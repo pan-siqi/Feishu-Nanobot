@@ -11,3 +11,4 @@ wheels/
 .nanobot_workspace
 git.sh
 .vscode
+model/*/

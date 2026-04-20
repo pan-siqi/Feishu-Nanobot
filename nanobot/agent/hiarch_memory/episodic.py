@@ -32,7 +32,7 @@ class EpisodicMemoryStore:
         self._mem_save_path = os.path.join(self._workspace, 'memory')
         self._save_path = os.path.join(self._mem_save_path, '.history.jsonl')
         self._scheme_path = './nanobot/nanobot/agent/hiarch_memory/itermediate.json'
-        self._embed_model_path = './models/beg-small-zh-v1.5/'
+        self._embed_model_path = './model/bge-small-zh-v1.5/'
         self._document_save_path = os.path.join(self._mem_save_path, '.document.md')
         self._lightrag_workspace = os.path.join(self._mem_save_path, 'rag_storage')
         self._initial_lightrag: bool = False
