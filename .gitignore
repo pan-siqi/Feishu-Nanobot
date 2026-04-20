@@ -8,5 +8,5 @@ wheels/
 
 # Virtual environments
 .venv
-git.sh
 .nanobot_workspace
+git.sh
