@@ -1255,6 +1255,7 @@ dependencies = [
     { name = "lightrag-hku" },
     { name = "loguru" },
     { name = "mcp" },
+    { name = "modelscope" },
     { name = "msgpack" },
     { name = "numpy" },
     { name = "oauth-cli-kit" },
@@ -1310,6 +1311,7 @@ requires-dist = [
     { name = "lightrag-hku", editable = "thirdparty/LightRAG" },
     { name = "loguru", specifier = ">=0.7.3,<1.0.0" },
     { name = "mcp", specifier = ">=1.19.0" },
+    { name = "modelscope", specifier = ">=1.36.0" },
     { name = "msgpack", specifier = ">=1.1.0,<2.0.0" },
     { name = "numpy", specifier = ">=2.4.4" },
     { name = "oauth-cli-kit", specifier = ">=0.1.3,<1.0.0" },
@@ -2962,6 +2964,23 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz", hash = "sha256:bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba", size = 8729, upload-time = "2022-08-14T12:40:10.846Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl", hash = "sha256:84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8", size = 9979, upload-time = "2022-08-14T12:40:09.779Z" },
+]
+
+[[package]]
+name = "modelscope"
+version = "1.36.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "filelock" },
+    { name = "packaging" },
+    { name = "requests" },
+    { name = "setuptools" },
+    { name = "tqdm" },
+    { name = "urllib3" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/d9/79/df2c9c3a7b3c280652619c35e22b95f93a1b0e13a245ef031fa1144894af/modelscope-1.36.0.tar.gz", hash = "sha256:98d0575fecaec802cbd6b7c46679283603883fdf414f9fcb6acf931f71469c48", size = 4573917, upload-time = "2026-04-20T06:43:17.794Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/07/7f/3b3c58a08851e7cbdbb5b70421519910d3edc2a9ff6ec847ebf331c68e27/modelscope-1.36.0-py3-none-any.whl", hash = "sha256:37b7117ffd5f99a8d0176c53997da6653585ee0a4bc897cca454fe17fa3ce1b2", size = 6068767, upload-time = "2026-04-20T06:43:13.941Z" },
 ]
 
 [[package]]
