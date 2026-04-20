@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "NanobotDebugger",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "nanobot/cli/commands.py",
+            "args": [
+                "gateway", "--workspace", "${workspaceFolder}/.nanobot_workspace",
+                "--config", "${workspaceFolder}/envs/nanobot_config.json",
+                "--verbose"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "cwd":"${workspaceFolder}",
+            "env": { "PYTHONPATH": "${workspaceFolder}" },
+            "python": "${workspaceFolder}/.venv/bin/python"
+        }
+    ]
+}

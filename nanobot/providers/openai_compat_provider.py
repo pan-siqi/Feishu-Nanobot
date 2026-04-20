@@ -13,6 +13,7 @@ import uuid
 from collections.abc import Awaitable, Callable
 from typing import TYPE_CHECKING, Any, Optional, Type, Dict
 from pydantic import BaseModel
+import httpx
 
 import json_repair
 
@@ -188,6 +189,7 @@ class OpenAICompatProvider(LLMProvider):
             api_key=api_key or "no-key",
             base_url=effective_base,
             default_headers=default_headers,
+            http_client=httpx.AsyncClient(trust_env=False),
             max_retries=0,
         )
         self._scheme: Type[BaseModel] | Dict | None = None
