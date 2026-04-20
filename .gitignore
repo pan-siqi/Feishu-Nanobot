@@ -10,3 +10,4 @@ wheels/
 .venv
 .nanobot_workspace
 git.sh
+.vscode
