@@ -1,0 +1,45 @@
+{
+  "type": "json_schema",
+  "json_schema": {
+    "name": "InterMediateSchema",
+    "strict": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "preference",
+            "profile",
+            "goal",
+            "constraint",
+            "project",
+            "relationship",
+            "short_term_task"
+          ]
+        },
+        "topic": {
+          "type": "string",
+          "description": "Short normalized topic name, snake_case preferred"
+        },
+        "importance": {
+          "type": "number"
+        },
+        "ttl_days": {
+          "type": "integer"
+        },
+        "content": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "topic",
+        "importance",
+        "ttl_days",
+        "content"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
