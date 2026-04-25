@@ -1,3 +1,3 @@
-uv run fsbot gateway --workspace ./.nanobot_workspace \
---config ./envs/nanobot_config.json \
+uv run fsbot gateway --workspace ./.nanobot/workspace \
+--config ./.nanobot/config.json \
 --verbose
