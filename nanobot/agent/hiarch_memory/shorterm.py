@@ -14,7 +14,7 @@ class ShortermMemoryStore:
         self._save_path = os.path.join(self._mem_save_path, '.history.jsonl')
         self._cursor_save_path = os.path.join(self._mem_save_path, '.cursor')
         self._shorterm_memory_save_path = os.path.join(self._mem_save_path, '.shortermem.jsonl')
-        self._max_history_num: int = 5
+        self._max_history_num: int = 1000
         self._cursor: int = self._load_cursor() if os.path.exists(self._cursor_save_path) else 0
         self._buffer: List = list()
         self._episodic_memorystore = episodic_memorystore
