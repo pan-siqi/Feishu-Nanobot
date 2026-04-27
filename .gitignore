@@ -16,3 +16,8 @@ model/*/
 
 # self-document
 analysis/
+
+#macos
+.DS_Store
+docs/.DS_Store
+nanobot/.DS_Store
