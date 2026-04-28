@@ -14,8 +14,13 @@ git.sh
 model/*/
 .nanobot
 
-# self-document
-analysis/
+# pytest
+.pytest_cache/
+
+#cache
+memory/decisions.db
+memory/rag_storage/
+sessions/
 
 #macos
 .DS_Store
