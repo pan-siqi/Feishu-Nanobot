@@ -667,7 +667,7 @@ class AgentLoop:
             self._set_tool_context(channel, chat_id, msg.metadata.get("message_id"))
             
             # use shorterm's history
-            history = self.shorterm_memorystore.rebuild_history(session)
+            history = await self.shorterm_memorystore.rebuild_history(session)
             # history = session.get_history(max_messages=0)
             current_role = "assistant" if msg.sender_id == "subagent" else "user"
 
