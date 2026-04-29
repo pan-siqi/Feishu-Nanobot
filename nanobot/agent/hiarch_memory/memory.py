@@ -46,7 +46,7 @@ class HiarchMemoryStore:
         kwg: str = await self._episodic_memorystore.retrieve(current_message)
         if kwg:
             parts.append(kwg)
-
+        
         if self._decision_store is not None and memory_project:
             block = self._format_decision_block(self._decision_store, memory_project)
             if block:
