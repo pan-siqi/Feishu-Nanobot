@@ -12,7 +12,7 @@ wheels/
 git.sh
 .vscode
 model/*/
-.nanobot
+# .nanobot
 
 # pytest
 .pytest_cache/
