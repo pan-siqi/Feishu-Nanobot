@@ -343,6 +343,19 @@ class DecisionMemoryStore:
                 return None
             return self._row_to_decision(row)
 
+    def has_for_project(self, project: str) -> bool:
+        """Return True if there is at least one active decision row for *project*."""
+        with self._connect() as conn:
+            row = conn.execute(
+                """
+                SELECT 1 FROM decisions
+                WHERE project = ? AND status = 'active'
+                LIMIT 1
+                """,
+                (project,),
+            ).fetchone()
+            return row is not None
+
     def list_by_project(self, project: str, *, limit: int = 50) -> list[Decision]:
         with self._connect() as conn:
             rows = conn.execute(
