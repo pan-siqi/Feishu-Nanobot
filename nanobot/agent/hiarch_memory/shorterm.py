@@ -1,12 +1,19 @@
-from typing import List, Dict, Any
+from typing import Any, Dict, List
+
+import jsonlines
+import os
+from loguru import logger
 from nanobot.session.manager import Session
 from nanobot.agent.hiarch_memory.episodic import EpisodicMemoryStore
-import os
-import jsonlines
-import time
+
 
 class ShortermMemoryStore:
-    def __init__(self, workspace: str, episodic_memorystore: EpisodicMemoryStore):
+    def __init__(
+        self,
+        workspace: str,
+        episodic_memorystore: EpisodicMemoryStore,
+        decision_store: Any | None = None,
+    ):
         self._workspace = workspace
         self._mem_save_path = os.path.join(self._workspace, 'memory')
         if not os.path.exists(self._mem_save_path):
@@ -18,6 +25,7 @@ class ShortermMemoryStore:
         self._cursor: int = self._load_cursor() if os.path.exists(self._cursor_save_path) else 0
         self._buffer: List = list()
         self._episodic_memorystore = episodic_memorystore
+        self._decision_store = decision_store
     
     async def rebuild_history(self, session: Session): # make number of history come into [m/2, m]
         history: List[Dict[str, Any]] = session.get_history(max_messages=0, clip_index=self._cursor)
@@ -25,8 +33,15 @@ class ShortermMemoryStore:
         # if should rebuild
         if self._is_rebuild(history):
             _num: int = self._get_num(history)
-            self._save_history(history[0: _num])
-            # after save, build vector database
+            batch = history[0:_num]
+            self._save_history(batch)
+            try:
+                if self._decision_store is not None and batch:
+                    extracted = await self._decision_store.extract(batch, project=session.key)
+                    if extracted:
+                        await self._decision_store.store(extracted)
+            except Exception:
+                logger.exception("Decision extract/store failed for session {}", session.key)
             history = history[_num:]
 
         # if should build-document
