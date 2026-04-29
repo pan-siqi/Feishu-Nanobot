@@ -13,3 +13,6 @@ git.sh
 .vscode
 model/*/
 .nanobot
+
+#ignore files
+docs/mds/proposal.md
