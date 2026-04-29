@@ -19,6 +19,7 @@ from nanobot.agent.hook import AgentHook, AgentHookContext, CompositeHook
 from nanobot.agent.memory import Consolidator, Dream
 from nanobot.agent.hiarch_memory.shorterm import ShortermMemoryStore
 from nanobot.agent.hiarch_memory.episodic import EpisodicMemoryStore
+from nanobot.agent.hiarch_memory.decision import DecisionMemoryStore
 from nanobot.agent.runner import _MAX_INJECTIONS_PER_TURN, AgentRunner, AgentRunSpec
 from nanobot.agent.skills import BUILTIN_SKILLS_DIR
 from nanobot.agent.subagent import SubagentManager
@@ -36,6 +37,7 @@ from nanobot.bus.queue import MessageBus
 from nanobot.command import CommandContext, CommandRouter, register_builtin_commands
 from nanobot.config.schema import AgentDefaults
 from nanobot.providers.base import LLMProvider
+from nanobot.providers.openai_compat_provider import OpenAICompatProvider
 from nanobot.session.manager import Session, SessionManager
 from nanobot.utils.document import extract_documents
 from nanobot.utils.helpers import image_placeholder_text
@@ -192,7 +194,25 @@ class AgentLoop:
 
         # our memory structure
         self.episodic_memorystore = EpisodicMemoryStore(workspace=workspace, provider=self.provider, model=self.model)
-        self.context = ContextBuilder(workspace, self.episodic_memorystore, timezone=timezone, disabled_skills=disabled_skills)
+
+        decision_store = None
+        if isinstance(self.provider, OpenAICompatProvider):
+            decision_store = DecisionMemoryStore(
+                workspace=str(workspace),
+                provider=self.provider,
+                model=self.model,
+                episodic=self.episodic_memorystore,
+            )
+
+        self.decision_store = decision_store
+
+        self.context = ContextBuilder(
+            workspace,
+            self.episodic_memorystore,
+            timezone=timezone,
+            disabled_skills=disabled_skills,
+            decision_store=decision_store,
+        )
         self.sessions = session_manager or SessionManager(workspace)
         self.tools = ToolRegistry()
         self.runner = AgentRunner(provider)
@@ -248,8 +268,9 @@ class AgentLoop:
         # )
 
         self.shorterm_memorystore = ShortermMemoryStore(
-            workspace = workspace,
-            episodic_memorystore = self.episodic_memorystore,
+            workspace=str(workspace),
+            episodic_memorystore=self.episodic_memorystore,
+            decision_store=decision_store,
         )
 
         self._register_default_tools()

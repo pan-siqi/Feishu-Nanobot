@@ -22,10 +22,12 @@ memory/decisions.db
 memory/rag_storage/
 sessions/
 
-#macos
+# macOS junk files (all directories)
 .DS_Store
-docs/.DS_Store
-nanobot/.DS_Store
+**/.DS_Store
 
-#ignore files
+# analysis workspace files
+analysis/
+analysis/**
+
 docs/mds/proposal.md

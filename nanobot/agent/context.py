@@ -6,7 +6,6 @@ import platform
 from importlib.resources import files as pkg_files
 from pathlib import Path
 from typing import Any
-
 # from nanobot.agent.memory import MemoryStore
 from nanobot.agent.hiarch_memory import HiarchMemoryStore
 from nanobot.agent.hiarch_memory.episodic import EpisodicMemoryStore
@@ -28,12 +27,16 @@ class ContextBuilder:
             workspace: Path, 
             episodic_memorystore: EpisodicMemoryStore,
             timezone: str | None = None,
-            disabled_skills: list[str] | None = None
+            disabled_skills: list[str] | None = None,
+            decision_store: Any | None = None,
         ):
         self.workspace = workspace
         self.timezone = timezone
-        # self.memory = MemoryStore(workspace)
-        self.memory = HiarchMemoryStore(workspace, episodic_memorystore) # use our memory
+        self.memory = HiarchMemoryStore(
+            str(workspace),
+            episodic_memorystore,
+            decision_store=decision_store,
+        )
         self.skills = SkillsLoader(workspace, disabled_skills=set(disabled_skills) if disabled_skills else None)
 
     # def build_system_prompt(
@@ -71,12 +74,20 @@ class ContextBuilder:
 
     #     return "\n\n---\n\n".join(parts)
     
+    @staticmethod
+    def _memory_project_key(channel: str | None, chat_id: str | None) -> str | None:
+        """Stable session scope for decision SQLite + retrieval (matches Session.key)."""
+        if channel and chat_id:
+            return f"{channel}:{chat_id}"
+        return None
+
     async def build_system_prompt(
         self,
         history: str,
         current_message: str,
         skill_names: list[str] | None = None,
         channel: str | None = None,
+        chat_id: str | None = None,
     ) -> str:
         """
         Build the system prompt from 
@@ -92,9 +103,10 @@ class ContextBuilder:
         bootstrap = self._load_bootstrap_files()
         if bootstrap:
             parts.append(bootstrap)
-        
-        memory = await self.memory.aggregation_memory(current_message)
-        if memory and self.memory.efficient():
+
+        mp = self._memory_project_key(channel, chat_id)
+        memory = await self.memory.aggregation_memory(current_message, memory_project=mp)
+        if memory and self.memory.efficient(memory_project=mp):
             parts.append(f"# Memory\n\n{memory}")
         
         always_skills = self.skills.get_always_skills()
@@ -195,7 +207,10 @@ class ContextBuilder:
         else:
             merged = [{"type": "text", "text": runtime_ctx}] + user_content
         messages = [
-            {"role": "system", "content": await self.build_system_prompt(history, current_message, skill_names, channel=channel)},
+            {"role": "system", "content": await self.build_system_prompt(
+                history, current_message, skill_names,
+                channel=channel, chat_id=chat_id,
+            )},
             *history,
         ]
         if messages[-1].get("role") == current_role:
