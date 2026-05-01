@@ -195,23 +195,21 @@ class AgentLoop:
         # our memory structure
         self.episodic_memorystore = EpisodicMemoryStore(workspace=workspace, provider=self.provider, model=self.model)
 
-        decision_store = None
-        if isinstance(self.provider, OpenAICompatProvider):
-            decision_store = DecisionMemoryStore(
-                workspace=str(workspace),
-                provider=self.provider,
-                model=self.model,
-                episodic=self.episodic_memorystore,
-            )
-
-        self.decision_store = decision_store
+        decision_memorystore = DecisionMemoryStore(
+            workspace=str(workspace),
+            provider=self.provider,
+            model=self.model,
+            episodic=self.episodic_memorystore,
+        )
+        
+        self.decision_memorystore = decision_memorystore
 
         self.context = ContextBuilder(
             workspace,
             self.episodic_memorystore,
             timezone=timezone,
             disabled_skills=disabled_skills,
-            decision_store=decision_store,
+            decision_memorystore=decision_memorystore,
         )
         self.sessions = session_manager or SessionManager(workspace)
         self.tools = ToolRegistry()
@@ -270,7 +268,7 @@ class AgentLoop:
         self.shorterm_memorystore = ShortermMemoryStore(
             workspace=str(workspace),
             episodic_memorystore=self.episodic_memorystore,
-            decision_store=decision_store,
+            decision_memorystore=decision_memorystore,
         )
 
         self._register_default_tools()

@@ -9,6 +9,7 @@ from typing import Any
 # from nanobot.agent.memory import MemoryStore
 from nanobot.agent.hiarch_memory import HiarchMemoryStore
 from nanobot.agent.hiarch_memory.episodic import EpisodicMemoryStore
+from nanobot.agent.hiarch_memory.decision import DecisionMemoryStore
 from nanobot.agent.skills import SkillsLoader
 from nanobot.utils.helpers import build_assistant_message, current_time_str, detect_image_mime
 from nanobot.utils.prompt_templates import render_template
@@ -26,16 +27,16 @@ class ContextBuilder:
             self, 
             workspace: Path, 
             episodic_memorystore: EpisodicMemoryStore,
-            timezone: str | None = None,
+            decision_memorystore: DecisionMemoryStore,
             disabled_skills: list[str] | None = None,
-            decision_store: Any | None = None,
+            timezone: str | None = None,
         ):
         self.workspace = workspace
         self.timezone = timezone
         self.memory = HiarchMemoryStore(
             str(workspace),
             episodic_memorystore,
-            decision_store=decision_store,
+            decision_memorystore=decision_memorystore,
         )
         self.skills = SkillsLoader(workspace, disabled_skills=set(disabled_skills) if disabled_skills else None)
 
