@@ -12,7 +12,7 @@ class ShortermMemoryStore:
         self,
         workspace: str,
         episodic_memorystore: EpisodicMemoryStore,
-        decision_store: Any | None = None,
+        decision_memorystore: Any | None = None,
     ):
         self._workspace = workspace
         self._mem_save_path = os.path.join(self._workspace, 'memory')
@@ -25,7 +25,7 @@ class ShortermMemoryStore:
         self._cursor: int = self._load_cursor() if os.path.exists(self._cursor_save_path) else 0
         self._buffer: List = list()
         self._episodic_memorystore = episodic_memorystore
-        self._decision_store = decision_store
+        self._decision_memorystore = decision_memorystore
     
     async def rebuild_history(self, session: Session): # make number of history come into [m/2, m]
         history: List[Dict[str, Any]] = session.get_history(max_messages=0, clip_index=self._cursor)
@@ -36,10 +36,10 @@ class ShortermMemoryStore:
             batch = history[0:_num]
             self._save_history(batch)
             try:
-                if self._decision_store is not None and batch:
-                    extracted = await self._decision_store.extract(batch, project=session.key)
+                if self._decision_memorystore is not None and batch:
+                    extracted = await self._decision_memorystore.extract(batch, project=session.key)
                     if extracted:
-                        await self._decision_store.store(extracted)
+                        await self._decision_memorystore.store(extracted)
             except Exception:
                 logger.exception("Decision extract/store failed for session {}", session.key)
             history = history[_num:]
