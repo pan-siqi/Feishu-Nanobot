@@ -703,7 +703,37 @@ def gateway(
 
         from nanobot.agent.tools.cron import CronTool
         from nanobot.agent.tools.message import MessageTool
+        from nanobot.cron.decision_review import DecisionReviewRequest, DecisionReviewService
         from nanobot.utils.evaluator import evaluate_response
+
+        if job.payload.message.strip().lower().startswith("decision_review"):
+            request_project = (job.payload.channel or "cli") + ":" + (job.payload.to or "direct")
+            request_limit = 3
+            # Optional format:
+            # decision_review project=feishu:oc_xxx limit=5
+            for chunk in job.payload.message.split():
+                if chunk.startswith("project="):
+                    request_project = chunk.split("=", 1)[1].strip() or request_project
+                elif chunk.startswith("limit="):
+                    try:
+                        request_limit = max(1, min(10, int(chunk.split("=", 1)[1])))
+                    except Exception:
+                        pass
+            review_service = DecisionReviewService(agent.decision_memorystore)
+            review_content = review_service.build_review_message(
+                DecisionReviewRequest(project=request_project, limit=request_limit)
+            )
+            if not review_content:
+                return "Decision review: no stale-important decisions found."
+            if job.payload.deliver and job.payload.to:
+                from nanobot.bus.events import OutboundMessage
+
+                await bus.publish_outbound(OutboundMessage(
+                    channel=job.payload.channel or "cli",
+                    chat_id=job.payload.to,
+                    content=review_content,
+                ))
+            return review_content
 
         reminder_note = (
             "[Scheduled Task] Timer finished.\n\n"
