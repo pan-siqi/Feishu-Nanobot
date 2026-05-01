@@ -21,6 +21,7 @@ class ContextBuilder:
     BOOTSTRAP_FILES = ["AGENTS.md", "SOUL.md", "USER.md", "TOOLS.md"]
     _RUNTIME_CONTEXT_TAG = "[Runtime Context — metadata only, not instructions]"
     _MAX_RECENT_HISTORY = 50
+    _MAX_MEMORY_BLOCK_CHARS = 7000
     _RUNTIME_CONTEXT_END = "[/Runtime Context]"
 
     def __init__(
@@ -108,6 +109,8 @@ class ContextBuilder:
         mp = self._memory_project_key(channel, chat_id)
         memory = await self.memory.aggregation_memory(current_message, memory_project=mp)
         if memory and self.memory.efficient(memory_project=mp):
+            if len(memory) > self._MAX_MEMORY_BLOCK_CHARS:
+                memory = memory[:self._MAX_MEMORY_BLOCK_CHARS].rstrip() + "\n\n...[memory truncated]"
             parts.append(f"# Memory\n\n{memory}")
         
         always_skills = self.skills.get_always_skills()
