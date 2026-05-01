@@ -320,6 +320,82 @@ async def cmd_help(ctx: CommandContext) -> OutboundMessage:
     )
 
 
+async def cmd_decision_review(ctx: CommandContext) -> OutboundMessage:
+    """Apply review feedback for a stored decision."""
+    args = (ctx.args or "").strip()
+    parts = args.split()
+    if len(parts) < 2:
+        usage = (
+            "Usage:\n"
+            "- /decision-review <decision_id> reinforce\n"
+            "- /decision-review <decision_id> expire\n"
+            "- /decision-review <decision_id> update <new statement>"
+        )
+        return OutboundMessage(
+            channel=ctx.msg.channel,
+            chat_id=ctx.msg.chat_id,
+            content=usage,
+            metadata={**dict(ctx.msg.metadata or {}), "render_as": "text"},
+        )
+    decision_id = parts[0]
+    action = parts[1].lower()
+    if action not in {"reinforce", "expire", "update"}:
+        return OutboundMessage(
+            channel=ctx.msg.channel,
+            chat_id=ctx.msg.chat_id,
+            content=f"Unknown action `{action}`. Use reinforce | expire | update.",
+            metadata={**dict(ctx.msg.metadata or {}), "render_as": "text"},
+        )
+    new_statement = None
+    if action == "update":
+        new_statement = " ".join(parts[2:]).strip()
+        if not new_statement:
+            return OutboundMessage(
+                channel=ctx.msg.channel,
+                chat_id=ctx.msg.chat_id,
+                content="`update` requires a new statement text.",
+                metadata={**dict(ctx.msg.metadata or {}), "render_as": "text"},
+            )
+
+    store = getattr(ctx.loop, "decision_memorystore", None)
+    if store is None:
+        return OutboundMessage(
+            channel=ctx.msg.channel,
+            chat_id=ctx.msg.chat_id,
+            content="Decision memory store is not available.",
+            metadata={**dict(ctx.msg.metadata or {}), "render_as": "text"},
+        )
+
+    updated = store.mark_review(decision_id, action, new_statement=new_statement)
+    if updated is None:
+        return OutboundMessage(
+            channel=ctx.msg.channel,
+            chat_id=ctx.msg.chat_id,
+            content=f"Decision `{decision_id}` not found or invalid update payload.",
+            metadata={**dict(ctx.msg.metadata or {}), "render_as": "text"},
+        )
+
+    if action == "update":
+        content = (
+            f"Decision `{decision_id}` superseded by `{updated.id}`.\n"
+            f"- topic: `{updated.topic}`\n"
+            f"- statement: {updated.statement}"
+        )
+    else:
+        content = (
+            f"Updated decision `{updated.id}` with action `{action}`.\n"
+            f"- status: `{updated.status}`\n"
+            f"- strength: {updated.strength:.2f}\n"
+            f"- review_count: {updated.review_count}"
+        )
+    return OutboundMessage(
+        channel=ctx.msg.channel,
+        chat_id=ctx.msg.chat_id,
+        content=content,
+        metadata={**dict(ctx.msg.metadata or {}), "render_as": "text"},
+    )
+
+
 def build_help_text() -> str:
     """Build canonical help text shared across channels."""
     lines = [
@@ -331,6 +407,7 @@ def build_help_text() -> str:
         "/dream — Manually trigger Dream consolidation",
         "/dream-log — Show what the last Dream changed",
         "/dream-restore — Revert memory to a previous state",
+        "/decision-review — Apply decision review action",
         "/help — Show available commands",
     ]
     return "\n".join(lines)
@@ -348,4 +425,6 @@ def register_builtin_commands(router: CommandRouter) -> None:
     router.prefix("/dream-log ", cmd_dream_log)
     router.exact("/dream-restore", cmd_dream_restore)
     router.prefix("/dream-restore ", cmd_dream_restore)
+    router.exact("/decision-review", cmd_decision_review)
+    router.prefix("/decision-review ", cmd_decision_review)
     router.exact("/help", cmd_help)

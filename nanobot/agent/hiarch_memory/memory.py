@@ -20,8 +20,8 @@ class HiarchMemoryStore:
         self._decision_memorystore = decision_memorystore
 
     @staticmethod
-    def _format_decision_block(store: DecisionMemoryStore, project: str) -> str:
-        decisions = store.list_by_project(project, limit=12)
+    def _format_decision_block(store: DecisionMemoryStore, project: str, query: str) -> str:
+        decisions = store.recall(query, project=project, limit=8)
         if not decisions:
             return ""
         lines: list[str] = []
@@ -34,7 +34,7 @@ class HiarchMemoryStore:
                 f"  - alternatives rejected / not chosen: {alts}\n"
                 f"  - importance={d.importance:.2f}, ref={d.source_ref}"
             )
-        return "## Recorded decisions (this session)\n\n" + "\n".join(lines)
+        return "## Relevant decisions (query-aware)\n\n" + "\n".join(lines)
 
     async def aggregation_memory(
         self,
@@ -46,7 +46,11 @@ class HiarchMemoryStore:
         if knowledge: parts.append(knowledge)
         
         if memory_project:
-            block = self._format_decision_block(self._decision_memorystore, memory_project)
+            block = self._format_decision_block(
+                self._decision_memorystore,
+                memory_project,
+                current_message,
+            )
             if block: parts.append(block)
 
         return "\n\n".join(parts) if parts else ""
