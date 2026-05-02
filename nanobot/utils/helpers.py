@@ -8,10 +8,33 @@ import time
 import uuid
 from datetime import datetime
 from pathlib import Path
-from typing import Any
+from typing import Any, List, Dict
+import jsonlines
 
 import tiktoken
 from loguru import logger
+
+def read_file(file_path: str) -> str:
+    with open(file_path, mode='r', encoding='utf-8') as reader:
+        content = reader.read().strip()
+    return content
+
+def write_file(data: str, file_path: str, mode: str = 'w'): # mode options: ['a', 'w']
+    with open(file_path, mode=mode, encoding='utf-8') as writer:
+        writer.write(data)
+    print('write successfully!')
+
+def read_jsonlines(jsonl_path: str) -> List[Dict]:
+    _temp: List[Dict] = list()
+    with jsonlines.open(jsonl_path, mode='r') as reader:
+        for obj in reader:
+            _temp.append(obj)
+    return _temp
+
+def write_jsonlines(data: List[Dict], jsonl_path: str):
+    with jsonlines.open(jsonl_path, mode='w') as writer:
+        writer.write(data)
+    print('write successfully!')
 
 
 def strip_think(text: str) -> str:
