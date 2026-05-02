@@ -2,30 +2,37 @@ from typing import Any, Dict, List
 
 import jsonlines
 import os
-from loguru import logger
 from nanobot.session.manager import Session
 from nanobot.agent.hiarch_memory.episodic import EpisodicMemoryStore
-
+from nanobot.agent.hiarch_memory.decision import DecisionMemoryStore
+from nanobot.agent.hiarch_memory.router import Router
 
 class ShortermMemoryStore:
     def __init__(
         self,
         workspace: str,
-        episodic_memorystore: EpisodicMemoryStore,
-        decision_memorystore: Any | None = None,
+        episodic: EpisodicMemoryStore,
+        decision: Any | None = None,
     ):
         self._workspace = workspace
         self._mem_save_path = os.path.join(self._workspace, 'memory')
         if not os.path.exists(self._mem_save_path):
             os.mkdir(self._mem_save_path)
-        self._save_path = os.path.join(self._mem_save_path, '.history.jsonl')
+        self._history_save_path = os.path.join(self._mem_save_path, '.history.jsonl')
         self._cursor_save_path = os.path.join(self._mem_save_path, '.cursor')
         self._shorterm_memory_save_path = os.path.join(self._mem_save_path, '.shortermem.jsonl')
-        self._max_history_num: int = 1000
+        
+        self._max_history_num: int = 500
         self._cursor: int = self._load_cursor() if os.path.exists(self._cursor_save_path) else 0
         self._buffer: List = list()
-        self._episodic_memorystore = episodic_memorystore
-        self._decision_memorystore = decision_memorystore
+        self._episodic = episodic
+        self._decision = decision
+        self._router = Router(
+            self._mem_save_path,
+            self._history_save_path,
+            self._episodic,
+            self._decision
+        )
     
     async def rebuild_history(self, session: Session): # make number of history come into [m/2, m]
         history: List[Dict[str, Any]] = session.get_history(max_messages=0, clip_index=self._cursor)
@@ -35,18 +42,13 @@ class ShortermMemoryStore:
             _num: int = self._get_num(history)
             batch = history[0:_num]
             self._save_history(batch)
-            try:
-                if self._decision_memorystore is not None and batch:
-                    extracted = await self._decision_memorystore.extract(batch, project=session.key)
-                    if extracted:
-                        await self._decision_memorystore.store(extracted)
-            except Exception:
-                logger.exception("Decision extract/store failed for session {}", session.key)
+            # <operate batch>
+            self._router.operate_batch() # enter router
             history = history[_num:]
 
         # if should build-document
-        if os.path.exists(self._save_path) and self._load_history():
-            await self._episodic_memorystore.check()
+        if os.path.exists(self._history_save_path) and self._load_history():
+            await self._episodic.check()
 
         self._cleanup_history()
         
@@ -68,17 +70,17 @@ class ShortermMemoryStore:
             writer.write_all(shortermem)
 
     def _cleanup_history(self):
-        if os.path.exists(self._save_path): os.remove(self._save_path)
+        if os.path.exists(self._history_save_path): os.remove(self._history_save_path)
     
     def _load_history(self) -> List[Dict[str, Any]]:
         _records = []
-        with jsonlines.open(self._save_path, mode='r') as reader:
+        with jsonlines.open(self._history_save_path, mode='r') as reader:
             for obj in reader:
                 _records.append(obj)
         return _records
 
     def _save_history(self, history: List):
-        with jsonlines.open(self._save_path, mode='a') as writer:
+        with jsonlines.open(self._history_save_path, mode='a') as writer:
             writer.write_all(history)
     
     def _save_cursor(self):

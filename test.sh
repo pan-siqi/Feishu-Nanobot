@@ -1,0 +1,1 @@
+uv run tests/test_pipline.py
