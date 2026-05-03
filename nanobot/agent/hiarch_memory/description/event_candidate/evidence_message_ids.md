@@ -1,0 +1,1 @@
+Message IDs that directly support this candidate. Each extracted event must be grounded in at least one original message.

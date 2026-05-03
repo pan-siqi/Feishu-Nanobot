@@ -14,6 +14,17 @@ import jsonlines
 import tiktoken
 from loguru import logger
 
+def format_messages(messages: List[Dict[str, str]]) -> str:
+    # convert chat history from List[Dict] to str format
+    lines = []
+    for message in messages:
+        if not message.get("content"):
+            continue
+        tools = f" [tools: {', '.join(message['tools_used'])}]" if message.get("tools_used") else ""
+        timestamp_string: str = message.get('timestamp', '?')[:16]
+        lines.append(f"[{timestamp_string}] {message['role'].upper()}{tools}: {message['content']}")
+    return "\n".join(lines)
+
 def read_file(file_path: str) -> str:
     with open(file_path, mode='r', encoding='utf-8') as reader:
         content = reader.read().strip()

@@ -1,0 +1,1 @@
+0=trivial, 0.5=useful, 1=critical long-term memory

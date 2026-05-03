@@ -3,8 +3,10 @@ import jsonlines
 import os
 from pydantic import BaseModel, Field
 from nanobot.utils.prompt_templates import render_template
+from nanobot.utils.helpers import format_messages
 from nanobot.providers.openai_compat_provider import OpenAICompatProvider
 from nanobot.providers.base import LLMResponse, LLMResponseStructure
+from nanobot.agent.hiarch_memory.scheme import InterMediateResult
 import json
 from uuid import uuid4
 import time
@@ -12,18 +14,6 @@ import asyncio
 from lightrag import LightRAG, QueryParam
 from lightrag.llm.openai import volcengine_openai_complete, LocalModelEmbed, openai_embed
 from lightrag.utils import setup_logger, EmbeddingFunc
-
-
-class InterMediate(BaseModel):
-    type: Literal["fact", "preference", "goal", "task", "constraint", "relationship"]
-    topic: str = Field(..., description="Short normalized topic name, snake_case preferred")
-    importance: float = Field(..., ge=0.0, le=1.0, description="0=trivial, 0.5=useful, 1=critical long-term memory")
-    ttl_days: int = Field(..., ge=1, le=3650, description="How long this memory remains relevant (in days)")
-    content: str = Field(..., min_length=1, description="Concise factual statement, no fluff")
-
-
-class InterMediateResult(BaseModel):
-    result: List[InterMediate]
 
 
 class EpisodicMemoryStore:
@@ -76,7 +66,7 @@ class EpisodicMemoryStore:
         return os.path.exists(self._lightrag_workspace)
 
     async def _jsonline_to_document(self, history) -> str:
-        histext: str = self._format_messages(history)
+        histext: str = format_messages(history)
         msg: List[Dict[str, Any]] = [
             {'role': 'system', 'content': render_template('custom/extract.md', strip=True)},
             {'role': 'user', 'content': histext},
@@ -105,14 +95,3 @@ class EpisodicMemoryStore:
         with open(self._scheme_path, mode='r', encoding='utf-8') as reader:
             content = json.loads(str(reader.read().strip()))
         return content
-
-    def _format_messages(self, messages: List[Dict]) -> str:
-        lines = []
-        for message in messages:
-            if not message.get("content"):
-                continue
-            tools = f" [tools: {', '.join(message['tools_used'])}]" if message.get("tools_used") else ""
-            lines.append(
-                f"[{message.get('timestamp', '?')[:16]}] {message['role'].upper()}{tools}: {message['content']}"
-            )
-        return "\n".join(lines)
