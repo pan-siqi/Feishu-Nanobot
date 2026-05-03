@@ -1,0 +1,1 @@
+How long this memory remains relevant (in days)

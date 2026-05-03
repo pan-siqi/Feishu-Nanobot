@@ -1,0 +1,1 @@
+The type of decision signal found in the dialogue. Use 'decided' for a clear decision, 'agreed' for consensus, 'rejected' for rejected options, 'changed' for revision of a previous decision, 'postponed' for delayed decisions, 'cancelled' for abandoned decisions, 'tentative' for temporary decisions, and 'open_question' for unresolved but decision-relevant issues.

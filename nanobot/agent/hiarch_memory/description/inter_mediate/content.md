@@ -1,0 +1,1 @@
+Concise factual statement, no fluff

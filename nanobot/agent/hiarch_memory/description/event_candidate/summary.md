@@ -1,0 +1,1 @@
+Concise summary of the event discussion. Focus on what was discussed, not generic dialogue summary.

@@ -1,0 +1,1 @@
+Confidence score for this extraction. 0 means very uncertain, 1 means highly certain.

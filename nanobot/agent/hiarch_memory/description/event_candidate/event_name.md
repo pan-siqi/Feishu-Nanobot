@@ -1,0 +1,1 @@
+Short normalized event name. It should describe the specific event, decision, or issue being discussed.
