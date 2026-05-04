@@ -21,7 +21,6 @@ class InterMediateResult(BaseModel):
     result: List[InterMediate]
 
 class EventCandidate(BaseModel):
-    model_config = ConfigDict(extra='forbid')
     event_name: str = Field(..., min_length=1, description=load_description(1, 'event_name'))
     decision_signal: Literal['decided', 'agreed', 'rejected', 'changed', 'postponed', 'cancelled', 'tentative', 'open_question'] = Field(..., description=load_description(1, 'decision_signal'))
     summary: str = Field(..., min_length=1, description=load_description('summary'))
@@ -32,3 +31,7 @@ class EventCandidate(BaseModel):
 
 class EventCandidateResult(BaseModel):
     result: List[EventCandidate]
+
+class EventCandidateMergeResult(BaseModel):
+    ec_id: str
+    event_candidate: EventCandidate
