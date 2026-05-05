@@ -10,7 +10,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, List, Dict
 import jsonlines
-
+import pickle
 import tiktoken
 from loguru import logger
 
@@ -47,6 +47,15 @@ def write_jsonlines(data: List[Dict], jsonl_path: str):
         writer.write_all(data)
     print('write successfully!')
 
+def read_pickle(obj_path: str) -> Any:
+    with open(obj_path, 'rb') as f:
+        obj = pickle.load(f)
+    return obj
+
+def write_pickle(obj: Any, obj_path: str):
+    with open(obj_path, 'wb') as f:
+        pickle.dump(obj, f)
+    print('write successfully!')
 
 def strip_think(text: str) -> str:
     """Remove thinking blocks and any unclosed trailing tag."""

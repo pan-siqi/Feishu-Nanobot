@@ -1,10 +1,11 @@
 from nanobot.agent.hiarch_memory.episodic import EpisodicMemoryStore
 from nanobot.agent.hiarch_memory.decision import DecisionMemoryStore
-from nanobot.utils.helpers import read_jsonlines, write_jsonlines, write_file
+from nanobot.utils.helpers import read_jsonlines, write_jsonlines, write_file, write_pickle, read_pickle
 from typing import List, Dict, Any
 import os
 import shutil
 from glob import glob
+from uuid import uuid4
 
 class Router:
     def __init__(
@@ -17,33 +18,42 @@ class Router:
         self._mem_save_path = mem_save_path; self._history_save_path = history_save_path
         self._windows_root = os.path.join(self._mem_save_path, '.windows')
         self._document_path = os.path.join(self._mem_save_path, '.document.txt')
+        self._windows_recorded_path = os.path.join(self._windows_root, '.record.pkl')
         self._windows_size: int = 100; self._overlap: int = 20
         self._episodic = episodic
         self._decision = decision
     
-    def operate_batch(self):
+    async def operate_batch(self):
         # first step: split `batch` into `slide windows`
         self._create_slide_windows()
         
         # second step: store in episodic & decision memorystore
         for windows_path in glob(os.path.join(self._windows_root, 'window*.jsonl')):
+            if windows_path in self._windows_recorded: continue
             _window_content: List[Dict[str, Any]] = read_jsonlines(windows_path)
             # 2.1 feedinto episodic
-            doc: str = self._episodic.convert_document(_window_content)
-            write_file(f'{doc}\n\n', self._document_path, mode='a') # save to .document file
-            self._episodic.insert(doc) # insert lightrag
+            doc: str = await self._episodic.convert_document(_window_content)
+            # write_file(f'{doc}\n\n', self._document_path, mode='a') # save to .document file
+            await self._episodic.insert(doc) # insert lightrag
             
             # 2.2 feedinto decision
-            self._decision.extract(_window_content) # extract event candidate, insert database
+            self._add_extra_message_id(_window_content) # add message id
+            await self._decision.extract(_window_content) # extract event candidate, insert database
+            self._windows_recorded.append(windows_path)
+            write_pickle(self._windows_recorded, self._windows_recorded_path)
 
         self._delete_slide_windows()
     
     def _create_slide_windows(self): # .history.jsonl --> windows/window_<idx>.jsonl
         # if os.path.exists(self._windows_root): raise Exception(f'{self._windows_root} could not exist!')
         if os.path.exists(self._windows_root):
+            self._windows_recorded: List = read_pickle(self._windows_recorded_path)
             print(f'{self._windows_root} exist! return'); return
-        os.makedirs(self._windows_root, exist_ok=False)
         
+        os.makedirs(self._windows_root, exist_ok=False)
+        self._windows_recorded: List = list()
+        write_pickle(self._windows_recorded, self._windows_recorded_path)
+
         _temp: List[Dict] = read_jsonlines(self._history_save_path)
         left: int = 0
         while True:
@@ -55,4 +65,8 @@ class Router:
     
     def _delete_slide_windows(self):
         shutil.rmtree(self._windows_root) # remove windows root dir
+        self._windows_recorded: List = list()
         
+    def _add_extra_message_id(self, _window_content: List[Dict[str, Any]]):
+        for win in _window_content:
+            win['message_ids'] = f'm{uuid4().hex[:10]}'

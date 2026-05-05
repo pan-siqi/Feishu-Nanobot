@@ -123,7 +123,7 @@ class EventCandidateRepository:
         texts_hash: List[str] = []
         
         for ec in ecs:
-            text = self._convert_text(ec)
+            text = self.convert_text(ec)
             txthash = self._stable_hash(text)
             texts.append(text)
             texts_hash.append(txthash)
@@ -144,7 +144,7 @@ class EventCandidateRepository:
         retures: [(ec1, score1), (ec1, score2), (ec1, score3), ...]
         score_i, small means good
         '''
-        text = self._convert_text(ec)
+        text = self.convert_text(ec)
         query_vector = self._embed_model.encode([text], normalize_embeddings=True).flatten()
         distance = EventCandidateItem.embedding.cosine_distance(query_vector).label("distance")
         stmt = (
@@ -164,8 +164,9 @@ class EventCandidateRepository:
             _result.append((ec_item, item[1]))
         return _result
     
-    def convert_text(self, ec: EventCandidateMetaClass, remove_ec_id: bool = False) -> str: # `EventCandidateMetaClass` --> `str`
-        _keys = [f.name for f in fields(ec) if remove_ec_id and f.name != 'ec_id']
+    def convert_text(self, ec: EventCandidateMetaClass | EventCandidateItem, remove_ec_id: bool = False) -> str: # `EventCandidateMetaClass` --> `str`
+        _keys = [f.name for f in fields(EventCandidateMetaClass)]
+        if remove_ec_id: _keys.remove('ec_id')
         _dict = dict()
         for key in _keys: _dict[key] = getattr(ec, key)
         return render_template('custom/canonical.md', strip=True, **_dict)

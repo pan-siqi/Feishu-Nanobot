@@ -5,6 +5,7 @@ from nanobot.providers.openai_compat_provider import OpenAICompatProvider
 from nanobot.providers.base import LLMResponse, LLMResponseStructure
 from nanobot.utils.prompt_templates import render_template
 from nanobot.utils.helpers import format_messages
+from sqlalchemy.orm.session import Session
 from typing import List, Dict, Tuple, Any
 from uuid import uuid4
 from datetime import datetime
@@ -22,7 +23,8 @@ class DecisionMemoryStore(BaseMemoryStore):
         ):
         self._workspace = workspace; self._mem_save_path = mem_save_path
         self._provider = provider; self._model = model
-        self._session = connect_database() # create session
+        _SessionLocal = connect_database() # create session
+        self._session: Session = _SessionLocal()
         self._ec_repo = EventCandidateRepository(self._session, batch_size, max_score)
         self._ec_save_path = os.path.join(self._mem_save_path, '.ec.jsonl')
     
@@ -41,6 +43,7 @@ class DecisionMemoryStore(BaseMemoryStore):
         # merge ec
         parsed: Dict[str, List] = response.parsed
         result: List[Dict] = parsed.get('result')
+        [item for item in result]
 
         if not self._ec_repo.list(): # if first
             for item in result: self._ec_repo.create(self._scheme_to_metaclass(item))
@@ -50,14 +53,16 @@ class DecisionMemoryStore(BaseMemoryStore):
                 restr = self._ec_repo.retrieve(ec)
                 is_create: bool = True
                 if restr:
-                    ec_merge = self._merge(ec, restr)
+                    ec_merge = await self._merge(ec, restr)
                     if ec_merge: self._ec_repo.update_by_ec_id(ec_merge); is_create = False
                 if is_create: self._ec_repo.create(ec)
+        self._ec_repo.build_embed()
                 
     async def _merge(self, ec: EventCandidateMetaClass, result: List[Tuple[EventCandidateMetaClass, float]]) -> EventCandidateMetaClass | None:
         ec_text = self._ec_repo.convert_text(ec, remove_ec_id=True)
         ecs_text = ''
-        for res in result: ecs_text += self._ec_repo.convert_text(res).strip() + '\n\n'
+        for res in result: 
+            ecs_text += self._ec_repo.convert_text(res[0]).strip() + '\n\n'
         
         msg_eval: List[Dict[str, Any]] = [
             {'role': 'user', 'content': render_template('custom/evaluate.md', strip=True, event=ec_text, event_list=ecs_text)},
@@ -80,7 +85,7 @@ class DecisionMemoryStore(BaseMemoryStore):
         parsed: Dict[str, Any] = response_merge.parsed # ec_id, EventCandidate
         return self._scheme_to_metaclass(parsed.get('event_candidate'), parsed.get('ec_id'))
     
-    def _scheme_to_metaclass(self, item: Dict, ec_id: str | None) -> EventCandidateMetaClass:
+    def _scheme_to_metaclass(self, item: Dict, ec_id: str | None = None) -> EventCandidateMetaClass:
         if not ec_id: ec_id = f'ec_{uuid4().hex[:10]}'
         ec = EventCandidateMetaClass(ec_id=ec_id, aliases=[], update_at=datetime.now().isoformat(), **item)
         return ec

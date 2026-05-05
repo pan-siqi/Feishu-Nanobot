@@ -35,7 +35,7 @@ class EpisodicMemoryStore:
         self._embed_model_path = './model/bge-small-zh-v1.5/'
         self._lightrag_workspace = os.path.join(self._mem_save_path, 'rag_storage')
         self._initial_lightrag: bool = False
-
+    
     async def initial_lightrag(self): # MUST CALL!
         embed_model = LocalModelEmbed(self._embed_model_path)
         embed_func = EmbeddingFunc(embed_model.embedding_dim, embed_model.embed, embed_model.max_token_size)
@@ -43,6 +43,7 @@ class EpisodicMemoryStore:
             working_dir=self._lightrag_workspace,
             embedding_func=embed_func,
             llm_model_func=volcengine_openai_complete,
+            llm_model_kwargs={'api_key': self._provider.api_key, 'base_url': self._provider.api_base, 'model': self._model},
             graph_storage="Neo4JStorage",
         )
         await self._rag.initialize_storages()
@@ -54,7 +55,7 @@ class EpisodicMemoryStore:
         return result
 
     async def convert_document(self, history: List[Dict[str, Any]]) -> str:
-        doc: str = self._jsonline_to_document(history)
+        doc: str = await self._jsonline_to_document(history)
         return doc
     
     async def insert(self, memunit: str | None = None) -> None:
@@ -76,8 +77,7 @@ class EpisodicMemoryStore:
         memunit = None
         self._provider.set_scheme(_scheme)
         response = await self._provider.chat_scheme(msg, model=self._model, tools=None, tool_choice=None)
-        if isinstance(response, LLMResponse):
-            raise Exception('fail to build scheme')
+        if isinstance(response, LLMResponse): raise Exception('fail to build scheme')
         if response.parsed: memunit: str = self._intermediate_to_document(response.parsed)
         return memunit
     

@@ -296,7 +296,7 @@ async def openai_complete_if_cache(
     # Handle keyword extraction mode
     if keyword_extraction:
         kwargs["response_format"] = GPTKeywordExtractionFormat
-
+    
     # Create the OpenAI client (supports both OpenAI and Azure)
     openai_async_client = create_openai_async_client(
         api_key=api_key,
@@ -734,8 +734,9 @@ async def volcengine_openai_complete(
 ) -> str:
     if history_messages is None:
         history_messages = []
+    model = kwargs.get('model'); del kwargs['model']
     return await openai_complete_if_cache(
-        "gpt-4o-mini",
+        model,
         prompt,
         system_prompt=system_prompt,
         history_messages=history_messages,
