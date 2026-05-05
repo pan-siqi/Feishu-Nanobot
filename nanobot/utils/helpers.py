@@ -44,7 +44,7 @@ def read_jsonlines(jsonl_path: str) -> List[Dict]:
 
 def write_jsonlines(data: List[Dict], jsonl_path: str):
     with jsonlines.open(jsonl_path, mode='w') as writer:
-        writer.write(data)
+        writer.write_all(data)
     print('write successfully!')
 
 

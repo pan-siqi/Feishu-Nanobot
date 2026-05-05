@@ -1,6 +1,7 @@
 from nanobot.agent.hiarch_memory.database.base import Base, connect_database
 from nanobot.utils.prompt_templates import render_template
-from sqlalchemy import create_engine, select, String, DateTime, Index
+from sqlalchemy import create_engine, select, String, DateTime, Index, Float
+from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, sessionmaker, Session
 from sqlalchemy import text
 from pgvector.sqlalchemy import Vector
@@ -34,19 +35,19 @@ class EventCandidateItem(Base):
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     
     # item name    
-    ec_id: Mapped[str]
-    event_name: Mapped[str]
-    aliases: Mapped[List[str]]
-    decision_signal: Mapped[str]
-    summary: Mapped[str]
-    decision_result: Mapped[str]
-    entities: Mapped[List[str]]
-    evidence_message_ids: Mapped[List[str]]
-    confidence: Mapped[float]
-    update_at: Mapped[str]
+    ec_id: Mapped[str] = mapped_column(String)
+    event_name: Mapped[str] = mapped_column(String)
+    aliases: Mapped[List[str]] = mapped_column(JSONB, default=list)
+    decision_signal: Mapped[str] = mapped_column(String)
+    summary: Mapped[str] = mapped_column(String)
+    decision_result: Mapped[str] = mapped_column(String)
+    entities: Mapped[List[str]] = mapped_column(JSONB, default=list)
+    evidence_message_ids: Mapped[List[str]] = mapped_column(JSONB, default=list)
+    confidence: Mapped[float] = mapped_column(Float)
+    update_at: Mapped[str] = mapped_column(String)
     
     # embedding item
-    embedding: Mapped[list[float] | None] = mapped_column(Vector(512))
+    embedding: Mapped[List[float] | None] = mapped_column(Vector(512))
     embedding_model: Mapped[str | None] = mapped_column(String)
     embedding_input_hash: Mapped[str | None] = mapped_column(String)
     embedding_updated_at: Mapped[datetime | None] = mapped_column(DateTime)

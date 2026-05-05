@@ -11,13 +11,12 @@ class ShortermMemoryStore:
     def __init__(
         self,
         workspace: str,
+        mem_save_path: str,
         episodic: EpisodicMemoryStore,
         decision: Any | None = None,
     ):
         self._workspace = workspace
-        self._mem_save_path = os.path.join(self._workspace, 'memory')
-        if not os.path.exists(self._mem_save_path):
-            os.mkdir(self._mem_save_path)
+        self._mem_save_path = mem_save_path
         self._history_save_path = os.path.join(self._mem_save_path, '.history.jsonl')
         self._cursor_save_path = os.path.join(self._mem_save_path, '.cursor')
         self._shorterm_memory_save_path = os.path.join(self._mem_save_path, '.shortermem.jsonl')
@@ -38,7 +37,8 @@ class ShortermMemoryStore:
         history: List[Dict[str, Any]] = session.get_history(max_messages=0, clip_index=self._cursor)
         
         # if should rebuild
-        if self._is_rebuild(history):
+        # if self._is_rebuild(history):
+        if True:
             _num: int = self._get_num(history)
             batch = history[0:_num]
             self._save_history(batch)
@@ -47,10 +47,10 @@ class ShortermMemoryStore:
             history = history[_num:]
 
         # if should build-document
-        if os.path.exists(self._history_save_path) and self._load_history():
-            await self._episodic.check()
+        # if os.path.exists(self._history_save_path) and self._load_history():
+        #     await self._episodic.check()
 
-        self._cleanup_history()
+        # self._cleanup_history()
         
         # save total shortermem
         self._save_shorterm_memory(history)

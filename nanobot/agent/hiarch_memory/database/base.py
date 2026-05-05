@@ -1,8 +1,9 @@
 from sqlalchemy import create_engine, select
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, sessionmaker
 from sqlalchemy.orm.session import Session
+from dataclasses import dataclass
 
-
+@dataclass
 class PostgresqlConfig:
     user_name: str
     user_passward: str
