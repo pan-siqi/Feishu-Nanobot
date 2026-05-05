@@ -43,7 +43,7 @@ class ShortermMemoryStore:
             batch = history[0:_num]
             self._save_history(batch)
             # <operate batch>
-            self._router.operate_batch() # enter router
+            await self._router.operate_batch() # enter router
             history = history[_num:]
 
         # if should build-document
