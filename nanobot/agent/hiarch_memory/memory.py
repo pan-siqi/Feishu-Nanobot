@@ -22,7 +22,6 @@ class HiarchMemoryStore:
     async def aggregation_memory(
         self,
         current_message: str,
-        memory_project: str | None = None,
     ) -> str:
         parts: list[str] = []
         knowledge: str = await self._episodic.retrieve(current_message)

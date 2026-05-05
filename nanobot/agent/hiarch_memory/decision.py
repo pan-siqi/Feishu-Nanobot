@@ -4,7 +4,7 @@ from nanobot.agent.hiarch_memory.database.ec_database import connect_database, E
 from nanobot.providers.openai_compat_provider import OpenAICompatProvider
 from nanobot.providers.base import LLMResponse, LLMResponseStructure
 from nanobot.utils.prompt_templates import render_template
-from nanobot.utils.helpers import write_jsonlines, read_jsonlines
+from nanobot.utils.helpers import format_messages
 from typing import List, Dict, Tuple, Any
 from uuid import uuid4
 from datetime import datetime
@@ -26,9 +26,9 @@ class DecisionMemoryStore(BaseMemoryStore):
         self._ec_repo = EventCandidateRepository(self._session, batch_size, max_score)
         self._ec_save_path = os.path.join(self._mem_save_path, '.ec.jsonl')
     
-    async def extract(self, history: List[Dict[str, Any]]) -> str:
+    async def extract(self, history: List[Dict[str, Any]]) -> None:
         # extract event candidates from window
-        histext: str = self._format_messages(history)
+        histext: str = format_messages(history)
         msg: List[Dict[str, Any]] = [
             {'role': 'system', 'content': render_template('custom/extract.md', strip=True)},
             {'role': 'user', 'content': histext},

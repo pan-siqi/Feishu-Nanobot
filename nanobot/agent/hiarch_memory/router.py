@@ -34,7 +34,7 @@ class Router:
             self._episodic.insert(doc) # insert lightrag
             
             # 2.2 feedinto decision
-            
+            self._decision.extract(_window_content) # extract event candidate, insert database
 
         self._delete_slide_windows()
     
