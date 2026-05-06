@@ -19,6 +19,7 @@ class Router:
         self._windows_root = os.path.join(self._mem_save_path, '.windows')
         self._document_path = os.path.join(self._mem_save_path, '.document.txt')
         self._windows_recorded_path = os.path.join(self._windows_root, '.record.pkl')
+        self._evidence_message_ids_path = os.path.join(self._mem_save_path, '.evids.pkl')
         self._windows_size: int = 100; self._overlap: int = 20
         self._episodic = episodic
         self._decision = decision
@@ -38,7 +39,8 @@ class Router:
             
             # 2.2 feedinto decision
             self._add_extra_message_id(_window_content) # add message id
-            await self._decision.extract(_window_content) # extract event candidate, insert database
+            _evidence_message_ids = await self._decision.extract(_window_content) # extract event candidate, insert database
+            self._merge_evidence_message_ids(_evidence_message_ids)
             self._windows_recorded.append(windows_path)
             write_pickle(self._windows_recorded, self._windows_recorded_path)
 
@@ -68,5 +70,20 @@ class Router:
         self._windows_recorded: List = list()
         
     def _add_extra_message_id(self, _window_content: List[Dict[str, Any]]):
+        self._windows_message_ids: List[str] = list()
         for win in _window_content:
-            win['message_ids'] = f'm{uuid4().hex[:10]}'
+            message_id: str = f'm{uuid4().hex[:10]}'
+            win['message_id'] = message_id
+    
+    def _merge_evidence_message_ids(self, evidence_message_ids: List[str]):
+        # filter not exists in _windows_message_ids
+        _evidence_message_ids: List = [emi for emi in evidence_message_ids if emi not in self._windows_message_ids]
+        _evidence_message_ids_history: List[str] = read_pickle(self._evidence_message_ids_path) if os.path.exists(self._evidence_message_ids_path) else list()
+
+        # merge
+        for evid in _evidence_message_ids:
+            if evid not in _evidence_message_ids_history:
+                _evidence_message_ids_history.append(evid)
+        
+        # save
+        write_pickle(_evidence_message_ids_history, self._evidence_message_ids_path)
