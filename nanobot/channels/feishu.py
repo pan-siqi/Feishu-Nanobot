@@ -1415,6 +1415,20 @@ class FeishuChannel(BaseChannel):
                 )
                 return
 
+            # process card
+            card_content = msg.metadata.get('_card')
+            if card_content:
+                card = json.dumps(
+                    {"config": {"wide_screen_mode": True}, "elements": [
+                        {"tag": "markdown", "content": card_content},
+                    ]},
+                    ensure_ascii=False,
+                )
+                await loop.run_in_executor(
+                    None, self._send_message_sync, receive_id_type, msg.chat_id, "interactive", card
+                )
+                return
+
             # Determine whether the first message should quote the user's message.
             # Only the very first send (media or text) in this call uses reply; subsequent
             # chunks/media fall back to plain create to avoid redundant quote bubbles.
