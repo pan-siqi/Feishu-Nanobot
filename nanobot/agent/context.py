@@ -107,13 +107,12 @@ class ContextBuilder:
         if bootstrap:
             parts.append(bootstrap)
 
-        # mp = self._memory_project_key(channel, chat_id)
-        # memory = await self.memory.aggregation_memory(current_message, memory_project=mp)
-        # if memory:
-        #     if len(memory) > self._MAX_MEMORY_BLOCK_CHARS:
-        #         memory = memory[:self._MAX_MEMORY_BLOCK_CHARS].rstrip() + "\n\n...[memory truncated]"
-        #     parts.append(f"# Memory\n\n{memory}")
-        
+        memory = await self.memory.aggregation_memory(current_message)
+        if memory:
+            if len(memory) > self._MAX_MEMORY_BLOCK_CHARS:
+                memory = memory[: self._MAX_MEMORY_BLOCK_CHARS].rstrip() + "\n\n...[memory truncated]"
+            parts.append(f"# Memory\n\n{memory}")
+
         always_skills = self.skills.get_always_skills()
         if always_skills:
             always_content = self.skills.load_skills_for_context(always_skills)

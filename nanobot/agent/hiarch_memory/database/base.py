@@ -1,3 +1,5 @@
+import os
+
 from sqlalchemy import create_engine, select
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, sessionmaker
 from sqlalchemy.orm.session import Session
@@ -26,11 +28,11 @@ class Base(DeclarativeBase):
 
 def connect_database() -> Session:
     postgresql_config = PostgresqlConfig(
-        user_name     = 'nanobot',
-        user_passward = '!Liwenhan123',
-        url           = 'localhost',
-        port          = '5432',
-        database_name = 'nanobot',
+        user_name=os.environ.get("NANOBOT_PG_USER", "nanobot"),
+        user_passward=os.environ.get("NANOBOT_PG_PASSWORD", ""),
+        url=os.environ.get("NANOBOT_PG_HOST", "localhost"),
+        port=os.environ.get("NANOBOT_PG_PORT", "5432"),
+        database_name=os.environ.get("NANOBOT_PG_DATABASE", "nanobot"),
     )
     engine = create_engine(
         postgresql_config.get_string(),
