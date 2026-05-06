@@ -603,10 +603,8 @@ class AgentLoop:
                         msg, on_stream=on_stream, on_stream_end=on_stream_end,
                         pending_queue=pending,
                     )
-                    if response == 'Read but no reply':
-                        logger.info('已读不回[😤]')
-                    elif response is not None:
-                        await self.bus.publish_outbound(response)
+                    if response is not None:
+                        for res in response: await self.bus.publish_outbound(res)
                     elif msg.channel == "cli":
                         await self.bus.publish_outbound(OutboundMessage(
                             channel=msg.channel, chat_id=msg.chat_id,
@@ -791,6 +789,8 @@ class AgentLoop:
 
         # set a monitor to check message flow
         outbound_messages: list[OutboundMessage] = list()
+        history_messages_length: int = len(history)
+
         read_only, all_msgs, card_outbound_message = \
         await self.monitor.check(
             session=session,
@@ -807,16 +807,15 @@ class AgentLoop:
                 session=session,
                 msg=msg,
                 initial_messages=all_msgs,
-                user_persisted_early=user_persisted_early,
                 _bus_progress=_bus_progress,
                 on_progress=on_progress,
                 on_stream=on_stream,
                 on_stream_end=on_stream_end,
                 pending_queue=pending_queue,
             )
+            if not normal_outbound_message: outbound_messages.append(normal_outbound_message)
         
         # save session
-        history_messages_length: int = len(session.messages)
         save_skip = 1 + history_messages_length + (1 if user_persisted_early else 0)
         self._save_turn(session, all_msgs, save_skip)
         self._clear_pending_user_turn(session)
@@ -831,7 +830,6 @@ class AgentLoop:
             session: Session,
             msg: InboundMessage,
             initial_messages: list[dict],
-            user_persisted_early: bool,
             _bus_progress: Callable,
             on_progress: Callable[[str], Awaitable[None]] | None = None,
             on_stream: Callable[[str], Awaitable[None]] | None = None,
@@ -871,7 +869,7 @@ class AgentLoop:
         # came from MessageTool.
         if (mt := self.tools.get("message")) and isinstance(mt, MessageTool) and mt._sent_in_turn:
             if not had_injections or stop_reason == "empty_final_response":
-                return None
+                return all_msgs, None
 
         preview = final_content[:120] + "..." if len(final_content) > 120 else final_content
         logger.info("Response to {}:{}: {}", msg.channel, msg.sender_id, preview)
