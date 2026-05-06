@@ -1,6 +1,3 @@
-import os
-from typing import List, Tuple
-
 from nanobot.agent.hiarch_memory.database.ec_database import Session as DataBaseSession
 from nanobot.agent.hiarch_memory.database.ec_database import EventCandidateMetaClass, EventCandidateRepository
 from nanobot.bus.events import InboundMessage, OutboundMessage
@@ -9,6 +6,9 @@ from nanobot.channels.feishu_card import resolve_interactive_card
 from nanobot.session.manager import Session
 from nanobot.utils.prompt_templates import render_template
 from loguru import logger
+from typing import List, Tuple
+from datetime import datetime
+import os
 
 _DEFAULT_CARD_MAX_DISTANCE = float(os.environ.get("NANOBOT_MONITOR_CARD_MAX_DISTANCE", "0.35"))
 
@@ -36,11 +36,21 @@ class Monitor:
             else _DEFAULT_CARD_MAX_DISTANCE
         )
 
-    async def check(self, session: Session, msg: InboundMessage) -> bool:
+    async def check(
+            self, session: Session,
+            msg: InboundMessage,
+            initial_messages: list[dict],
+        ) -> Tuple[bool, list[dict]]:
         """Return True to skip the agent loop for this message ('read but no reply')."""
+        messages = initial_messages
         read_only = await self._block_message(session)
-        await self._publish_card(session, msg)
-        return read_only
+        publish_result = await self._publish_card(session, msg)
+        if not publish_result: return read_only, messages, None
+        
+        # update publish result
+        card_message, card_outboundmessage = publish_result
+        messages.append(card_message)
+        return read_only, messages, card_outboundmessage
 
     async def _block_message(self, session: Session) -> bool: #这个还没写--要写
         """
@@ -50,13 +60,17 @@ class Monitor:
         _ = session
         return False
 
-    async def _publish_card(self, session: Session, msg: InboundMessage) -> None | OutboundMessage:
+    async def _publish_card(
+            self,
+            session: Session,
+            msg: InboundMessage
+        ) -> None | Tuple[dict, OutboundMessage]:
         _ = session
         text = (msg.content or "").strip()
         if not text:
             logger.debug("Monitor card: skip (empty inbound text)")
             return
-        
+
         result: List[Tuple[EventCandidateMetaClass, float]] = self._repo.retrieve(text)
         if not result:
             logger.info("Monitor card: skip (no EventCandidate within repo filter)")
@@ -76,12 +90,16 @@ class Monitor:
         )
 
         outbound_text = card_md if len(card_md) <= 2000 else card_md[:1997] + "..."
-        return OutboundMessage(
-                channel=msg.channel,
-                chat_id=msg.chat_id,
-                content=outbound_text,
-                metadata=meta,
-            )
+        card_message = {'role': 'assistant', 'content': outbound_text, 'timestamp': datetime.now().isoformat()}
+        card_outboundmessage = \
+        OutboundMessage(
+            channel=msg.channel,
+            chat_id=msg.chat_id,
+            content=outbound_text,
+            metadata=meta,
+        )
+        return card_message, card_outboundmessage
+        
 
     def convert_ec_to_beautify_markdown(self, ec: EventCandidateMetaClass) -> str:
         return render_template(

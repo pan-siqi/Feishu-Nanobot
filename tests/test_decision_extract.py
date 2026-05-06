@@ -1,42 +1,79 @@
-"""Sprint 1 — DecisionMemoryStore: extract + SQLite store (+ optional LightRAG)."""
-
 from __future__ import annotations
+
+from dataclasses import asdict
+from typing import Any
 
 import pytest
 
-from nanobot.agent.hiarch_memory.decision import (
-    Decision,
-    DecisionExtractItem,
-    DecisionExtractResult,
-    DecisionMemoryStore,
-)
+from nanobot.agent.hiarch_memory.decision import DecisionMemoryStore, _merge_eval_bool
+from nanobot.agent.hiarch_memory.scheme import EventCandidateResult
 from nanobot.providers.base import LLMResponse, LLMResponseStructure
 
 
-class _FakeRag:
+class _FakeRepo:
     def __init__(self) -> None:
-        self.docs: list[str] = []
+        self.items: list[Any] = []
 
-    async def ainsert(self, doc: str) -> None:
-        self.docs.append(doc)
+    def list(self, limit: int = 20, offset: int = 0, project: str | None = None):
+        _ = limit
+        _ = offset
+        if project is None:
+            return list(self.items)
+        return [i for i in self.items if i.project == project]
 
+    def create(self, ec):
+        self.items.append(ec)
+        return ec
 
-class _FakeEpisodic:
-    """Minimal stand-in for EpisodicMemoryStore._rag dual-write."""
+    def retrieve(self, query, top_k: int = 5, is_filter: bool = True, project: str | None = None):
+        _ = top_k
+        _ = is_filter
+        if hasattr(query, "event_name"):
+            # for merge path in extract
+            cands = self.list(project=project)
+            return [(cands[0], 0.1)] if cands else []
+        # for prompt block path
+        return [(i, 0.1) for i in self.list(project=project)[:3]]
 
-    def __init__(self) -> None:
-        self._rag = _FakeRag()
+    def update_by_ec_id(self, ec_new, keys_selected=None):
+        _ = keys_selected
+        for idx, old in enumerate(self.items):
+            if old.ec_id == ec_new.ec_id:
+                self.items[idx] = ec_new
+                return ec_new
+        self.items.append(ec_new)
+        return ec_new
+
+    def build_embed(self):
+        return None
+
+    def convert_text(self, ec, remove_ec_id: bool = False):
+        payload = asdict(ec)
+        if remove_ec_id:
+            payload.pop("ec_id", None)
+        return f"event_name={payload.get('event_name')} decision_result={payload.get('decision_result')}"
+
+    def apply_decay(self) -> int:
+        return 0
+
+    def list_review_candidates(self, *, project: str, limit: int = 3):
+        _ = project
+        _ = limit
+        return []
 
 
 class _FakeProvider:
-    def __init__(self, parsed: DecisionExtractResult | None) -> None:
+    def __init__(self, parsed: dict[str, Any] | None, merge_decision: str = "False") -> None:
         self._parsed = parsed
         self._scheme = None
+        self._merge_decision = merge_decision
 
     def set_scheme(self, scheme: object) -> None:
         self._scheme = scheme
 
     async def chat_scheme(self, *args: object, **kwargs: object):
+        _ = args
+        _ = kwargs
         if self._parsed is None:
             return LLMResponse(content="error", finish_reason="error")
         return LLMResponseStructure(
@@ -46,112 +83,95 @@ class _FakeProvider:
             usage={},
         )
 
-
-@pytest.fixture
-def workspace(tmp_path):
-    return tmp_path
-
-
-@pytest.mark.asyncio
-async def test_store_sqlite_roundtrip(workspace):
-    prov = _FakeProvider(None)
-    store = DecisionMemoryStore(workspace, prov, model="dummy")  # type: ignore[arg-type]
-    now = 1710000000
-    d = Decision(
-        id="abc12345",
-        project="feishu:oc_1",
-        topic="auth_strategy",
-        statement="Use JWT for API auth",
-        reasons=["stateless", "mobile"],
-        objections=["token leak concern"],
-        alternatives=["session cookies"],
-        decided_at=now,
-        deadline=now + 86400,
-        participants=["u1", "u2"],
-        source="chat",
-        source_ref="msg_001",
-        importance=0.85,
-        last_reviewed_at=now,
-        review_count=0,
-        strength=1.0,
-        supersedes=None,
-        status="active",
-    )
-    await store.store([d])
-    got = store.get("abc12345")
-    assert got is not None
-    assert got.topic == "auth_strategy"
-    assert got.statement == "Use JWT for API auth"
-    assert got.reasons == ["stateless", "mobile"]
-    assert got.objections == ["token leak concern"]
-    assert got.importance == 0.85
+    async def chat_with_retry(self, *args: object, **kwargs: object):
+        _ = args
+        _ = kwargs
+        return LLMResponse(content=self._merge_decision, finish_reason="stop")
 
 
 @pytest.mark.asyncio
-async def test_extract_filters_low_importance(workspace):
-    parsed = DecisionExtractResult(
+async def test_extract_create_with_project_scope(tmp_path):
+    parsed = EventCandidateResult(
         result=[
-            DecisionExtractItem(
-                topic="trivial",
-                statement="We use spaces for indent",
-                importance=0.1,
-            ),
-            DecisionExtractItem(
-                topic="deploy_window",
-                statement="Production deploys only Tue/Thu",
-                reasons=["change advisory board"],
-                importance=0.9,
-                source_ref="ref-xyz",
-            ),
+            {
+                "event_name": "auth_strategy",
+                "decision_signal": "decided",
+                "summary": "团队确认鉴权方案",
+                "decision_result": "采用 JWT",
+                "aliases": ["auth"],
+                "entities": ["JWT"],
+                "evidence_message_ids": ["m1"],
+                "confidence": 0.9,
+                "reasons": ["无状态架构"],
+                "objections": ["token 泄露风险"],
+                "alternatives": ["session"],
+                "deadline": "2026-05-10",
+                "participants": ["alice", "bob"],
+                "importance": 0.8,
+            }
         ]
+    ).model_dump()
+    repo = _FakeRepo()
+    store = DecisionMemoryStore(
+        workspace=str(tmp_path),
+        mem_save_path=str(tmp_path),
+        provider=_FakeProvider(parsed),
+        model="dummy",
+        database_session=None,  # unused in current implementation
+        repo=repo,
     )
-    store = DecisionMemoryStore(workspace, _FakeProvider(parsed), model="dummy")  # type: ignore[arg-type]
-    messages = [
-        {"role": "user", "content": "hello", "timestamp": "2026-04-01T10:00:00"},
-    ]
-    out = await store.extract(messages, project="cli:direct")
-    assert len(out) == 1
-    assert out[0].topic == "deploy_window"
-    assert out[0].project == "cli:direct"
-    assert out[0].importance == 0.9
+    out = await store.extract(
+        [{"role": "user", "content": "我们定一下鉴权方案", "timestamp": "2026-01-01T00:00:00"}],
+        project="feishu:oc_1",
+    )
+    assert out == ["m1"]
+    assert len(repo.items) == 1
+    assert repo.items[0].project == "feishu:oc_1"
+    assert repo.items[0].status == "active"
+    assert repo.items[0].importance == 0.8
+
+
+def test_merge_eval_bool_parser():
+    assert _merge_eval_bool("True")
+    assert _merge_eval_bool("yes")
+    assert _merge_eval_bool("是")
+    assert not _merge_eval_bool("False")
+    assert not _merge_eval_bool("no")
 
 
 @pytest.mark.asyncio
-async def test_store_dual_write_lightrag(workspace):
-    episodic = _FakeEpisodic()
-    prov = _FakeProvider(None)
-    store = DecisionMemoryStore(workspace, prov, model="dummy", episodic=episodic)  # type: ignore[arg-type]
-    now = 1710000100
-    d = Decision(
-        id="dec8a3f01",
-        project="p1",
-        topic="search_stack",
-        statement="Ship Algolia first",
-        reasons=["timeline"],
-        objections=[],
-        alternatives=["elasticsearch"],
-        decided_at=now,
-        deadline=None,
-        participants=["alice"],
-        source="cli",
-        source_ref="manual",
-        importance=0.8,
-        last_reviewed_at=now,
-        status="active",
+async def test_prompt_block_for_query_respects_project(tmp_path):
+    parsed = EventCandidateResult(
+        result=[
+            {
+                "event_name": "deploy_policy",
+                "decision_signal": "decided",
+                "summary": "发版窗口",
+                "decision_result": "周二周四发版",
+                "aliases": [],
+                "entities": ["prod"],
+                "evidence_message_ids": ["m2"],
+                "confidence": 0.9,
+                "reasons": [],
+                "objections": [],
+                "alternatives": [],
+                "deadline": None,
+                "participants": [],
+                "importance": 0.7,
+            }
+        ]
+    ).model_dump()
+    repo = _FakeRepo()
+    store = DecisionMemoryStore(
+        workspace=str(tmp_path),
+        mem_save_path=str(tmp_path),
+        provider=_FakeProvider(parsed),
+        model="dummy",
+        database_session=None,
+        repo=repo,
     )
-    await store.store([d])
-    assert len(episodic._rag.docs) == 1
-    assert "[DECISION dec8a3f01]" in episodic._rag.docs[0]
-    assert "topic=search_stack" in episodic._rag.docs[0]
-
-
-@pytest.mark.asyncio
-async def test_extract_llm_error_returns_empty(workspace):
-    store = DecisionMemoryStore(workspace, _FakeProvider(None), model="x")  # type: ignore[arg-type]
-    # Force error path: provider returns LLMResponse
-    async def bad_chat_scheme(*a, **k):
-        return LLMResponse(content="x", finish_reason="error")
-
-    store._provider.chat_scheme = bad_chat_scheme  # type: ignore[method-assign]
-    out = await store.extract([{"role": "user", "content": "x", "timestamp": "2026-01-01"}], project="p")
-    assert out == []
+    await store.extract([{"role": "user", "content": "发版节奏", "timestamp": "2026-01-01"}], project="cli:direct")
+    block_ok = store.prompt_block_for_query("发版", project="cli:direct")
+    block_empty = store.prompt_block_for_query("发版", project="other:scope")
+    assert "## Related decisions" in block_ok
+    assert block_empty == ""
