@@ -20,9 +20,12 @@ from nanobot.agent.memory import Consolidator, Dream
 from nanobot.agent.hiarch_memory.shorterm import ShortermMemoryStore
 from nanobot.agent.hiarch_memory.episodic import EpisodicMemoryStore
 from nanobot.agent.hiarch_memory.decision import DecisionMemoryStore
+from nanobot.agent.hiarch_memory.database.ec_database import Session as DataBaseSession
+from nanobot.agent.hiarch_memory.database.ec_database import connect_database, EventCandidateMetaClass, EventCandidateRepository
 from nanobot.agent.runner import _MAX_INJECTIONS_PER_TURN, AgentRunner, AgentRunSpec
 from nanobot.agent.skills import BUILTIN_SKILLS_DIR
 from nanobot.agent.subagent import SubagentManager
+from nanobot.agent.monitor import Monitor
 from nanobot.agent.tools.cron import CronTool
 from nanobot.agent.tools.filesystem import EditFileTool, ListDirTool, ReadFileTool, WriteFileTool
 from nanobot.agent.tools.message import MessageTool
@@ -203,10 +206,31 @@ class AgentLoop:
         BATCH_SIZE: int = 200
         MAX_SCORE: float = 0.5
         
-        self.episodic = EpisodicMemoryStore(workspace=self.workspace, mem_save_path=self._mem_save_path, provider=provider, model=self.model)
-        self.decision = DecisionMemoryStore(workspace=self.workspace, mem_save_path=self._mem_save_path, provider=provider, model=self.model, batch_size=BATCH_SIZE, max_score=MAX_SCORE)
-        self.shorterm = ShortermMemoryStore(workspace=self.workspace, mem_save_path=self._mem_save_path, episodic=self.episodic, decision=self.decision)
-        
+        # vector database basic config
+        _SessionLocal = connect_database() # create session
+        self._database_session: DataBaseSession = _SessionLocal()
+        self._repo = EventCandidateRepository(self._database_session, BATCH_SIZE, MAX_SCORE)
+
+        self.episodic = EpisodicMemoryStore(
+            workspace=self.workspace,
+            mem_save_path=self._mem_save_path,
+            provider=provider,
+            model=self.model,
+        )
+        self.decision = DecisionMemoryStore(
+            workspace=self.workspace,
+            mem_save_path=self._mem_save_path,
+            provider=provider,
+            model=self.model,
+            database_session=self._database_session,
+            repo=self._repo,
+        )
+        self.shorterm = ShortermMemoryStore(
+            workspace=self.workspace,
+            mem_save_path=self._mem_save_path,
+            episodic=self.episodic,
+            decision=self.decision,
+        )
         self.context = ContextBuilder(
             workspace,
             self.episodic,
@@ -267,6 +291,11 @@ class AgentLoop:
         #     provider=provider,
         #     model=self.model,
         # )
+        self.monitor = Monitor(
+            bus=self.bus,
+            database_session=self._database_session,
+            repo=self._repo,
+        )
 
         self._register_default_tools()
         self.commands = CommandRouter()
@@ -760,15 +789,8 @@ class AgentLoop:
             self.sessions.save(session)
             user_persisted_early = True
 
-        # set block
-        is_block: bool = False
-        if not msg.is_mentioned:
-            is_block = self._block_message(session)
-        
-        # publish card
-        await self._publish_card(msg)
-
-        if is_block:
+        # set a monitor to check message flow
+        if await self.monitor.check(session, msg):
             return 'Read but no reply'
 
         final_content, _, all_msgs, stop_reason, had_injections = await self._run_agent_loop(
@@ -815,50 +837,6 @@ class AgentLoop:
             chat_id=msg.chat_id,
             content=final_content,
             metadata=meta,
-        )
-
-    def _block_message(self, session) -> bool: # [True, False]
-        '''
-        session.messages: [{'role': 'user', 'content': '[user id]: xxx', 'timestamp': 'xxx'}]
-        --> LLM --> True/False
-        '''
-        # message = [
-        #     {'role': 'user', 'content': render_template('custom/t1.md', strip=True, value='xxx')}
-        # ]
-        # response = self.provider.chat_with_retry(message)
-        # print(f'skip: {session.messages[-1]['content']}')
-        return True
-
-    async def _publish_card(self, msg: InboundMessage):
-        # Visible plain-text companion (card body is in metadata["_card_json"]).
-        content = "this is a card content"
-        demo_md = "\n\n".join(
-            [
-                "城市慢慢安静下来，灯光像洒在夜色里的碎星。",
-                "我把今天的疲惫折好，放进晚风经过的角落。",
-                "",
-                "> 愿你在喧嚣里保留一点柔软，",
-                "> 也在独处时，听见心里微小却坚定的光。",
-                "",
-                "**明天会来，带着新的云、新的路，以及新的可能。**",
-            ]
-        )
-        
-        meta = dict(msg.metadata or {})
-        meta["_card_json"] = resolve_interactive_card(
-            meta,
-            default_markdown=demo_md,
-            default_header_title="Nanobot",
-        )
-        meta["_card"] = demo_md
-
-        await self.bus.publish_outbound(
-            OutboundMessage(
-                channel=msg.channel,
-                chat_id=msg.chat_id,
-                content=content,
-                metadata=meta,
-            )
         )
 
     def _sanitize_persisted_blocks(

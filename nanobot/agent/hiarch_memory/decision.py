@@ -18,14 +18,13 @@ class DecisionMemoryStore(BaseMemoryStore):
             mem_save_path: str,
             provider: OpenAICompatProvider,
             model: str,
-            batch_size: int,
-            max_score: float,
+            database_session: Session,
+            repo: EventCandidateRepository,
         ):
         self._workspace = workspace; self._mem_save_path = mem_save_path
         self._provider = provider; self._model = model
-        _SessionLocal = connect_database() # create session
-        self._session: Session = _SessionLocal()
-        self._ec_repo = EventCandidateRepository(self._session, batch_size, max_score)
+        self._session = database_session
+        self._ec_repo = repo
         self._ec_save_path = os.path.join(self._mem_save_path, '.ec.jsonl')
     
     async def extract(self, history: List[Dict[str, Any]]) -> List[str]:
