@@ -827,9 +827,18 @@ class AgentLoop:
 
     async def _publish_card(self, msg: InboundMessage):
         content = 'this is a card content'
-        card = f"****\n\nHHHHHH$x+1 = 2$"
+        card = """## 🌙 今夜的风
+
+城市慢慢安静下来，灯光像洒在夜色里的碎星。  
+我把今天的疲惫折好，放进晚风经过的角落。
+
+> 愿你在喧嚣里保留一点柔软，  
+> 也在独处时，听见心里微小却坚定的光。
+
+**明天会来，带着新的云、新的路，以及新的可能。**
+"""
         meta = dict(msg.metadata or {})
-        meta['_card'] = card
+        meta['_card'] = card.strip()
 
         await self.bus.publish_outbound(
             OutboundMessage(
