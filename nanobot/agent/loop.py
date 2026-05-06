@@ -672,7 +672,7 @@ class AgentLoop:
         on_stream: Callable[[str], Awaitable[None]] | None = None,
         on_stream_end: Callable[..., Awaitable[None]] | None = None,
         pending_queue: asyncio.Queue | None = None,
-    ) -> OutboundMessage | None | str:
+    ) -> list[OutboundMessage] | OutboundMessage | None | str:
         """Process a single inbound message and return the response."""
         # System messages: parse origin from chat_id ("channel:chat_id")
         if msg.channel == "system":
@@ -790,28 +790,54 @@ class AgentLoop:
             user_persisted_early = True
 
         # set a monitor to check message flow
-        history_messages_length: int = len(session.messages)
-        read_only, card_message = await self.monitor.check(session, msg)
+        outbound_messages: list[OutboundMessage] = list()
+        read_only, all_msgs, card_outbound_message = \
+        await self.monitor.check(
+            session=session,
+            msg=msg,
+            initial_messages=initial_messages,
+        )
 
+        if not card_outbound_message: outbound_messages.append(card_outbound_message)
+        
         # do check:
-        if read_only:
-            return # no response
+        if not read_only:
+            all_msgs, normal_outbound_message = \
+            await self._normal_response(
+                session=session,
+                msg=msg,
+                initial_messages=all_msgs,
+                user_persisted_early=user_persisted_early,
+                _bus_progress=_bus_progress,
+                on_progress=on_progress,
+                on_stream=on_stream,
+                on_stream_end=on_stream_end,
+                pending_queue=pending_queue,
+            )
         
-        
+        # save session
+        history_messages_length: int = len(session.messages)
+        save_skip = 1 + history_messages_length + (1 if user_persisted_early else 0)
+        self._save_turn(session, all_msgs, save_skip)
+        self._clear_pending_user_turn(session)
+        self._clear_runtime_checkpoint(session)
+        self.sessions.save(session)
 
+        return outbound_messages
 
 
     async def _normal_response(
             self,
             session: Session,
             msg: InboundMessage,
-            initial_messages: dict[list],
+            initial_messages: list[dict],
+            user_persisted_early: bool,
             _bus_progress: Callable,
             on_progress: Callable[[str], Awaitable[None]] | None = None,
             on_stream: Callable[[str], Awaitable[None]] | None = None,
             on_stream_end: Callable[..., Awaitable[None]] | None = None,
             pending_queue: asyncio.Queue | None = None,
-        ):
+        ) -> OutboundMessage | None:
         final_content, _, all_msgs, stop_reason, had_injections = await self._run_agent_loop(
             initial_messages,
             on_progress=on_progress or _bus_progress,
@@ -824,17 +850,17 @@ class AgentLoop:
             pending_queue=pending_queue,
         )
 
-
         if final_content is None or not final_content.strip():
             final_content = EMPTY_FINAL_RESPONSE_MESSAGE
 
         # Skip the already-persisted user message when saving the turn
         # save_skip = 1 + len(history) + (1 if user_persisted_early else 0)
-        save_skip = 1 + history_messages_length + (1 if user_persisted_early else 0)
-        self._save_turn(session, all_msgs, save_skip)
-        self._clear_pending_user_turn(session)
-        self._clear_runtime_checkpoint(session)
-        self.sessions.save(session)
+        # history_messages_length: int = len(session.messages)
+        # save_skip = 1 + history_messages_length + (1 if user_persisted_early else 0)
+        # self._save_turn(session, all_msgs, save_skip)
+        # self._clear_pending_user_turn(session)
+        # self._clear_runtime_checkpoint(session)
+        # self.sessions.save(session)
         # self._schedule_background(self.consolidator.maybe_consolidate_by_tokens(session))
 
         # When follow-up messages were injected mid-turn, a later natural
@@ -853,12 +879,13 @@ class AgentLoop:
         meta = dict(msg.metadata or {})
         if on_stream is not None and stop_reason != "error":
             meta["_streamed"] = True
-        return OutboundMessage(
+        normal_outbound_message =  OutboundMessage(
             channel=msg.channel,
             chat_id=msg.chat_id,
             content=final_content,
             metadata=meta,
         )
+        return all_msgs, normal_outbound_message
     
 
     def _sanitize_persisted_blocks(
