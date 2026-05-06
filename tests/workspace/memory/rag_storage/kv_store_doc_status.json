@@ -1,395 +1,275 @@
 {
-  "doc-0fb39d7ab4ebb1627da577667df01f93": {
+  "doc-ae9bad23c518fcb3bc3f6dabc9f830b7": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-0fb39d7ab4ebb1627da577667df01f93"
+      "chunk-ae9bad23c518fcb3bc3f6dabc9f830b7"
     ],
-    "content_summary": "[Memory]\nuid: 74e1a\ntype: constraint\ntopic: employee_skills\nimportance: 1.0\nttl_days: 30\ntimestamp: 1777962643\n\ncontent:\n员工技能标签为空时，系统会默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: 5012d\ntype: task\ntopic: testing\nimportance: 0.5\nttl_days: 15\ntimestamp: 1777962643...",
-    "content_length": 1095,
-    "created_at": "2026-05-05T06:34:07.656780+00:00",
-    "updated_at": "2026-05-05T07:43:41.372553+00:00",
+    "content_summary": "[Memory]\nuid: f6162\ntype: fact\ntopic: boundary_condition_employee_skill_tag\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778047712\n\ncontent:\n员工技能标签为空时，系统会默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: d7f19\ntype: fact\ntopic: store_replay_results\nimportance: 0.7\nttl_d...",
+    "content_length": 1368,
+    "created_at": "2026-05-06T06:08:34.918738+00:00",
+    "updated_at": "2026-05-06T06:08:44.884460+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260505_063407_a3869841",
+    "track_id": "insert_20260506_060834_aa9b21f1",
     "metadata": {
-      "processing_start_time": 1777967007,
-      "processing_end_time": 1777967021
+      "processing_start_time": 1778047714,
+      "processing_end_time": 1778047724
     }
   },
-  "doc-b3fba99e4e16b08c01c14a9c9e7177ab": {
+  "doc-889cd3a80c43f7bce79d2e9f0d43ae3c": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-b3fba99e4e16b08c01c14a9c9e7177ab"
+      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c"
     ],
-    "content_summary": "[Memory]\nuid: e4a66\ntype: constraint\ntopic: boundary_condition\nimportance: 0.5\nttl_days: 30\ntimestamp: 1777963210\n\ncontent:\n员工技能标签为空时，系统会默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: 617ca\ntype: task\ntopic: gray_list\nimportance: 0.5\nttl_days: 30\ntimestamp: 17779...",
-    "content_length": 1318,
-    "created_at": "2026-05-05T06:40:11.977305+00:00",
-    "updated_at": "2026-05-05T07:43:42.301437+00:00",
+    "content_summary": "[Memory]\nuid: 8e37f\ntype: task\ntopic: milestones_and_acceptance_criteria\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778047748\n\ncontent:\n需求拆分成三阶段里程碑，并指出每阶段验收标准。\n\n[Memory]\nuid: ce931\ntype: preference\ntopic: demo_preferences\nimportance: 0.5\nttl_days: 30\nt...",
+    "content_length": 827,
+    "created_at": "2026-05-06T06:09:08.260162+00:00",
+    "updated_at": "2026-05-06T06:09:20.161349+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260505_064011_5ca40857",
+    "track_id": "insert_20260506_060908_ec2de665",
     "metadata": {
-      "processing_start_time": 1777967007,
-      "processing_end_time": 1777967022
+      "processing_start_time": 1778047748,
+      "processing_end_time": 1778047760
     }
   },
-  "doc-4dbcc7b99de8467cf3d4d5750dec3723": {
+  "doc-92f04e4637b01e8690c21f1043ac04e3": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-4dbcc7b99de8467cf3d4d5750dec3723"
+      "chunk-92f04e4637b01e8690c21f1043ac04e3"
     ],
-    "content_summary": "[Memory]\nuid: 266c7\ntype: fact\ntopic: system_behavior\nimportance: 1.0\nttl_days: 30\ntimestamp: 1777963309\n\ncontent:\n员工技能标签为空时，系统会默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: cd6eb\ntype: task\ntopic: data_management\nimportance: 0.5\nttl_days: 14\ntimestamp: 17779633...",
-    "content_length": 1572,
-    "created_at": "2026-05-05T06:41:50.188392+00:00",
-    "updated_at": "2026-05-05T07:43:55.361089+00:00",
+    "content_summary": "[Memory]\nuid: e5b69\ntype: goal\ntopic: polaris_core_metrics\nimportance: 1.0\nttl_days: 14\ntimestamp: 1778047796\n\ncontent:\nPolaris评审的核心指标为：人工覆盖率、员工连续晚班次数、班次缺口率和门店经理满意度。\n\n[Memory]\nuid: d0856\ntype: fact\ntopic: meeting_minutes\nimportance: 1.0\nttl_days: 30\n...",
+    "content_length": 1688,
+    "created_at": "2026-05-06T06:09:56.258946+00:00",
+    "updated_at": "2026-05-06T06:10:09.236840+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260505_064150_5eaba737",
+    "track_id": "insert_20260506_060956_03398103",
     "metadata": {
-      "processing_start_time": 1777967021,
-      "processing_end_time": 1777967035
+      "processing_start_time": 1778047796,
+      "processing_end_time": 1778047809
     }
   },
-  "doc-847726ab3add2aec75c8f03c2bc49d8b": {
+  "doc-eb1d6ee54f9c54ae28745b1cf885e083": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-847726ab3add2aec75c8f03c2bc49d8b"
+      "chunk-eb1d6ee54f9c54ae28745b1cf885e083"
     ],
-    "content_summary": "[Memory]\nuid: 34e1c\ntype: constraint\ntopic: employee_skills\nimportance: 1.0\nttl_days: 30\ntimestamp: 1777963978\n\ncontent:\n员工技能标签为空时，系统会默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: 8695b\ntype: task\ntopic: testing\nimportance: 0.5\nttl_days: 30\ntimestamp: 1777963978...",
-    "content_length": 936,
-    "created_at": "2026-05-05T06:52:59.353309+00:00",
-    "updated_at": "2026-05-05T07:43:52.384273+00:00",
+    "content_summary": "[Memory]\nuid: 45ded\ntype: fact\ntopic: polaris_acceptance_criteria\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778047869\n\ncontent:\nPolaris智能排班 目前最缺的是一致的验收口径，不是更多功能。请大家先把口径表补齐。\n\n[Memory]\nuid: d4a15\ntype: fact\ntopic: blue_whale_acceptance_criteria\nimportan...",
+    "content_length": 1844,
+    "created_at": "2026-05-06T06:11:09.768886+00:00",
+    "updated_at": "2026-05-06T06:11:19.490251+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260505_065259_19a10a79",
+    "track_id": "insert_20260506_061109_943dcb7e",
     "metadata": {
-      "processing_start_time": 1777967022,
-      "processing_end_time": 1777967032
+      "processing_start_time": 1778047869,
+      "processing_end_time": 1778047879
     }
   },
-  "doc-9ff3855b72b767c3bec7568b60fc84f9": {
+  "doc-06ccdd4148be7e3a4d432ca34f4b65a0": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-9ff3855b72b767c3bec7568b60fc84f9"
+      "chunk-06ccdd4148be7e3a4d432ca34f4b65a0"
     ],
-    "content_summary": "[Memory]\nuid: a0771\ntype: constraint\ntopic: employee_scheduling\nimportance: 1.0\nttl_days: 30\ntimestamp: 1777964060\n\ncontent:\n员工技能标签为空时，系统会默认低优先级，这可能导致新人排班过少。\n\n[Memory]\nuid: f9cdf\ntype: constraint\ntopic: product_documentation\nimportance: 1.0\nttl_days:...",
-    "content_length": 1091,
-    "created_at": "2026-05-05T06:54:21.374505+00:00",
-    "updated_at": "2026-05-05T07:44:05.753504+00:00",
+    "content_summary": "[Memory]\nuid: 678bf\ntype: fact\ntopic: orion_overseas_payment_gateway\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778047930\n\ncontent:\nOrion海外支付网关进入小流量灰度阶段，业务方希望看到每日进展和明确的风险列表。\n\n[Memory]\nuid: 9bf8c\ntype: fact\ntopic: star_bridge_crm\nimportance: 1.0\nttl_day...",
+    "content_length": 1730,
+    "created_at": "2026-05-06T06:12:10.629535+00:00",
+    "updated_at": "2026-05-06T06:12:21.925940+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260505_065421_7b3b8ba2",
+    "track_id": "insert_20260506_061210_95f82aa5",
     "metadata": {
-      "processing_start_time": 1777967032,
-      "processing_end_time": 1777967045
+      "processing_start_time": 1778047930,
+      "processing_end_time": 1778047941
     }
   },
-  "doc-23024f9ea6618de13fe52f15018d4109": {
+  "doc-3e06d0e157a44134b0e57b91cf1fddb1": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-23024f9ea6618de13fe52f15018d4109"
+      "chunk-3e06d0e157a44134b0e57b91cf1fddb1"
     ],
-    "content_summary": "[Memory]\nuid: 2dbe4\ntype: fact\ntopic: employee_skills_issue\nimportance: 1.0\nttl_days: 30\ntimestamp: 1777964173\n\ncontent:\n员工技能标签为空时，系统会默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: ce8bb\ntype: task\ntopic: gray_list_management\nimportance: 0.5\nttl_days: 30\ntimestam...",
-    "content_length": 1291,
-    "created_at": "2026-05-05T06:56:14.257750+00:00",
-    "updated_at": "2026-05-05T07:44:04.239431+00:00",
+    "content_summary": "[Memory]\nuid: fc4bc\ntype: task\ntopic: sql_troubleshooting\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778048003\n\ncontent:\n编写 SQL 排查思路，定位报表指标波动的来源。\n\n[Memory]\nuid: d490d\ntype: goal\ntopic: falcon_pilot_commitment\nimportance: 0.5\nttl_days: 30\ntimestamp: 177...",
+    "content_length": 1229,
+    "created_at": "2026-05-06T06:13:23.814120+00:00",
+    "updated_at": "2026-05-06T06:13:37.771943+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260505_065614_e5c7c7d9",
+    "track_id": "insert_20260506_061323_c4f2502a",
     "metadata": {
-      "processing_start_time": 1777967035,
-      "processing_end_time": 1777967044
+      "processing_start_time": 1778048003,
+      "processing_end_time": 1778048017
     }
   },
-  "doc-4e0f1885eb6771149f93a455915b9113": {
+  "doc-2a9fe9e3df5e1fda2445315449929f76": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-4e0f1885eb6771149f93a455915b9113"
+      "chunk-2a9fe9e3df5e1fda2445315449929f76"
     ],
-    "content_summary": "[Memory]\nuid: 180c6\ntype: constraint\ntopic: employee_skills\nimportance: 1.0\nttl_days: 30\ntimestamp: 1777964308\n\ncontent:\n员工技能标签为空时，系统会默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: ae66f\ntype: constraint\ntopic: new_store_management\nimportance: 0.5\nttl_days: 30\nti...",
-    "content_length": 948,
-    "created_at": "2026-05-05T06:58:29.431216+00:00",
-    "updated_at": "2026-05-05T07:44:14.894061+00:00",
+    "content_summary": "[Memory]\nuid: d0e85\ntype: task\ntopic: weekly_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778048062\n\ncontent:\n本周只承诺 核心链路，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 30346\ntype: task\ntopic: risk_management\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778048062\n\ncont...",
+    "content_length": 1035,
+    "created_at": "2026-05-06T06:14:22.536390+00:00",
+    "updated_at": "2026-05-06T06:14:33.116054+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260505_065829_3460da6a",
+    "track_id": "insert_20260506_061422_005882d0",
     "metadata": {
-      "processing_start_time": 1777967044,
-      "processing_end_time": 1777967054
+      "processing_start_time": 1778048062,
+      "processing_end_time": 1778048073
     }
   },
-  "doc-2e07022cad33ab55065c5bba8a438969": {
+  "doc-a7a5f6a61d77f4b20efb7f871e74155a": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-2e07022cad33ab55065c5bba8a438969"
+      "chunk-a7a5f6a61d77f4b20efb7f871e74155a"
     ],
-    "content_summary": "[Memory]\nuid: c0e2a\ntype: constraint\ntopic: employee_skills\nimportance: 0.5\nttl_days: 30\ntimestamp: 1777964495\n\ncontent:\n员工技能标签为空时，系统会默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: ec44e\ntype: fact\ntopic: staffing_issues\nimportance: 0.5\nttl_days: 14\ntimestamp: 17...",
-    "content_length": 982,
-    "created_at": "2026-05-05T07:01:36.572292+00:00",
-    "updated_at": "2026-05-05T07:44:18.960508+00:00",
+    "content_summary": "[Memory]\nuid: a1c7d\ntype: fact\ntopic: polaris_audit_log\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778048137\n\ncontent:\nPolaris的审计日志字段已经入库，法务可以按门店、日期和规则版本过滤抽查.\n\n[Memory]\nuid: b86a1\ntype: goal\ntopic: polaris_exports_support\nimportance: 0.7\nttl_days: 30\nt...",
+    "content_length": 1604,
+    "created_at": "2026-05-06T06:15:37.328558+00:00",
+    "updated_at": "2026-05-06T06:15:48.032664+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260505_070136_36599b6f",
+    "track_id": "insert_20260506_061537_7aac8bda",
     "metadata": {
-      "processing_start_time": 1777967045,
-      "processing_end_time": 1777967058
+      "processing_start_time": 1778048137,
+      "processing_end_time": 1778048148
     }
   },
-  "doc-c17fc70850ea5d35ec1022bdd417c6ee": {
+  "doc-61ef8cd55c161340695f43105b297ff4": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-c17fc70850ea5d35ec1022bdd417c6ee"
+      "chunk-61ef8cd55c161340695f43105b297ff4"
     ],
-    "content_summary": "[Memory]\nuid: 3e0ca\ntype: constraint\ntopic: employee_skills_empty_priority\nimportance: 1.0\nttl_days: 30\ntimestamp: 1777964661\n\ncontent:\n当员工技能标签为空时，系统会默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: 9c674\ntype: task\ntopic: graylist_management\nimportance: 0.5\nttl_da...",
-    "content_length": 1420,
-    "created_at": "2026-05-05T07:04:22.823055+00:00",
-    "updated_at": "2026-05-05T07:44:22.124812+00:00",
+    "content_summary": "[Memory]\nuid: 7c86d\ntype: fact\ntopic: release_schedule\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778048328\n\ncontent:\n上线窗口顺延一周，以确保关键链路在真实业务场景下足够稳定，核心功能已完成，但需补充验证数据一致性和异常兜底。\n\n[Memory]\nuid: 8310a\ntype: task\ntopic: orion_payment_gateway\nimportance: 0.6\ntt...",
+    "content_length": 1212,
+    "created_at": "2026-05-06T06:18:48.516451+00:00",
+    "updated_at": "2026-05-06T06:19:02.832795+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260505_070422_c1718a85",
+    "track_id": "insert_20260506_061848_e0fbce53",
     "metadata": {
-      "processing_start_time": 1777967054,
-      "processing_end_time": 1777967062
+      "processing_start_time": 1778048328,
+      "processing_end_time": 1778048342
     }
   },
-  "doc-2ec1e958be5dc9b11f6a224a2a6b9571": {
+  "doc-d9bd56dec3ecb540f1eaa11cc8bcdd05": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-2ec1e958be5dc9b11f6a224a2a6b9571"
+      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
     ],
-    "content_summary": "[Memory]\nuid: a1515\ntype: fact\ntopic: employee_skill_tags\nimportance: 1.0\nttl_days: 30\ntimestamp: 1777964810\n\ncontent:\n当员工技能标签为空时，系统会默认低优先级，这可能导致新人排班过少。\n\n[Memory]\nuid: ad3e9\ntype: fact\ntopic: new_store_inclusion\nimportance: 0.5\nttl_days: 30\ntimestamp...",
-    "content_length": 1268,
-    "created_at": "2026-05-05T07:06:51.436040+00:00",
-    "updated_at": "2026-05-05T07:44:32.355118+00:00",
+    "content_summary": "[Memory]\nuid: 60fea\ntype: task\ntopic: daily_report\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778048386\n\ncontent:\n日报可以简短一些，需明确阻塞项和需要他人协助的地方。\n\n[Memory]\nuid: bc0f4\ntype: constraint\ntopic: blue_whale_report\nimportance: 0.7\nttl_days: 30\ntimestamp: 177804838...",
+    "content_length": 1634,
+    "created_at": "2026-05-06T06:19:46.816299+00:00",
+    "updated_at": "2026-05-06T06:19:56.818747+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260505_070651_dbe1bd63",
+    "track_id": "insert_20260506_061946_d6ce80aa",
     "metadata": {
-      "processing_start_time": 1777967058,
-      "processing_end_time": 1777967072
+      "processing_start_time": 1778048386,
+      "processing_end_time": 1778048396
     }
   },
-  "doc-0c0342e74ce24f9442643b70f4938abe": {
-    "status": "processed",
-    "chunks_count": 1,
-    "chunks_list": [
-      "chunk-0c0342e74ce24f9442643b70f4938abe"
-    ],
-    "content_summary": "[Memory]\nuid: 1b6d1\ntype: constraint\ntopic: employee_scheduling\nimportance: 1.0\nttl_days: 30\ntimestamp: 1777965261\n\ncontent:\n员工技能标签为空时，系统会默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: bef02\ntype: task\ntopic: polaris_explanation_panel\nimportance: 0.5\nttl_days: 60...",
-    "content_length": 981,
-    "created_at": "2026-05-05T07:15:21.055146+00:00",
-    "updated_at": "2026-05-05T07:44:33.551121+00:00",
-    "file_path": "unknown_source",
-    "track_id": "insert_20260505_071521_81ce2c6c",
-    "metadata": {
-      "processing_start_time": 1777967062,
-      "processing_end_time": 1777967073
-    }
-  },
-  "doc-60813e3913c0d8681c0ef7937b01b99c": {
-    "status": "processed",
-    "chunks_count": 1,
-    "chunks_list": [
-      "chunk-60813e3913c0d8681c0ef7937b01b99c"
-    ],
-    "content_summary": "[Memory]\nuid: b5813\ntype: constraint\ntopic: employee_schedule\nimportance: 0.5\nttl_days: 30\ntimestamp: 1777965694\n\ncontent:\n当员工技能标签为空时，系统默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: 14161\ntype: fact\ntopic: system_documentation\nimportance: 1.0\nttl_days: 30\ntimest...",
-    "content_length": 1045,
-    "created_at": "2026-05-05T07:23:37.336294+00:00",
-    "updated_at": "2026-05-05T07:44:43.306389+00:00",
-    "file_path": "unknown_source",
-    "track_id": "insert_20260505_072337_140c335b",
-    "metadata": {
-      "processing_start_time": 1777967072,
-      "processing_end_time": 1777967083
-    }
-  },
-  "doc-164629181eeda930a1e97de010bdca44": {
-    "status": "processed",
-    "chunks_count": 1,
-    "chunks_list": [
-      "chunk-164629181eeda930a1e97de010bdca44"
-    ],
-    "content_summary": "[Memory]\nuid: 50c49\ntype: constraint\ntopic: employee_skills_issue\nimportance: 1.0\nttl_days: 30\ntimestamp: 1777967006\n\ncontent:\n员工技能标签为空时，系统会默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: 778dc\ntype: fact\ntopic: staffing_risk\nimportance: 1.0\nttl_days: 14\ntimestamp...",
-    "content_length": 780,
-    "created_at": "2026-05-05T07:43:27.839384+00:00",
-    "updated_at": "2026-05-05T07:44:42.290325+00:00",
-    "file_path": "unknown_source",
-    "track_id": "insert_20260505_074327_7a6682c4",
-    "metadata": {
-      "processing_start_time": 1777967073,
-      "processing_end_time": 1777967082
-    }
-  },
-  "doc-a33fb9dbf76c6ab5d6ee21334f31b10d": {
-    "status": "processed",
-    "chunks_count": 1,
-    "chunks_list": [
-      "chunk-a33fb9dbf76c6ab5d6ee21334f31b10d"
-    ],
-    "content_summary": "[Memory]\nuid: 41b8d\ntype: constraint\ntopic: employee_skills\nimportance: 1.0\nttl_days: 30\ntimestamp: 1777969313\n\ncontent:\n员工技能标签为空时，系统会默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: 09e7f\ntype: goal\ntopic: product_narrative\nimportance: 1.0\nttl_days: 30\ntimestamp: ...",
-    "content_length": 1107,
-    "created_at": "2026-05-05T08:21:55.019247+00:00",
-    "updated_at": "2026-05-05T08:22:06.845859+00:00",
-    "file_path": "unknown_source",
-    "track_id": "insert_20260505_082155_6c1f6489",
-    "metadata": {
-      "processing_start_time": 1777969315,
-      "processing_end_time": 1777969326
-    }
-  },
-  "doc-cb2279cdf4d0c9e56dfd82efc8f7b7eb": {
+  "doc-cc62a6c9fb99d31439150380cef44c4d": {
     "status": "processed",
     "chunks_count": 2,
     "chunks_list": [
-      "chunk-1b4ac1050fd4c4da4c13a546f1092f96",
-      "chunk-1041fcefcd08c4b8b16e0886ed561d59"
+      "chunk-cc62a6c9fb99d31439150380cef44c4d",
+      "chunk-a719e38a41e4f45b9ddde017e3a10812"
     ],
-    "content_summary": "[Memory]\nuid: 51a03\ntype: fact\ntopic: star_bridge_crm_risk\nimportance: 0.5\nttl_days: 7\ntimestamp: 1777969389\n\ncontent:\n星桥CRM这周风险没有新增，但有两个旧风险还没关闭：历史客户数据字段不一致，以及接口回滚方案还没演练。\n\n[Memory]\nuid: 8580c\ntype: fact\ntopic: hr_new_badge\nimportance: 0.5\nttl_days: 3...",
-    "content_length": 3635,
-    "created_at": "2026-05-05T08:23:09.546313+00:00",
-    "updated_at": "2026-05-05T08:23:22.723941+00:00",
+    "content_summary": "[Memory]\nuid: 8bd72\ntype: fact\ntopic: orion_payment_gateway_tracking\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778048450\n\ncontent:\nOrion海外支付网关 的埋点需要前端补充，特别是从配置页返回列表页的路径。\n\n[Memory]\nuid: c147b\ntype: fact\ntopic: blueshell_report_alarm\nimportance: 0.5\nttl...",
+    "content_length": 2683,
+    "created_at": "2026-05-06T06:20:50.127371+00:00",
+    "updated_at": "2026-05-06T06:21:02.149214+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260505_082309_8ab2899f",
+    "track_id": "insert_20260506_062050_d232f394",
     "metadata": {
-      "processing_start_time": 1777969389,
-      "processing_end_time": 1777969402
+      "processing_start_time": 1778048450,
+      "processing_end_time": 1778048462
     }
   },
-  "doc-85ceb61467a102ff77b5ca7639e61dad": {
+  "doc-3fc6eb7b138cd81ac51cd60c88e12b75": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-85ceb61467a102ff77b5ca7639e61dad"
+      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
     ],
-    "content_summary": "[Memory]\nuid: 8a303\ntype: constraint\ntopic: star_bridge_crm\nimportance: 1.0\nttl_days: 30\ntimestamp: 1777969451\n\ncontent:\n星桥CRM存在埋点缺失，尤其是从配置页返回列表页的路径，需要前端补充。\n\n[Memory]\nuid: 51178\ntype: preference\ntopic: client_demo\nimportance: 0.5\nttl_days: 30\ntimesta...",
-    "content_length": 1442,
-    "created_at": "2026-05-05T08:24:11.675684+00:00",
-    "updated_at": "2026-05-05T08:24:27.972930+00:00",
+    "content_summary": "[Memory]\nuid: 2a835\ntype: goal\ntopic: project_goal\nimportance: 1.0\nttl_days: 14\ntimestamp: 1778048538\n\ncontent:\n如果两周后指标稳定，讨论全量上线；否则先把项目目标从全量上线改成区域试点。\n\n[Memory]\nuid: e4a85\ntype: fact\ntopic: explanation_panel_structure\nimportance: 0.5\nttl_days: 30\ntime...",
+    "content_length": 1578,
+    "created_at": "2026-05-06T06:22:18.230688+00:00",
+    "updated_at": "2026-05-06T06:22:29.822366+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260505_082411_9777038e",
+    "track_id": "insert_20260506_062218_e244b746",
     "metadata": {
-      "processing_start_time": 1777969451,
-      "processing_end_time": 1777969467
+      "processing_start_time": 1778048538,
+      "processing_end_time": 1778048549
     }
   },
-  "doc-bb5c51b38f13dad45911c5ef26998736": {
+  "doc-57902305cc4fde183edf80ae8dd20894": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-bb5c51b38f13dad45911c5ef26998736"
+      "chunk-57902305cc4fde183edf80ae8dd20894"
     ],
-    "content_summary": "[Memory]\nuid: 20152\ntype: constraint\ntopic: system_behavior\nimportance: 1.0\nttl_days: 30\ntimestamp: 1777969863\n\ncontent:\n员工技能标签为空时，系统会默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: 9a921\ntype: task\ntopic: data_management\nimportance: 0.5\nttl_days: 30\ntimestamp: 17...",
-    "content_length": 1142,
-    "created_at": "2026-05-05T08:31:04.991615+00:00",
-    "updated_at": "2026-05-05T08:31:14.347046+00:00",
+    "content_summary": "[Memory]\nuid: 06db2\ntype: task\ntopic: core_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778048616\n\ncontent:\n本周只承诺核心链路，其他内容写进下一轮迭代。\n\n[Memory]\nuid: aef65\ntype: task\ntopic: key_report_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778048616\n\nc...",
+    "content_length": 1510,
+    "created_at": "2026-05-06T06:23:36.359137+00:00",
+    "updated_at": "2026-05-06T06:23:47.879214+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260505_083104_195ccb36",
+    "track_id": "insert_20260506_062336_767ba2c9",
     "metadata": {
-      "processing_start_time": 1777969864,
-      "processing_end_time": 1777969874
+      "processing_start_time": 1778048616,
+      "processing_end_time": 1778048627
     }
   },
-  "doc-26b06aa0c5b9f23d91349f546eaa888f": {
+  "doc-57b9e13b3eeafb17864ad7ee24b8a66e": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-26b06aa0c5b9f23d91349f546eaa888f"
+      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
     ],
-    "content_summary": "[Memory]\nuid: f26f0\ntype: constraint\ntopic: boundary_condition\nimportance: 1.0\nttl_days: 30\ntimestamp: 1777970018\n\ncontent:\n员工技能标签为空时，系统会默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: a5ca4\ntype: constraint\ntopic: gray_list\nimportance: 0.5\nttl_days: 30\ntimestamp:...",
-    "content_length": 1119,
-    "created_at": "2026-05-05T08:33:39.553927+00:00",
-    "updated_at": "2026-05-05T08:33:55.569380+00:00",
+    "content_summary": "[Memory]\nuid: 4954c\ntype: fact\ntopic: falcon_risk_control_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778048658\n\ncontent:\nFalcon风控中台 目前最缺的是一致的验收口径，不是更多功能。请大家先把口径表补齐。\n\n[Memory]\nuid: 34d54\ntype: fact\ntopic: blue_whale_report_acceptance...",
+    "content_length": 1651,
+    "created_at": "2026-05-06T06:24:18.177021+00:00",
+    "updated_at": "2026-05-06T06:24:26.247532+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260505_083339_e36f3a5f",
+    "track_id": "insert_20260506_062418_f62e9645",
     "metadata": {
-      "processing_start_time": 1777970019,
-      "processing_end_time": 1777970035
+      "processing_start_time": 1778048658,
+      "processing_end_time": 1778048666
     }
   },
-  "doc-fbb15a02ae7886cbf8118a76155f2a4d": {
+  "doc-0baf43ebc0b5e09bd22b03ea28799d01": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-fbb15a02ae7886cbf8118a76155f2a4d"
+      "chunk-0baf43ebc0b5e09bd22b03ea28799d01"
     ],
-    "content_summary": "[Memory]\nuid: 7605f\ntype: constraint\ntopic: employee_skills\nimportance: 1.0\nttl_days: 30\ntimestamp: 1777970651\n\ncontent:\n员工技能标签为空时，系统默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: ae0fa\ntype: fact\ntopic: staffing_risks\nimportance: 1.0\nttl_days: 30\ntimestamp: 1777...",
-    "content_length": 1258,
-    "created_at": "2026-05-05T08:44:12.791286+00:00",
-    "updated_at": "2026-05-05T08:44:23.447108+00:00",
+    "content_summary": "[Memory]\nuid: 976d5\ntype: fact\ntopic: polaris_audit_log\nimportance: 0.7\nttl_days: 180\ntimestamp: 1778048733\n\ncontent:\nPolaris 的审计日志字段已经入库，法务可以按门店、日期和规则版本过滤抽查。\n\n[Memory]\nuid: 9518a\ntype: task\ntopic: risk_matrix_generation\nimportance: 0.5\nttl_days: 30\n...",
+    "content_length": 1634,
+    "created_at": "2026-05-06T06:25:33.005968+00:00",
+    "updated_at": "2026-05-06T06:25:43.130340+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260505_084412_732d5040",
+    "track_id": "insert_20260506_062533_6b1f77d0",
     "metadata": {
-      "processing_start_time": 1777970652,
-      "processing_end_time": 1777970663
+      "processing_start_time": 1778048733,
+      "processing_end_time": 1778048743
     }
   },
-  "doc-257dc3149297f67229682b3933f5d357": {
+  "doc-15044e321936a9838efaca34c4b7be2f": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-257dc3149297f67229682b3933f5d357"
+      "chunk-15044e321936a9838efaca34c4b7be2f"
     ],
-    "content_summary": "[Memory]\nuid: 54a12\ntype: fact\ntopic: star_bridge_crm_risks\nimportance: 0.5\nttl_days: 7\ntimestamp: 1777970679\n\ncontent:\n星桥CRM 本周风险未新增，旧风险包括历史客户数据字段不一致和接口回滚方案未演练。\n\n[Memory]\nuid: fe889\ntype: fact\ntopic: polaris_audit_logs\nimportance: 0.5\nttl_days: 30\nt...",
-    "content_length": 1656,
-    "created_at": "2026-05-05T08:44:39.280727+00:00",
-    "updated_at": "2026-05-05T08:44:54.864185+00:00",
+    "content_summary": "[Memory]\nuid: 766dd\ntype: fact\ntopic: polaris_scheduling_gray_test\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778048812\n\ncontent:\nPolaris智能排班的试点门店灰度版本已经拉了分支，今天先合主流程，非核心的配置项不要再插进来了。\n\n[Memory]\nuid: c3946\ntype: fact\ntopic: polaris_scheduling_poc\nimportanc...",
+    "content_length": 1715,
+    "created_at": "2026-05-06T06:26:52.292807+00:00",
+    "updated_at": "2026-05-06T06:27:11.406148+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260505_084439_d6b073ed",
+    "track_id": "insert_20260506_062652_8007f772",
     "metadata": {
-      "processing_start_time": 1777970679,
-      "processing_end_time": 1777970694
-    }
-  },
-  "doc-4f6518c25c68e803227152a9928769c1": {
-    "status": "processed",
-    "chunks_count": 1,
-    "chunks_list": [
-      "chunk-4f6518c25c68e803227152a9928769c1"
-    ],
-    "content_summary": "[Memory]\nuid: c5bd7\ntype: fact\ntopic: xingqiao_crm_risk_status\nimportance: 0.5\nttl_days: 7\ntimestamp: 1777970828\n\ncontent:\n星桥CRM 这周风险没有新增，但有两个旧风险还没关闭：历史客户数据字段不一致，以及接口回滚方案还没演练。\n\n[Memory]\nuid: fae21\ntype: fact\ntopic: polaris_audit_log\nimportance: 0.5\nt...",
-    "content_length": 1769,
-    "created_at": "2026-05-05T08:47:09.592901+00:00",
-    "updated_at": "2026-05-05T08:47:22.130307+00:00",
-    "file_path": "unknown_source",
-    "track_id": "insert_20260505_084709_1904458b",
-    "metadata": {
-      "processing_start_time": 1777970829,
-      "processing_end_time": 1777970842
-    }
-  },
-  "doc-6542522ab21aeb1f125ab7ac3d935dbc": {
-    "status": "processed",
-    "chunks_count": 2,
-    "chunks_list": [
-      "chunk-6542522ab21aeb1f125ab7ac3d935dbc",
-      "chunk-b5100b07b1d9802e83eb27a9fc3e5bf0"
-    ],
-    "content_summary": "[Memory]\nuid: 68eee\ntype: fact\ntopic: crm_risk\nimportance: 0.5\nttl_days: 7\ntimestamp: 1777971010\n\ncontent:\n星桥CRM 本周风险没有新增，存在两个旧风险：历史客户数据字段不一致，以及接口回滚方案还没演练。\n\n[Memory]\nuid: 6ae32\ntype: fact\ntopic: hr_updates\nimportance: 0.5\nttl_days: 30\ntimestamp: 1777...",
-    "content_length": 2577,
-    "created_at": "2026-05-05T08:50:11.774014+00:00",
-    "updated_at": "2026-05-05T08:50:25.548830+00:00",
-    "file_path": "unknown_source",
-    "track_id": "insert_20260505_085011_547d6c6b",
-    "metadata": {
-      "processing_start_time": 1777971011,
-      "processing_end_time": 1777971025
-    }
-  },
-  "doc-db7406a7cec74cac415bb65e61af0c02": {
-    "status": "processed",
-    "chunks_count": 1,
-    "chunks_list": [
-      "chunk-db7406a7cec74cac415bb65e61af0c02"
-    ],
-    "content_summary": "[Memory]\nuid: 5f105\ntype: task\ntopic: polaris_intelligent_scheduling\nimportance: 0.5\nttl_days: 30\ntimestamp: 1777971714\n\ncontent:\n更新Polaris智能排班周报，绿色项已完成，黄色项需协作，红色项与劳动合规约束复杂有关。\n\n[Memory]\nuid: f38bf\ntype: task\ntopic: orion_overseas_payment_gateway\nimpo...",
-    "content_length": 1867,
-    "created_at": "2026-05-05T09:01:54.936956+00:00",
-    "updated_at": "2026-05-05T09:02:07.038891+00:00",
-    "file_path": "unknown_source",
-    "track_id": "insert_20260505_090154_be5be20b",
-    "metadata": {
-      "processing_start_time": 1777971714,
-      "processing_end_time": 1777971727
+      "processing_start_time": 1778048812,
+      "processing_end_time": 1778048831
     }
   }
 }

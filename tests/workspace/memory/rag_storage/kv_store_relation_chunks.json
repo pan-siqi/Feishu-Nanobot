@@ -1,1642 +1,1190 @@
 {
-  "回放结果<SEP>连班次数": {
+  "Product Copy Emphasis<SEP>Task Update Schedule Table": {
     "chunk_ids": [
-      "chunk-0fb39d7ab4ebb1627da577667df01f93"
+      "chunk-ae9bad23c518fcb3bc3f6dabc9f830b7"
     ],
     "count": 1,
-    "create_time": 1777967021,
-    "update_time": 1777967021,
-    "_id": "回放结果<SEP>连班次数"
+    "create_time": 1778047724,
+    "update_time": 1778047724,
+    "_id": "Product Copy Emphasis<SEP>Task Update Schedule Table"
   },
-  "Employee Skills<SEP>New Store Opening": {
+  "Boundary Condition Employee Skill Tag<SEP>Store Replay Results": {
     "chunk_ids": [
-      "chunk-0fb39d7ab4ebb1627da577667df01f93"
+      "chunk-ae9bad23c518fcb3bc3f6dabc9f830b7"
     ],
     "count": 1,
-    "create_time": 1777967021,
-    "update_time": 1777967021,
-    "_id": "Employee Skills<SEP>New Store Opening"
+    "create_time": 1778047724,
+    "update_time": 1778047724,
+    "_id": "Boundary Condition Employee Skill Tag<SEP>Store Replay Results"
   },
-  "数据验证<SEP>样本变化": {
+  "Goal Discussion on Stability and Pilot<SEP>Task Generate Meeting Minutes": {
     "chunk_ids": [
-      "chunk-0fb39d7ab4ebb1627da577667df01f93"
+      "chunk-ae9bad23c518fcb3bc3f6dabc9f830b7"
     ],
     "count": 1,
-    "create_time": 1777967021,
-    "update_time": 1777967021,
-    "_id": "数据验证<SEP>样本变化"
+    "create_time": 1778047724,
+    "update_time": 1778047724,
+    "_id": "Goal Discussion on Stability and Pilot<SEP>Task Generate Meeting Minutes"
   },
-  "Product Documentation<SEP>Staffing": {
+  "Algorithm Replay Grouping Advice<SEP>Store Replay Results": {
     "chunk_ids": [
-      "chunk-0fb39d7ab4ebb1627da577667df01f93"
+      "chunk-ae9bad23c518fcb3bc3f6dabc9f830b7"
     ],
     "count": 1,
-    "create_time": 1777967021,
-    "update_time": 1777967021,
-    "_id": "Product Documentation<SEP>Staffing"
+    "create_time": 1778047724,
+    "update_time": 1778047724,
+    "_id": "Algorithm Replay Grouping Advice<SEP>Store Replay Results"
   },
-  "Algorithm Replay<SEP>New Store Opening": {
+  "Algorithm Replay Grouping Advice<SEP>Store": {
     "chunk_ids": [
-      "chunk-0fb39d7ab4ebb1627da577667df01f93"
+      "chunk-ae9bad23c518fcb3bc3f6dabc9f830b7"
     ],
     "count": 1,
-    "create_time": 1777967021,
-    "update_time": 1777967021,
-    "_id": "Algorithm Replay<SEP>New Store Opening"
+    "create_time": 1778047724,
+    "update_time": 1778047724,
+    "_id": "Algorithm Replay Grouping Advice<SEP>Store"
   },
-  "员工技能<SEP>连班次数": {
+  "Core Metrics for Review<SEP>人工覆盖率": {
     "chunk_ids": [
-      "chunk-0fb39d7ab4ebb1627da577667df01f93"
+      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c"
     ],
     "count": 1,
-    "create_time": 1777967021,
-    "update_time": 1777967021,
-    "_id": "员工技能<SEP>连班次数"
+    "create_time": 1778047759,
+    "update_time": 1778047759,
+    "_id": "Core Metrics for Review<SEP>人工覆盖率"
   },
-  "Data Validation<SEP>Staffing": {
+  "Blue Whale Reports<SEP>Falcon Risk Control Platform": {
     "chunk_ids": [
-      "chunk-0fb39d7ab4ebb1627da577667df01f93"
+      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c"
     ],
     "count": 1,
-    "create_time": 1777967021,
-    "update_time": 1777967021,
-    "_id": "Data Validation<SEP>Staffing"
+    "create_time": 1778047759,
+    "update_time": 1778047759,
+    "_id": "Blue Whale Reports<SEP>Falcon Risk Control Platform"
   },
-  "Employee Skills<SEP>Project Management": {
+  "Acceptance Criteria Consistency<SEP>Milestones and Acceptance Criteria": {
     "chunk_ids": [
-      "chunk-0fb39d7ab4ebb1627da577667df01f93"
+      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c"
     ],
     "count": 1,
-    "create_time": 1777967021,
-    "update_time": 1777967021,
-    "_id": "Employee Skills<SEP>Project Management"
+    "create_time": 1778047759,
+    "update_time": 1778047759,
+    "_id": "Acceptance Criteria Consistency<SEP>Milestones and Acceptance Criteria"
   },
-  "Boundary Condition<SEP>Memory": {
+  "Client Demo Preferences<SEP>Milestones and Acceptance Criteria": {
     "chunk_ids": [
-      "chunk-b3fba99e4e16b08c01c14a9c9e7177ab",
-      "chunk-26b06aa0c5b9f23d91349f546eaa888f"
+      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c"
     ],
-    "count": 2,
-    "update_time": 1777970035,
-    "_id": "Boundary Condition<SEP>Memory"
-  },
-  "Gray List<SEP>Memory": {
-    "chunk_ids": [
-      "chunk-b3fba99e4e16b08c01c14a9c9e7177ab",
-      "chunk-26b06aa0c5b9f23d91349f546eaa888f"
-    ],
-    "count": 2,
-    "update_time": 1777970035,
-    "_id": "Gray List<SEP>Memory"
-  },
-  "Algorithm Replay<SEP>Memory": {
-    "chunk_ids": [
-      "chunk-b3fba99e4e16b08c01c14a9c9e7177ab",
-      "chunk-26b06aa0c5b9f23d91349f546eaa888f"
-    ],
-    "count": 2,
-    "update_time": 1777970035,
-    "_id": "Algorithm Replay<SEP>Memory"
-  },
-  "Memory<SEP>Product Documentation": {
-    "chunk_ids": [
-      "chunk-b3fba99e4e16b08c01c14a9c9e7177ab",
-      "chunk-26b06aa0c5b9f23d91349f546eaa888f"
-    ],
-    "count": 2,
-    "update_time": 1777970035,
-    "_id": "Memory<SEP>Product Documentation"
-  },
-  "Memory<SEP>Shift Schedule": {
-    "chunk_ids": [
-      "chunk-b3fba99e4e16b08c01c14a9c9e7177ab"
-    ],
-    "count": 1,
-    "create_time": 1777967022,
-    "update_time": 1777967022,
-    "_id": "Memory<SEP>Shift Schedule"
-  },
-  "Explanation Panel<SEP>Memory": {
-    "chunk_ids": [
-      "chunk-b3fba99e4e16b08c01c14a9c9e7177ab"
-    ],
-    "count": 1,
-    "create_time": 1777967022,
-    "update_time": 1777967022,
-    "_id": "Explanation Panel<SEP>Memory"
-  },
-  "Memory<SEP>Report Stability": {
-    "chunk_ids": [
-      "chunk-b3fba99e4e16b08c01c14a9c9e7177ab"
-    ],
-    "count": 1,
-    "create_time": 1777967022,
-    "update_time": 1777967022,
-    "_id": "Memory<SEP>Report Stability"
-  },
-  "Memory<SEP>Schedule Verification": {
-    "chunk_ids": [
-      "chunk-b3fba99e4e16b08c01c14a9c9e7177ab"
-    ],
-    "count": 1,
-    "create_time": 1777967022,
-    "update_time": 1777967022,
-    "_id": "Memory<SEP>Schedule Verification"
-  },
-  "Memory<SEP>员工技能标签": {
-    "chunk_ids": [
-      "chunk-b3fba99e4e16b08c01c14a9c9e7177ab",
-      "chunk-bb5c51b38f13dad45911c5ef26998736",
-      "chunk-26b06aa0c5b9f23d91349f546eaa888f"
-    ],
-    "count": 3,
-    "update_time": 1777970035,
-    "_id": "Memory<SEP>员工技能标签"
-  },
-  "Memory<SEP>门店": {
-    "chunk_ids": [
-      "chunk-b3fba99e4e16b08c01c14a9c9e7177ab"
-    ],
-    "count": 1,
-    "create_time": 1777967022,
-    "update_time": 1777967022,
-    "_id": "Memory<SEP>门店"
-  },
-  "Memory<SEP>季度报告": {
-    "chunk_ids": [
-      "chunk-b3fba99e4e16b08c01c14a9c9e7177ab"
-    ],
-    "count": 1,
-    "create_time": 1777967022,
-    "update_time": 1777967022,
-    "_id": "Memory<SEP>季度报告"
-  },
-  "Memory<SEP>高峰时段": {
-    "chunk_ids": [
-      "chunk-b3fba99e4e16b08c01c14a9c9e7177ab"
-    ],
-    "count": 1,
-    "create_time": 1777967022,
-    "update_time": 1777967022,
-    "_id": "Memory<SEP>高峰时段"
-  },
-  "Employee Skills<SEP>Testing": {
-    "chunk_ids": [
-      "chunk-847726ab3add2aec75c8f03c2bc49d8b"
-    ],
-    "count": 1,
-    "create_time": 1777967032,
-    "update_time": 1777967032,
-    "_id": "Employee Skills<SEP>Testing"
-  },
-  "Algorithm<SEP>Product Communication": {
-    "chunk_ids": [
-      "chunk-847726ab3add2aec75c8f03c2bc49d8b"
-    ],
-    "count": 1,
-    "create_time": 1777967032,
-    "update_time": 1777967032,
-    "_id": "Algorithm<SEP>Product Communication"
-  },
-  "12 Stores<SEP>Workforce": {
-    "chunk_ids": [
-      "chunk-847726ab3add2aec75c8f03c2bc49d8b"
-    ],
-    "count": 1,
-    "create_time": 1777967032,
-    "update_time": 1777967032,
-    "_id": "12 Stores<SEP>Workforce"
-  },
-  "Employee Skills<SEP>Workforce": {
-    "chunk_ids": [
-      "chunk-847726ab3add2aec75c8f03c2bc49d8b"
-    ],
-    "count": 1,
-    "create_time": 1777967032,
-    "update_time": 1777967032,
-    "_id": "Employee Skills<SEP>Workforce"
-  },
-  "Data Update<SEP>Testing": {
-    "chunk_ids": [
-      "chunk-847726ab3add2aec75c8f03c2bc49d8b"
-    ],
-    "count": 1,
-    "create_time": 1777967032,
-    "update_time": 1777967032,
-    "_id": "Data Update<SEP>Testing"
-  },
-  "Algorithm<SEP>Data Update": {
-    "chunk_ids": [
-      "chunk-847726ab3add2aec75c8f03c2bc49d8b"
-    ],
-    "count": 1,
-    "create_time": 1777967032,
-    "update_time": 1777967032,
-    "_id": "Algorithm<SEP>Data Update"
-  },
-  "新增门店<SEP>灰度名单": {
-    "chunk_ids": [
-      "chunk-4dbcc7b99de8467cf3d4d5750dec3723"
-    ],
-    "count": 1,
-    "create_time": 1777967035,
-    "update_time": 1777967035,
-    "_id": "新增门店<SEP>灰度名单"
-  },
-  "全量上线或区域试点<SEP>指标": {
-    "chunk_ids": [
-      "chunk-4dbcc7b99de8467cf3d4d5750dec3723"
-    ],
-    "count": 1,
-    "create_time": 1777967035,
-    "update_time": 1777967035,
-    "_id": "全量上线或区域试点<SEP>指标"
-  },
-  "团队成员<SEP>灰度测试": {
-    "chunk_ids": [
-      "chunk-4dbcc7b99de8467cf3d4d5750dec3723"
-    ],
-    "count": 1,
-    "create_time": 1777967035,
-    "update_time": 1777967035,
-    "_id": "团队成员<SEP>灰度测试"
-  },
-  "人手不足风险<SEP>员工连续晚班次数": {
-    "chunk_ids": [
-      "chunk-4dbcc7b99de8467cf3d4d5750dec3723"
-    ],
-    "count": 1,
-    "create_time": 1777967035,
-    "update_time": 1777967035,
-    "_id": "人手不足风险<SEP>员工连续晚班次数"
-  },
-  "算法回放<SEP>门店类型": {
-    "chunk_ids": [
-      "chunk-4dbcc7b99de8467cf3d4d5750dec3723"
-    ],
-    "count": 1,
-    "create_time": 1777967035,
-    "update_time": 1777967035,
-    "_id": "算法回放<SEP>门店类型"
-  },
-  "员工技能标签<SEP>系统": {
-    "chunk_ids": [
-      "chunk-4dbcc7b99de8467cf3d4d5750dec3723"
-    ],
-    "count": 1,
-    "create_time": 1777967035,
-    "update_time": 1777967035,
-    "_id": "员工技能标签<SEP>系统"
-  },
-  "样本变化<SEP>灰度名单": {
-    "chunk_ids": [
-      "chunk-4dbcc7b99de8467cf3d4d5750dec3723"
-    ],
-    "count": 1,
-    "create_time": 1777967035,
-    "update_time": 1777967035,
-    "_id": "样本变化<SEP>灰度名单"
-  },
-  "Explanation Panel Structure<SEP>System Intent Communication": {
-    "chunk_ids": [
-      "chunk-23024f9ea6618de13fe52f15018d4109"
-    ],
-    "count": 1,
-    "create_time": 1777967044,
-    "update_time": 1777967044,
-    "_id": "Explanation Panel Structure<SEP>System Intent Communication"
-  },
-  "Algorithm Playback Grouping<SEP>Gray List Management": {
-    "chunk_ids": [
-      "chunk-23024f9ea6618de13fe52f15018d4109"
-    ],
-    "count": 1,
-    "create_time": 1777967044,
-    "update_time": 1777967044,
-    "_id": "Algorithm Playback Grouping<SEP>Gray List Management"
-  },
-  "Meeting Minutes<SEP>SQL Investigation Strategy": {
-    "chunk_ids": [
-      "chunk-23024f9ea6618de13fe52f15018d4109"
-    ],
-    "count": 1,
-    "create_time": 1777967044,
-    "update_time": 1777967044,
-    "_id": "Meeting Minutes<SEP>SQL Investigation Strategy"
-  },
-  "Employee Skills Issue<SEP>Weekend Staffing Risk": {
-    "chunk_ids": [
-      "chunk-23024f9ea6618de13fe52f15018d4109"
-    ],
-    "count": 1,
-    "create_time": 1777967044,
-    "update_time": 1777967044,
-    "_id": "Employee Skills Issue<SEP>Weekend Staffing Risk"
-  },
-  "员工技能标签<SEP>员工排班": {
-    "chunk_ids": [
-      "chunk-9ff3855b72b767c3bec7568b60fc84f9"
-    ],
-    "count": 1,
-    "create_time": 1777967045,
-    "update_time": 1777967045,
-    "_id": "员工技能标签<SEP>员工排班"
-  },
-  "Data Management<SEP>Testing Strategy": {
-    "chunk_ids": [
-      "chunk-9ff3855b72b767c3bec7568b60fc84f9"
-    ],
-    "count": 1,
-    "create_time": 1777967045,
-    "update_time": 1777967045,
-    "_id": "Data Management<SEP>Testing Strategy"
-  },
-  "Product Documentation<SEP>Project Management": {
-    "chunk_ids": [
-      "chunk-9ff3855b72b767c3bec7568b60fc84f9"
-    ],
-    "count": 1,
-    "create_time": 1777967045,
-    "update_time": 1777967045,
-    "_id": "Product Documentation<SEP>Project Management"
-  },
-  "Employee Scheduling<SEP>Staffing Risk": {
-    "chunk_ids": [
-      "chunk-9ff3855b72b767c3bec7568b60fc84f9"
-    ],
-    "count": 1,
-    "create_time": 1777967045,
-    "update_time": 1777967045,
-    "_id": "Employee Scheduling<SEP>Staffing Risk"
-  },
-  "Product Documentation<SEP>门店经理": {
-    "chunk_ids": [
-      "chunk-9ff3855b72b767c3bec7568b60fc84f9"
-    ],
-    "count": 1,
-    "create_time": 1777967045,
-    "update_time": 1777967045,
-    "_id": "Product Documentation<SEP>门店经理"
-  },
-  "Algorithm Analysis<SEP>Testing Strategy": {
-    "chunk_ids": [
-      "chunk-9ff3855b72b767c3bec7568b60fc84f9"
-    ],
-    "count": 1,
-    "create_time": 1777967045,
-    "update_time": 1777967045,
-    "_id": "Algorithm Analysis<SEP>Testing Strategy"
-  },
-  "Testing Strategy<SEP>新增门店": {
-    "chunk_ids": [
-      "chunk-9ff3855b72b767c3bec7568b60fc84f9"
-    ],
-    "count": 1,
-    "create_time": 1777967045,
-    "update_time": 1777967045,
-    "_id": "Testing Strategy<SEP>新增门店"
-  },
-  "Algorithm Analysis<SEP>Project Management": {
-    "chunk_ids": [
-      "chunk-9ff3855b72b767c3bec7568b60fc84f9"
-    ],
-    "count": 1,
-    "create_time": 1777967045,
-    "update_time": 1777967045,
-    "_id": "Algorithm Analysis<SEP>Project Management"
-  },
-  "Testing Strategy<SEP>样本变化": {
-    "chunk_ids": [
-      "chunk-9ff3855b72b767c3bec7568b60fc84f9"
-    ],
-    "count": 1,
-    "create_time": 1777967045,
-    "update_time": 1777967045,
-    "_id": "Testing Strategy<SEP>样本变化"
-  },
-  "员工<SEP>门店": {
-    "chunk_ids": [
-      "chunk-4e0f1885eb6771149f93a455915b9113",
-      "chunk-2ec1e958be5dc9b11f6a224a2a6b9571"
-    ],
-    "count": 2,
-    "update_time": 1777967072,
-    "_id": "员工<SEP>门店"
-  },
-  "Algorithm Replay<SEP>New Store Management": {
-    "chunk_ids": [
-      "chunk-4e0f1885eb6771149f93a455915b9113"
-    ],
-    "count": 1,
-    "create_time": 1777967054,
-    "update_time": 1777967054,
-    "_id": "Algorithm Replay<SEP>New Store Management"
-  },
-  "Employee Skills<SEP>Scheduling Results": {
-    "chunk_ids": [
-      "chunk-4e0f1885eb6771149f93a455915b9113",
-      "chunk-a33fb9dbf76c6ab5d6ee21334f31b10d"
-    ],
-    "count": 2,
-    "update_time": 1777969326,
-    "_id": "Employee Skills<SEP>Scheduling Results"
-  },
-  "Scheduling Results<SEP>Staffing Results": {
-    "chunk_ids": [
-      "chunk-4e0f1885eb6771149f93a455915b9113"
-    ],
-    "count": 1,
-    "create_time": 1777967054,
-    "update_time": 1777967054,
-    "_id": "Scheduling Results<SEP>Staffing Results"
-  },
-  "New Store Management<SEP>Product Documentation": {
-    "chunk_ids": [
-      "chunk-4e0f1885eb6771149f93a455915b9113"
-    ],
-    "count": 1,
-    "create_time": 1777967054,
-    "update_time": 1777967054,
-    "_id": "New Store Management<SEP>Product Documentation"
-  },
-  "Data Management<SEP>Data Validation": {
-    "chunk_ids": [
-      "chunk-2e07022cad33ab55065c5bba8a438969"
-    ],
-    "count": 1,
-    "create_time": 1777967058,
-    "update_time": 1777967058,
-    "_id": "Data Management<SEP>Data Validation"
-  },
-  "Employee Skills<SEP>Staffing Issues": {
-    "chunk_ids": [
-      "chunk-2e07022cad33ab55065c5bba8a438969"
-    ],
-    "count": 1,
-    "create_time": 1777967058,
-    "update_time": 1777967058,
-    "_id": "Employee Skills<SEP>Staffing Issues"
-  },
-  "Data Management<SEP>New Store Inclusion": {
-    "chunk_ids": [
-      "chunk-2e07022cad33ab55065c5bba8a438969"
-    ],
     "count": 1,
-    "create_time": 1777967058,
-    "update_time": 1777967058,
-    "_id": "Data Management<SEP>New Store Inclusion"
+    "create_time": 1778047760,
+    "update_time": 1778047760,
+    "_id": "Client Demo Preferences<SEP>Milestones and Acceptance Criteria"
   },
-  "Data Validation<SEP>Rule Version": {
+  "Core Metrics for Review<SEP>员工连续晚班次数": {
     "chunk_ids": [
-      "chunk-2e07022cad33ab55065c5bba8a438969"
+      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c"
     ],
     "count": 1,
-    "create_time": 1777967058,
-    "update_time": 1777967058,
-    "_id": "Data Validation<SEP>Rule Version"
+    "create_time": 1778047760,
+    "update_time": 1778047760,
+    "_id": "Core Metrics for Review<SEP>员工连续晚班次数"
   },
-  "Product Documentation<SEP>Staffing Issues": {
+  "Blue Whale Reports<SEP>Star Bridge CRM": {
     "chunk_ids": [
-      "chunk-2e07022cad33ab55065c5bba8a438969"
+      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c"
     ],
     "count": 1,
-    "create_time": 1777967058,
-    "update_time": 1777967058,
-    "_id": "Product Documentation<SEP>Staffing Issues"
+    "create_time": 1778047760,
+    "update_time": 1778047760,
+    "_id": "Blue Whale Reports<SEP>Star Bridge CRM"
   },
-  "Employee Skills<SEP>Employee Skills Tag": {
+  "Core Metrics for Review<SEP>班次缺口率": {
     "chunk_ids": [
-      "chunk-2e07022cad33ab55065c5bba8a438969"
+      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c"
     ],
     "count": 1,
-    "create_time": 1777967058,
-    "update_time": 1777967058,
-    "_id": "Employee Skills<SEP>Employee Skills Tag"
+    "create_time": 1778047760,
+    "update_time": 1778047760,
+    "_id": "Core Metrics for Review<SEP>班次缺口率"
   },
-  "Data Validation<SEP>Model Version": {
+  "Acceptance Criteria Consistency<SEP>Core Metrics for Review": {
     "chunk_ids": [
-      "chunk-2e07022cad33ab55065c5bba8a438969"
+      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c"
     ],
     "count": 1,
-    "create_time": 1777967058,
-    "update_time": 1777967058,
-    "_id": "Data Validation<SEP>Model Version"
+    "create_time": 1778047760,
+    "update_time": 1778047760,
+    "_id": "Acceptance Criteria Consistency<SEP>Core Metrics for Review"
   },
-  "Algorithm Analysis<SEP>Staffing Issues": {
+  "Core Metrics for Review<SEP>门店经理满意度": {
     "chunk_ids": [
-      "chunk-2e07022cad33ab55065c5bba8a438969"
+      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c"
     ],
     "count": 1,
-    "create_time": 1777967058,
-    "update_time": 1777967058,
-    "_id": "Algorithm Analysis<SEP>Staffing Issues"
+    "create_time": 1778047760,
+    "update_time": 1778047760,
+    "_id": "Core Metrics for Review<SEP>门店经理满意度"
   },
-  "Staffing Issues<SEP>Store Performance": {
+  "Meeting Minutes<SEP>Polaris Core Metrics": {
     "chunk_ids": [
-      "chunk-2e07022cad33ab55065c5bba8a438969"
+      "chunk-92f04e4637b01e8690c21f1043ac04e3"
     ],
     "count": 1,
-    "create_time": 1777967058,
-    "update_time": 1777967058,
-    "_id": "Staffing Issues<SEP>Store Performance"
+    "create_time": 1778047808,
+    "update_time": 1778047808,
+    "_id": "Meeting Minutes<SEP>Polaris Core Metrics"
   },
-  "Employee Skill Tags<SEP>Staffing Risks": {
+  "Polaris Audit Log<SEP>Star Bridge CRM": {
     "chunk_ids": [
-      "chunk-2ec1e958be5dc9b11f6a224a2a6b9571"
+      "chunk-92f04e4637b01e8690c21f1043ac04e3"
     ],
     "count": 1,
-    "create_time": 1777967072,
-    "update_time": 1777967072,
-    "_id": "Employee Skill Tags<SEP>Staffing Risks"
+    "create_time": 1778047808,
+    "update_time": 1778047808,
+    "_id": "Polaris Audit Log<SEP>Star Bridge CRM"
   },
-  "New Store Inclusion<SEP>Pilot Project": {
+  "Data Consistency<SEP>Risk Management": {
     "chunk_ids": [
-      "chunk-2ec1e958be5dc9b11f6a224a2a6b9571"
+      "chunk-92f04e4637b01e8690c21f1043ac04e3"
     ],
     "count": 1,
-    "create_time": 1777967072,
-    "update_time": 1777967072,
-    "_id": "New Store Inclusion<SEP>Pilot Project"
-  },
-  "Polaris Explanation Panel<SEP>Product Documentation": {
-    "chunk_ids": [
-      "chunk-2ec1e958be5dc9b11f6a224a2a6b9571",
-      "chunk-0c0342e74ce24f9442643b70f4938abe"
-    ],
-    "count": 2,
-    "update_time": 1777967073,
-    "_id": "Polaris Explanation Panel<SEP>Product Documentation"
+    "create_time": 1778047808,
+    "update_time": 1778047808,
+    "_id": "Data Consistency<SEP>Risk Management"
   },
-  "灰度名单<SEP>门店": {
+  "Acceptance Criteria<SEP>Blue Whale Report": {
     "chunk_ids": [
-      "chunk-2ec1e958be5dc9b11f6a224a2a6b9571"
+      "chunk-92f04e4637b01e8690c21f1043ac04e3"
     ],
     "count": 1,
-    "create_time": 1777967072,
-    "update_time": 1777967072,
-    "_id": "灰度名单<SEP>门店"
+    "create_time": 1778047808,
+    "update_time": 1778047808,
+    "_id": "Acceptance Criteria<SEP>Blue Whale Report"
   },
-  "Staffing Risks<SEP>Update Schedule Table": {
+  "Star Bridge CRM<SEP>星桥CRM": {
     "chunk_ids": [
-      "chunk-2ec1e958be5dc9b11f6a224a2a6b9571"
+      "chunk-92f04e4637b01e8690c21f1043ac04e3"
     ],
     "count": 1,
-    "create_time": 1777967072,
-    "update_time": 1777967072,
-    "_id": "Staffing Risks<SEP>Update Schedule Table"
+    "create_time": 1778047808,
+    "update_time": 1778047808,
+    "_id": "Star Bridge CRM<SEP>星桥CRM"
   },
-  "Algorithm Playback<SEP>Product Documentation": {
+  "Feedback Loop<SEP>Risk Management": {
     "chunk_ids": [
-      "chunk-2ec1e958be5dc9b11f6a224a2a6b9571"
+      "chunk-92f04e4637b01e8690c21f1043ac04e3"
     ],
     "count": 1,
-    "create_time": 1777967072,
-    "update_time": 1777967072,
-    "_id": "Algorithm Playback<SEP>Product Documentation"
+    "create_time": 1778047808,
+    "update_time": 1778047808,
+    "_id": "Feedback Loop<SEP>Risk Management"
   },
-  "Employee Scheduling<SEP>Store Performance": {
+  "Polaris Core Metrics<SEP>Risk Management": {
     "chunk_ids": [
-      "chunk-0c0342e74ce24f9442643b70f4938abe"
+      "chunk-92f04e4637b01e8690c21f1043ac04e3"
     ],
     "count": 1,
-    "create_time": 1777967073,
-    "update_time": 1777967073,
-    "_id": "Employee Scheduling<SEP>Store Performance"
+    "create_time": 1778047809,
+    "update_time": 1778047809,
+    "_id": "Polaris Core Metrics<SEP>Risk Management"
   },
-  "Polaris Explanation Panel<SEP>Store Performance": {
+  "Polaris<SEP>Polaris Core Metrics": {
     "chunk_ids": [
-      "chunk-0c0342e74ce24f9442643b70f4938abe"
+      "chunk-92f04e4637b01e8690c21f1043ac04e3"
     ],
     "count": 1,
-    "create_time": 1777967073,
-    "update_time": 1777967073,
-    "_id": "Polaris Explanation Panel<SEP>Store Performance"
+    "create_time": 1778047809,
+    "update_time": 1778047809,
+    "_id": "Polaris<SEP>Polaris Core Metrics"
   },
-  "Algorithm Playback<SEP>Store Performance": {
+  "Polaris<SEP>Polaris智能排班": {
     "chunk_ids": [
-      "chunk-0c0342e74ce24f9442643b70f4938abe"
+      "chunk-eb1d6ee54f9c54ae28745b1cf885e083"
     ],
     "count": 1,
-    "create_time": 1777967073,
-    "update_time": 1777967073,
-    "_id": "Algorithm Playback<SEP>Store Performance"
+    "create_time": 1778047879,
+    "update_time": 1778047879,
+    "_id": "Polaris<SEP>Polaris智能排班"
   },
-  "Store Performance<SEP>员工技能标签": {
+  "Polaris<SEP>蓝鲸报表": {
     "chunk_ids": [
-      "chunk-0c0342e74ce24f9442643b70f4938abe"
+      "chunk-eb1d6ee54f9c54ae28745b1cf885e083"
     ],
     "count": 1,
-    "create_time": 1777967073,
-    "update_time": 1777967073,
-    "_id": "Store Performance<SEP>员工技能标签"
+    "create_time": 1778047879,
+    "update_time": 1778047879,
+    "_id": "Polaris<SEP>蓝鲸报表"
   },
-  "Grey List Management<SEP>Polaris Explanation Panel": {
+  "Orion海外支付网关<SEP>Polaris": {
     "chunk_ids": [
-      "chunk-0c0342e74ce24f9442643b70f4938abe"
+      "chunk-eb1d6ee54f9c54ae28745b1cf885e083"
     ],
     "count": 1,
-    "create_time": 1777967073,
-    "update_time": 1777967073,
-    "_id": "Grey List Management<SEP>Polaris Explanation Panel"
+    "create_time": 1778047879,
+    "update_time": 1778047879,
+    "_id": "Orion海外支付网关<SEP>Polaris"
   },
-  "Polaris Explanation Panel<SEP>审计日志": {
+  "Falcon风控中台<SEP>Polaris": {
     "chunk_ids": [
-      "chunk-0c0342e74ce24f9442643b70f4938abe"
+      "chunk-eb1d6ee54f9c54ae28745b1cf885e083"
     ],
     "count": 1,
-    "create_time": 1777967073,
-    "update_time": 1777967073,
-    "_id": "Polaris Explanation Panel<SEP>审计日志"
+    "create_time": 1778047879,
+    "update_time": 1778047879,
+    "_id": "Falcon风控中台<SEP>Polaris"
   },
-  "Gray List Management<SEP>Polaris": {
+  "Business Trip Budget<SEP>Polaris": {
     "chunk_ids": [
-      "chunk-164629181eeda930a1e97de010bdca44"
+      "chunk-eb1d6ee54f9c54ae28745b1cf885e083"
     ],
     "count": 1,
-    "create_time": 1777967082,
-    "update_time": 1777967082,
-    "_id": "Gray List Management<SEP>Polaris"
+    "create_time": 1778047879,
+    "update_time": 1778047879,
+    "_id": "Business Trip Budget<SEP>Polaris"
   },
-  "Employee Skills Issue<SEP>Staffing Risk": {
+  "Polaris<SEP>星桥CRM": {
     "chunk_ids": [
-      "chunk-164629181eeda930a1e97de010bdca44"
+      "chunk-eb1d6ee54f9c54ae28745b1cf885e083"
     ],
     "count": 1,
-    "create_time": 1777967082,
-    "update_time": 1777967082,
-    "_id": "Employee Skills Issue<SEP>Staffing Risk"
+    "create_time": 1778047879,
+    "update_time": 1778047879,
+    "_id": "Polaris<SEP>星桥CRM"
   },
-  "Staffing Risk<SEP>System Role Clarity": {
+  "Orion海外支付网关<SEP>风险管理": {
     "chunk_ids": [
-      "chunk-164629181eeda930a1e97de010bdca44"
+      "chunk-06ccdd4148be7e3a4d432ca34f4b65a0"
     ],
     "count": 1,
-    "create_time": 1777967082,
-    "update_time": 1777967082,
-    "_id": "Staffing Risk<SEP>System Role Clarity"
+    "create_time": 1778047941,
+    "update_time": 1778047941,
+    "_id": "Orion海外支付网关<SEP>风险管理"
   },
-  "Employee Skills Issue<SEP>Gray List Management": {
+  "星桥CRM<SEP>风险管理": {
     "chunk_ids": [
-      "chunk-164629181eeda930a1e97de010bdca44"
+      "chunk-06ccdd4148be7e3a4d432ca34f4b65a0"
     ],
     "count": 1,
-    "create_time": 1777967082,
-    "update_time": 1777967082,
-    "_id": "Employee Skills Issue<SEP>Gray List Management"
+    "create_time": 1778047941,
+    "update_time": 1778047941,
+    "_id": "星桥CRM<SEP>风险管理"
   },
-  "12 Stores<SEP>Staffing Risk": {
+  "蓝鲸报表<SEP>风险管理": {
     "chunk_ids": [
-      "chunk-164629181eeda930a1e97de010bdca44"
+      "chunk-06ccdd4148be7e3a4d432ca34f4b65a0"
     ],
     "count": 1,
-    "create_time": 1777967082,
-    "update_time": 1777967082,
-    "_id": "12 Stores<SEP>Staffing Risk"
+    "create_time": 1778047941,
+    "update_time": 1778047941,
+    "_id": "蓝鲸报表<SEP>风险管理"
   },
-  "Replay Results<SEP>Staffing Risk": {
+  "Falcon风控中台<SEP>风险管理": {
     "chunk_ids": [
-      "chunk-164629181eeda930a1e97de010bdca44"
+      "chunk-06ccdd4148be7e3a4d432ca34f4b65a0"
     ],
     "count": 1,
-    "create_time": 1777967082,
-    "update_time": 1777967082,
-    "_id": "Replay Results<SEP>Staffing Risk"
+    "create_time": 1778047941,
+    "update_time": 1778047941,
+    "_id": "Falcon风控中台<SEP>风险管理"
   },
-  "Gray List Management<SEP>Report Analysis": {
+  "沙箱验证<SEP>蓝鲸报表": {
     "chunk_ids": [
-      "chunk-60813e3913c0d8681c0ef7937b01b99c"
+      "chunk-06ccdd4148be7e3a4d432ca34f4b65a0"
     ],
     "count": 1,
-    "create_time": 1777967083,
-    "update_time": 1777967083,
-    "_id": "Gray List Management<SEP>Report Analysis"
+    "create_time": 1778047941,
+    "update_time": 1778047941,
+    "_id": "沙箱验证<SEP>蓝鲸报表"
   },
-  "Employee Schedule<SEP>System Documentation": {
+  "Orion海外支付网关<SEP>蓝鲸报表": {
     "chunk_ids": [
-      "chunk-60813e3913c0d8681c0ef7937b01b99c"
+      "chunk-06ccdd4148be7e3a4d432ca34f4b65a0"
     ],
     "count": 1,
-    "create_time": 1777967083,
-    "update_time": 1777967083,
-    "_id": "Employee Schedule<SEP>System Documentation"
+    "create_time": 1778047941,
+    "update_time": 1778047941,
+    "_id": "Orion海外支付网关<SEP>蓝鲸报表"
   },
-  "Meeting Minutes<SEP>Risk Management": {
+  "蓝鲸Deadline<SEP>蓝鲸报表": {
     "chunk_ids": [
-      "chunk-60813e3913c0d8681c0ef7937b01b99c"
+      "chunk-3e06d0e157a44134b0e57b91cf1fddb1"
     ],
     "count": 1,
-    "create_time": 1777967083,
-    "update_time": 1777967083,
-    "_id": "Meeting Minutes<SEP>Risk Management"
+    "create_time": 1778048017,
+    "update_time": 1778048017,
+    "_id": "蓝鲸Deadline<SEP>蓝鲸报表"
   },
-  "30 Days TTL<SEP>Employee Schedule": {
+  "星桥CRM<SEP>星桥Deadline": {
     "chunk_ids": [
-      "chunk-60813e3913c0d8681c0ef7937b01b99c"
+      "chunk-3e06d0e157a44134b0e57b91cf1fddb1"
     ],
     "count": 1,
-    "create_time": 1777967083,
-    "update_time": 1777967083,
-    "_id": "30 Days TTL<SEP>Employee Schedule"
+    "create_time": 1778048017,
+    "update_time": 1778048017,
+    "_id": "星桥CRM<SEP>星桥Deadline"
   },
-  "Algorithm Analysis<SEP>System Documentation": {
+  "Falcon Deadline<SEP>Falcon风控中台": {
     "chunk_ids": [
-      "chunk-60813e3913c0d8681c0ef7937b01b99c"
+      "chunk-3e06d0e157a44134b0e57b91cf1fddb1"
     ],
     "count": 1,
-    "create_time": 1777967083,
-    "update_time": 1777967083,
-    "_id": "Algorithm Analysis<SEP>System Documentation"
+    "create_time": 1778048017,
+    "update_time": 1778048017,
+    "_id": "Falcon Deadline<SEP>Falcon风控中台"
   },
-  "0.5 Importance<SEP>Meeting Minutes": {
+  "蓝鲸Pilot Commitment<SEP>蓝鲸报表": {
     "chunk_ids": [
-      "chunk-60813e3913c0d8681c0ef7937b01b99c"
+      "chunk-3e06d0e157a44134b0e57b91cf1fddb1"
     ],
     "count": 1,
-    "create_time": 1777967083,
-    "update_time": 1777967083,
-    "_id": "0.5 Importance<SEP>Meeting Minutes"
+    "create_time": 1778048017,
+    "update_time": 1778048017,
+    "_id": "蓝鲸Pilot Commitment<SEP>蓝鲸报表"
   },
-  "1.0 Importance<SEP>System Documentation": {
+  "星桥CRM<SEP>星桥Core Commitment": {
     "chunk_ids": [
-      "chunk-60813e3913c0d8681c0ef7937b01b99c"
+      "chunk-3e06d0e157a44134b0e57b91cf1fddb1"
     ],
     "count": 1,
-    "create_time": 1777967083,
-    "update_time": 1777967083,
-    "_id": "1.0 Importance<SEP>System Documentation"
+    "create_time": 1778048017,
+    "update_time": 1778048017,
+    "_id": "星桥CRM<SEP>星桥Core Commitment"
   },
-  "Gray List Management<SEP>Meeting Minutes": {
+  "Falcon Pilot Commitment<SEP>Falcon风控中台": {
     "chunk_ids": [
-      "chunk-60813e3913c0d8681c0ef7937b01b99c"
+      "chunk-3e06d0e157a44134b0e57b91cf1fddb1"
     ],
     "count": 1,
-    "create_time": 1777967083,
-    "update_time": 1777967083,
-    "_id": "Gray List Management<SEP>Meeting Minutes"
+    "create_time": 1778048017,
+    "update_time": 1778048017,
+    "_id": "Falcon Pilot Commitment<SEP>Falcon风控中台"
   },
-  "14 Days TTL<SEP>Meeting Minutes": {
+  "Bluewhale Pilot Commitment<SEP>蓝鲸报表": {
     "chunk_ids": [
-      "chunk-60813e3913c0d8681c0ef7937b01b99c"
+      "chunk-3e06d0e157a44134b0e57b91cf1fddb1"
     ],
     "count": 1,
-    "create_time": 1777967083,
-    "update_time": 1777967083,
-    "_id": "14 Days TTL<SEP>Meeting Minutes"
+    "create_time": 1778048017,
+    "update_time": 1778048017,
+    "_id": "Bluewhale Pilot Commitment<SEP>蓝鲸报表"
   },
-  "Product Narrative<SEP>Store Performance": {
+  "Starbridge Core Commitment<SEP>星桥CRM": {
     "chunk_ids": [
-      "chunk-a33fb9dbf76c6ab5d6ee21334f31b10d"
+      "chunk-3e06d0e157a44134b0e57b91cf1fddb1"
     ],
     "count": 1,
-    "create_time": 1777969326,
-    "update_time": 1777969326,
-    "_id": "Product Narrative<SEP>Store Performance"
+    "create_time": 1778048017,
+    "update_time": 1778048017,
+    "_id": "Starbridge Core Commitment<SEP>星桥CRM"
   },
-  "Algorithm Replay<SEP>Gray List": {
+  "Pilot Version<SEP>Task Status": {
     "chunk_ids": [
-      "chunk-a33fb9dbf76c6ab5d6ee21334f31b10d"
+      "chunk-2a9fe9e3df5e1fda2445315449929f76"
     ],
     "count": 1,
-    "create_time": 1777969326,
-    "update_time": 1777969326,
-    "_id": "Algorithm Replay<SEP>Gray List"
+    "create_time": 1778048072,
+    "update_time": 1778048072,
+    "_id": "Pilot Version<SEP>Task Status"
   },
-  "Project Management<SEP>Store Performance": {
+  "Labor Compliance<SEP>Polaris智能排班": {
     "chunk_ids": [
-      "chunk-a33fb9dbf76c6ab5d6ee21334f31b10d"
+      "chunk-2a9fe9e3df5e1fda2445315449929f76"
     ],
     "count": 1,
-    "create_time": 1777969326,
-    "update_time": 1777969326,
-    "_id": "Project Management<SEP>Store Performance"
+    "create_time": 1778048072,
+    "update_time": 1778048072,
+    "_id": "Labor Compliance<SEP>Polaris智能排班"
   },
-  "Employee Skills Tag<SEP>Scheduling Results": {
+  "Artificial Bottom Guarantee<SEP>Store Manager": {
     "chunk_ids": [
-      "chunk-a33fb9dbf76c6ab5d6ee21334f31b10d"
+      "chunk-2a9fe9e3df5e1fda2445315449929f76"
     ],
     "count": 1,
-    "create_time": 1777969326,
-    "update_time": 1777969326,
-    "_id": "Employee Skills Tag<SEP>Scheduling Results"
+    "create_time": 1778048072,
+    "update_time": 1778048072,
+    "_id": "Artificial Bottom Guarantee<SEP>Store Manager"
   },
-  "Store Performance<SEP>Store Replay Results": {
+  "Memory<SEP>Weekly Commitment": {
     "chunk_ids": [
-      "chunk-a33fb9dbf76c6ab5d6ee21334f31b10d"
+      "chunk-2a9fe9e3df5e1fda2445315449929f76"
     ],
     "count": 1,
-    "create_time": 1777969326,
-    "update_time": 1777969326,
-    "_id": "Store Performance<SEP>Store Replay Results"
+    "create_time": 1778048072,
+    "update_time": 1778048072,
+    "_id": "Memory<SEP>Weekly Commitment"
   },
-  "Algorithm Replay<SEP>Scheduling Results": {
+  "Memory<SEP>Risk Management": {
     "chunk_ids": [
-      "chunk-a33fb9dbf76c6ab5d6ee21334f31b10d"
+      "chunk-2a9fe9e3df5e1fda2445315449929f76"
     ],
     "count": 1,
-    "create_time": 1777969326,
-    "update_time": 1777969326,
-    "_id": "Algorithm Replay<SEP>Scheduling Results"
+    "create_time": 1778048073,
+    "update_time": 1778048073,
+    "_id": "Memory<SEP>Risk Management"
   },
-  "Polaris智能排班<SEP>客户演示": {
+  "Acceptance Criteria<SEP>Polaris智能排班": {
     "chunk_ids": [
-      "chunk-1041fcefcd08c4b8b16e0886ed561d59",
-      "chunk-1b4ac1050fd4c4da4c13a546f1092f96"
+      "chunk-2a9fe9e3df5e1fda2445315449929f76"
     ],
-    "count": 2,
-    "create_time": 1777969402,
-    "update_time": 1777969402,
-    "_id": "Polaris智能排班<SEP>客户演示"
-  },
-  "Polaris Scheduling Client Demo<SEP>business scenario": {
-    "chunk_ids": [
-      "chunk-1041fcefcd08c4b8b16e0886ed561d59"
-    ],
     "count": 1,
-    "create_time": 1777969402,
-    "update_time": 1777969402,
-    "_id": "Polaris Scheduling Client Demo<SEP>business scenario"
+    "create_time": 1778048073,
+    "update_time": 1778048073,
+    "_id": "Acceptance Criteria<SEP>Polaris智能排班"
   },
-  "决策摘要<SEP>灰度名单": {
+  "PoC Version<SEP>Polaris智能排班": {
     "chunk_ids": [
-      "chunk-1041fcefcd08c4b8b16e0886ed561d59"
+      "chunk-2a9fe9e3df5e1fda2445315449929f76"
     ],
     "count": 1,
-    "create_time": 1777969402,
-    "update_time": 1777969402,
-    "_id": "决策摘要<SEP>灰度名单"
+    "create_time": 1778048073,
+    "update_time": 1778048073,
+    "_id": "PoC Version<SEP>Polaris智能排班"
   },
-  "批处理延迟<SEP>蓝鲸报表": {
+  "Polaris智能排班<SEP>Task Status": {
     "chunk_ids": [
-      "chunk-1041fcefcd08c4b8b16e0886ed561d59"
+      "chunk-2a9fe9e3df5e1fda2445315449929f76"
     ],
     "count": 1,
-    "create_time": 1777969402,
-    "update_time": 1777969402,
-    "_id": "批处理延迟<SEP>蓝鲸报表"
+    "create_time": 1778048073,
+    "update_time": 1778048073,
+    "_id": "Polaris智能排班<SEP>Task Status"
   },
-  "下午茶<SEP>芝士蛋糕": {
+  "Acceptance Criteria<SEP>Risk Matrix": {
     "chunk_ids": [
-      "chunk-1041fcefcd08c4b8b16e0886ed561d59"
+      "chunk-a7a5f6a61d77f4b20efb7f871e74155a"
     ],
     "count": 1,
-    "create_time": 1777969402,
-    "update_time": 1777969402,
-    "_id": "下午茶<SEP>芝士蛋糕"
+    "create_time": 1778048147,
+    "update_time": 1778048147,
+    "_id": "Acceptance Criteria<SEP>Risk Matrix"
   },
-  "客户说明<SEP>影响范围": {
+  "Meeting Room Cache Issue<SEP>Weekly Report Updates": {
     "chunk_ids": [
-      "chunk-1041fcefcd08c4b8b16e0886ed561d59"
+      "chunk-a7a5f6a61d77f4b20efb7f871e74155a"
     ],
     "count": 1,
-    "create_time": 1777969402,
-    "update_time": 1777969402,
-    "_id": "客户说明<SEP>影响范围"
+    "create_time": 1778048147,
+    "update_time": 1778048147,
+    "_id": "Meeting Room Cache Issue<SEP>Weekly Report Updates"
   },
-  "SQL排查<SEP>指标定义": {
+  "Polaris Audit Log<SEP>Polaris Smart Scheduling": {
     "chunk_ids": [
-      "chunk-1041fcefcd08c4b8b16e0886ed561d59"
+      "chunk-a7a5f6a61d77f4b20efb7f871e74155a"
     ],
     "count": 1,
-    "create_time": 1777969402,
-    "update_time": 1777969402,
-    "_id": "SQL排查<SEP>指标定义"
+    "create_time": 1778048147,
+    "update_time": 1778048147,
+    "_id": "Polaris Audit Log<SEP>Polaris Smart Scheduling"
   },
-  "会议室预约系统<SEP>缓存问题": {
+  "Polaris Acceptance Criteria<SEP>Polaris Audit Log": {
     "chunk_ids": [
-      "chunk-1041fcefcd08c4b8b16e0886ed561d59"
+      "chunk-a7a5f6a61d77f4b20efb7f871e74155a"
     ],
     "count": 1,
-    "create_time": 1777969402,
-    "update_time": 1777969402,
-    "_id": "会议室预约系统<SEP>缓存问题"
+    "create_time": 1778048147,
+    "update_time": 1778048147,
+    "_id": "Polaris Acceptance Criteria<SEP>Polaris Audit Log"
   },
-  "团建投票<SEP>羽毛球": {
+  "Blue Whale Report<SEP>Polaris Smart Scheduling": {
     "chunk_ids": [
-      "chunk-1041fcefcd08c4b8b16e0886ed561d59"
+      "chunk-a7a5f6a61d77f4b20efb7f871e74155a"
     ],
     "count": 1,
-    "create_time": 1777969402,
-    "update_time": 1777969402,
-    "_id": "团建投票<SEP>羽毛球"
+    "create_time": 1778048147,
+    "update_time": 1778048147,
+    "_id": "Blue Whale Report<SEP>Polaris Smart Scheduling"
   },
-  "16:30<SEP>Afternoon Tea Update": {
+  "Acceptance Criteria<SEP>Risk Identification": {
     "chunk_ids": [
-      "chunk-1041fcefcd08c4b8b16e0886ed561d59"
+      "chunk-a7a5f6a61d77f4b20efb7f871e74155a"
     ],
     "count": 1,
-    "create_time": 1777969402,
-    "update_time": 1777969402,
-    "_id": "16:30<SEP>Afternoon Tea Update"
+    "create_time": 1778048147,
+    "update_time": 1778048147,
+    "_id": "Acceptance Criteria<SEP>Risk Identification"
   },
-  "Meeting Room Reservation Issue<SEP>cache problem": {
+  "Polaris Exports Support<SEP>Polaris Smart Scheduling": {
     "chunk_ids": [
-      "chunk-1041fcefcd08c4b8b16e0886ed561d59"
+      "chunk-a7a5f6a61d77f4b20efb7f871e74155a"
     ],
     "count": 1,
-    "create_time": 1777969402,
-    "update_time": 1777969402,
-    "_id": "Meeting Room Reservation Issue<SEP>cache problem"
+    "create_time": 1778048147,
+    "update_time": 1778048147,
+    "_id": "Polaris Exports Support<SEP>Polaris Smart Scheduling"
   },
-  "Team Building Vote<SEP>activity options": {
+  "Polaris Audit Log<SEP>Risk Matrix": {
     "chunk_ids": [
-      "chunk-1041fcefcd08c4b8b16e0886ed561d59"
+      "chunk-a7a5f6a61d77f4b20efb7f871e74155a"
     ],
     "count": 1,
-    "create_time": 1777969402,
-    "update_time": 1777969402,
-    "_id": "Team Building Vote<SEP>activity options"
+    "create_time": 1778048147,
+    "update_time": 1778048147,
+    "_id": "Polaris Audit Log<SEP>Risk Matrix"
   },
-  "历史客户数据字段不一致<SEP>星桥CRM": {
+  "Xingqiao CRM<SEP>Xingqiao CRM Key Report": {
     "chunk_ids": [
-      "chunk-1b4ac1050fd4c4da4c13a546f1092f96"
+      "chunk-61ef8cd55c161340695f43105b297ff4"
     ],
     "count": 1,
-    "create_time": 1777969402,
-    "update_time": 1777969402,
-    "_id": "历史客户数据字段不一致<SEP>星桥CRM"
-  },
-  "Polaris<SEP>管理层": {
-    "chunk_ids": [
-      "chunk-1b4ac1050fd4c4da4c13a546f1092f96",
-      "chunk-6542522ab21aeb1f125ab7ac3d935dbc"
-    ],
-    "count": 2,
-    "update_time": 1777971025,
-    "_id": "Polaris<SEP>管理层"
+    "create_time": 1778048342,
+    "update_time": 1778048342,
+    "_id": "Xingqiao CRM<SEP>Xingqiao CRM Key Report"
   },
-  "埋点漏了一段<SEP>蓝鲸报表": {
+  "Core Scope<SEP>Release Schedule": {
     "chunk_ids": [
-      "chunk-1b4ac1050fd4c4da4c13a546f1092f96"
+      "chunk-61ef8cd55c161340695f43105b297ff4"
     ],
     "count": 1,
-    "create_time": 1777969402,
-    "update_time": 1777969402,
-    "_id": "埋点漏了一段<SEP>蓝鲸报表"
+    "create_time": 1778048342,
+    "update_time": 1778048342,
+    "_id": "Core Scope<SEP>Release Schedule"
   },
-  "Orion<SEP>海外支付网关": {
+  "Core Scope<SEP>Third Party Dependency": {
     "chunk_ids": [
-      "chunk-1b4ac1050fd4c4da4c13a546f1092f96"
+      "chunk-61ef8cd55c161340695f43105b297ff4"
     ],
     "count": 1,
-    "create_time": 1777969402,
-    "update_time": 1777969402,
-    "_id": "Orion<SEP>海外支付网关"
+    "create_time": 1778048342,
+    "update_time": 1778048342,
+    "_id": "Core Scope<SEP>Third Party Dependency"
   },
-  "Falcon<SEP>风控中台": {
+  "Orion Payment Gateway<SEP>Release Schedule": {
     "chunk_ids": [
-      "chunk-1b4ac1050fd4c4da4c13a546f1092f96"
+      "chunk-61ef8cd55c161340695f43105b297ff4"
     ],
     "count": 1,
-    "create_time": 1777969402,
-    "update_time": 1777969402,
-    "_id": "Falcon<SEP>风控中台"
+    "create_time": 1778048342,
+    "update_time": 1778048342,
+    "_id": "Orion Payment Gateway<SEP>Release Schedule"
   },
-  "接口回滚方案<SEP>星桥CRM": {
+  "Orion Overseas Payment Gateway<SEP>Orion Payment Gateway": {
     "chunk_ids": [
-      "chunk-1b4ac1050fd4c4da4c13a546f1092f96",
-      "chunk-6542522ab21aeb1f125ab7ac3d935dbc"
+      "chunk-61ef8cd55c161340695f43105b297ff4"
     ],
-    "count": 2,
-    "update_time": 1777971025,
-    "_id": "接口回滚方案<SEP>星桥CRM"
-  },
-  "蓝鲸报表<SEP>财务和运营口径存在差异": {
-    "chunk_ids": [
-      "chunk-1b4ac1050fd4c4da4c13a546f1092f96"
-    ],
     "count": 1,
-    "create_time": 1777969402,
-    "update_time": 1777969402,
-    "_id": "蓝鲸报表<SEP>财务和运营口径存在差异"
+    "create_time": 1778048342,
+    "update_time": 1778048342,
+    "_id": "Orion Overseas Payment Gateway<SEP>Orion Payment Gateway"
   },
-  "Orion<SEP>Orion支付网关": {
+  "Release Schedule<SEP>Xingqiao CRM": {
     "chunk_ids": [
-      "chunk-1b4ac1050fd4c4da4c13a546f1092f96"
+      "chunk-61ef8cd55c161340695f43105b297ff4"
     ],
     "count": 1,
-    "create_time": 1777969402,
-    "update_time": 1777969402,
-    "_id": "Orion<SEP>Orion支付网关"
+    "create_time": 1778048342,
+    "update_time": 1778048342,
+    "_id": "Release Schedule<SEP>Xingqiao CRM"
   },
-  "星桥CRM<SEP>验收口径": {
+  "Monitoring and Rollback<SEP>Release Schedule": {
     "chunk_ids": [
-      "chunk-1b4ac1050fd4c4da4c13a546f1092f96"
+      "chunk-61ef8cd55c161340695f43105b297ff4"
     ],
     "count": 1,
-    "create_time": 1777969402,
-    "update_time": 1777969402,
-    "_id": "星桥CRM<SEP>验收口径"
+    "create_time": 1778048342,
+    "update_time": 1778048342,
+    "_id": "Monitoring and Rollback<SEP>Release Schedule"
   },
-  "前端补充<SEP>星桥CRM": {
+  "Monitoring and Rollback<SEP>Root Cause Analysis": {
     "chunk_ids": [
-      "chunk-85ceb61467a102ff77b5ca7639e61dad"
+      "chunk-61ef8cd55c161340695f43105b297ff4"
     ],
     "count": 1,
-    "create_time": 1777969467,
-    "update_time": 1777969467,
-    "_id": "前端补充<SEP>星桥CRM"
+    "create_time": 1778048342,
+    "update_time": 1778048342,
+    "_id": "Monitoring and Rollback<SEP>Root Cause Analysis"
   },
-  "里程碑<SEP>需求拆解": {
+  "Blocking Items<SEP>Daily Report": {
     "chunk_ids": [
-      "chunk-85ceb61467a102ff77b5ca7639e61dad"
+      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
     ],
     "count": 1,
-    "create_time": 1777969467,
-    "update_time": 1777969467,
-    "_id": "里程碑<SEP>需求拆解"
+    "create_time": 1778048396,
+    "update_time": 1778048396,
+    "_id": "Blocking Items<SEP>Daily Report"
   },
-  "业务场景理解<SEP>客户演示": {
+  "Blue Whale Report<SEP>Completion Criteria": {
     "chunk_ids": [
-      "chunk-85ceb61467a102ff77b5ca7639e61dad"
+      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
     ],
     "count": 1,
-    "create_time": 1777969467,
-    "update_time": 1777969467,
-    "_id": "业务场景理解<SEP>客户演示"
+    "create_time": 1778048396,
+    "update_time": 1778048396,
+    "_id": "Blue Whale Report<SEP>Completion Criteria"
   },
-  "值班同学判断<SEP>告警描述": {
+  "Meeting Minutes<SEP>generated contents": {
     "chunk_ids": [
-      "chunk-85ceb61467a102ff77b5ca7639e61dad"
+      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
     ],
     "count": 1,
-    "create_time": 1777969467,
-    "update_time": 1777969467,
-    "_id": "值班同学判断<SEP>告警描述"
+    "create_time": 1778048396,
+    "update_time": 1778048396,
+    "_id": "Meeting Minutes<SEP>generated contents"
   },
-  "复盘<SEP>真实缺陷与沟通成本": {
+  "Falcon Risk Control Platform<SEP>Online Phase": {
     "chunk_ids": [
-      "chunk-85ceb61467a102ff77b5ca7639e61dad"
+      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
     ],
     "count": 1,
-    "create_time": 1777969467,
-    "update_time": 1777969467,
-    "_id": "复盘<SEP>真实缺陷与沟通成本"
+    "create_time": 1778048396,
+    "update_time": 1778048396,
+    "_id": "Falcon Risk Control Platform<SEP>Online Phase"
   },
-  "SQL排查思路<SEP>故障检测": {
+  "Integration Phase<SEP>Star Bridge CRM": {
     "chunk_ids": [
-      "chunk-85ceb61467a102ff77b5ca7639e61dad"
+      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
     ],
     "count": 1,
-    "create_time": 1777969467,
-    "update_time": 1777969467,
-    "_id": "SQL排查思路<SEP>故障检测"
+    "create_time": 1778048396,
+    "update_time": 1778048396,
+    "_id": "Integration Phase<SEP>Star Bridge CRM"
   },
-  "会议纪要<SEP>项目管理": {
+  "Orion Overseas Payment Gateway<SEP>Sandbox Verification Stage": {
     "chunk_ids": [
-      "chunk-85ceb61467a102ff77b5ca7639e61dad"
+      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
     ],
     "count": 1,
-    "create_time": 1777969467,
-    "update_time": 1777969467,
-    "_id": "会议纪要<SEP>项目管理"
+    "create_time": 1778048396,
+    "update_time": 1778048396,
+    "_id": "Orion Overseas Payment Gateway<SEP>Sandbox Verification Stage"
   },
-  "项目风险矩阵<SEP>风险评估": {
+  "Risk Assessment<SEP>Risk Table": {
     "chunk_ids": [
-      "chunk-85ceb61467a102ff77b5ca7639e61dad"
+      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
     ],
     "count": 1,
-    "create_time": 1777969467,
-    "update_time": 1777969467,
-    "_id": "项目风险矩阵<SEP>风险评估"
+    "create_time": 1778048396,
+    "update_time": 1778048396,
+    "_id": "Risk Assessment<SEP>Risk Table"
   },
-  "出差预算<SEP>财务安排": {
+  "Daily Progress<SEP>Risk List": {
     "chunk_ids": [
-      "chunk-85ceb61467a102ff77b5ca7639e61dad"
+      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
     ],
     "count": 1,
-    "create_time": 1777969467,
-    "update_time": 1777969467,
-    "_id": "出差预算<SEP>财务安排"
+    "create_time": 1778048396,
+    "update_time": 1778048396,
+    "_id": "Daily Progress<SEP>Risk List"
   },
-  "决策变更<SEP>管理层同步": {
+  "Sales Team<SEP>Unified Template": {
     "chunk_ids": [
-      "chunk-85ceb61467a102ff77b5ca7639e61dad"
+      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
     ],
     "count": 1,
-    "create_time": 1777969467,
-    "update_time": 1777969467,
-    "_id": "决策变更<SEP>管理层同步"
+    "create_time": 1778048396,
+    "update_time": 1778048396,
+    "_id": "Sales Team<SEP>Unified Template"
   },
-  "星桥CRM<SEP>缺失埋点": {
+  "Gray Data Run<SEP>Star Bridge CRM": {
     "chunk_ids": [
-      "chunk-85ceb61467a102ff77b5ca7639e61dad"
+      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
     ],
     "count": 1,
-    "create_time": 1777969467,
-    "update_time": 1777969467,
-    "_id": "星桥CRM<SEP>缺失埋点"
+    "create_time": 1778048396,
+    "update_time": 1778048396,
+    "_id": "Gray Data Run<SEP>Star Bridge CRM"
   },
-  "Memory<SEP>System Behavior": {
+  "Orion Payment Gateway Demo<SEP>Orion Payment Gateway Tracking": {
     "chunk_ids": [
-      "chunk-bb5c51b38f13dad45911c5ef26998736"
+      "chunk-cc62a6c9fb99d31439150380cef44c4d"
     ],
     "count": 1,
-    "create_time": 1777969874,
-    "update_time": 1777969874,
-    "_id": "Memory<SEP>System Behavior"
+    "create_time": 1778048461,
+    "update_time": 1778048461,
+    "_id": "Orion Payment Gateway Demo<SEP>Orion Payment Gateway Tracking"
   },
-  "Data Management<SEP>Memory": {
+  "Development Split Interface List<SEP>Product": {
     "chunk_ids": [
-      "chunk-bb5c51b38f13dad45911c5ef26998736"
+      "chunk-a719e38a41e4f45b9ddde017e3a10812"
     ],
     "count": 1,
-    "create_time": 1777969874,
-    "update_time": 1777969874,
-    "_id": "Data Management<SEP>Memory"
+    "create_time": 1778048461,
+    "update_time": 1778048461,
+    "_id": "Development Split Interface List<SEP>Product"
   },
-  "Algorithm<SEP>Memory": {
+  "Polaris Audit Log<SEP>Polaris Smart Scheduling Review": {
     "chunk_ids": [
-      "chunk-bb5c51b38f13dad45911c5ef26998736"
+      "chunk-cc62a6c9fb99d31439150380cef44c4d"
     ],
     "count": 1,
-    "create_time": 1777969874,
-    "update_time": 1777969874,
-    "_id": "Algorithm<SEP>Memory"
+    "create_time": 1778048461,
+    "update_time": 1778048461,
+    "_id": "Polaris Audit Log<SEP>Polaris Smart Scheduling Review"
   },
-  "Memory<SEP>Product Communication": {
+  "Project Pending Tasks<SEP>Project Risk Matrix": {
     "chunk_ids": [
-      "chunk-bb5c51b38f13dad45911c5ef26998736"
+      "chunk-cc62a6c9fb99d31439150380cef44c4d"
     ],
     "count": 1,
-    "create_time": 1777969874,
-    "update_time": 1777969874,
-    "_id": "Memory<SEP>Product Communication"
+    "create_time": 1778048461,
+    "update_time": 1778048461,
+    "_id": "Project Pending Tasks<SEP>Project Risk Matrix"
   },
-  "Memory<SEP>Performance Metrics": {
+  "Polaris Smart Scheduling Metrics<SEP>Polaris Smart Scheduling Report": {
     "chunk_ids": [
-      "chunk-bb5c51b38f13dad45911c5ef26998736"
+      "chunk-cc62a6c9fb99d31439150380cef44c4d"
     ],
     "count": 1,
-    "create_time": 1777969874,
-    "update_time": 1777969874,
-    "_id": "Memory<SEP>Performance Metrics"
+    "create_time": 1778048461,
+    "update_time": 1778048461,
+    "_id": "Polaris Smart Scheduling Metrics<SEP>Polaris Smart Scheduling Report"
   },
-  "Data Update<SEP>Memory": {
+  "Blueshell Report Alarm<SEP>Blueshell Report Risk": {
     "chunk_ids": [
-      "chunk-bb5c51b38f13dad45911c5ef26998736"
+      "chunk-cc62a6c9fb99d31439150380cef44c4d"
     ],
     "count": 1,
-    "create_time": 1777969874,
-    "update_time": 1777969874,
-    "_id": "Data Update<SEP>Memory"
+    "create_time": 1778048461,
+    "update_time": 1778048461,
+    "_id": "Blueshell Report Alarm<SEP>Blueshell Report Risk"
   },
-  "Memory<SEP>Project Management": {
+  "Product<SEP>Testing": {
     "chunk_ids": [
-      "chunk-bb5c51b38f13dad45911c5ef26998736"
+      "chunk-a719e38a41e4f45b9ddde017e3a10812"
     ],
     "count": 1,
-    "create_time": 1777969874,
-    "update_time": 1777969874,
-    "_id": "Memory<SEP>Project Management"
+    "create_time": 1778048462,
+    "update_time": 1778048462,
+    "_id": "Product<SEP>Testing"
   },
-  "Memory<SEP>灰度名单": {
+  "Operations<SEP>Product": {
     "chunk_ids": [
-      "chunk-bb5c51b38f13dad45911c5ef26998736"
+      "chunk-a719e38a41e4f45b9ddde017e3a10812"
     ],
     "count": 1,
-    "create_time": 1777969874,
-    "update_time": 1777969874,
-    "_id": "Memory<SEP>灰度名单"
-  },
-  "Memory<SEP>门店类型": {
-    "chunk_ids": [
-      "chunk-bb5c51b38f13dad45911c5ef26998736",
-      "chunk-26b06aa0c5b9f23d91349f546eaa888f"
-    ],
-    "count": 2,
-    "update_time": 1777970035,
-    "_id": "Memory<SEP>门店类型"
+    "create_time": 1778048462,
+    "update_time": 1778048462,
+    "_id": "Operations<SEP>Product"
   },
-  "Memory<SEP>门店经理": {
+  "Gray List<SEP>Operations": {
     "chunk_ids": [
-      "chunk-bb5c51b38f13dad45911c5ef26998736"
+      "chunk-a719e38a41e4f45b9ddde017e3a10812"
     ],
     "count": 1,
-    "create_time": 1777969874,
-    "update_time": 1777969874,
-    "_id": "Memory<SEP>门店经理"
+    "create_time": 1778048462,
+    "update_time": 1778048462,
+    "_id": "Gray List<SEP>Operations"
   },
-  "Memory<SEP>Report Results": {
+  "Acceptance Criteria<SEP>Product": {
     "chunk_ids": [
-      "chunk-26b06aa0c5b9f23d91349f546eaa888f"
+      "chunk-a719e38a41e4f45b9ddde017e3a10812"
     ],
     "count": 1,
-    "create_time": 1777970035,
-    "update_time": 1777970035,
-    "_id": "Memory<SEP>Report Results"
+    "create_time": 1778048462,
+    "update_time": 1778048462,
+    "_id": "Acceptance Criteria<SEP>Product"
   },
-  "Memory<SEP>Schedule Results": {
+  "Falcon<SEP>风险识别": {
     "chunk_ids": [
-      "chunk-26b06aa0c5b9f23d91349f546eaa888f"
+      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
     ],
     "count": 1,
-    "create_time": 1777970035,
-    "update_time": 1777970035,
-    "_id": "Memory<SEP>Schedule Results"
+    "create_time": 1778048549,
+    "update_time": 1778048549,
+    "_id": "Falcon<SEP>风险识别"
   },
-  "Meeting Decision<SEP>Memory": {
+  "Polaris<SEP>员工": {
     "chunk_ids": [
-      "chunk-26b06aa0c5b9f23d91349f546eaa888f"
+      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
     ],
     "count": 1,
-    "create_time": 1777970035,
-    "update_time": 1777970035,
-    "_id": "Meeting Decision<SEP>Memory"
+    "create_time": 1778048549,
+    "update_time": 1778048549,
+    "_id": "Polaris<SEP>员工"
   },
-  "Memory<SEP>新增门店": {
+  "核心指标<SEP>项目目标": {
     "chunk_ids": [
-      "chunk-26b06aa0c5b9f23d91349f546eaa888f"
+      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
     ],
     "count": 1,
-    "create_time": 1777970035,
-    "update_time": 1777970035,
-    "_id": "Memory<SEP>新增门店"
+    "create_time": 1778048549,
+    "update_time": 1778048549,
+    "_id": "核心指标<SEP>项目目标"
   },
-  "Memory<SEP>一线接受度": {
+  "决策支持系统<SEP>员工": {
     "chunk_ids": [
-      "chunk-26b06aa0c5b9f23d91349f546eaa888f"
+      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
     ],
     "count": 1,
-    "create_time": 1777970035,
-    "update_time": 1777970035,
-    "_id": "Memory<SEP>一线接受度"
+    "create_time": 1778048549,
+    "update_time": 1778048549,
+    "_id": "决策支持系统<SEP>员工"
   },
-  "Employee Skills<SEP>Staffing Risks": {
+  "里程碑结构<SEP>需求": {
     "chunk_ids": [
-      "chunk-fbb15a02ae7886cbf8118a76155f2a4d"
+      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
     ],
     "count": 1,
-    "create_time": 1777970663,
-    "update_time": 1777970663,
-    "_id": "Employee Skills<SEP>Staffing Risks"
+    "create_time": 1778048549,
+    "update_time": 1778048549,
+    "_id": "里程碑结构<SEP>需求"
   },
-  "Polaris<SEP>Product Documentation": {
+  "Polaris<SEP>核心指标": {
     "chunk_ids": [
-      "chunk-fbb15a02ae7886cbf8118a76155f2a4d"
+      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
     ],
     "count": 1,
-    "create_time": 1777970663,
-    "update_time": 1777970663,
-    "_id": "Polaris<SEP>Product Documentation"
+    "create_time": 1778048549,
+    "update_time": 1778048549,
+    "_id": "Polaris<SEP>核心指标"
   },
-  "Sample Management<SEP>Staffing Risks": {
+  "蓝鲸报表<SEP>风险识别": {
     "chunk_ids": [
-      "chunk-fbb15a02ae7886cbf8118a76155f2a4d"
+      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
     ],
     "count": 1,
-    "create_time": 1777970663,
-    "update_time": 1777970663,
-    "_id": "Sample Management<SEP>Staffing Risks"
+    "create_time": 1778048549,
+    "update_time": 1778048549,
+    "_id": "蓝鲸报表<SEP>风险识别"
   },
-  "Polaris<SEP>Scheduling": {
+  "产品文案<SEP>决策支持系统": {
     "chunk_ids": [
-      "chunk-fbb15a02ae7886cbf8118a76155f2a4d"
+      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
     ],
     "count": 1,
-    "create_time": 1777970663,
-    "update_time": 1777970663,
-    "_id": "Polaris<SEP>Scheduling"
+    "create_time": 1778048549,
+    "update_time": 1778048549,
+    "_id": "产品文案<SEP>决策支持系统"
   },
-  "Algorithm Replay<SEP>Staffing Risks": {
+  "Polaris<SEP>审计日志": {
     "chunk_ids": [
-      "chunk-fbb15a02ae7886cbf8118a76155f2a4d"
+      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
     ],
     "count": 1,
-    "create_time": 1777970663,
-    "update_time": 1777970663,
-    "_id": "Algorithm Replay<SEP>Staffing Risks"
+    "create_time": 1778048549,
+    "update_time": 1778048549,
+    "_id": "Polaris<SEP>审计日志"
   },
-  "Grayscale List<SEP>Sample Management": {
+  "Next Morning Meeting<SEP>Risk Assessment": {
     "chunk_ids": [
-      "chunk-fbb15a02ae7886cbf8118a76155f2a4d"
+      "chunk-57902305cc4fde183edf80ae8dd20894"
     ],
     "count": 1,
-    "create_time": 1777970663,
-    "update_time": 1777970663,
-    "_id": "Grayscale List<SEP>Sample Management"
+    "create_time": 1778048627,
+    "update_time": 1778048627,
+    "_id": "Next Morning Meeting<SEP>Risk Assessment"
   },
-  "Polaris<SEP>Project Management": {
+  "Core Commitment<SEP>Next Iteration": {
     "chunk_ids": [
-      "chunk-fbb15a02ae7886cbf8118a76155f2a4d"
+      "chunk-57902305cc4fde183edf80ae8dd20894"
     ],
     "count": 1,
-    "create_time": 1777970663,
-    "update_time": 1777970663,
-    "_id": "Polaris<SEP>Project Management"
+    "create_time": 1778048627,
+    "update_time": 1778048627,
+    "_id": "Core Commitment<SEP>Next Iteration"
   },
-  "12 Stores<SEP>Staffing Risks": {
+  "Manual Backup<SEP>Store Manager": {
     "chunk_ids": [
-      "chunk-fbb15a02ae7886cbf8118a76155f2a4d"
+      "chunk-57902305cc4fde183edf80ae8dd20894"
     ],
     "count": 1,
-    "create_time": 1777970663,
-    "update_time": 1777970663,
-    "_id": "12 Stores<SEP>Staffing Risks"
+    "create_time": 1778048627,
+    "update_time": 1778048627,
+    "_id": "Manual Backup<SEP>Store Manager"
   },
-  "Orion Overseas Payment Gateway<SEP>Project Decision Summary": {
+  "Gray Test Phase<SEP>Pilot Stores": {
     "chunk_ids": [
-      "chunk-257dc3149297f67229682b3933f5d357"
+      "chunk-57902305cc4fde183edf80ae8dd20894"
     ],
     "count": 1,
-    "create_time": 1777970694,
-    "update_time": 1777970694,
-    "_id": "Orion Overseas Payment Gateway<SEP>Project Decision Summary"
+    "create_time": 1778048627,
+    "update_time": 1778048627,
+    "_id": "Gray Test Phase<SEP>Pilot Stores"
   },
-  "Falcon Risk Control Center<SEP>Report Updates": {
+  "Business and Technical Teams<SEP>Labor Compliance": {
     "chunk_ids": [
-      "chunk-257dc3149297f67229682b3933f5d357"
+      "chunk-57902305cc4fde183edf80ae8dd20894"
     ],
     "count": 1,
-    "create_time": 1777970694,
-    "update_time": 1777970694,
-    "_id": "Falcon Risk Control Center<SEP>Report Updates"
+    "create_time": 1778048627,
+    "update_time": 1778048627,
+    "_id": "Business and Technical Teams<SEP>Labor Compliance"
   },
-  "Star Bridge CRM<SEP>Star Bridge CRM Acceptance Criteria": {
+  "Acceptance Criteria<SEP>Polaris Intelligent Scheduling": {
     "chunk_ids": [
-      "chunk-257dc3149297f67229682b3933f5d357"
+      "chunk-57902305cc4fde183edf80ae8dd20894"
     ],
     "count": 1,
-    "create_time": 1777970694,
-    "update_time": 1777970694,
-    "_id": "Star Bridge CRM<SEP>Star Bridge CRM Acceptance Criteria"
+    "create_time": 1778048627,
+    "update_time": 1778048627,
+    "_id": "Acceptance Criteria<SEP>Polaris Intelligent Scheduling"
   },
-  "Polaris<SEP>Polaris Smart Scheduling Report": {
+  "Key Report Commitment<SEP>Next Iteration": {
     "chunk_ids": [
-      "chunk-257dc3149297f67229682b3933f5d357"
+      "chunk-57902305cc4fde183edf80ae8dd20894"
     ],
     "count": 1,
-    "create_time": 1777970694,
-    "update_time": 1777970694,
-    "_id": "Polaris<SEP>Polaris Smart Scheduling Report"
+    "create_time": 1778048627,
+    "update_time": 1778048627,
+    "_id": "Key Report Commitment<SEP>Next Iteration"
   },
-  "Client Communication Draft<SEP>Star Bridge CRM": {
+  "Labor Compliance<SEP>Model Evaluation Phase": {
     "chunk_ids": [
-      "chunk-257dc3149297f67229682b3933f5d357"
+      "chunk-57902305cc4fde183edf80ae8dd20894"
     ],
     "count": 1,
-    "create_time": 1777970694,
-    "update_time": 1777970694,
-    "_id": "Client Communication Draft<SEP>Star Bridge CRM"
+    "create_time": 1778048627,
+    "update_time": 1778048627,
+    "_id": "Labor Compliance<SEP>Model Evaluation Phase"
   },
-  "Historical Customer Data Field Inconsistencies<SEP>Star Bridge CRM": {
+  "Next Iteration<SEP>Risk Control Commitment": {
     "chunk_ids": [
-      "chunk-257dc3149297f67229682b3933f5d357"
+      "chunk-57902305cc4fde183edf80ae8dd20894"
     ],
     "count": 1,
-    "create_time": 1777970694,
-    "update_time": 1777970694,
-    "_id": "Historical Customer Data Field Inconsistencies<SEP>Star Bridge CRM"
+    "create_time": 1778048627,
+    "update_time": 1778048627,
+    "_id": "Next Iteration<SEP>Risk Control Commitment"
   },
-  "Interface Rollback Plan<SEP>Star Bridge CRM": {
+  "PoC Acceptance Criteria<SEP>Polaris Intelligent Scheduling": {
     "chunk_ids": [
-      "chunk-257dc3149297f67229682b3933f5d357"
+      "chunk-57902305cc4fde183edf80ae8dd20894"
     ],
     "count": 1,
-    "create_time": 1777970694,
-    "update_time": 1777970694,
-    "_id": "Interface Rollback Plan<SEP>Star Bridge CRM"
+    "create_time": 1778048627,
+    "update_time": 1778048627,
+    "_id": "PoC Acceptance Criteria<SEP>Polaris Intelligent Scheduling"
   },
-  "Risk Matrix Advice<SEP>Xingqiao CRM": {
+  "Falcon风控中台<SEP>acceptance criteria": {
     "chunk_ids": [
-      "chunk-4f6518c25c68e803227152a9928769c1"
+      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
     ],
     "count": 1,
-    "create_time": 1777970842,
-    "update_time": 1777970842,
-    "_id": "Risk Matrix Advice<SEP>Xingqiao CRM"
+    "create_time": 1778048666,
+    "update_time": 1778048666,
+    "_id": "Falcon风控中台<SEP>acceptance criteria"
   },
-  "Blue Whale Report<SEP>Meeting Room Reservation System": {
+  "Polaris<SEP>explanation button": {
     "chunk_ids": [
-      "chunk-4f6518c25c68e803227152a9928769c1"
+      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
     ],
     "count": 1,
-    "create_time": 1777970842,
-    "update_time": 1777970842,
-    "_id": "Blue Whale Report<SEP>Meeting Room Reservation System"
+    "create_time": 1778048666,
+    "update_time": 1778048666,
+    "_id": "Polaris<SEP>explanation button"
   },
-  "Overall Project Schedule<SEP>Polaris": {
+  "customer demo<SEP>白雨": {
     "chunk_ids": [
-      "chunk-4f6518c25c68e803227152a9928769c1"
+      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
     ],
     "count": 1,
-    "create_time": 1777970842,
-    "update_time": 1777970842,
-    "_id": "Overall Project Schedule<SEP>Polaris"
+    "create_time": 1778048666,
+    "update_time": 1778048666,
+    "_id": "customer demo<SEP>白雨"
   },
-  "Polaris<SEP>Polaris Audit Log": {
+  "Orion海外支付网关<SEP>management communication": {
     "chunk_ids": [
-      "chunk-4f6518c25c68e803227152a9928769c1"
+      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
     ],
     "count": 1,
-    "create_time": 1777970842,
-    "update_time": 1777970842,
-    "_id": "Polaris<SEP>Polaris Audit Log"
+    "create_time": 1778048666,
+    "update_time": 1778048666,
+    "_id": "Orion海外支付网关<SEP>management communication"
   },
-  "Falcon<SEP>Overall Project Schedule": {
+  "backlog<SEP>scope management": {
     "chunk_ids": [
-      "chunk-4f6518c25c68e803227152a9928769c1"
+      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
     ],
     "count": 1,
-    "create_time": 1777970842,
-    "update_time": 1777970842,
-    "_id": "Falcon<SEP>Overall Project Schedule"
+    "create_time": 1778048666,
+    "update_time": 1778048666,
+    "_id": "backlog<SEP>scope management"
   },
-  "Orion<SEP>Overall Project Schedule": {
+  "Polaris<SEP>audit log storage": {
     "chunk_ids": [
-      "chunk-4f6518c25c68e803227152a9928769c1"
+      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
     ],
     "count": 1,
-    "create_time": 1777970842,
-    "update_time": 1777970842,
-    "_id": "Orion<SEP>Overall Project Schedule"
+    "create_time": 1778048666,
+    "update_time": 1778048666,
+    "_id": "Polaris<SEP>audit log storage"
   },
-  "Falcon<SEP>Falcon Risk Control Weekly Report": {
+  "acceptance criteria<SEP>蓝鲸报表": {
     "chunk_ids": [
-      "chunk-4f6518c25c68e803227152a9928769c1"
+      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
     ],
     "count": 1,
-    "create_time": 1777970842,
-    "update_time": 1777970842,
-    "_id": "Falcon<SEP>Falcon Risk Control Weekly Report"
+    "create_time": 1778048666,
+    "update_time": 1778048666,
+    "_id": "acceptance criteria<SEP>蓝鲸报表"
   },
-  "Orion<SEP>Orion Overseas Payment Weekly Report": {
+  "Polaris智能排班<SEP>acceptance criteria": {
     "chunk_ids": [
-      "chunk-4f6518c25c68e803227152a9928769c1"
+      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
     ],
     "count": 1,
-    "create_time": 1777970842,
-    "update_time": 1777970842,
-    "_id": "Orion<SEP>Orion Overseas Payment Weekly Report"
+    "create_time": 1778048666,
+    "update_time": 1778048666,
+    "_id": "Polaris智能排班<SEP>acceptance criteria"
   },
-  "语言内容<SEP>面向业务方的解释": {
+  "Polaris<SEP>scope management": {
     "chunk_ids": [
-      "chunk-6542522ab21aeb1f125ab7ac3d935dbc"
+      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
     ],
     "count": 1,
-    "create_time": 1777971025,
-    "update_time": 1777971025,
-    "_id": "语言内容<SEP>面向业务方的解释"
+    "create_time": 1778048666,
+    "update_time": 1778048666,
+    "_id": "Polaris<SEP>scope management"
   },
-  "Falcon风控中台<SEP>绿色项": {
+  "Polaris Review Metrics<SEP>Review Scope": {
     "chunk_ids": [
-      "chunk-6542522ab21aeb1f125ab7ac3d935dbc"
+      "chunk-0baf43ebc0b5e09bd22b03ea28799d01"
     ],
     "count": 1,
-    "create_time": 1777971025,
-    "update_time": 1777971025,
-    "_id": "Falcon风控中台<SEP>绿色项"
+    "create_time": 1778048743,
+    "update_time": 1778048743,
+    "_id": "Polaris Review Metrics<SEP>Review Scope"
   },
-  "Business District Store<SEP>Model Playback": {
+  "Polaris Audit Log<SEP>Risk Matrix Generation": {
     "chunk_ids": [
-      "chunk-b5100b07b1d9802e83eb27a9fc3e5bf0"
+      "chunk-0baf43ebc0b5e09bd22b03ea28799d01"
     ],
     "count": 1,
-    "create_time": 1777971025,
-    "update_time": 1777971025,
-    "_id": "Business District Store<SEP>Model Playback"
+    "create_time": 1778048743,
+    "update_time": 1778048743,
+    "_id": "Polaris Audit Log<SEP>Risk Matrix Generation"
   },
-  "客户数据字段<SEP>星桥CRM": {
+  "Customer Demo Preference<SEP>Falcon Risk Control Demo": {
     "chunk_ids": [
-      "chunk-6542522ab21aeb1f125ab7ac3d935dbc"
+      "chunk-0baf43ebc0b5e09bd22b03ea28799d01"
     ],
     "count": 1,
-    "create_time": 1777971025,
-    "update_time": 1777971025,
-    "_id": "客户数据字段<SEP>星桥CRM"
+    "create_time": 1778048743,
+    "update_time": 1778048743,
+    "_id": "Customer Demo Preference<SEP>Falcon Risk Control Demo"
   },
-  "Community Store<SEP>Model Playback": {
+  "Business Trip Plan<SEP>Meeting Room Booking Issue": {
     "chunk_ids": [
-      "chunk-b5100b07b1d9802e83eb27a9fc3e5bf0"
+      "chunk-0baf43ebc0b5e09bd22b03ea28799d01"
     ],
     "count": 1,
-    "create_time": 1777971025,
-    "update_time": 1777971025,
-    "_id": "Community Store<SEP>Model Playback"
+    "create_time": 1778048743,
+    "update_time": 1778048743,
+    "_id": "Business Trip Plan<SEP>Meeting Room Booking Issue"
   },
-  "Falcon风控中台<SEP>黄色项": {
+  "Polaris Intelligent Scheduling<SEP>Polaris Scheduling Report": {
     "chunk_ids": [
-      "chunk-6542522ab21aeb1f125ab7ac3d935dbc"
+      "chunk-0baf43ebc0b5e09bd22b03ea28799d01"
     ],
     "count": 1,
-    "create_time": 1777971025,
-    "update_time": 1777971025,
-    "_id": "Falcon风控中台<SEP>黄色项"
+    "create_time": 1778048743,
+    "update_time": 1778048743,
+    "_id": "Polaris Intelligent Scheduling<SEP>Polaris Scheduling Report"
   },
-  "Memory<SEP>Model Playback": {
+  "Polaris智能排班<SEP>试点门店": {
     "chunk_ids": [
-      "chunk-b5100b07b1d9802e83eb27a9fc3e5bf0"
+      "chunk-15044e321936a9838efaca34c4b7be2f"
     ],
     "count": 1,
-    "create_time": 1777971025,
-    "update_time": 1777971025,
-    "_id": "Memory<SEP>Model Playback"
+    "create_time": 1778048831,
+    "update_time": 1778048831,
+    "_id": "Polaris智能排班<SEP>试点门店"
   },
-  "Fact<SEP>Model Playback": {
+  "回滚脚本<SEP>监控告警": {
     "chunk_ids": [
-      "chunk-b5100b07b1d9802e83eb27a9fc3e5bf0"
+      "chunk-15044e321936a9838efaca34c4b7be2f"
     ],
     "count": 1,
-    "create_time": 1777971025,
-    "update_time": 1777971025,
-    "_id": "Fact<SEP>Model Playback"
+    "create_time": 1778048831,
+    "update_time": 1778048831,
+    "_id": "回滚脚本<SEP>监控告警"
   },
-  "Falcon风控中台<SEP>红色项": {
+  "人工兜底<SEP>决策": {
     "chunk_ids": [
-      "chunk-6542522ab21aeb1f125ab7ac3d935dbc"
+      "chunk-15044e321936a9838efaca34c4b7be2f"
     ],
     "count": 1,
-    "create_time": 1777971025,
-    "update_time": 1777971025,
-    "_id": "Falcon风控中台<SEP>红色项"
+    "create_time": 1778048831,
+    "update_time": 1778048831,
+    "_id": "人工兜底<SEP>决策"
   },
-  "22214<SEP>Fact": {
+  "PoC阶段<SEP>Polaris智能排班": {
     "chunk_ids": [
-      "chunk-b5100b07b1d9802e83eb27a9fc3e5bf0"
+      "chunk-15044e321936a9838efaca34c4b7be2f"
     ],
     "count": 1,
-    "create_time": 1777971025,
-    "update_time": 1777971025,
-    "_id": "22214<SEP>Fact"
+    "create_time": 1778048831,
+    "update_time": 1778048831,
+    "_id": "PoC阶段<SEP>Polaris智能排班"
   },
-  "1777971010<SEP>Fact": {
+  "成功率<SEP>模型评估": {
     "chunk_ids": [
-      "chunk-b5100b07b1d9802e83eb27a9fc3e5bf0"
+      "chunk-15044e321936a9838efaca34c4b7be2f"
     ],
     "count": 1,
-    "create_time": 1777971025,
-    "update_time": 1777971025,
-    "_id": "1777971010<SEP>Fact"
+    "create_time": 1778048831,
+    "update_time": 1778048831,
+    "_id": "成功率<SEP>模型评估"
   },
-  "会议纪要<SEP>星桥CRM": {
+  "响应时间<SEP>模型评估": {
     "chunk_ids": [
-      "chunk-db7406a7cec74cac415bb65e61af0c02"
+      "chunk-15044e321936a9838efaca34c4b7be2f"
     ],
     "count": 1,
-    "create_time": 1777971726,
-    "update_time": 1777971726,
-    "_id": "会议纪要<SEP>星桥CRM"
+    "create_time": 1778048831,
+    "update_time": 1778048831,
+    "_id": "响应时间<SEP>模型评估"
   },
-  "Client Expectation<SEP>Project Verification": {
+  "Polaris智能排班<SEP>模型评估": {
     "chunk_ids": [
-      "chunk-db7406a7cec74cac415bb65e61af0c02"
+      "chunk-15044e321936a9838efaca34c4b7be2f"
     ],
     "count": 1,
-    "create_time": 1777971726,
-    "update_time": 1777971726,
-    "_id": "Client Expectation<SEP>Project Verification"
+    "create_time": 1778048831,
+    "update_time": 1778048831,
+    "_id": "Polaris智能排班<SEP>模型评估"
   },
-  "Polaris Intelligent Scheduling<SEP>Project Progress": {
+  "异常兜底<SEP>模型评估": {
     "chunk_ids": [
-      "chunk-db7406a7cec74cac415bb65e61af0c02"
+      "chunk-15044e321936a9838efaca34c4b7be2f"
     ],
     "count": 1,
-    "create_time": 1777971726,
-    "update_time": 1777971726,
-    "_id": "Polaris Intelligent Scheduling<SEP>Project Progress"
+    "create_time": 1778048831,
+    "update_time": 1778048831,
+    "_id": "异常兜底<SEP>模型评估"
   },
-  "Orion Overseas Payment Gateway<SEP>Project Progress": {
+  "Polaris智能排班<SEP>决策": {
     "chunk_ids": [
-      "chunk-db7406a7cec74cac415bb65e61af0c02"
+      "chunk-15044e321936a9838efaca34c4b7be2f"
     ],
     "count": 1,
-    "create_time": 1777971726,
-    "update_time": 1777971726,
-    "_id": "Orion Overseas Payment Gateway<SEP>Project Progress"
+    "create_time": 1778048831,
+    "update_time": 1778048831,
+    "_id": "Polaris智能排班<SEP>决策"
   },
-  "会议纪要<SEP>蓝鲸报表": {
+  "人工回滚入口<SEP>模型评估": {
     "chunk_ids": [
-      "chunk-db7406a7cec74cac415bb65e61af0c02"
+      "chunk-15044e321936a9838efaca34c4b7be2f"
     ],
     "count": 1,
-    "create_time": 1777971726,
-    "update_time": 1777971726,
-    "_id": "会议纪要<SEP>蓝鲸报表"
+    "create_time": 1778048831,
+    "update_time": 1778048831,
+    "_id": "人工回滚入口<SEP>模型评估"
   },
-  "Project Progress<SEP>Xingqiao CRM": {
+  "Polaris智能排班<SEP>统一口径": {
     "chunk_ids": [
-      "chunk-db7406a7cec74cac415bb65e61af0c02"
+      "chunk-15044e321936a9838efaca34c4b7be2f"
     ],
     "count": 1,
-    "create_time": 1777971726,
-    "update_time": 1777971726,
-    "_id": "Project Progress<SEP>Xingqiao CRM"
+    "create_time": 1778048831,
+    "update_time": 1778048831,
+    "_id": "Polaris智能排班<SEP>统一口径"
   },
-  "Blue Whale Report<SEP>Project Progress": {
+  "Polaris智能排班<SEP>数据样本": {
     "chunk_ids": [
-      "chunk-db7406a7cec74cac415bb65e61af0c02"
+      "chunk-15044e321936a9838efaca34c4b7be2f"
     ],
     "count": 1,
-    "create_time": 1777971726,
-    "update_time": 1777971726,
-    "_id": "Blue Whale Report<SEP>Project Progress"
+    "create_time": 1778048831,
+    "update_time": 1778048831,
+    "_id": "Polaris智能排班<SEP>数据样本"
   },
-  "Falcon Risk Control Platform<SEP>Project Progress": {
+  "Polaris智能排班<SEP>灰度版本": {
     "chunk_ids": [
-      "chunk-db7406a7cec74cac415bb65e61af0c02"
+      "chunk-15044e321936a9838efaca34c4b7be2f"
     ],
     "count": 1,
-    "create_time": 1777971727,
-    "update_time": 1777971727,
-    "_id": "Falcon Risk Control Platform<SEP>Project Progress"
+    "create_time": 1778048831,
+    "update_time": 1778048831,
+    "_id": "Polaris智能排班<SEP>灰度版本"
   }
 }

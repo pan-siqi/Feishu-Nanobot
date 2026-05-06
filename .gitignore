@@ -31,3 +31,5 @@ analysis/
 analysis/**
 
 docs/proposal/**
+
+tests/**

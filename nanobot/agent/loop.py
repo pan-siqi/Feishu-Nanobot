@@ -43,6 +43,7 @@ from nanobot.utils.document import extract_documents
 from nanobot.utils.helpers import image_placeholder_text
 from nanobot.utils.helpers import truncate_text as truncate_text_fn
 from nanobot.utils.runtime import EMPTY_FINAL_RESPONSE_MESSAGE
+from nanobot.utils.prompt_templates import render_template
 
 if TYPE_CHECKING:
     from nanobot.config.schema import ChannelsConfig, ExecToolConfig, WebToolsConfig
@@ -193,23 +194,21 @@ class AgentLoop:
         self._extra_hooks: list[AgentHook] = hooks or []
 
         # our memory structure
-        self.episodic_memorystore = EpisodicMemoryStore(workspace=workspace, provider=self.provider, model=self.model)
-
-        decision_memorystore = DecisionMemoryStore(
-            workspace=str(workspace),
-            provider=self.provider,
-            model=self.model,
-            episodic=self.episodic_memorystore,
-        )
+        self._mem_save_path = os.path.join(self.workspace, 'memory')
+        if not os.path.exists(self._mem_save_path): os.mkdir(self._mem_save_path)
+        BATCH_SIZE: int = 200
+        MAX_SCORE: float = 0.5
         
-        self.decision_memorystore = decision_memorystore
-
+        self.episodic = EpisodicMemoryStore(workspace=self.workspace, mem_save_path=self._mem_save_path, provider=provider, model=self.model)
+        self.decision = DecisionMemoryStore(workspace=self.workspace, mem_save_path=self._mem_save_path, provider=provider, model=self.model, batch_size=BATCH_SIZE, max_score=MAX_SCORE)
+        self.shorterm = ShortermMemoryStore(workspace=self.workspace, mem_save_path=self._mem_save_path, episodic=self.episodic, decision=self.decision)
+        
         self.context = ContextBuilder(
             workspace,
-            self.episodic_memorystore,
+            self.episodic,
+            self.decision,
             timezone=timezone,
             disabled_skills=disabled_skills,
-            decision_memorystore=decision_memorystore,
         )
         self.sessions = session_manager or SessionManager(workspace)
         self.tools = ToolRegistry()
@@ -264,12 +263,6 @@ class AgentLoop:
         #     provider=provider,
         #     model=self.model,
         # )
-
-        self.shorterm_memorystore = ShortermMemoryStore(
-            workspace=str(workspace),
-            episodic_memorystore=self.episodic_memorystore,
-            decision_memorystore=decision_memorystore,
-        )
 
         self._register_default_tools()
         self.commands = CommandRouter()
@@ -577,7 +570,9 @@ class AgentLoop:
                         msg, on_stream=on_stream, on_stream_end=on_stream_end,
                         pending_queue=pending,
                     )
-                    if response is not None:
+                    if response == 'Read but no reply':
+                        logger.info('已读不回[😤]')
+                    elif response is not None:
                         await self.bus.publish_outbound(response)
                     elif msg.channel == "cli":
                         await self.bus.publish_outbound(OutboundMessage(
@@ -644,7 +639,7 @@ class AgentLoop:
         on_stream: Callable[[str], Awaitable[None]] | None = None,
         on_stream_end: Callable[..., Awaitable[None]] | None = None,
         pending_queue: asyncio.Queue | None = None,
-    ) -> OutboundMessage | None:
+    ) -> OutboundMessage | None | str:
         """Process a single inbound message and return the response."""
         # System messages: parse origin from chat_id ("channel:chat_id")
         if msg.channel == "system":
@@ -665,7 +660,7 @@ class AgentLoop:
             self._set_tool_context(channel, chat_id, msg.metadata.get("message_id"))
             
             # use shorterm's history
-            history = await self.shorterm_memorystore.rebuild_history(session)
+            history = await self.shorterm.rebuild_history(session)
             # history = session.get_history(max_messages=0)
             current_role = "assistant" if msg.sender_id == "subagent" else "user"
 
@@ -722,7 +717,7 @@ class AgentLoop:
 
         # history = session.get_history(max_messages=0)
         # use shorterm's history
-        history = await self.shorterm_memorystore.rebuild_history(session)
+        history = await self.shorterm.rebuild_history(session)
 
         initial_messages = await self.context.build_messages(
             history=history,
@@ -754,10 +749,17 @@ class AgentLoop:
         # makes recovery possible from the session log alone.
         user_persisted_early = False
         if isinstance(msg.content, str) and msg.content.strip():
-            session.add_message("user", msg.content)
+            # session.add_message("user", msg.content)
+            msg_content: str = f'[{msg.sender_id}]: {msg.content}'
+            session.add_message("user", msg_content)
             self._mark_pending_user_turn(session)
             self.sessions.save(session)
             user_persisted_early = True
+
+        # set block 
+        if not msg.is_mentioned:
+            if self._block_message(session):
+                return 'Read but no reply'
 
         final_content, _, all_msgs, stop_reason, had_injections = await self._run_agent_loop(
             initial_messages,
@@ -804,6 +806,18 @@ class AgentLoop:
             content=final_content,
             metadata=meta,
         )
+
+    def _block_message(self, session) -> bool: # [True, False]
+        '''
+        session.messages: [{'role': 'user', 'content': '[user id]: xxx', 'timestamp': 'xxx'}]
+        --> LLM --> True/False
+        '''
+        message = [
+            {'role': 'user', 'content': render_template('custom/t1.md', strip=True, value='xxx')}
+        ]
+        response = self.provider.chat_with_retry(message)
+        print(f'skip: {session.messages[-1]['content']}')
+        return True
 
     def _sanitize_persisted_blocks(
         self,
@@ -978,15 +992,15 @@ class AgentLoop:
         if not session.metadata.get(self._PENDING_USER_TURN_KEY):
             return False
 
-        if session.messages and session.messages[-1].get("role") == "user":
-            session.messages.append(
-                {
-                    "role": "assistant",
-                    "content": "Error: Task interrupted before a response was generated.",
-                    "timestamp": datetime.now().isoformat(),
-                }
-            )
-            session.updated_at = datetime.now()
+        # if session.messages and session.messages[-1].get("role") == "user":
+        #     session.messages.append(
+        #         {
+        #             "role": "assistant",
+        #             "content": "Error: Task interrupted before a response was generated.",
+        #             "timestamp": datetime.now().isoformat(),
+        #         }
+        #     )
+        #     session.updated_at = datetime.now()
 
         self._clear_pending_user_turn(session)
         return True
