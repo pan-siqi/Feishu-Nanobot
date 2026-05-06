@@ -37,8 +37,8 @@ class ShortermMemoryStore:
         history: List[Dict[str, Any]] = session.get_history(max_messages=0, clip_index=self._cursor)
         
         # if should rebuild
-        # if self._is_rebuild(history):
-        if True:
+        # if True:
+        if self._is_rebuild(history):
             _num: int = self._get_num(history)
             batch = history[0:_num]
             self._save_history(batch)

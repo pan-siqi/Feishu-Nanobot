@@ -1,954 +1,658 @@
 {
-  "doc-0fb39d7ab4ebb1627da577667df01f93": {
+  "doc-ae9bad23c518fcb3bc3f6dabc9f830b7": {
     "relation_pairs": [
       [
-        "Product Documentation",
-        "Staffing"
+        "Goal Discussion on Stability and Pilot",
+        "Task Generate Meeting Minutes"
       ],
       [
-        "Employee Skills",
-        "New Store Opening"
-      ],
-      [
-        "数据验证",
-        "样本变化"
-      ],
-      [
-        "Algorithm Replay",
-        "New Store Opening"
-      ],
-      [
-        "Employee Skills",
-        "Project Management"
-      ],
-      [
-        "回放结果",
-        "连班次数"
-      ],
-      [
-        "员工技能",
-        "连班次数"
-      ],
-      [
-        "Data Validation",
-        "Staffing"
-      ]
-    ],
-    "count": 8,
-    "create_time": 1777967021,
-    "update_time": 1777967021,
-    "_id": "doc-0fb39d7ab4ebb1627da577667df01f93"
-  },
-  "doc-b3fba99e4e16b08c01c14a9c9e7177ab": {
-    "relation_pairs": [
-      [
-        "Memory",
-        "高峰时段"
-      ],
-      [
-        "Memory",
-        "员工技能标签"
-      ],
-      [
-        "Memory",
-        "Shift Schedule"
-      ],
-      [
-        "Memory",
-        "Product Documentation"
-      ],
-      [
-        "Algorithm Replay",
-        "Memory"
-      ],
-      [
-        "Memory",
-        "季度报告"
-      ],
-      [
-        "Memory",
-        "门店"
-      ],
-      [
-        "Gray List",
-        "Memory"
-      ],
-      [
-        "Memory",
-        "Report Stability"
-      ],
-      [
-        "Boundary Condition",
-        "Memory"
-      ],
-      [
-        "Explanation Panel",
-        "Memory"
-      ],
-      [
-        "Memory",
-        "Schedule Verification"
-      ]
-    ],
-    "count": 12,
-    "create_time": 1777967022,
-    "update_time": 1777967022,
-    "_id": "doc-b3fba99e4e16b08c01c14a9c9e7177ab"
-  },
-  "doc-847726ab3add2aec75c8f03c2bc49d8b": {
-    "relation_pairs": [
-      [
-        "Data Update",
-        "Testing"
-      ],
-      [
-        "Algorithm",
-        "Data Update"
-      ],
-      [
-        "Employee Skills",
-        "Testing"
-      ],
-      [
-        "12 Stores",
-        "Workforce"
-      ],
-      [
-        "Algorithm",
-        "Product Communication"
-      ],
-      [
-        "Employee Skills",
-        "Workforce"
-      ]
-    ],
-    "count": 6,
-    "create_time": 1777967032,
-    "update_time": 1777967032,
-    "_id": "doc-847726ab3add2aec75c8f03c2bc49d8b"
-  },
-  "doc-4dbcc7b99de8467cf3d4d5750dec3723": {
-    "relation_pairs": [
-      [
-        "人手不足风险",
-        "员工连续晚班次数"
-      ],
-      [
-        "员工技能标签",
-        "系统"
-      ],
-      [
-        "全量上线或区域试点",
-        "指标"
-      ],
-      [
-        "算法回放",
-        "门店类型"
-      ],
-      [
-        "样本变化",
-        "灰度名单"
-      ],
-      [
-        "新增门店",
-        "灰度名单"
-      ],
-      [
-        "团队成员",
-        "灰度测试"
-      ]
-    ],
-    "count": 7,
-    "create_time": 1777967035,
-    "update_time": 1777967035,
-    "_id": "doc-4dbcc7b99de8467cf3d4d5750dec3723"
-  },
-  "doc-23024f9ea6618de13fe52f15018d4109": {
-    "relation_pairs": [
-      [
-        "Employee Skills Issue",
-        "Weekend Staffing Risk"
-      ],
-      [
-        "Meeting Minutes",
-        "SQL Investigation Strategy"
-      ],
-      [
-        "Algorithm Playback Grouping",
-        "Gray List Management"
-      ],
-      [
-        "Explanation Panel Structure",
-        "System Intent Communication"
-      ]
-    ],
-    "count": 4,
-    "create_time": 1777967044,
-    "update_time": 1777967044,
-    "_id": "doc-23024f9ea6618de13fe52f15018d4109"
-  },
-  "doc-9ff3855b72b767c3bec7568b60fc84f9": {
-    "relation_pairs": [
-      [
-        "Product Documentation",
-        "Project Management"
-      ],
-      [
-        "Testing Strategy",
-        "样本变化"
-      ],
-      [
-        "Algorithm Analysis",
-        "Project Management"
-      ],
-      [
-        "Testing Strategy",
-        "新增门店"
-      ],
-      [
-        "Data Management",
-        "Testing Strategy"
-      ],
-      [
-        "Algorithm Analysis",
-        "Testing Strategy"
-      ],
-      [
-        "Employee Scheduling",
-        "Staffing Risk"
-      ],
-      [
-        "Product Documentation",
-        "门店经理"
-      ],
-      [
-        "员工技能标签",
-        "员工排班"
-      ]
-    ],
-    "count": 9,
-    "create_time": 1777967045,
-    "update_time": 1777967045,
-    "_id": "doc-9ff3855b72b767c3bec7568b60fc84f9"
-  },
-  "doc-4e0f1885eb6771149f93a455915b9113": {
-    "relation_pairs": [
-      [
-        "员工",
-        "门店"
-      ],
-      [
-        "Scheduling Results",
-        "Staffing Results"
-      ],
-      [
-        "Algorithm Replay",
-        "New Store Management"
-      ],
-      [
-        "Employee Skills",
-        "Scheduling Results"
-      ],
-      [
-        "New Store Management",
-        "Product Documentation"
-      ]
-    ],
-    "count": 5,
-    "create_time": 1777967054,
-    "update_time": 1777967054,
-    "_id": "doc-4e0f1885eb6771149f93a455915b9113"
-  },
-  "doc-2e07022cad33ab55065c5bba8a438969": {
-    "relation_pairs": [
-      [
-        "Data Management",
-        "Data Validation"
-      ],
-      [
-        "Data Validation",
-        "Rule Version"
-      ],
-      [
-        "Staffing Issues",
-        "Store Performance"
-      ],
-      [
-        "Product Documentation",
-        "Staffing Issues"
-      ],
-      [
-        "Algorithm Analysis",
-        "Staffing Issues"
-      ],
-      [
-        "Data Management",
-        "New Store Inclusion"
-      ],
-      [
-        "Employee Skills",
-        "Staffing Issues"
-      ],
-      [
-        "Employee Skills",
-        "Employee Skills Tag"
-      ],
-      [
-        "Data Validation",
-        "Model Version"
-      ]
-    ],
-    "count": 9,
-    "create_time": 1777967058,
-    "update_time": 1777967058,
-    "_id": "doc-2e07022cad33ab55065c5bba8a438969"
-  },
-  "doc-2ec1e958be5dc9b11f6a224a2a6b9571": {
-    "relation_pairs": [
-      [
-        "员工",
-        "门店"
-      ],
-      [
-        "Polaris Explanation Panel",
-        "Product Documentation"
-      ],
-      [
-        "Staffing Risks",
-        "Update Schedule Table"
-      ],
-      [
-        "New Store Inclusion",
-        "Pilot Project"
-      ],
-      [
-        "灰度名单",
-        "门店"
-      ],
-      [
-        "Algorithm Playback",
-        "Product Documentation"
-      ],
-      [
-        "Employee Skill Tags",
-        "Staffing Risks"
-      ]
-    ],
-    "count": 7,
-    "create_time": 1777967072,
-    "update_time": 1777967072,
-    "_id": "doc-2ec1e958be5dc9b11f6a224a2a6b9571"
-  },
-  "doc-0c0342e74ce24f9442643b70f4938abe": {
-    "relation_pairs": [
-      [
-        "Polaris Explanation Panel",
-        "审计日志"
-      ],
-      [
-        "Polaris Explanation Panel",
-        "Product Documentation"
-      ],
-      [
-        "Store Performance",
-        "员工技能标签"
-      ],
-      [
-        "Algorithm Playback",
-        "Store Performance"
-      ],
-      [
-        "Grey List Management",
-        "Polaris Explanation Panel"
-      ],
-      [
-        "Employee Scheduling",
-        "Store Performance"
-      ],
-      [
-        "Polaris Explanation Panel",
-        "Store Performance"
-      ]
-    ],
-    "count": 7,
-    "create_time": 1777967073,
-    "update_time": 1777967073,
-    "_id": "doc-0c0342e74ce24f9442643b70f4938abe"
-  },
-  "doc-164629181eeda930a1e97de010bdca44": {
-    "relation_pairs": [
-      [
-        "Staffing Risk",
-        "System Role Clarity"
-      ],
-      [
-        "Replay Results",
-        "Staffing Risk"
-      ],
-      [
-        "Employee Skills Issue",
-        "Gray List Management"
-      ],
-      [
-        "Gray List Management",
-        "Polaris"
-      ],
-      [
-        "12 Stores",
-        "Staffing Risk"
-      ],
-      [
-        "Employee Skills Issue",
-        "Staffing Risk"
-      ]
-    ],
-    "count": 6,
-    "create_time": 1777967082,
-    "update_time": 1777967082,
-    "_id": "doc-164629181eeda930a1e97de010bdca44"
-  },
-  "doc-60813e3913c0d8681c0ef7937b01b99c": {
-    "relation_pairs": [
-      [
-        "Meeting Minutes",
-        "Risk Management"
-      ],
-      [
-        "Gray List Management",
-        "Meeting Minutes"
-      ],
-      [
-        "Employee Schedule",
-        "System Documentation"
-      ],
-      [
-        "1.0 Importance",
-        "System Documentation"
-      ],
-      [
-        "Algorithm Analysis",
-        "System Documentation"
-      ],
-      [
-        "14 Days TTL",
-        "Meeting Minutes"
-      ],
-      [
-        "30 Days TTL",
-        "Employee Schedule"
-      ],
-      [
-        "Gray List Management",
-        "Report Analysis"
-      ],
-      [
-        "0.5 Importance",
-        "Meeting Minutes"
-      ]
-    ],
-    "count": 9,
-    "create_time": 1777967083,
-    "update_time": 1777967083,
-    "_id": "doc-60813e3913c0d8681c0ef7937b01b99c"
-  },
-  "doc-a33fb9dbf76c6ab5d6ee21334f31b10d": {
-    "relation_pairs": [
-      [
-        "Product Narrative",
-        "Store Performance"
-      ],
-      [
-        "Employee Skills Tag",
-        "Scheduling Results"
-      ],
-      [
-        "Store Performance",
+        "Boundary Condition Employee Skill Tag",
         "Store Replay Results"
       ],
       [
-        "Project Management",
-        "Store Performance"
+        "Algorithm Replay Grouping Advice",
+        "Store Replay Results"
       ],
       [
-        "Employee Skills",
-        "Scheduling Results"
+        "Product Copy Emphasis",
+        "Task Update Schedule Table"
       ],
       [
-        "Algorithm Replay",
-        "Gray List"
-      ],
-      [
-        "Algorithm Replay",
-        "Scheduling Results"
+        "Algorithm Replay Grouping Advice",
+        "Store"
       ]
     ],
-    "count": 7,
-    "create_time": 1777969326,
-    "update_time": 1777969326,
-    "_id": "doc-a33fb9dbf76c6ab5d6ee21334f31b10d"
+    "count": 5,
+    "create_time": 1778047724,
+    "update_time": 1778047724,
+    "_id": "doc-ae9bad23c518fcb3bc3f6dabc9f830b7"
   },
-  "doc-cb2279cdf4d0c9e56dfd82efc8f7b7eb": {
+  "doc-889cd3a80c43f7bce79d2e9f0d43ae3c": {
     "relation_pairs": [
       [
-        "埋点漏了一段",
-        "蓝鲸报表"
+        "Blue Whale Reports",
+        "Falcon Risk Control Platform"
       ],
       [
-        "会议室预约系统",
-        "缓存问题"
+        "Core Metrics for Review",
+        "人工覆盖率"
       ],
       [
-        "Team Building Vote",
-        "activity options"
+        "Core Metrics for Review",
+        "员工连续晚班次数"
       ],
       [
-        "Orion",
-        "海外支付网关"
+        "Acceptance Criteria Consistency",
+        "Core Metrics for Review"
       ],
       [
-        "下午茶",
-        "芝士蛋糕"
+        "Client Demo Preferences",
+        "Milestones and Acceptance Criteria"
       ],
       [
-        "接口回滚方案",
-        "星桥CRM"
+        "Core Metrics for Review",
+        "门店经理满意度"
       ],
       [
-        "团建投票",
-        "羽毛球"
+        "Core Metrics for Review",
+        "班次缺口率"
       ],
       [
-        "16:30",
-        "Afternoon Tea Update"
+        "Acceptance Criteria Consistency",
+        "Milestones and Acceptance Criteria"
       ],
       [
-        "客户说明",
-        "影响范围"
-      ],
-      [
-        "SQL排查",
-        "指标定义"
-      ],
-      [
-        "Orion",
-        "Orion支付网关"
-      ],
-      [
-        "Polaris",
-        "管理层"
-      ],
-      [
-        "决策摘要",
-        "灰度名单"
-      ],
-      [
-        "历史客户数据字段不一致",
-        "星桥CRM"
-      ],
-      [
-        "Polaris智能排班",
-        "客户演示"
-      ],
-      [
-        "蓝鲸报表",
-        "财务和运营口径存在差异"
-      ],
-      [
-        "Meeting Room Reservation Issue",
-        "cache problem"
-      ],
-      [
-        "星桥CRM",
-        "验收口径"
-      ],
-      [
-        "批处理延迟",
-        "蓝鲸报表"
-      ],
-      [
-        "Polaris Scheduling Client Demo",
-        "business scenario"
-      ],
-      [
-        "Falcon",
-        "风控中台"
+        "Blue Whale Reports",
+        "Star Bridge CRM"
       ]
     ],
-    "count": 21,
-    "create_time": 1777969402,
-    "update_time": 1777969402,
-    "_id": "doc-cb2279cdf4d0c9e56dfd82efc8f7b7eb"
+    "count": 9,
+    "create_time": 1778047760,
+    "update_time": 1778047760,
+    "_id": "doc-889cd3a80c43f7bce79d2e9f0d43ae3c"
   },
-  "doc-85ceb61467a102ff77b5ca7639e61dad": {
-    "relation_pairs": [
-      [
-        "里程碑",
-        "需求拆解"
-      ],
-      [
-        "业务场景理解",
-        "客户演示"
-      ],
-      [
-        "会议纪要",
-        "项目管理"
-      ],
-      [
-        "出差预算",
-        "财务安排"
-      ],
-      [
-        "决策变更",
-        "管理层同步"
-      ],
-      [
-        "星桥CRM",
-        "缺失埋点"
-      ],
-      [
-        "SQL排查思路",
-        "故障检测"
-      ],
-      [
-        "复盘",
-        "真实缺陷与沟通成本"
-      ],
-      [
-        "值班同学判断",
-        "告警描述"
-      ],
-      [
-        "项目风险矩阵",
-        "风险评估"
-      ],
-      [
-        "前端补充",
-        "星桥CRM"
-      ]
-    ],
-    "count": 11,
-    "create_time": 1777969467,
-    "update_time": 1777969467,
-    "_id": "doc-85ceb61467a102ff77b5ca7639e61dad"
-  },
-  "doc-bb5c51b38f13dad45911c5ef26998736": {
-    "relation_pairs": [
-      [
-        "Memory",
-        "门店经理"
-      ],
-      [
-        "Memory",
-        "灰度名单"
-      ],
-      [
-        "Memory",
-        "Product Communication"
-      ],
-      [
-        "Algorithm",
-        "Memory"
-      ],
-      [
-        "Memory",
-        "员工技能标签"
-      ],
-      [
-        "Memory",
-        "System Behavior"
-      ],
-      [
-        "Data Management",
-        "Memory"
-      ],
-      [
-        "Data Update",
-        "Memory"
-      ],
-      [
-        "Memory",
-        "Performance Metrics"
-      ],
-      [
-        "Memory",
-        "门店类型"
-      ],
-      [
-        "Memory",
-        "Project Management"
-      ]
-    ],
-    "count": 11,
-    "create_time": 1777969874,
-    "update_time": 1777969874,
-    "_id": "doc-bb5c51b38f13dad45911c5ef26998736"
-  },
-  "doc-26b06aa0c5b9f23d91349f546eaa888f": {
-    "relation_pairs": [
-      [
-        "Memory",
-        "新增门店"
-      ],
-      [
-        "Boundary Condition",
-        "Memory"
-      ],
-      [
-        "Memory",
-        "门店类型"
-      ],
-      [
-        "Memory",
-        "Product Documentation"
-      ],
-      [
-        "Gray List",
-        "Memory"
-      ],
-      [
-        "Meeting Decision",
-        "Memory"
-      ],
-      [
-        "Memory",
-        "一线接受度"
-      ],
-      [
-        "Memory",
-        "Report Results"
-      ],
-      [
-        "Memory",
-        "Schedule Results"
-      ],
-      [
-        "Algorithm Replay",
-        "Memory"
-      ],
-      [
-        "Memory",
-        "员工技能标签"
-      ]
-    ],
-    "count": 11,
-    "create_time": 1777970035,
-    "update_time": 1777970035,
-    "_id": "doc-26b06aa0c5b9f23d91349f546eaa888f"
-  },
-  "doc-fbb15a02ae7886cbf8118a76155f2a4d": {
-    "relation_pairs": [
-      [
-        "Algorithm Replay",
-        "Staffing Risks"
-      ],
-      [
-        "Employee Skills",
-        "Staffing Risks"
-      ],
-      [
-        "Polaris",
-        "Product Documentation"
-      ],
-      [
-        "Grayscale List",
-        "Sample Management"
-      ],
-      [
-        "12 Stores",
-        "Staffing Risks"
-      ],
-      [
-        "Polaris",
-        "Project Management"
-      ],
-      [
-        "Polaris",
-        "Scheduling"
-      ],
-      [
-        "Sample Management",
-        "Staffing Risks"
-      ]
-    ],
-    "count": 8,
-    "create_time": 1777970663,
-    "update_time": 1777970663,
-    "_id": "doc-fbb15a02ae7886cbf8118a76155f2a4d"
-  },
-  "doc-257dc3149297f67229682b3933f5d357": {
+  "doc-92f04e4637b01e8690c21f1043ac04e3": {
     "relation_pairs": [
       [
         "Polaris",
-        "Polaris Smart Scheduling Report"
+        "Polaris Core Metrics"
       ],
       [
-        "Falcon Risk Control Center",
-        "Report Updates"
-      ],
-      [
-        "Orion Overseas Payment Gateway",
-        "Project Decision Summary"
+        "Data Consistency",
+        "Risk Management"
       ],
       [
         "Star Bridge CRM",
-        "Star Bridge CRM Acceptance Criteria"
+        "星桥CRM"
       ],
       [
-        "Historical Customer Data Field Inconsistencies",
+        "Meeting Minutes",
+        "Polaris Core Metrics"
+      ],
+      [
+        "Acceptance Criteria",
+        "Blue Whale Report"
+      ],
+      [
+        "Polaris Audit Log",
         "Star Bridge CRM"
       ],
       [
-        "Interface Rollback Plan",
-        "Star Bridge CRM"
+        "Feedback Loop",
+        "Risk Management"
       ],
       [
-        "Client Communication Draft",
-        "Star Bridge CRM"
+        "Polaris Core Metrics",
+        "Risk Management"
       ]
     ],
-    "count": 7,
-    "create_time": 1777970694,
-    "update_time": 1777970694,
-    "_id": "doc-257dc3149297f67229682b3933f5d357"
+    "count": 8,
+    "create_time": 1778047809,
+    "update_time": 1778047809,
+    "_id": "doc-92f04e4637b01e8690c21f1043ac04e3"
   },
-  "doc-4f6518c25c68e803227152a9928769c1": {
+  "doc-eb1d6ee54f9c54ae28745b1cf885e083": {
     "relation_pairs": [
       [
-        "Orion",
-        "Orion Overseas Payment Weekly Report"
-      ],
-      [
-        "Orion",
-        "Overall Project Schedule"
-      ],
-      [
-        "Falcon",
-        "Falcon Risk Control Weekly Report"
-      ],
-      [
-        "Risk Matrix Advice",
-        "Xingqiao CRM"
+        "Business Trip Budget",
+        "Polaris"
       ],
       [
         "Polaris",
-        "Polaris Audit Log"
+        "蓝鲸报表"
       ],
       [
-        "Falcon",
-        "Overall Project Schedule"
+        "Polaris",
+        "Polaris智能排班"
       ],
       [
-        "Blue Whale Report",
-        "Meeting Room Reservation System"
+        "Falcon风控中台",
+        "Polaris"
       ],
       [
-        "Overall Project Schedule",
+        "Polaris",
+        "星桥CRM"
+      ],
+      [
+        "Orion海外支付网关",
         "Polaris"
       ]
     ],
-    "count": 8,
-    "create_time": 1777970842,
-    "update_time": 1777970842,
-    "_id": "doc-4f6518c25c68e803227152a9928769c1"
+    "count": 6,
+    "create_time": 1778047879,
+    "update_time": 1778047879,
+    "_id": "doc-eb1d6ee54f9c54ae28745b1cf885e083"
   },
-  "doc-6542522ab21aeb1f125ab7ac3d935dbc": {
+  "doc-06ccdd4148be7e3a4d432ca34f4b65a0": {
     "relation_pairs": [
       [
+        "沙箱验证",
+        "蓝鲸报表"
+      ],
+      [
+        "Orion海外支付网关",
+        "蓝鲸报表"
+      ],
+      [
+        "蓝鲸报表",
+        "风险管理"
+      ],
+      [
+        "星桥CRM",
+        "风险管理"
+      ],
+      [
         "Falcon风控中台",
-        "黄色项"
+        "风险管理"
       ],
       [
-        "Fact",
-        "Model Playback"
+        "Orion海外支付网关",
+        "风险管理"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1778047941,
+    "update_time": 1778047941,
+    "_id": "doc-06ccdd4148be7e3a4d432ca34f4b65a0"
+  },
+  "doc-3e06d0e157a44134b0e57b91cf1fddb1": {
+    "relation_pairs": [
+      [
+        "蓝鲸Pilot Commitment",
+        "蓝鲸报表"
       ],
       [
-        "客户数据字段",
+        "Falcon Pilot Commitment",
+        "Falcon风控中台"
+      ],
+      [
+        "星桥CRM",
+        "星桥Deadline"
+      ],
+      [
+        "Falcon Deadline",
+        "Falcon风控中台"
+      ],
+      [
+        "蓝鲸Deadline",
+        "蓝鲸报表"
+      ],
+      [
+        "Bluewhale Pilot Commitment",
+        "蓝鲸报表"
+      ],
+      [
+        "星桥CRM",
+        "星桥Core Commitment"
+      ],
+      [
+        "Starbridge Core Commitment",
         "星桥CRM"
-      ],
+      ]
+    ],
+    "count": 8,
+    "create_time": 1778048017,
+    "update_time": 1778048017,
+    "_id": "doc-3e06d0e157a44134b0e57b91cf1fddb1"
+  },
+  "doc-2a9fe9e3df5e1fda2445315449929f76": {
+    "relation_pairs": [
       [
-        "语言内容",
-        "面向业务方的解释"
-      ],
-      [
-        "Falcon风控中台",
-        "红色项"
-      ],
-      [
-        "1777971010",
-        "Fact"
-      ],
-      [
-        "Falcon风控中台",
-        "绿色项"
-      ],
-      [
-        "Community Store",
-        "Model Playback"
-      ],
-      [
-        "22214",
-        "Fact"
+        "Memory",
+        "Weekly Commitment"
       ],
       [
         "Memory",
-        "Model Playback"
+        "Risk Management"
       ],
       [
-        "Polaris",
-        "管理层"
+        "Labor Compliance",
+        "Polaris智能排班"
       ],
       [
-        "接口回滚方案",
-        "星桥CRM"
+        "Artificial Bottom Guarantee",
+        "Store Manager"
       ],
       [
-        "Business District Store",
-        "Model Playback"
-      ]
-    ],
-    "count": 13,
-    "create_time": 1777971025,
-    "update_time": 1777971025,
-    "_id": "doc-6542522ab21aeb1f125ab7ac3d935dbc"
-  },
-  "doc-db7406a7cec74cac415bb65e61af0c02": {
-    "relation_pairs": [
-      [
-        "Client Expectation",
-        "Project Verification"
+        "Pilot Version",
+        "Task Status"
       ],
       [
-        "Falcon Risk Control Platform",
-        "Project Progress"
+        "PoC Version",
+        "Polaris智能排班"
       ],
       [
-        "Polaris Intelligent Scheduling",
-        "Project Progress"
+        "Polaris智能排班",
+        "Task Status"
       ],
       [
-        "Blue Whale Report",
-        "Project Progress"
-      ],
-      [
-        "会议纪要",
-        "星桥CRM"
-      ],
-      [
-        "Orion Overseas Payment Gateway",
-        "Project Progress"
-      ],
-      [
-        "Project Progress",
-        "Xingqiao CRM"
-      ],
-      [
-        "会议纪要",
-        "蓝鲸报表"
+        "Acceptance Criteria",
+        "Polaris智能排班"
       ]
     ],
     "count": 8,
-    "create_time": 1777971727,
-    "update_time": 1777971727,
-    "_id": "doc-db7406a7cec74cac415bb65e61af0c02"
+    "create_time": 1778048073,
+    "update_time": 1778048073,
+    "_id": "doc-2a9fe9e3df5e1fda2445315449929f76"
+  },
+  "doc-a7a5f6a61d77f4b20efb7f871e74155a": {
+    "relation_pairs": [
+      [
+        "Meeting Room Cache Issue",
+        "Weekly Report Updates"
+      ],
+      [
+        "Acceptance Criteria",
+        "Risk Matrix"
+      ],
+      [
+        "Polaris Exports Support",
+        "Polaris Smart Scheduling"
+      ],
+      [
+        "Polaris Acceptance Criteria",
+        "Polaris Audit Log"
+      ],
+      [
+        "Acceptance Criteria",
+        "Risk Identification"
+      ],
+      [
+        "Polaris Audit Log",
+        "Risk Matrix"
+      ],
+      [
+        "Polaris Audit Log",
+        "Polaris Smart Scheduling"
+      ],
+      [
+        "Blue Whale Report",
+        "Polaris Smart Scheduling"
+      ]
+    ],
+    "count": 8,
+    "create_time": 1778048148,
+    "update_time": 1778048148,
+    "_id": "doc-a7a5f6a61d77f4b20efb7f871e74155a"
+  },
+  "doc-61ef8cd55c161340695f43105b297ff4": {
+    "relation_pairs": [
+      [
+        "Xingqiao CRM",
+        "Xingqiao CRM Key Report"
+      ],
+      [
+        "Orion Overseas Payment Gateway",
+        "Orion Payment Gateway"
+      ],
+      [
+        "Core Scope",
+        "Release Schedule"
+      ],
+      [
+        "Release Schedule",
+        "Xingqiao CRM"
+      ],
+      [
+        "Orion Payment Gateway",
+        "Release Schedule"
+      ],
+      [
+        "Monitoring and Rollback",
+        "Release Schedule"
+      ],
+      [
+        "Monitoring and Rollback",
+        "Root Cause Analysis"
+      ],
+      [
+        "Core Scope",
+        "Third Party Dependency"
+      ]
+    ],
+    "count": 8,
+    "create_time": 1778048342,
+    "update_time": 1778048342,
+    "_id": "doc-61ef8cd55c161340695f43105b297ff4"
+  },
+  "doc-d9bd56dec3ecb540f1eaa11cc8bcdd05": {
+    "relation_pairs": [
+      [
+        "Risk Assessment",
+        "Risk Table"
+      ],
+      [
+        "Blue Whale Report",
+        "Completion Criteria"
+      ],
+      [
+        "Gray Data Run",
+        "Star Bridge CRM"
+      ],
+      [
+        "Daily Progress",
+        "Risk List"
+      ],
+      [
+        "Meeting Minutes",
+        "generated contents"
+      ],
+      [
+        "Sales Team",
+        "Unified Template"
+      ],
+      [
+        "Falcon Risk Control Platform",
+        "Online Phase"
+      ],
+      [
+        "Blocking Items",
+        "Daily Report"
+      ],
+      [
+        "Orion Overseas Payment Gateway",
+        "Sandbox Verification Stage"
+      ],
+      [
+        "Integration Phase",
+        "Star Bridge CRM"
+      ]
+    ],
+    "count": 10,
+    "create_time": 1778048396,
+    "update_time": 1778048396,
+    "_id": "doc-d9bd56dec3ecb540f1eaa11cc8bcdd05"
+  },
+  "doc-cc62a6c9fb99d31439150380cef44c4d": {
+    "relation_pairs": [
+      [
+        "Operations",
+        "Product"
+      ],
+      [
+        "Product",
+        "Testing"
+      ],
+      [
+        "Blueshell Report Alarm",
+        "Blueshell Report Risk"
+      ],
+      [
+        "Polaris Audit Log",
+        "Polaris Smart Scheduling Review"
+      ],
+      [
+        "Project Pending Tasks",
+        "Project Risk Matrix"
+      ],
+      [
+        "Development Split Interface List",
+        "Product"
+      ],
+      [
+        "Gray List",
+        "Operations"
+      ],
+      [
+        "Acceptance Criteria",
+        "Product"
+      ],
+      [
+        "Orion Payment Gateway Demo",
+        "Orion Payment Gateway Tracking"
+      ],
+      [
+        "Polaris Smart Scheduling Metrics",
+        "Polaris Smart Scheduling Report"
+      ]
+    ],
+    "count": 10,
+    "create_time": 1778048462,
+    "update_time": 1778048462,
+    "_id": "doc-cc62a6c9fb99d31439150380cef44c4d"
+  },
+  "doc-3fc6eb7b138cd81ac51cd60c88e12b75": {
+    "relation_pairs": [
+      [
+        "Polaris",
+        "核心指标"
+      ],
+      [
+        "Polaris",
+        "审计日志"
+      ],
+      [
+        "核心指标",
+        "项目目标"
+      ],
+      [
+        "里程碑结构",
+        "需求"
+      ],
+      [
+        "决策支持系统",
+        "员工"
+      ],
+      [
+        "蓝鲸报表",
+        "风险识别"
+      ],
+      [
+        "Falcon",
+        "风险识别"
+      ],
+      [
+        "Polaris",
+        "员工"
+      ],
+      [
+        "产品文案",
+        "决策支持系统"
+      ]
+    ],
+    "count": 9,
+    "create_time": 1778048549,
+    "update_time": 1778048549,
+    "_id": "doc-3fc6eb7b138cd81ac51cd60c88e12b75"
+  },
+  "doc-57902305cc4fde183edf80ae8dd20894": {
+    "relation_pairs": [
+      [
+        "PoC Acceptance Criteria",
+        "Polaris Intelligent Scheduling"
+      ],
+      [
+        "Manual Backup",
+        "Store Manager"
+      ],
+      [
+        "Next Morning Meeting",
+        "Risk Assessment"
+      ],
+      [
+        "Core Commitment",
+        "Next Iteration"
+      ],
+      [
+        "Key Report Commitment",
+        "Next Iteration"
+      ],
+      [
+        "Gray Test Phase",
+        "Pilot Stores"
+      ],
+      [
+        "Next Iteration",
+        "Risk Control Commitment"
+      ],
+      [
+        "Labor Compliance",
+        "Model Evaluation Phase"
+      ],
+      [
+        "Acceptance Criteria",
+        "Polaris Intelligent Scheduling"
+      ],
+      [
+        "Business and Technical Teams",
+        "Labor Compliance"
+      ]
+    ],
+    "count": 10,
+    "create_time": 1778048627,
+    "update_time": 1778048627,
+    "_id": "doc-57902305cc4fde183edf80ae8dd20894"
+  },
+  "doc-57b9e13b3eeafb17864ad7ee24b8a66e": {
+    "relation_pairs": [
+      [
+        "Polaris",
+        "scope management"
+      ],
+      [
+        "backlog",
+        "scope management"
+      ],
+      [
+        "Falcon风控中台",
+        "acceptance criteria"
+      ],
+      [
+        "acceptance criteria",
+        "蓝鲸报表"
+      ],
+      [
+        "Polaris",
+        "explanation button"
+      ],
+      [
+        "Orion海外支付网关",
+        "management communication"
+      ],
+      [
+        "Polaris",
+        "audit log storage"
+      ],
+      [
+        "customer demo",
+        "白雨"
+      ],
+      [
+        "Polaris智能排班",
+        "acceptance criteria"
+      ]
+    ],
+    "count": 9,
+    "create_time": 1778048666,
+    "update_time": 1778048666,
+    "_id": "doc-57b9e13b3eeafb17864ad7ee24b8a66e"
+  },
+  "doc-0baf43ebc0b5e09bd22b03ea28799d01": {
+    "relation_pairs": [
+      [
+        "Polaris Audit Log",
+        "Risk Matrix Generation"
+      ],
+      [
+        "Business Trip Plan",
+        "Meeting Room Booking Issue"
+      ],
+      [
+        "Customer Demo Preference",
+        "Falcon Risk Control Demo"
+      ],
+      [
+        "Polaris Intelligent Scheduling",
+        "Polaris Scheduling Report"
+      ],
+      [
+        "Polaris Review Metrics",
+        "Review Scope"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1778048743,
+    "update_time": 1778048743,
+    "_id": "doc-0baf43ebc0b5e09bd22b03ea28799d01"
+  },
+  "doc-15044e321936a9838efaca34c4b7be2f": {
+    "relation_pairs": [
+      [
+        "回滚脚本",
+        "监控告警"
+      ],
+      [
+        "人工回滚入口",
+        "模型评估"
+      ],
+      [
+        "响应时间",
+        "模型评估"
+      ],
+      [
+        "人工兜底",
+        "决策"
+      ],
+      [
+        "异常兜底",
+        "模型评估"
+      ],
+      [
+        "Polaris智能排班",
+        "决策"
+      ],
+      [
+        "Polaris智能排班",
+        "试点门店"
+      ],
+      [
+        "成功率",
+        "模型评估"
+      ],
+      [
+        "Polaris智能排班",
+        "模型评估"
+      ],
+      [
+        "PoC阶段",
+        "Polaris智能排班"
+      ],
+      [
+        "Polaris智能排班",
+        "灰度版本"
+      ],
+      [
+        "Polaris智能排班",
+        "统一口径"
+      ],
+      [
+        "Polaris智能排班",
+        "数据样本"
+      ]
+    ],
+    "count": 13,
+    "create_time": 1778048831,
+    "update_time": 1778048831,
+    "_id": "doc-15044e321936a9838efaca34c4b7be2f"
   }
 }

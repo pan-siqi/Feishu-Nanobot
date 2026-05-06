@@ -138,6 +138,7 @@ class BaseChannel(ABC):
         media: list[str] | None = None,
         metadata: dict[str, Any] | None = None,
         session_key: str | None = None,
+        is_mentioned: bool | None = None,
     ) -> None:
         """
         Handle an incoming message from the chat platform.
@@ -172,6 +173,7 @@ class BaseChannel(ABC):
             media=media or [],
             metadata=meta,
             session_key_override=session_key,
+            is_mentioned=is_mentioned,
         )
 
         await self.bus.publish_inbound(msg)

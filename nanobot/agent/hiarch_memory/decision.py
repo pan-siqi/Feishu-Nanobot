@@ -45,7 +45,7 @@ class DecisionMemoryStore(BaseMemoryStore):
         result: List[Dict] = parsed.get('result')
         _evidence_message_ids: List[str] = list()
         for item in result: _evidence_message_ids.extend(item.get('evidence_message_ids'))
-
+        
         if not self._ec_repo.list(): # if first
             for item in result: self._ec_repo.create(self._scheme_to_metaclass(item))
         else:

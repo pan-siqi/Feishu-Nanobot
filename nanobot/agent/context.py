@@ -27,18 +27,19 @@ class ContextBuilder:
     def __init__(
             self, 
             workspace: Path, 
-            episodic_memorystore: EpisodicMemoryStore,
-            decision_memorystore: DecisionMemoryStore,
+            episodic: EpisodicMemoryStore,
+            decision: DecisionMemoryStore,
             disabled_skills: list[str] | None = None,
             timezone: str | None = None,
         ):
         self.workspace = workspace
         self.timezone = timezone
         self.memory = HiarchMemoryStore(
-            str(workspace),
-            episodic_memorystore,
-            decision_memorystore=decision_memorystore,
+            workspace=self.workspace,
+            episodic=episodic,
+            decision=decision,
         )
+
         self.skills = SkillsLoader(workspace, disabled_skills=set(disabled_skills) if disabled_skills else None)
 
     # def build_system_prompt(
@@ -106,12 +107,12 @@ class ContextBuilder:
         if bootstrap:
             parts.append(bootstrap)
 
-        mp = self._memory_project_key(channel, chat_id)
-        memory = await self.memory.aggregation_memory(current_message, memory_project=mp)
-        if memory and self.memory.efficient(memory_project=mp):
-            if len(memory) > self._MAX_MEMORY_BLOCK_CHARS:
-                memory = memory[:self._MAX_MEMORY_BLOCK_CHARS].rstrip() + "\n\n...[memory truncated]"
-            parts.append(f"# Memory\n\n{memory}")
+        # mp = self._memory_project_key(channel, chat_id)
+        # memory = await self.memory.aggregation_memory(current_message, memory_project=mp)
+        # if memory:
+        #     if len(memory) > self._MAX_MEMORY_BLOCK_CHARS:
+        #         memory = memory[:self._MAX_MEMORY_BLOCK_CHARS].rstrip() + "\n\n...[memory truncated]"
+        #     parts.append(f"# Memory\n\n{memory}")
         
         always_skills = self.skills.get_always_skills()
         if always_skills:
