@@ -11,6 +11,8 @@ from uuid import uuid4
 from datetime import datetime
 import os
 
+from loguru import logger
+
 
 def _merge_eval_bool(content: str | None) -> bool:
     """Parse evaluate.md LLM output as merge-or-not (never use eval())."""
@@ -66,7 +68,7 @@ class DecisionMemoryStore(BaseMemoryStore):
         
         # merge ec
         parsed: Dict[str, List] = response.parsed
-        result: List[Dict] = parsed.get('result')
+        result: List[Dict] = parsed.get('result') or []
         _evidence_message_ids: List[str] = list()
         for item in result: _evidence_message_ids.extend(item.get('evidence_message_ids'))
         
@@ -82,6 +84,11 @@ class DecisionMemoryStore(BaseMemoryStore):
                     if ec_merge: self._ec_repo.update_by_ec_id(ec_merge); is_create = False
                 if is_create: self._ec_repo.create(ec)
         self._ec_repo.build_embed()
+        logger.info(
+            "Decision extract finished: candidates_in_response={} evidence_message_ids={}",
+            len(result) if result else 0,
+            len(_evidence_message_ids),
+        )
         return _evidence_message_ids
                 
     async def _merge(self, ec: EventCandidateMetaClass, result: List[Tuple[EventCandidateMetaClass, float]]) -> EventCandidateMetaClass | None:

@@ -7,6 +7,8 @@ import shutil
 from glob import glob
 from uuid import uuid4
 
+from loguru import logger
+
 class Router:
     def __init__(
         self,
@@ -29,6 +31,7 @@ class Router:
         self._create_slide_windows()
         
         # second step: store in episodic & decision memorystore
+        processed = 0
         for windows_path in glob(os.path.join(self._windows_root, 'window*.jsonl')):
             if windows_path in self._windows_recorded: continue
             _window_content: List[Dict[str, Any]] = read_jsonlines(windows_path)
@@ -43,8 +46,15 @@ class Router:
             self._merge_evidence_message_ids(_evidence_message_ids)
             self._windows_recorded.append(windows_path)
             write_pickle(self._windows_recorded, self._windows_recorded_path)
+            processed += 1
 
         self._delete_slide_windows()
+        if processed:
+            logger.info(
+                "Router operate_batch: slide_windows_processed={} rag_dir={} decision_pg=EventCandidateItem",
+                processed,
+                os.path.join(self._mem_save_path, "rag_storage"),
+            )
     
     def _create_slide_windows(self): # .history.jsonl --> windows/window_<idx>.jsonl
         # if os.path.exists(self._windows_root): raise Exception(f'{self._windows_root} could not exist!')

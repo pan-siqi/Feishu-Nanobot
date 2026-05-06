@@ -4,6 +4,8 @@ from typing import Any
 
 from nanobot.agent.hiarch_memory.episodic import EpisodicMemoryStore
 from nanobot.agent.hiarch_memory.decision import DecisionMemoryStore
+
+
 class HiarchMemoryStore:
     _DEFAULT_MAX_HISTORY = 1000
 

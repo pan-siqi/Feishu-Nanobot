@@ -790,8 +790,26 @@ class AgentLoop:
             user_persisted_early = True
 
         # set a monitor to check message flow
+        history_messages_length: int = len(session.messages)
         read_only, card_message = await self.monitor.check(session, msg)
 
+        # do check:
+        if read_only:
+            return # no response
+        elif 
+
+
+    async def _normal_response(
+            self,
+            session: Session,
+            msg: InboundMessage,
+            initial_messages: dict[list],
+            _bus_progress: Callable,
+            on_progress: Callable[[str], Awaitable[None]] | None = None,
+            on_stream: Callable[[str], Awaitable[None]] | None = None,
+            on_stream_end: Callable[..., Awaitable[None]] | None = None,
+            pending_queue: asyncio.Queue | None = None,
+        ):
         final_content, _, all_msgs, stop_reason, had_injections = await self._run_agent_loop(
             initial_messages,
             on_progress=on_progress or _bus_progress,
@@ -809,7 +827,8 @@ class AgentLoop:
             final_content = EMPTY_FINAL_RESPONSE_MESSAGE
 
         # Skip the already-persisted user message when saving the turn
-        save_skip = 1 + len(history) + (1 if user_persisted_early else 0)
+        # save_skip = 1 + len(history) + (1 if user_persisted_early else 0)
+        save_skip = 1 + history_messages_length + (1 if user_persisted_early else 0)
         self._save_turn(session, all_msgs, save_skip)
         self._clear_pending_user_turn(session)
         self._clear_runtime_checkpoint(session)
@@ -838,6 +857,7 @@ class AgentLoop:
             content=final_content,
             metadata=meta,
         )
+
 
     def _sanitize_persisted_blocks(
         self,
