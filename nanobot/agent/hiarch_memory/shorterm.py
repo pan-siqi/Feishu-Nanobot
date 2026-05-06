@@ -2,6 +2,8 @@ from typing import Any, Dict, List
 
 import jsonlines
 import os
+from loguru import logger
+
 from nanobot.session.manager import Session
 from nanobot.agent.hiarch_memory.episodic import EpisodicMemoryStore
 from nanobot.agent.hiarch_memory.decision import DecisionMemoryStore
@@ -42,6 +44,12 @@ class ShortermMemoryStore:
             _num: int = self._get_num(history)
             batch = history[0:_num]
             self._save_history(batch)
+            logger.info(
+                "Shorterm flush: batch_messages={} cursor_after={} history_jsonl={}",
+                _num,
+                self._cursor,
+                self._history_save_path,
+            )
             # <operate batch>
             await self._router.operate_batch() # enter router
             history = history[_num:]

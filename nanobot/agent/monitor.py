@@ -1,7 +1,5 @@
 import os
-from typing import List, Tuple, Dict, Any
-from datetime import datetime, timezone
-from loguru import logger
+from typing import List, Tuple
 
 from nanobot.agent.hiarch_memory.database.ec_database import Session as DataBaseSession
 from nanobot.agent.hiarch_memory.database.ec_database import EventCandidateMetaClass, EventCandidateRepository
@@ -10,6 +8,7 @@ from nanobot.bus.queue import MessageBus
 from nanobot.channels.feishu_card import resolve_interactive_card
 from nanobot.session.manager import Session
 from nanobot.utils.prompt_templates import render_template
+from loguru import logger
 
 _DEFAULT_CARD_MAX_DISTANCE = float(os.environ.get("NANOBOT_MONITOR_CARD_MAX_DISTANCE", "0.35"))
 
@@ -37,11 +36,11 @@ class Monitor:
             else _DEFAULT_CARD_MAX_DISTANCE
         )
 
-    async def check(self, session: Session, msg: InboundMessage) -> Tuple[bool, None | Dict[str, Any]]:
+    async def check(self, session: Session, msg: InboundMessage) -> bool:
         """Return True to skip the agent loop for this message ('read but no reply')."""
         read_only = await self._block_message(session)
-        card_message: None | Dict[str, Any] = await self._publish_card(session, msg)
-        return read_only, card_message
+        await self._publish_card(session, msg)
+        return read_only
 
     async def _block_message(self, session: Session) -> bool:
         """
@@ -51,19 +50,26 @@ class Monitor:
         _ = session
         return False
 
-    async def _publish_card(self, session: Session, msg: InboundMessage) -> None | Dict[str, Any]:
+    async def _publish_card(self, session: Session, msg: InboundMessage) -> bool:
         _ = session
         text = (msg.content or "").strip()
         if not text:
-            return
+            logger.debug("Monitor card: skip (empty inbound text)")
+            return False
 
         result: List[Tuple[EventCandidateMetaClass, float]] = self._repo.retrieve(text)
         if not result:
-            return
+            logger.info("Monitor card: skip (no EventCandidate within repo filter)")
+            return False
 
         best_score = result[0][1]
         if best_score >= self._card_max_distance:
-            return
+            logger.info(
+                "Monitor card: skip (best_distance={:.4f} >= threshold={:.4f})",
+                best_score,
+                self._card_max_distance,
+            )
+            return False
 
         card_md = "\n\n".join(self.convert_ec_to_beautify_markdown(ec) for ec, _ in result)
         meta = dict(msg.metadata or {})
@@ -74,12 +80,6 @@ class Monitor:
         )
 
         outbound_text = card_md if len(card_md) <= 2000 else card_md[:1997] + "..."
-        logger.info(
-            "Monitor proactive card: hits={}, best_distance={:.4f}, max_distance={}",
-            len(result),
-            best_score,
-            self._card_max_distance,
-        )
         await self.bus.publish_outbound(
             OutboundMessage(
                 channel=msg.channel,
@@ -88,14 +88,14 @@ class Monitor:
                 metadata=meta,
             )
         )
-
-        # build card message
-        card_message = {
-            'role': 'card',
-            'content': outbound_text,
-            'timestamp': datetime.now().isoformat(),
-        }
-        return card_message
+        logger.info(
+            "Monitor card: pushed hits={} best_distance={:.4f} channel={} chat_id={}",
+            len(result),
+            best_score,
+            msg.channel,
+            msg.chat_id,
+        )
+        return True
 
     def convert_ec_to_beautify_markdown(self, ec: EventCandidateMetaClass) -> str:
         return render_template(

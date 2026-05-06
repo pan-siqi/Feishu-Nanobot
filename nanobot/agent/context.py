@@ -6,7 +6,6 @@ import platform
 from importlib.resources import files as pkg_files
 from pathlib import Path
 from typing import Any
-from loguru import logger
 # from nanobot.agent.memory import MemoryStore
 from nanobot.agent.hiarch_memory import HiarchMemoryStore
 from nanobot.agent.hiarch_memory.episodic import EpisodicMemoryStore
@@ -14,6 +13,7 @@ from nanobot.agent.hiarch_memory.decision import DecisionMemoryStore
 from nanobot.agent.skills import SkillsLoader
 from nanobot.utils.helpers import build_assistant_message, current_time_str, detect_image_mime
 from nanobot.utils.prompt_templates import render_template
+from loguru import logger
 
 
 class ContextBuilder:
@@ -114,10 +114,10 @@ class ContextBuilder:
                 memory = memory[: self._MAX_MEMORY_BLOCK_CHARS].rstrip() + "\n\n...[memory truncated]"
             parts.append(f"# Memory\n\n{memory}")
             logger.info(
-                "Memory block injected (# Memory): episodic={episodic}, decision={decision}, chars={n}",
-                episodic=("Episodic knowledge" in memory),
-                decision=("## Related decisions" in memory),
-                n=len(memory),
+                "System prompt includes # Memory: chars={} episodic_block={} decision_block={}",
+                len(memory),
+                "## Episodic knowledge" in memory,
+                "## Related decisions" in memory,
             )
 
         always_skills = self.skills.get_always_skills()
