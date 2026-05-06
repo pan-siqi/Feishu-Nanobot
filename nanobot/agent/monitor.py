@@ -42,7 +42,7 @@ class Monitor:
         await self._publish_card(session, msg)
         return read_only
 
-    async def _block_message(self, session: Session) -> bool:
+    async def _block_message(self, session: Session) -> bool: #这个还没写--要写
         """
         Return True when the message should be consumed without an LLM reply.
         Reserved for group_reply_gate.md style logic; currently never suppresses.
@@ -50,26 +50,22 @@ class Monitor:
         _ = session
         return False
 
-    async def _publish_card(self, session: Session, msg: InboundMessage) -> bool:
+    async def _publish_card(self, session: Session, msg: InboundMessage) -> None | OutboundMessage:
         _ = session
         text = (msg.content or "").strip()
         if not text:
             logger.debug("Monitor card: skip (empty inbound text)")
-            return False
-
+            return
+        
         result: List[Tuple[EventCandidateMetaClass, float]] = self._repo.retrieve(text)
         if not result:
             logger.info("Monitor card: skip (no EventCandidate within repo filter)")
-            return False
+            return
 
         best_score = result[0][1]
         if best_score >= self._card_max_distance:
-            logger.info(
-                "Monitor card: skip (best_distance={:.4f} >= threshold={:.4f})",
-                best_score,
-                self._card_max_distance,
-            )
-            return False
+            logger.info("Monitor card: skip (best_distance={:.4f} >= threshold={:.4f})", best_score, self._card_max_distance)
+            return
 
         card_md = "\n\n".join(self.convert_ec_to_beautify_markdown(ec) for ec, _ in result)
         meta = dict(msg.metadata or {})
@@ -80,22 +76,12 @@ class Monitor:
         )
 
         outbound_text = card_md if len(card_md) <= 2000 else card_md[:1997] + "..."
-        await self.bus.publish_outbound(
-            OutboundMessage(
+        return OutboundMessage(
                 channel=msg.channel,
                 chat_id=msg.chat_id,
                 content=outbound_text,
                 metadata=meta,
             )
-        )
-        logger.info(
-            "Monitor card: pushed hits={} best_distance={:.4f} channel={} chat_id={}",
-            len(result),
-            best_score,
-            msg.channel,
-            msg.chat_id,
-        )
-        return True
 
     def convert_ec_to_beautify_markdown(self, ec: EventCandidateMetaClass) -> str:
         return render_template(

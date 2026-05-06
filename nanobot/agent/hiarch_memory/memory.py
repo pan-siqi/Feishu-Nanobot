@@ -24,6 +24,7 @@ class HiarchMemoryStore:
     async def aggregation_memory(
         self,
         current_message: str,
+        memory_project: str | None = None,
     ) -> str:
         parts: list[str] = []
         knowledge: str = await self._episodic.retrieve(current_message)
@@ -31,16 +32,19 @@ class HiarchMemoryStore:
             parts.append(f"## Episodic knowledge\n\n{knowledge.strip()}")
 
         if self._decision is not None:
-            dec_block = self._decision.prompt_block_for_query(current_message)
+            dec_block = self._decision.prompt_block_for_query(
+                current_message, project=memory_project
+            )
             if dec_block:
                 parts.append(dec_block)
 
         return "\n\n".join(parts) if parts else ""
 
     def efficient(self, memory_project: str | None = None) -> bool:
-        _ = memory_project  # reserved for per-project decision scopes (future schema)
         if self._episodic.can_retrieve():
             return True
-        if self._decision is not None and self._decision.has_any_candidates():
-            return True
-        return False
+        if self._decision is None:
+            return False
+        if memory_project:
+            return self._decision.has_any_candidates(project=memory_project)
+        return self._decision.has_any_candidates()
