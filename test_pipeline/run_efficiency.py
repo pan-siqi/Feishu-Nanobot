@@ -2,7 +2,7 @@
 """
 效能指标验证（submission_report_final.md §5.3）
 
-根据 data/efficiency/tasks.json 复算字符数、步骤数及汇总表；可选与报告参考总值对账。
+根据 fixtures/report/efficiency/tasks.json 复算字符数、步骤数及汇总表；可选与报告参考总值对账。
 """
 
 from __future__ import annotations

@@ -1,7 +1,7 @@
 <div align="center">
   <img src="docs/imgs/test.png" alt="Feishu-Nanobot Logo" width="auto" style="margin-bottom: 20px;">
-  <h1>Feishu-nanobot</h1>
-  <h3>专为飞书定制的增强记忆型个人AI智能体</h3>
+  <h1>DeepMind</h1>
+  <h3>专为飞书Feishu定制的增强记忆型个人AI智能体</h3>
 </div>
 
 > ⚠️ **项目声明**

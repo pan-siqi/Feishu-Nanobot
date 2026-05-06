@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "description": "可自动跑的 DecisionBench 子集（E2E：extract + retrieve），控制成本仅保留少量用例"
+  },
+  "cases": [
+    {
+      "id": "e2e-auth-jwt",
+      "project": "feishu:oc_e2e_bench_auth",
+      "dialogue": [
+        "产品评审会上讨论了鉴权方案，最后技术负责人拍板：统一采用 JWT，不再使用服务端 Session。",
+        "会议纪要请同步：鉴权结论已确定。"
+      ],
+      "query": "我们鉴权最后定的是 JWT 还是 Session",
+      "hit_substrings": ["JWT"]
+    },
+    {
+      "id": "e2e-weekly-zhang",
+      "project": "feishu:oc_e2e_bench_weekly",
+      "dialogue": [
+        "团队确认：项目进度周报收件人为张三，邮箱 zhangsan@company.com，周五前发出。",
+        "以上结论全员执行。"
+      ],
+      "query": "周报收件人邮箱是什么",
+      "hit_substrings": ["zhangsan", "张三"]
+    }
+  ]
+}
