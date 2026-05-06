@@ -34,6 +34,7 @@ from nanobot.agent.tools.spawn import SpawnTool
 from nanobot.agent.tools.web import WebFetchTool, WebSearchTool
 from nanobot.bus.events import InboundMessage, OutboundMessage
 from nanobot.bus.queue import MessageBus
+from nanobot.channels.feishu_card import resolve_interactive_card
 from nanobot.command import CommandContext, CommandRouter, register_builtin_commands
 from nanobot.config.schema import AgentDefaults
 from nanobot.providers.base import LLMProvider
@@ -44,6 +45,9 @@ from nanobot.utils.helpers import image_placeholder_text
 from nanobot.utils.helpers import truncate_text as truncate_text_fn
 from nanobot.utils.runtime import EMPTY_FINAL_RESPONSE_MESSAGE
 from nanobot.utils.prompt_templates import render_template
+
+# Default interactive card JSON for Feishu (overridable via inbound metadata).
+_DEFAULT_PUBLISH_CARD_JSON = Path(__file__).resolve().parent / "hiarch_memory" / "test.json"
 
 if TYPE_CHECKING:
     from nanobot.config.schema import ChannelsConfig, ExecToolConfig, WebToolsConfig
@@ -826,19 +830,27 @@ class AgentLoop:
         return True
 
     async def _publish_card(self, msg: InboundMessage):
-        content = 'this is a card content'
-        card = """##🌙 今夜的风
-
-城市慢慢安静下来，灯光像洒在夜色里的碎星。  
-我把今天的疲惫折好，放进晚风经过的角落。
-
->愿你在喧嚣里保留一点柔软，  
->也在独处时，听见心里微小却坚定的光。
-
-**明天会来，带着新的云、新的路，以及新的可能。**
-"""
+        # Visible plain-text companion (card body is in metadata["_card_json"]).
+        content = "this is a card content"
+        demo_md = "\n\n".join(
+            [
+                "城市慢慢安静下来，灯光像洒在夜色里的碎星。",
+                "我把今天的疲惫折好，放进晚风经过的角落。",
+                "",
+                "> 愿你在喧嚣里保留一点柔软，",
+                "> 也在独处时，听见心里微小却坚定的光。",
+                "",
+                "**明天会来，带着新的云、新的路，以及新的可能。**",
+            ]
+        )
+        
         meta = dict(msg.metadata or {})
-        meta['_card'] = card.strip()
+        meta["_card_json"] = resolve_interactive_card(
+            meta,
+            default_markdown=demo_md,
+            default_header_title="Nanobot",
+        )
+        meta["_card"] = demo_md
 
         await self.bus.publish_outbound(
             OutboundMessage(
@@ -847,7 +859,7 @@ class AgentLoop:
                 content=content,
                 metadata=meta,
             )
-        ) 
+        )
 
     def _sanitize_persisted_blocks(
         self,
