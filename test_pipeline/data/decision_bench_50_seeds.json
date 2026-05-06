@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "name": "DecisionBench-50 seeds",
+    "description": "报告 5.5 / 附录：DecisionBench-50 的 20 条种子用例，覆盖召回、噪声、覆盖、遗忘、假阳性等意图，供扩展完整 50 题集",
+    "version": "1.0"
+  },
+  "seeds": [
+    {"id": "db-01", "axis": "recall", "query": "上次拍板用 JWT 还是 Session？", "notes": "决策记忆召回"},
+    {"id": "db-02", "axis": "recall", "query": "客户 ABC 不接受哪种通知方式？", "notes": "偏好类决策"},
+    {"id": "db-03", "axis": "noise", "query": "周报收件人是谁", "distractor_theme": "无关技术问答穿插", "notes": "抗噪声召回"},
+    {"id": "db-04", "axis": "noise", "query": "发版日期最终定在哪天", "distractor_theme": "大量闲聊", "notes": "deadline 类"},
+    {"id": "db-05", "axis": "override", "query": "运营周报收件人现在是谁", "notes": "时序覆写后唯一真值"},
+    {"id": "db-06", "axis": "override", "query": "API 网关选型结论变了吗", "notes": "changed 信号"},
+    {"id": "db-07", "axis": "forgetting", "query": "三个月前定的复盘节奏还要复习吗", "notes": "遗忘曲线 / 复习候选"},
+    {"id": "db-08", "axis": "forgetting", "query": "哪些决策 R(t) 已低于阈值", "notes": "强度衰减语义"},
+    {"id": "db-09", "axis": "false_positive", "query": "帮我写一段 Python 快速排序", "notes": "不应触发决策检索"},
+    {"id": "db-10", "axis": "false_positive", "query": "今天天气怎么样", "notes": "闲聊不注入记忆"},
+    {"id": "db-11", "axis": "router", "query": "为什么不用 Elasticsearch？", "notes": "QueryRouter 决策词"},
+    {"id": "db-12", "axis": "router", "query": "上周架构评审当时怎么定的", "notes": "Episodic 历史词"},
+    {"id": "db-13", "axis": "status", "query": "Algolia 方案现在还有效吗", "notes": "rejected / superseded 区分"},
+    {"id": "db-14", "axis": "status", "query": "暂缓的需求列表里有哪条", "notes": "postponed"},
+    {"id": "db-15", "axis": "project_isolation", "query": "项目 A 的收件人", "project": "feishu:oc_a", "notes": "project 过滤"},
+    {"id": "db-16", "axis": "project_isolation", "query": "项目 B 的收件人", "project": "feishu:oc_b", "notes": "跨项目不串"},
+    {"id": "db-17", "axis": "evidence", "query": "谁说的截止日从 5 号改 8 号", "notes": "证据链 / message id"},
+    {"id": "db-18", "axis": "merge", "query": "同一事件两条记录合并后结论", "notes": "evaluate+merge"},
+    {"id": "db-19", "axis": "efficiency", "query": "发本周周报", "notes": "短指令 + 记忆命中"},
+    {"id": "db-20", "axis": "efficiency", "query": "发今天产品评审纪要", "notes": "步骤压缩场景"}
+  ]
+}
