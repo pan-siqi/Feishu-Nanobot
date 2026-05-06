@@ -1,52 +1,267 @@
 {
-    "schema": "2.0", 
-    "body": {
-        "elements": [
-            {
-                "tag": "button",
-                "element_id": "custom_id", 
-                "margin": "0px 0px 0px 0px",
-                "type": "primary", 
-                "size": "small", 
-                "width": "default",
-                "text": {
-                    "tag": "plain_text",
-                    "content": "确定"
-                },
-                "icon": {
-                    "tag": "standard_icon", 
-                    "token": "chat-forbidden_outlined", 
-                    "color": "orange"
-                },
-                "hover_tips": {}, 
-                "disabled": false,
-                "disabled_tips": {},
-                "confirm": {
-                    "title": {
-                        "tag": "plain_text",
-                        "content": "title"
-                    },
-                    "text": {
-                        "tag": "plain_text",
-                        "content": "content"
-                    }
-                },
-                "behaviors": [
-                    {
-                        "type": "open_url", 
-                        "default_url": "https://www.baidu.com", 
-                        "android_url": "https://developer.android.com/", 
-                        "ios_url": "lark://msgcard/unsupported_action", 
-                        "pc_url": "https://www.windows.com" 
-                    },
-                    {
-                        "type": "callback",
-                        "value": {
-                            "key_1": "value_1"
-                        }
-                    }
-                ]
-            }
-        ]
+  "schema": "2.0",
+  "config": {
+    "wide_screen_mode": true
+  },
+  "header": {
+    "template": "blue",
+    "title": {
+      "tag": "plain_text",
+      "content": "Decision Review · 检索结果"
     }
+  },
+  "body": {
+    "elements": [
+      {
+        "tag": "markdown",
+        "content": "共检索到 **{{ total }}** 条候选决策信号，请逐条确认处理方式。"
+      },
+
+      {
+        "tag": "column_set",
+        "element_id": "item_0",
+        "margin": "8px 0 0 0",
+        "flex_mode": "stretch",
+        "background_style": "grey",
+        "columns": [
+          {
+            "tag": "column",
+            "width": "weighted",
+            "weight": 1,
+            "padding": "12px",
+            "vertical_spacing": "8px",
+            "elements": [
+              {
+                "tag": "markdown",
+                "content": "<text_tag color='blue'>#1</text_tag>\n\n{{ item_markdown_0 }}"
+              },
+              {
+                "tag": "column_set",
+                "flex_mode": "flow",
+                "horizontal_spacing": "8px",
+                "columns": [
+                  {
+                    "tag": "column",
+                    "width": "auto",
+                    "elements": [
+                      {
+                        "tag": "button",
+                        "element_id": "accept_0",
+                        "type": "primary_filled",
+                        "size": "small",
+                        "text": {
+                          "tag": "plain_text",
+                          "content": "采纳"
+                        },
+                        "hover_tips": {
+                          "tag": "plain_text",
+                          "content": "确认该条决策结果有效"
+                        },
+                        "behaviors": [
+                          {
+                            "type": "callback",
+                            "value": {
+                              "action": "accept",
+                              "item_index": 0,
+                              "event_name": "{{ event_name_0 }}",
+                              "decision_result": "{{ decision_result_0 }}"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "column",
+                    "width": "auto",
+                    "elements": [
+                      {
+                        "tag": "button",
+                        "element_id": "review_0",
+                        "type": "primary",
+                        "size": "small",
+                        "text": {
+                          "tag": "plain_text",
+                          "content": "复核"
+                        },
+                        "hover_tips": {
+                          "tag": "plain_text",
+                          "content": "标记为需要人工复核"
+                        },
+                        "behaviors": [
+                          {
+                            "type": "callback",
+                            "value": {
+                              "action": "review",
+                              "item_index": 0,
+                              "event_name": "{{ event_name_0 }}"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "column",
+                    "width": "auto",
+                    "elements": [
+                      {
+                        "tag": "button",
+                        "element_id": "reject_0",
+                        "type": "danger",
+                        "size": "small",
+                        "text": {
+                          "tag": "plain_text",
+                          "content": "驳回"
+                        },
+                        "confirm": {
+                          "title": {
+                            "tag": "plain_text",
+                            "content": "确认驳回？"
+                          },
+                          "text": {
+                            "tag": "plain_text",
+                            "content": "该操作会将此条结果标记为无效。"
+                          }
+                        },
+                        "behaviors": [
+                          {
+                            "type": "callback",
+                            "value": {
+                              "action": "reject",
+                              "item_index": 0,
+                              "event_name": "{{ event_name_0 }}"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "tag": "column_set",
+        "element_id": "item_1",
+        "margin": "8px 0 0 0",
+        "flex_mode": "stretch",
+        "background_style": "grey",
+        "columns": [
+          {
+            "tag": "column",
+            "width": "weighted",
+            "weight": 1,
+            "padding": "12px",
+            "vertical_spacing": "8px",
+            "elements": [
+              {
+                "tag": "markdown",
+                "content": "<text_tag color='blue'>#2</text_tag>\n\n{{ item_markdown_1 }}"
+              },
+              {
+                "tag": "column_set",
+                "flex_mode": "flow",
+                "horizontal_spacing": "8px",
+                "columns": [
+                  {
+                    "tag": "column",
+                    "width": "auto",
+                    "elements": [
+                      {
+                        "tag": "button",
+                        "element_id": "accept_1",
+                        "type": "primary_filled",
+                        "size": "small",
+                        "text": {
+                          "tag": "plain_text",
+                          "content": "采纳"
+                        },
+                        "behaviors": [
+                          {
+                            "type": "callback",
+                            "value": {
+                              "action": "accept",
+                              "item_index": 1,
+                              "event_name": "{{ event_name_1 }}",
+                              "decision_result": "{{ decision_result_1 }}"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "column",
+                    "width": "auto",
+                    "elements": [
+                      {
+                        "tag": "button",
+                        "element_id": "review_1",
+                        "type": "primary",
+                        "size": "small",
+                        "text": {
+                          "tag": "plain_text",
+                          "content": "复核"
+                        },
+                        "behaviors": [
+                          {
+                            "type": "callback",
+                            "value": {
+                              "action": "review",
+                              "item_index": 1,
+                              "event_name": "{{ event_name_1 }}"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "column",
+                    "width": "auto",
+                    "elements": [
+                      {
+                        "tag": "button",
+                        "element_id": "reject_1",
+                        "type": "danger",
+                        "size": "small",
+                        "text": {
+                          "tag": "plain_text",
+                          "content": "驳回"
+                        },
+                        "confirm": {
+                          "title": {
+                            "tag": "plain_text",
+                            "content": "确认驳回？"
+                          },
+                          "text": {
+                            "tag": "plain_text",
+                            "content": "该操作会将此条结果标记为无效。"
+                          }
+                        },
+                        "behaviors": [
+                          {
+                            "type": "callback",
+                            "value": {
+                              "action": "reject",
+                              "item_index": 1,
+                              "event_name": "{{ event_name_1 }}"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

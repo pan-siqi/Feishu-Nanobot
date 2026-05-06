@@ -34,7 +34,7 @@ class EventCandidateItem(Base):
     
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     
-    # item name    
+    # item name
     ec_id: Mapped[str] = mapped_column(String)
     event_name: Mapped[str] = mapped_column(String)
     aliases: Mapped[List[str]] = mapped_column(JSONB, default=list)
@@ -139,13 +139,23 @@ class EventCandidateRepository:
 
         self.session.commit()
     
-    def retrieve(self, ec: EventCandidateMetaClass, top_k: int = 5, is_filter: bool = True) -> List[Tuple[EventCandidateMetaClass, float]]:
+    def retrieve(
+            self,
+            query: EventCandidateMetaClass | str, 
+            top_k: int = 5, 
+            is_filter: bool = True
+        ) -> List[Tuple[EventCandidateMetaClass, float]]:
         '''
         retures: [(ec1, score1), (ec1, score2), (ec1, score3), ...]
         score_i, small means good
         '''
-        text = self.convert_text(ec)
-        query_vector = self._embed_model.encode([text], normalize_embeddings=True).flatten()
+        # convert query to string format
+        if isinstance(query, EventCandidateMetaClass):
+            query_string = self.convert_text(query)
+        elif isinstance(query, str):
+            query_string = str(query)
+        
+        query_vector = self._embed_model.encode([query_string], normalize_embeddings=True).flatten()
         distance = EventCandidateItem.embedding.cosine_distance(query_vector).label("distance")
         stmt = (
             select(EventCandidateItem, distance)
@@ -157,7 +167,7 @@ class EventCandidateRepository:
         if is_filter: result = list(filter(lambda item: item[1] < self._max_score, result))
 
         _result: List[Tuple] = list()
-        _keys = [f.name for f in fields(ec)]
+        _keys = [f.name for f in fields(EventCandidateMetaClass)]
         for item in result: # item --> metaclass
             _dict = {key: getattr(item[0], key) for key in _keys}
             ec_item = EventCandidateMetaClass(**_dict)
