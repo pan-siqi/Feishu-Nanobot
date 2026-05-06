@@ -74,6 +74,7 @@ class Router:
         for win in _window_content:
             message_id: str = f'm{uuid4().hex[:10]}'
             win['message_id'] = message_id
+            self._windows_message_ids.append(message_id)
     
     def _merge_evidence_message_ids(self, evidence_message_ids: List[str]):
         # filter not exists in _windows_message_ids

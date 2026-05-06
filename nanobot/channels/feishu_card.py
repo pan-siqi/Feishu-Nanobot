@@ -27,7 +27,7 @@ _CARD_JSON_KEY = "_card_json"
 def markdown_to_card_v2(
     markdown: str,
     *,
-    header_title: str | None = None,
+    header_title: str | None = "Nanobot",
     header_template: str = "blue",
 ) -> dict[str, Any]:
     """Wrap markdown in a schema 2.0 interactive card."""

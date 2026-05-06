@@ -1,6 +1,6 @@
 from nanobot.agent.hiarch_memory.base import BaseMemoryStore
 from nanobot.agent.hiarch_memory.scheme import EventCandidate, EventCandidateResult, EventCandidateMergeResult
-from nanobot.agent.hiarch_memory.database.ec_database import connect_database, EventCandidateMetaClass, EventCandidateRepository
+from nanobot.agent.hiarch_memory.database.ec_database import EventCandidateMetaClass, EventCandidateRepository
 from nanobot.providers.openai_compat_provider import OpenAICompatProvider
 from nanobot.providers.base import LLMResponse, LLMResponseStructure
 from nanobot.utils.prompt_templates import render_template
@@ -10,6 +10,20 @@ from typing import List, Dict, Tuple, Any
 from uuid import uuid4
 from datetime import datetime
 import os
+
+
+def _merge_eval_bool(content: str | None) -> bool:
+    """Parse evaluate.md LLM output as merge-or-not (never use eval())."""
+    if not content:
+        return False
+    t = content.strip().lower()
+    if t in ("true", "yes", "1", "是", "y"):
+        return True
+    if t in ("false", "no", "0", "否", "n"):
+        return False
+    head = t.split()[0] if t else ""
+    return head in ("true", "yes", "1", "是")
+
 
 class DecisionMemoryStore(BaseMemoryStore):
     def __init__(
@@ -26,6 +40,17 @@ class DecisionMemoryStore(BaseMemoryStore):
         self._session = database_session
         self._ec_repo = repo
         self._ec_save_path = os.path.join(self._mem_save_path, '.ec.jsonl')
+
+    def has_any_candidates(self) -> bool:
+        return bool(self._ec_repo.list(limit=1))
+
+    def prompt_block_for_query(self, query: str, top_k: int = 3) -> str:
+        """Canonical text blocks for top matching event candidates (system prompt)."""
+        hits = self._ec_repo.retrieve(query, top_k=top_k)
+        if not hits:
+            return ""
+        chunks = [self._ec_repo.convert_text(ec) for ec, _ in hits]
+        return "## Related decisions\n\n" + "\n\n".join(chunks)
     
     async def extract(self, history: List[Dict[str, Any]]) -> List[str]:
         # extract event candidates from window
@@ -70,8 +95,7 @@ class DecisionMemoryStore(BaseMemoryStore):
         ]
         response_eval = await self._provider.chat_with_retry(msg_eval, model=self._model, tools=None, tool_choice=None)
         
-        # parse response
-        if not eval(response_eval.content): # should not merge
+        if not _merge_eval_bool(response_eval.content):
             return None
 
         msg_merge: List[Dict[str, Any]] = [
