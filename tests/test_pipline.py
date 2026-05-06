@@ -28,7 +28,6 @@ class Memory:
         _SessionLocal = connect_database() # create session
         self._database_session: DataBaseSession = _SessionLocal()
         self._repo = EventCandidateRepository(self._database_session, BATCH_SIZE, MAX_SCORE)
-
         
         self.episodic = EpisodicMemoryStore(
             workspace=WORKSPACE_DIR,

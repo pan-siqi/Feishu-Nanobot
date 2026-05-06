@@ -43,7 +43,7 @@ class Monitor:
         ) -> Tuple[bool, list[dict]]:
         """Return True to skip the agent loop for this message ('read but no reply')."""
         messages = initial_messages
-        read_only = await self._block_message(session)
+        read_only = await self._block_message(session, msg)
         publish_result = await self._publish_card(session, msg)
         if not publish_result: return read_only, messages, None
         
@@ -52,11 +52,13 @@ class Monitor:
         messages.append(card_message)
         return read_only, messages, card_outboundmessage
 
-    async def _block_message(self, session: Session) -> bool: #这个还没写--要写
+    async def _block_message(self, session: Session, msg: InboundMessage) -> bool: #这个还没写--要写
         """
         Return True when the message should be consumed without an LLM reply.
         Reserved for group_reply_gate.md style logic; currently never suppresses.
         """
+        if msg.is_mentioned:
+            return False
         _ = session
         return True
 
@@ -97,6 +99,7 @@ class Monitor:
             "custom/beaucanonical.md",
             strip=True,
             event_name=ec.event_name,
+            project=ec.project,
             aliases=", ".join(ec.aliases),
             decision_signal=ec.decision_signal,
             summary=ec.summary,
