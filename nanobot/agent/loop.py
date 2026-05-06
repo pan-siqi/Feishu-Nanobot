@@ -790,8 +790,7 @@ class AgentLoop:
             user_persisted_early = True
 
         # set a monitor to check message flow
-        if await self.monitor.check(session, msg):
-            return 'Read but no reply'
+        read_only, card_message = await self.monitor.check(session, msg)
 
         final_content, _, all_msgs, stop_reason, had_injections = await self._run_agent_loop(
             initial_messages,
@@ -804,6 +803,7 @@ class AgentLoop:
             message_id=msg.metadata.get("message_id"),
             pending_queue=pending_queue,
         )
+
 
         if final_content is None or not final_content.strip():
             final_content = EMPTY_FINAL_RESPONSE_MESSAGE

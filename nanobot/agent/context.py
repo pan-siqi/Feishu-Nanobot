@@ -6,6 +6,7 @@ import platform
 from importlib.resources import files as pkg_files
 from pathlib import Path
 from typing import Any
+from loguru import logger
 # from nanobot.agent.memory import MemoryStore
 from nanobot.agent.hiarch_memory import HiarchMemoryStore
 from nanobot.agent.hiarch_memory.episodic import EpisodicMemoryStore
@@ -112,6 +113,12 @@ class ContextBuilder:
             if len(memory) > self._MAX_MEMORY_BLOCK_CHARS:
                 memory = memory[: self._MAX_MEMORY_BLOCK_CHARS].rstrip() + "\n\n...[memory truncated]"
             parts.append(f"# Memory\n\n{memory}")
+            logger.info(
+                "Memory block injected (# Memory): episodic={episodic}, decision={decision}, chars={n}",
+                episodic=("Episodic knowledge" in memory),
+                decision=("## Related decisions" in memory),
+                n=len(memory),
+            )
 
         always_skills = self.skills.get_always_skills()
         if always_skills:
