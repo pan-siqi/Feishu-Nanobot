@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "project": "feishu:oc_router_smoke",
+    "description": "最小 Router 全链路烟测（少量消息；检索校验依赖 NANOBOT_MEMORY_ROUTE_ALL=1 以保证决策层参与聚合）"
+  },
+  "messages": [
+    "团队确认：项目进度周报收件人为张三 zhangsan@company.com，请在周五前发出。"
+  ],
+  "queries": [
+    {
+      "text": "上次拍板定的周报收件人邮箱是哪个",
+      "hit_substrings": ["张三", "zhangsan"],
+      "check_aggregation": true
+    }
+  ]
+}

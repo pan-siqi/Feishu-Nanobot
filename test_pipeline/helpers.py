@@ -16,11 +16,31 @@ from nanobot.utils.prompt_templates import render_template
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 _PIPELINE_DIR = Path(__file__).resolve().parent
-DATA_DIR = _PIPELINE_DIR / "data"
+
+# Report-aligned datasets live under fixtures/report/ (see README-test.md).
+REPORT_FIXTURES_DIR = _PIPELINE_DIR / "fixtures" / "report"
+# Back-compat alias: historical scripts used `data/`.
+DATA_DIR = REPORT_FIXTURES_DIR
+_LEGACY_DATA_DIR = _PIPELINE_DIR / "data"
+
+
+def report_fixture_path(*parts: str) -> Path:
+    return REPORT_FIXTURES_DIR.joinpath(*parts)
 
 
 def load_dataset_json(*parts: str) -> Any:
-    path = DATA_DIR.joinpath(*parts)
+    path = REPORT_FIXTURES_DIR.joinpath(*parts)
+    if not path.exists() and _LEGACY_DATA_DIR.exists():
+        alt = _LEGACY_DATA_DIR.joinpath(*parts)
+        if alt.exists():
+            path = alt
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def load_scenario_json(name: str) -> Any:
+    """Load `fixtures/scenarios/{name}.json` (router / extended benchmarks)."""
+    path = _PIPELINE_DIR / "fixtures" / "scenarios" / f"{name}.json"
     with open(path, encoding="utf-8") as f:
         return json.load(f)
 
