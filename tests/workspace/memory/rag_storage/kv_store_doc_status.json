@@ -1,275 +1,376 @@
 {
-  "doc-ae9bad23c518fcb3bc3f6dabc9f830b7": {
+  "doc-af9844458918cd898899fb9dd08e385c": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-ae9bad23c518fcb3bc3f6dabc9f830b7"
+      "chunk-af9844458918cd898899fb9dd08e385c"
     ],
-    "content_summary": "[Memory]\nuid: f6162\ntype: fact\ntopic: boundary_condition_employee_skill_tag\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778047712\n\ncontent:\n员工技能标签为空时，系统会默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: d7f19\ntype: fact\ntopic: store_replay_results\nimportance: 0.7\nttl_d...",
-    "content_length": 1368,
-    "created_at": "2026-05-06T06:08:34.918738+00:00",
-    "updated_at": "2026-05-06T06:08:44.884460+00:00",
+    "content_summary": "[Memory]\nuid: 9902f\ntype: fact\ntopic: system_behavior\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778090475\n\ncontent:\n系统在员工技能标签为空时会默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: b3b9c\ntype: preference\ntopic: product_documentation\nimportance: 0.7\nttl_days: 180\ntimest...",
+    "content_length": 974,
+    "created_at": "2026-05-06T18:01:16.376380+00:00",
+    "updated_at": "2026-05-06T18:01:26.643240+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260506_060834_aa9b21f1",
+    "track_id": "insert_20260506_180116_7e5ca2c2",
     "metadata": {
-      "processing_start_time": 1778047714,
-      "processing_end_time": 1778047724
+      "processing_start_time": 1778090476,
+      "processing_end_time": 1778090486
     }
   },
-  "doc-889cd3a80c43f7bce79d2e9f0d43ae3c": {
+  "doc-417c911a0a791840d66dc227cd884e37": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c"
+      "chunk-417c911a0a791840d66dc227cd884e37"
     ],
-    "content_summary": "[Memory]\nuid: 8e37f\ntype: task\ntopic: milestones_and_acceptance_criteria\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778047748\n\ncontent:\n需求拆分成三阶段里程碑，并指出每阶段验收标准。\n\n[Memory]\nuid: ce931\ntype: preference\ntopic: demo_preferences\nimportance: 0.5\nttl_days: 30\nt...",
-    "content_length": 827,
-    "created_at": "2026-05-06T06:09:08.260162+00:00",
-    "updated_at": "2026-05-06T06:09:20.161349+00:00",
+    "content_summary": "[Memory]\nuid: 982ea\ntype: task\ntopic: star_bridge_crm_event_tracking\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090523\n\ncontent:\n星桥CRM 的埋点需要前端补充，尤其是从配置页返回列表页的路径。\n\n[Memory]\nuid: 175b5\ntype: preference\ntopic: star_bridge_crm_demo_preference\nimportance...",
+    "content_length": 2255,
+    "created_at": "2026-05-06T18:02:03.418212+00:00",
+    "updated_at": "2026-05-06T18:02:17.189520+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260506_060908_ec2de665",
+    "track_id": "insert_20260506_180203_97484033",
     "metadata": {
-      "processing_start_time": 1778047748,
-      "processing_end_time": 1778047760
+      "processing_start_time": 1778090523,
+      "processing_end_time": 1778090537
     }
   },
-  "doc-92f04e4637b01e8690c21f1043ac04e3": {
+  "doc-bbdf641d26f984e1ba66e8da7593c02c": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-92f04e4637b01e8690c21f1043ac04e3"
+      "chunk-bbdf641d26f984e1ba66e8da7593c02c"
     ],
-    "content_summary": "[Memory]\nuid: e5b69\ntype: goal\ntopic: polaris_core_metrics\nimportance: 1.0\nttl_days: 14\ntimestamp: 1778047796\n\ncontent:\nPolaris评审的核心指标为：人工覆盖率、员工连续晚班次数、班次缺口率和门店经理满意度。\n\n[Memory]\nuid: d0856\ntype: fact\ntopic: meeting_minutes\nimportance: 1.0\nttl_days: 30\n...",
-    "content_length": 1688,
-    "created_at": "2026-05-06T06:09:56.258946+00:00",
-    "updated_at": "2026-05-06T06:10:09.236840+00:00",
+    "content_summary": "[Memory]\nuid: 73b1d\ntype: task\ntopic: blue_whale_report_tracking\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090577\n\ncontent:\n蓝鲸报表的埋点需要前端补充，尤其是从配置页返回列表页的路径。\n\n[Memory]\nuid: 67e95\ntype: fact\ntopic: polaris_review_metrics\nimportance: 1.0\nttl_days: 14\nti...",
+    "content_length": 1679,
+    "created_at": "2026-05-06T18:02:57.946277+00:00",
+    "updated_at": "2026-05-06T18:03:11.347903+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260506_060956_03398103",
+    "track_id": "insert_20260506_180257_5623646c",
     "metadata": {
-      "processing_start_time": 1778047796,
-      "processing_end_time": 1778047809
+      "processing_start_time": 1778090577,
+      "processing_end_time": 1778090591
     }
   },
-  "doc-eb1d6ee54f9c54ae28745b1cf885e083": {
+  "doc-af0a542d93d4019c7a2c187932978fd7": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-eb1d6ee54f9c54ae28745b1cf885e083"
+      "chunk-af0a542d93d4019c7a2c187932978fd7"
     ],
-    "content_summary": "[Memory]\nuid: 45ded\ntype: fact\ntopic: polaris_acceptance_criteria\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778047869\n\ncontent:\nPolaris智能排班 目前最缺的是一致的验收口径，不是更多功能。请大家先把口径表补齐。\n\n[Memory]\nuid: d4a15\ntype: fact\ntopic: blue_whale_acceptance_criteria\nimportan...",
-    "content_length": 1844,
-    "created_at": "2026-05-06T06:11:09.768886+00:00",
-    "updated_at": "2026-05-06T06:11:19.490251+00:00",
+    "content_summary": "[Memory]\nuid: 15dfc\ntype: constraint\ntopic: polaris_smart_scheduling_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778090644\n\ncontent:\nPolaris智能排班目前最缺的是一致的验收口径，不是更多功能。\n\n[Memory]\nuid: a0b37\ntype: constraint\ntopic: blue_whale_report_acce...",
+    "content_length": 2394,
+    "created_at": "2026-05-06T18:04:04.968265+00:00",
+    "updated_at": "2026-05-06T18:04:24.226451+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260506_061109_943dcb7e",
+    "track_id": "insert_20260506_180404_e0b295b0",
     "metadata": {
-      "processing_start_time": 1778047869,
-      "processing_end_time": 1778047879
+      "processing_start_time": 1778090644,
+      "processing_end_time": 1778090664
     }
   },
-  "doc-06ccdd4148be7e3a4d432ca34f4b65a0": {
+  "doc-831841e6a9d2d322331bf44767072027": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-06ccdd4148be7e3a4d432ca34f4b65a0"
+      "chunk-831841e6a9d2d322331bf44767072027"
     ],
-    "content_summary": "[Memory]\nuid: 678bf\ntype: fact\ntopic: orion_overseas_payment_gateway\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778047930\n\ncontent:\nOrion海外支付网关进入小流量灰度阶段，业务方希望看到每日进展和明确的风险列表。\n\n[Memory]\nuid: 9bf8c\ntype: fact\ntopic: star_bridge_crm\nimportance: 1.0\nttl_day...",
-    "content_length": 1730,
-    "created_at": "2026-05-06T06:12:10.629535+00:00",
-    "updated_at": "2026-05-06T06:12:21.925940+00:00",
+    "content_summary": "[Memory]\nuid: bcc27\ntype: goal\ntopic: falcon_risk_control_gray_release\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778090729\n\ncontent:\nFalcon风控中台先小流量灰度，业务方希望看到每日进展和明确的风险列表。\n\n[Memory]\nuid: 463bf\ntype: goal\ntopic: orion_overseas_payment_gray_release\nimpor...",
+    "content_length": 2034,
+    "created_at": "2026-05-06T18:05:29.269086+00:00",
+    "updated_at": "2026-05-06T18:05:41.249230+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260506_061210_95f82aa5",
+    "track_id": "insert_20260506_180529_2de78b83",
     "metadata": {
-      "processing_start_time": 1778047930,
-      "processing_end_time": 1778047941
+      "processing_start_time": 1778090729,
+      "processing_end_time": 1778090741
     }
   },
-  "doc-3e06d0e157a44134b0e57b91cf1fddb1": {
+  "doc-674919726c613ceae563de940e9210c6": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-3e06d0e157a44134b0e57b91cf1fddb1"
+      "chunk-674919726c613ceae563de940e9210c6"
     ],
-    "content_summary": "[Memory]\nuid: fc4bc\ntype: task\ntopic: sql_troubleshooting\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778048003\n\ncontent:\n编写 SQL 排查思路，定位报表指标波动的来源。\n\n[Memory]\nuid: d490d\ntype: goal\ntopic: falcon_pilot_commitment\nimportance: 0.5\nttl_days: 30\ntimestamp: 177...",
-    "content_length": 1229,
-    "created_at": "2026-05-06T06:13:23.814120+00:00",
-    "updated_at": "2026-05-06T06:13:37.771943+00:00",
+    "content_summary": "[Memory]\nuid: 70bf4\ntype: task\ntopic: sql_troubleshooting_approach\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778090888\n\ncontent:\nSQL 排查思路包括确认指标定义变化，按日期、渠道、地区和业务线逐层聚合，比较源表入库量、去重逻辑和维表关联命中率，抽样核对明细记录。\n\n[Memory]\nuid: 67cf5\ntype: fact\ntopic: customer_commun...",
+    "content_length": 1778,
+    "created_at": "2026-05-06T18:08:08.750984+00:00",
+    "updated_at": "2026-05-06T18:08:33.295704+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260506_061323_c4f2502a",
+    "track_id": "insert_20260506_180808_040df20f",
     "metadata": {
-      "processing_start_time": 1778048003,
-      "processing_end_time": 1778048017
+      "processing_start_time": 1778090888,
+      "processing_end_time": 1778090913
     }
   },
-  "doc-2a9fe9e3df5e1fda2445315449929f76": {
+  "doc-532678afc48ac990ae29c1022012f438": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-2a9fe9e3df5e1fda2445315449929f76"
+      "chunk-532678afc48ac990ae29c1022012f438"
     ],
-    "content_summary": "[Memory]\nuid: d0e85\ntype: task\ntopic: weekly_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778048062\n\ncontent:\n本周只承诺 核心链路，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 30346\ntype: task\ntopic: risk_management\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778048062\n\ncont...",
-    "content_length": 1035,
-    "created_at": "2026-05-06T06:14:22.536390+00:00",
-    "updated_at": "2026-05-06T06:14:33.116054+00:00",
+    "content_summary": "[Memory]\nuid: 39017\ntype: task\ntopic: decision_on_release_timing\nimportance: 1.0\nttl_days: 7\ntimestamp: 1778091069\n\ncontent:\nPolaris智能排班需要确认是否保留原计划在周五上线，或者多跑两天灰度数据再开全量，团队倾向于后者。\n\n[Memory]\nuid: 4d96a\ntype: task\ntopic: commitment_for_current_week\nimport...",
+    "content_length": 1728,
+    "created_at": "2026-05-06T18:11:09.630391+00:00",
+    "updated_at": "2026-05-06T18:11:21.458717+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260506_061422_005882d0",
+    "track_id": "insert_20260506_181109_2cfe0b07",
     "metadata": {
-      "processing_start_time": 1778048062,
-      "processing_end_time": 1778048073
+      "processing_start_time": 1778091069,
+      "processing_end_time": 1778091081
     }
   },
-  "doc-a7a5f6a61d77f4b20efb7f871e74155a": {
+  "doc-1d29631898da6b5d9c45d90897b8d65e": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-a7a5f6a61d77f4b20efb7f871e74155a"
+      "chunk-1d29631898da6b5d9c45d90897b8d65e"
     ],
-    "content_summary": "[Memory]\nuid: a1c7d\ntype: fact\ntopic: polaris_audit_log\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778048137\n\ncontent:\nPolaris的审计日志字段已经入库，法务可以按门店、日期和规则版本过滤抽查.\n\n[Memory]\nuid: b86a1\ntype: goal\ntopic: polaris_exports_support\nimportance: 0.7\nttl_days: 30\nt...",
-    "content_length": 1604,
-    "created_at": "2026-05-06T06:15:37.328558+00:00",
-    "updated_at": "2026-05-06T06:15:48.032664+00:00",
+    "content_summary": "[Memory]\nuid: de029\ntype: preference\ntopic: polaris_alarm_description\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091092\n\ncontent:\nPolaris智能排班 的告警描述需改清楚，以避免值班同学误判。\n\n[Memory]\nuid: 7b405\ntype: preference\ntopic: polaris_demo_preference\nimportance: 0.5\nt...",
+    "content_length": 1731,
+    "created_at": "2026-05-06T18:11:32.448678+00:00",
+    "updated_at": "2026-05-06T18:11:45.720425+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260506_061537_7aac8bda",
+    "track_id": "insert_20260506_181132_b8fad93b",
     "metadata": {
-      "processing_start_time": 1778048137,
-      "processing_end_time": 1778048148
+      "processing_start_time": 1778091092,
+      "processing_end_time": 1778091105
     }
   },
-  "doc-61ef8cd55c161340695f43105b297ff4": {
+  "doc-f27bcfe21acd513bf183bbb73930a3a9": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-61ef8cd55c161340695f43105b297ff4"
+      "chunk-f27bcfe21acd513bf183bbb73930a3a9"
     ],
-    "content_summary": "[Memory]\nuid: 7c86d\ntype: fact\ntopic: release_schedule\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778048328\n\ncontent:\n上线窗口顺延一周，以确保关键链路在真实业务场景下足够稳定，核心功能已完成，但需补充验证数据一致性和异常兜底。\n\n[Memory]\nuid: 8310a\ntype: task\ntopic: orion_payment_gateway\nimportance: 0.6\ntt...",
-    "content_length": 1212,
-    "created_at": "2026-05-06T06:18:48.516451+00:00",
-    "updated_at": "2026-05-06T06:19:02.832795+00:00",
+    "content_summary": "[Memory]\nuid: c89af\ntype: fact\ntopic: project_schedule_adjustment\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778091138\n\ncontent:\n上线窗口顺延以确保关键链路在真实业务场景下稳定，延后一周能降低上线后返工和客户侧中断风险。\n\n[Memory]\nuid: 76c59\ntype: fact\ntopic: bluewhale_report_development\nimportance...",
+    "content_length": 1676,
+    "created_at": "2026-05-06T18:12:18.784196+00:00",
+    "updated_at": "2026-05-06T18:12:28.303744+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260506_061848_e0fbce53",
+    "track_id": "insert_20260506_181218_e38f1e54",
     "metadata": {
-      "processing_start_time": 1778048328,
-      "processing_end_time": 1778048342
+      "processing_start_time": 1778091138,
+      "processing_end_time": 1778091148
     }
   },
-  "doc-d9bd56dec3ecb540f1eaa11cc8bcdd05": {
+  "doc-76d97ae9ad65e7c134e4f39f61203547": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
+      "chunk-76d97ae9ad65e7c134e4f39f61203547"
     ],
-    "content_summary": "[Memory]\nuid: 60fea\ntype: task\ntopic: daily_report\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778048386\n\ncontent:\n日报可以简短一些，需明确阻塞项和需要他人协助的地方。\n\n[Memory]\nuid: bc0f4\ntype: constraint\ntopic: blue_whale_report\nimportance: 0.7\nttl_days: 30\ntimestamp: 177804838...",
-    "content_length": 1634,
-    "created_at": "2026-05-06T06:19:46.816299+00:00",
-    "updated_at": "2026-05-06T06:19:56.818747+00:00",
+    "content_summary": "[Memory]\nuid: cbb2d\ntype: preference\ntopic: daily_report_format\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778091162\n\ncontent:\n今天日报简短，需明确阻塞项和需要他人协助的地方。\n\n[Memory]\nuid: 05e4f\ntype: task\ntopic: blue_whale_report_acceptance_criteria\nimportance: 0.5\nttl_days...",
+    "content_length": 2318,
+    "created_at": "2026-05-06T18:12:42.759672+00:00",
+    "updated_at": "2026-05-06T18:12:59.195509+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260506_061946_d6ce80aa",
+    "track_id": "insert_20260506_181242_2b6266bb",
     "metadata": {
-      "processing_start_time": 1778048386,
-      "processing_end_time": 1778048396
+      "processing_start_time": 1778091162,
+      "processing_end_time": 1778091179
     }
   },
-  "doc-cc62a6c9fb99d31439150380cef44c4d": {
-    "status": "processed",
-    "chunks_count": 2,
-    "chunks_list": [
-      "chunk-cc62a6c9fb99d31439150380cef44c4d",
-      "chunk-a719e38a41e4f45b9ddde017e3a10812"
-    ],
-    "content_summary": "[Memory]\nuid: 8bd72\ntype: fact\ntopic: orion_payment_gateway_tracking\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778048450\n\ncontent:\nOrion海外支付网关 的埋点需要前端补充，特别是从配置页返回列表页的路径。\n\n[Memory]\nuid: c147b\ntype: fact\ntopic: blueshell_report_alarm\nimportance: 0.5\nttl...",
-    "content_length": 2683,
-    "created_at": "2026-05-06T06:20:50.127371+00:00",
-    "updated_at": "2026-05-06T06:21:02.149214+00:00",
-    "file_path": "unknown_source",
-    "track_id": "insert_20260506_062050_d232f394",
-    "metadata": {
-      "processing_start_time": 1778048450,
-      "processing_end_time": 1778048462
-    }
-  },
-  "doc-3fc6eb7b138cd81ac51cd60c88e12b75": {
+  "doc-31cf726d0fd95502a49473b957839521": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
+      "chunk-31cf726d0fd95502a49473b957839521"
     ],
-    "content_summary": "[Memory]\nuid: 2a835\ntype: goal\ntopic: project_goal\nimportance: 1.0\nttl_days: 14\ntimestamp: 1778048538\n\ncontent:\n如果两周后指标稳定，讨论全量上线；否则先把项目目标从全量上线改成区域试点。\n\n[Memory]\nuid: e4a85\ntype: fact\ntopic: explanation_panel_structure\nimportance: 0.5\nttl_days: 30\ntime...",
-    "content_length": 1578,
-    "created_at": "2026-05-06T06:22:18.230688+00:00",
-    "updated_at": "2026-05-06T06:22:29.822366+00:00",
+    "content_summary": "[Memory]\nuid: 317c0\ntype: task\ntopic: orion_overseas_payment_gateway_tracking\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091222\n\ncontent:\nOrion海外支付网关 的埋点需要前端补充，尤其是从配置页返回列表页的路径。\n\n[Memory]\nuid: 51488\ntype: fact\ntopic: blue_whale_report_risks\nimportanc...",
+    "content_length": 1751,
+    "created_at": "2026-05-06T18:13:42.392199+00:00",
+    "updated_at": "2026-05-06T18:13:52.462337+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260506_062218_e244b746",
+    "track_id": "insert_20260506_181342_5d480392",
     "metadata": {
-      "processing_start_time": 1778048538,
-      "processing_end_time": 1778048549
+      "processing_start_time": 1778091222,
+      "processing_end_time": 1778091232
     }
   },
-  "doc-57902305cc4fde183edf80ae8dd20894": {
+  "doc-16eadec8b7fe2c62976d614a8fe4526c": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-57902305cc4fde183edf80ae8dd20894"
+      "chunk-16eadec8b7fe2c62976d614a8fe4526c"
     ],
-    "content_summary": "[Memory]\nuid: 06db2\ntype: task\ntopic: core_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778048616\n\ncontent:\n本周只承诺核心链路，其他内容写进下一轮迭代。\n\n[Memory]\nuid: aef65\ntype: task\ntopic: key_report_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778048616\n\nc...",
-    "content_length": 1510,
-    "created_at": "2026-05-06T06:23:36.359137+00:00",
-    "updated_at": "2026-05-06T06:23:47.879214+00:00",
+    "content_summary": "[Memory]\nuid: 5292e\ntype: goal\ntopic: project_goal_adjustment\nimportance: 0.7\nttl_days: 14\ntimestamp: 1778091246\n\ncontent:\n如果两周后指标稳定，再讨论全量；如果解释面板仍然不够清楚，项目目标从全量上线改成区域试点。\n\n[Memory]\nuid: bc21b\ntype: fact\ntopic: explanation_panel_structure\nimportance: 0....",
+    "content_length": 1667,
+    "created_at": "2026-05-06T18:14:06.607558+00:00",
+    "updated_at": "2026-05-06T18:14:21.340754+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260506_062336_767ba2c9",
+    "track_id": "insert_20260506_181406_c0d9580f",
     "metadata": {
-      "processing_start_time": 1778048616,
-      "processing_end_time": 1778048627
+      "processing_start_time": 1778091246,
+      "processing_end_time": 1778091261
     }
   },
-  "doc-57b9e13b3eeafb17864ad7ee24b8a66e": {
+  "doc-f15f687f9191405de27a91f7e558fd9a": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
+      "chunk-f15f687f9191405de27a91f7e558fd9a"
     ],
-    "content_summary": "[Memory]\nuid: 4954c\ntype: fact\ntopic: falcon_risk_control_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778048658\n\ncontent:\nFalcon风控中台 目前最缺的是一致的验收口径，不是更多功能。请大家先把口径表补齐。\n\n[Memory]\nuid: 34d54\ntype: fact\ntopic: blue_whale_report_acceptance...",
-    "content_length": 1651,
-    "created_at": "2026-05-06T06:24:18.177021+00:00",
-    "updated_at": "2026-05-06T06:24:26.247532+00:00",
+    "content_summary": "[Memory]\nuid: 166b1\ntype: constraint\ntopic: labor_compliance_constraint\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091286\n\ncontent:\nPolaris智能排班的劳动合规约束复杂，可能在上线窗口集中暴露，需要提前演练监控告警和回滚脚本。\n\n[Memory]\nuid: 77822\ntype: constraint\ntopic: manual_override\nimport...",
+    "content_length": 1155,
+    "created_at": "2026-05-06T18:14:46.238252+00:00",
+    "updated_at": "2026-05-06T18:14:57.065005+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260506_062418_f62e9645",
+    "track_id": "insert_20260506_181446_006763ed",
     "metadata": {
-      "processing_start_time": 1778048658,
-      "processing_end_time": 1778048666
+      "processing_start_time": 1778091286,
+      "processing_end_time": 1778091297
     }
   },
-  "doc-0baf43ebc0b5e09bd22b03ea28799d01": {
+  "doc-97fed97bb39e4f420820b8b544ae7410": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-0baf43ebc0b5e09bd22b03ea28799d01"
+      "chunk-97fed97bb39e4f420820b8b544ae7410"
     ],
-    "content_summary": "[Memory]\nuid: 976d5\ntype: fact\ntopic: polaris_audit_log\nimportance: 0.7\nttl_days: 180\ntimestamp: 1778048733\n\ncontent:\nPolaris 的审计日志字段已经入库，法务可以按门店、日期和规则版本过滤抽查。\n\n[Memory]\nuid: 9518a\ntype: task\ntopic: risk_matrix_generation\nimportance: 0.5\nttl_days: 30\n...",
-    "content_length": 1634,
-    "created_at": "2026-05-06T06:25:33.005968+00:00",
-    "updated_at": "2026-05-06T06:25:43.130340+00:00",
+    "content_summary": "[Memory]\nuid: e1d36\ntype: fact\ntopic: decision_summary\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778091312\n\ncontent:\n核心范围先收敛，灰度名单分两批，数据口径由产品和财务共同确认，第三方依赖必须有降级方案，上线前补充压测和回归。\n\n[Memory]\nuid: fd73d\ntype: task\ntopic: action_items\nimportance: 1.0\nttl_days: ...",
+    "content_length": 1666,
+    "created_at": "2026-05-06T18:15:12.738987+00:00",
+    "updated_at": "2026-05-06T18:15:24.738772+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260506_062533_6b1f77d0",
+    "track_id": "insert_20260506_181512_d8cab84b",
     "metadata": {
-      "processing_start_time": 1778048733,
-      "processing_end_time": 1778048743
+      "processing_start_time": 1778091312,
+      "processing_end_time": 1778091324
     }
   },
-  "doc-15044e321936a9838efaca34c4b7be2f": {
+  "doc-582667d8032621bc02939bcc57d7c2dd": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-15044e321936a9838efaca34c4b7be2f"
+      "chunk-582667d8032621bc02939bcc57d7c2dd"
     ],
-    "content_summary": "[Memory]\nuid: 766dd\ntype: fact\ntopic: polaris_scheduling_gray_test\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778048812\n\ncontent:\nPolaris智能排班的试点门店灰度版本已经拉了分支，今天先合主流程，非核心的配置项不要再插进来了。\n\n[Memory]\nuid: c3946\ntype: fact\ntopic: polaris_scheduling_poc\nimportanc...",
-    "content_length": 1715,
-    "created_at": "2026-05-06T06:26:52.292807+00:00",
-    "updated_at": "2026-05-06T06:27:11.406148+00:00",
+    "content_summary": "[Memory]\nuid: 1cfd1\ntype: fact\ntopic: go_live_schedule\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778091348\n\ncontent:\n决定将上线窗口顺延以确保关键链路稳定，核心功能已完成，但数据一致性和异常兜底仍需验证。\n\n[Memory]\nuid: cd7f4\ntype: fact\ntopic: polaris_audit_log\nimportance: 0.5\nttl_days: 180\ntim...",
+    "content_length": 1437,
+    "created_at": "2026-05-06T18:15:48.061721+00:00",
+    "updated_at": "2026-05-06T18:15:58.078543+00:00",
     "file_path": "unknown_source",
-    "track_id": "insert_20260506_062652_8007f772",
+    "track_id": "insert_20260506_181548_17d4fda5",
     "metadata": {
-      "processing_start_time": 1778048812,
-      "processing_end_time": 1778048831
+      "processing_start_time": 1778091348,
+      "processing_end_time": 1778091358
+    }
+  },
+  "doc-86b7f7de6132f8beaa10e4b8030e9c0e": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-86b7f7de6132f8beaa10e4b8030e9c0e"
+    ],
+    "content_summary": "[Memory]\nuid: eda34\ntype: fact\ntopic: polaris_poC_stage\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091382\n\ncontent:\nPolaris智能排班今天进入PoC阶段，使用历史客流、员工技能标签和排班约束生成门店班表建议，目前最大不确定性是节假日客流波动大，需要确认负责人。\n\n[Memory]\nuid: 950d7\ntype: fact\ntopic: polaris_gray_versio...",
+    "content_length": 1263,
+    "created_at": "2026-05-06T18:16:22.011927+00:00",
+    "updated_at": "2026-05-06T18:16:32.256171+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260506_181622_ff212ad4",
+    "metadata": {
+      "processing_start_time": 1778091382,
+      "processing_end_time": 1778091392
+    }
+  },
+  "doc-cecb5a926892f726efe8342701a1573a": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-cecb5a926892f726efe8342701a1573a"
+    ],
+    "content_summary": "[Memory]\nuid: 3bf1a\ntype: task\ntopic: falcon_risk_control_architecture_review\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778091407\n\ncontent:\nFalcon风控中台今天进入架构评审阶段，需确认跨境交易规则负责人。\n\n[Memory]\nuid: 71519\ntype: task\ntopic: orion_overseas_payment_gateway_decisio...",
+    "content_length": 1713,
+    "created_at": "2026-05-06T18:16:47.259461+00:00",
+    "updated_at": "2026-05-06T18:17:03.936122+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260506_181647_2a4f7213",
+    "metadata": {
+      "processing_start_time": 1778091407,
+      "processing_end_time": 1778091423
+    }
+  },
+  "doc-157fe779439b0bcbd54d32979002c203": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-157fe779439b0bcbd54d32979002c203"
+    ],
+    "content_summary": "[Memory]\nuid: 040ff\ntype: constraint\ntopic: falcon_risk_control_strategy_replay_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091448\n\ncontent:\nFalcon风控中台的策略回放验收标准需要补充成功率、响应时间、异常兜底和人工回滚入口，以便测试判断是否通过。\n\n[Memory]\nuid: f553a\ntype: constr...",
+    "content_length": 2302,
+    "created_at": "2026-05-06T18:17:28.740298+00:00",
+    "updated_at": "2026-05-06T18:17:45.500334+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260506_181728_51238074",
+    "metadata": {
+      "processing_start_time": 1778091448,
+      "processing_end_time": 1778091465
+    }
+  },
+  "doc-6b55c418053c4a4792e8da66632e67d6": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-6b55c418053c4a4792e8da66632e67d6"
+    ],
+    "content_summary": "[Memory]\nuid: f89cd\ntype: task\ntopic: hdmi_adapter_usage\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778091488\n\ncontent:\n客户演示需要 8 楼会议室的 HDMI 转接头。\n\n[Memory]\nuid: a6106\ntype: task\ntopic: blue_whale_report_acceptance_criteria\nimportance: 0.7\nttl_days: 30\nti...",
+    "content_length": 1655,
+    "created_at": "2026-05-06T18:18:08.545326+00:00",
+    "updated_at": "2026-05-06T18:18:17.506866+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260506_181808_7a4730b1",
+    "metadata": {
+      "processing_start_time": 1778091488,
+      "processing_end_time": 1778091497
+    }
+  },
+  "doc-f8a3af499c22f18aceb06df693b066e1": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-f8a3af499c22f18aceb06df693b066e1"
+    ],
+    "content_summary": "[Memory]\nuid: a1140\ntype: fact\ntopic: polaris_explanation_panel_structure\nimportance: 1.0\nttl_days: 180\ntimestamp: 1778091526\n\ncontent:\nPolaris 的解释面板需要拆成三层：先给门店经理看结论，再展示触发的关键约束，最后保留详细日志给审计使用。\n\n[Memory]\nuid: f4a03\ntype: fact\ntopic: employee_skill_tag_...",
+    "content_length": 1221,
+    "created_at": "2026-05-06T18:18:46.802596+00:00",
+    "updated_at": "2026-05-06T18:18:56.972440+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260506_181846_f0de2a42",
+    "metadata": {
+      "processing_start_time": 1778091526,
+      "processing_end_time": 1778091536
+    }
+  },
+  "doc-bc6f0745fb5b43edaa4da42211ad7255": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-bc6f0745fb5b43edaa4da42211ad7255"
+    ],
+    "content_summary": "[Memory]\nuid: b4e22\ntype: constraint\ntopic: falcon_risk_control_strategy_replay_data\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778091561\n\ncontent:\nFalcon风控中台的策略回放数据量太大，需要在今天下班前确认负责人。\n\n[Memory]\nuid: e9189\ntype: task\ntopic: orion_overseas_payment_gateway...",
+    "content_length": 1746,
+    "created_at": "2026-05-06T18:19:21.358510+00:00",
+    "updated_at": "2026-05-06T18:19:36.680194+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260506_181921_d951cbac",
+    "metadata": {
+      "processing_start_time": 1778091561,
+      "processing_end_time": 1778091576
+    }
+  },
+  "doc-ae63aa94ccb0c6e7e81e3bbf1731a75a": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-ae63aa94ccb0c6e7e81e3bbf1731a75a"
+    ],
+    "content_summary": "[Memory]\nuid: 261f3\ntype: fact\ntopic: orion_overseas_payment_gateway_interface_development\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091604\n\ncontent:\nOrion海外支付网关的排期中，接口开发相关任务还剩7个未关闭，其中回归测试最容易拖慢节奏。\n\n[Memory]\nuid: 51f6d\ntype: task\ntopic: blue_whale_r...",
+    "content_length": 1848,
+    "created_at": "2026-05-06T18:20:04.384090+00:00",
+    "updated_at": "2026-05-06T18:20:14.074476+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20260506_182004_fc5e03de",
+    "metadata": {
+      "processing_start_time": 1778091604,
+      "processing_end_time": 1778091614
     }
   }
 }

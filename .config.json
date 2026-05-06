@@ -2,7 +2,7 @@
   "agents": {
     "defaults": {
       "workspace": "~/.nanobot/workspace",
-      "model": "gpt-4o-mini",
+      "model": "ep-20260423223104-568xj",
       "provider": "custom",
       "maxTokens": 8192,
       "contextWindowTokens": 65536,
@@ -207,8 +207,8 @@
   },
   "providers": {
     "custom": {
-      "apiKey": "sk-QZ4YFUpfJBYJLGphOx6IS2LA6eZm463GwR0NP4mczkFlXMs3",
-      "apiBase": "https://www.dmxapi.cn/v1",
+      "apiKey": "ark-ac09661c-4790-4392-ac7d-5f8e4bda0552-c01dd",
+      "apiBase": "https://ark.cn-beijing.volces.com/api/v3",
       "extraHeaders": null
     },
     "azureOpenai": {
@@ -368,5 +368,28 @@
     "restrictToWorkspace": false,
     "mcpServers": {},
     "ssrfWhitelist": []
-  }
+  },
+      "defaults": {
+      "workspace": "~/.nanobot/workspace",
+      "model": "ep-20260423223104-568xj",
+      "provider": "custom",
+      "maxTokens": 8192,
+      "contextWindowTokens": 65536,
+      "contextBlockLimit": null,
+      "temperature": 0.1,
+      "maxToolIterations": 200,
+      "maxToolResultChars": 16000,
+      "providerRetryMode": "standard",
+      "reasoningEffort": null,
+      "timezone": "UTC",
+      "unifiedSession": false,
+      "disabledSkills": [],
+      "idleCompactAfterMinutes": 0,
+      "dream": {
+        "intervalH": 2,
+        "modelOverride": null,
+        "maxBatchSize": 20,
+        "maxIterations": 10
+      }
+    }
 }

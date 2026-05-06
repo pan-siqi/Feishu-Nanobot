@@ -1,85 +1,161 @@
 {
-  "Product Copy Emphasis": {
+  "Data Handling": {
     "chunk_ids": [
-      "chunk-ae9bad23c518fcb3bc3f6dabc9f830b7"
+      "chunk-af9844458918cd898899fb9dd08e385c"
     ],
     "count": 1,
-    "create_time": 1778047723,
-    "update_time": 1778047723,
-    "_id": "Product Copy Emphasis"
+    "create_time": 1778090485,
+    "update_time": 1778090485,
+    "_id": "Data Handling"
   },
-  "Algorithm Replay Grouping Advice": {
+  "Store Types": {
     "chunk_ids": [
-      "chunk-ae9bad23c518fcb3bc3f6dabc9f830b7"
+      "chunk-af9844458918cd898899fb9dd08e385c"
     ],
     "count": 1,
-    "create_time": 1778047723,
-    "update_time": 1778047723,
-    "_id": "Algorithm Replay Grouping Advice"
+    "create_time": 1778090485,
+    "update_time": 1778090485,
+    "_id": "Store Types"
   },
-  "Goal Discussion on Stability and Pilot": {
+  "Graylist": {
     "chunk_ids": [
-      "chunk-ae9bad23c518fcb3bc3f6dabc9f830b7"
+      "chunk-af9844458918cd898899fb9dd08e385c"
     ],
     "count": 1,
-    "create_time": 1778047723,
-    "update_time": 1778047723,
-    "_id": "Goal Discussion on Stability and Pilot"
+    "create_time": 1778090485,
+    "update_time": 1778090485,
+    "_id": "Graylist"
   },
-  "Task Grayscale List": {
+  "Data Schema": {
     "chunk_ids": [
-      "chunk-ae9bad23c518fcb3bc3f6dabc9f830b7"
+      "chunk-af9844458918cd898899fb9dd08e385c"
     ],
     "count": 1,
-    "create_time": 1778047723,
-    "update_time": 1778047723,
-    "_id": "Task Grayscale List"
+    "create_time": 1778090485,
+    "update_time": 1778090485,
+    "_id": "Data Schema"
   },
-  "Task Generate Meeting Minutes": {
+  "Project Plan": {
     "chunk_ids": [
-      "chunk-ae9bad23c518fcb3bc3f6dabc9f830b7"
+      "chunk-af9844458918cd898899fb9dd08e385c"
     ],
     "count": 1,
-    "create_time": 1778047723,
-    "update_time": 1778047723,
-    "_id": "Task Generate Meeting Minutes"
+    "create_time": 1778090485,
+    "update_time": 1778090485,
+    "_id": "Project Plan"
   },
-  "Task Update Schedule Table": {
+  "System Behavior": {
     "chunk_ids": [
-      "chunk-ae9bad23c518fcb3bc3f6dabc9f830b7"
-    ],
-    "count": 1,
-    "create_time": 1778047723,
-    "update_time": 1778047723,
-    "_id": "Task Update Schedule Table"
-  },
-  "Boundary Condition Employee Skill Tag": {
-    "chunk_ids": [
-      "chunk-ae9bad23c518fcb3bc3f6dabc9f830b7"
-    ],
-    "count": 1,
-    "create_time": 1778047723,
-    "update_time": 1778047723,
-    "_id": "Boundary Condition Employee Skill Tag"
-  },
-  "Store Replay Results": {
-    "chunk_ids": [
-      "chunk-a33fb9dbf76c6ab5d6ee21334f31b10d",
-      "chunk-ae9bad23c518fcb3bc3f6dabc9f830b7"
+      "chunk-bb5c51b38f13dad45911c5ef26998736",
+      "chunk-af9844458918cd898899fb9dd08e385c"
     ],
     "count": 2,
-    "create_time": 1778047723,
-    "update_time": 1778047723,
-    "_id": "Store Replay Results"
+    "create_time": 1778090485,
+    "update_time": 1778090485,
+    "_id": "System Behavior"
   },
-  "Employee Skill Tag": {
+  "Product Documentation": {
     "chunk_ids": [
-      "chunk-ae9bad23c518fcb3bc3f6dabc9f830b7"
+      "chunk-0fb39d7ab4ebb1627da577667df01f93",
+      "chunk-b3fba99e4e16b08c01c14a9c9e7177ab",
+      "chunk-9ff3855b72b767c3bec7568b60fc84f9",
+      "chunk-4e0f1885eb6771149f93a455915b9113",
+      "chunk-2e07022cad33ab55065c5bba8a438969",
+      "chunk-2ec1e958be5dc9b11f6a224a2a6b9571",
+      "chunk-0c0342e74ce24f9442643b70f4938abe",
+      "chunk-26b06aa0c5b9f23d91349f546eaa888f",
+      "chunk-fbb15a02ae7886cbf8118a76155f2a4d",
+      "chunk-af9844458918cd898899fb9dd08e385c"
+    ],
+    "count": 10,
+    "create_time": 1778090485,
+    "update_time": 1778090485,
+    "_id": "Product Documentation"
+  },
+  "Algorithm Replay": {
+    "chunk_ids": [
+      "chunk-0fb39d7ab4ebb1627da577667df01f93",
+      "chunk-b3fba99e4e16b08c01c14a9c9e7177ab",
+      "chunk-4e0f1885eb6771149f93a455915b9113",
+      "chunk-a33fb9dbf76c6ab5d6ee21334f31b10d",
+      "chunk-26b06aa0c5b9f23d91349f546eaa888f",
+      "chunk-fbb15a02ae7886cbf8118a76155f2a4d",
+      "chunk-af9844458918cd898899fb9dd08e385c"
+    ],
+    "count": 7,
+    "create_time": 1778090485,
+    "update_time": 1778090485,
+    "_id": "Algorithm Replay"
+  },
+  "Milestone Requirement": {
+    "chunk_ids": [
+      "chunk-417c911a0a791840d66dc227cd884e37"
     ],
     "count": 1,
-    "create_time": 1778047723,
-    "update_time": 1778047723,
-    "_id": "Employee Skill Tag"
+    "create_time": 1778090533,
+    "update_time": 1778090533,
+    "_id": "Milestone Requirement"
+  },
+  "Polaris Core Metrics": {
+    "chunk_ids": [
+      "chunk-92f04e4637b01e8690c21f1043ac04e3",
+      "chunk-417c911a0a791840d66dc227cd884e37"
+    ],
+    "count": 2,
+    "create_time": 1778090533,
+    "update_time": 1778090533,
+    "_id": "Polaris Core Metrics"
+  },
+  "Polaris Intelligent Scheduling": {
+    "chunk_ids": [
+      "chunk-db7406a7cec74cac415bb65e61af0c02",
+      "chunk-57902305cc4fde183edf80ae8dd20894",
+      "chunk-0baf43ebc0b5e09bd22b03ea28799d01",
+      "chunk-417c911a0a791840d66dc227cd884e37"
+    ],
+    "count": 4,
+    "create_time": 1778090533,
+    "update_time": 1778090533,
+    "_id": "Polaris Intelligent Scheduling"
+  },
+  "Falcon Risk Control": {
+    "chunk_ids": [
+      "chunk-0baf43ebc0b5e09bd22b03ea28799d01",
+      "chunk-417c911a0a791840d66dc227cd884e37",
+      "chunk-f27bcfe21acd513bf183bbb73930a3a9"
+    ],
+    "count": 3,
+    "update_time": 1778091148,
+    "_id": "Falcon Risk Control"
+  },
+  "Orion Overseas Payment Gateway": {
+    "chunk_ids": [
+      "chunk-257dc3149297f67229682b3933f5d357",
+      "chunk-db7406a7cec74cac415bb65e61af0c02",
+      "chunk-61ef8cd55c161340695f43105b297ff4",
+      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05",
+      "chunk-417c911a0a791840d66dc227cd884e37",
+      "chunk-f27bcfe21acd513bf183bbb73930a3a9",
+      "chunk-16eadec8b7fe2c62976d614a8fe4526c",
+      "chunk-cecb5a926892f726efe8342701a1573a",
+      "chunk-6b55c418053c4a4792e8da66632e67d6"
+    ],
+    "count": 9,
+    "update_time": 1778091497,
+    "_id": "Orion Overseas Payment Gateway"
+  },
+  "Star Bridge CRM": {
+    "chunk_ids": [
+      "chunk-257dc3149297f67229682b3933f5d357",
+      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c",
+      "chunk-92f04e4637b01e8690c21f1043ac04e3",
+      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05",
+      "chunk-417c911a0a791840d66dc227cd884e37",
+      "chunk-76d97ae9ad65e7c134e4f39f61203547"
+    ],
+    "count": 6,
+    "update_time": 1778091176,
+    "_id": "Star Bridge CRM"
   },
   "Meeting Minutes": {
     "chunk_ids": [
@@ -89,162 +165,13 @@
       "chunk-db7406a7cec74cac415bb65e61af0c02",
       "chunk-ae9bad23c518fcb3bc3f6dabc9f830b7",
       "chunk-92f04e4637b01e8690c21f1043ac04e3",
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
+      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05",
+      "chunk-417c911a0a791840d66dc227cd884e37"
     ],
-    "count": 7,
-    "update_time": 1778048396,
+    "count": 8,
+    "create_time": 1778090533,
+    "update_time": 1778090533,
     "_id": "Meeting Minutes"
-  },
-  "Store": {
-    "chunk_ids": [
-      "chunk-ae9bad23c518fcb3bc3f6dabc9f830b7"
-    ],
-    "count": 1,
-    "create_time": 1778047723,
-    "update_time": 1778047723,
-    "_id": "Store"
-  },
-  "Core Metrics for Review": {
-    "chunk_ids": [
-      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c"
-    ],
-    "count": 1,
-    "create_time": 1778047759,
-    "update_time": 1778047759,
-    "_id": "Core Metrics for Review"
-  },
-  "Milestones and Acceptance Criteria": {
-    "chunk_ids": [
-      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c"
-    ],
-    "count": 1,
-    "create_time": 1778047759,
-    "update_time": 1778047759,
-    "_id": "Milestones and Acceptance Criteria"
-  },
-  "Acceptance Criteria Consistency": {
-    "chunk_ids": [
-      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c"
-    ],
-    "count": 1,
-    "create_time": 1778047759,
-    "update_time": 1778047759,
-    "_id": "Acceptance Criteria Consistency"
-  },
-  "人工覆盖率": {
-    "chunk_ids": [
-      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c"
-    ],
-    "count": 1,
-    "create_time": 1778047759,
-    "update_time": 1778047759,
-    "_id": "人工覆盖率"
-  },
-  "Client Demo Preferences": {
-    "chunk_ids": [
-      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c"
-    ],
-    "count": 1,
-    "create_time": 1778047759,
-    "update_time": 1778047759,
-    "_id": "Client Demo Preferences"
-  },
-  "Blue Whale Reports": {
-    "chunk_ids": [
-      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c"
-    ],
-    "count": 1,
-    "create_time": 1778047759,
-    "update_time": 1778047759,
-    "_id": "Blue Whale Reports"
-  },
-  "Falcon Risk Control Platform": {
-    "chunk_ids": [
-      "chunk-db7406a7cec74cac415bb65e61af0c02",
-      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c",
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
-    ],
-    "count": 3,
-    "update_time": 1778048396,
-    "_id": "Falcon Risk Control Platform"
-  },
-  "Star Bridge CRM": {
-    "chunk_ids": [
-      "chunk-257dc3149297f67229682b3933f5d357",
-      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c",
-      "chunk-92f04e4637b01e8690c21f1043ac04e3",
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
-    ],
-    "count": 4,
-    "update_time": 1778048396,
-    "_id": "Star Bridge CRM"
-  },
-  "班次缺口率": {
-    "chunk_ids": [
-      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c"
-    ],
-    "count": 1,
-    "create_time": 1778047759,
-    "update_time": 1778047759,
-    "_id": "班次缺口率"
-  },
-  "门店经理满意度": {
-    "chunk_ids": [
-      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c"
-    ],
-    "count": 1,
-    "create_time": 1778047759,
-    "update_time": 1778047759,
-    "_id": "门店经理满意度"
-  },
-  "员工连续晚班次数": {
-    "chunk_ids": [
-      "chunk-4dbcc7b99de8467cf3d4d5750dec3723",
-      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c"
-    ],
-    "count": 2,
-    "create_time": 1778047759,
-    "update_time": 1778047759,
-    "_id": "员工连续晚班次数"
-  },
-  "Polaris Audit Log": {
-    "chunk_ids": [
-      "chunk-4f6518c25c68e803227152a9928769c1",
-      "chunk-92f04e4637b01e8690c21f1043ac04e3",
-      "chunk-a7a5f6a61d77f4b20efb7f871e74155a",
-      "chunk-cc62a6c9fb99d31439150380cef44c4d",
-      "chunk-0baf43ebc0b5e09bd22b03ea28799d01"
-    ],
-    "count": 5,
-    "update_time": 1778048743,
-    "_id": "Polaris Audit Log"
-  },
-  "Customer Demo": {
-    "chunk_ids": [
-      "chunk-92f04e4637b01e8690c21f1043ac04e3"
-    ],
-    "count": 1,
-    "create_time": 1778047805,
-    "update_time": 1778047805,
-    "_id": "Customer Demo"
-  },
-  "Data Consistency": {
-    "chunk_ids": [
-      "chunk-92f04e4637b01e8690c21f1043ac04e3"
-    ],
-    "count": 1,
-    "create_time": 1778047805,
-    "update_time": 1778047805,
-    "_id": "Data Consistency"
-  },
-  "Polaris Core Metrics": {
-    "chunk_ids": [
-      "chunk-92f04e4637b01e8690c21f1043ac04e3"
-    ],
-    "count": 1,
-    "create_time": 1778047805,
-    "update_time": 1778047805,
-    "_id": "Polaris Core Metrics"
   },
   "Blue Whale Report": {
     "chunk_ids": [
@@ -253,53 +180,96 @@
       "chunk-db7406a7cec74cac415bb65e61af0c02",
       "chunk-92f04e4637b01e8690c21f1043ac04e3",
       "chunk-a7a5f6a61d77f4b20efb7f871e74155a",
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
+      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05",
+      "chunk-417c911a0a791840d66dc227cd884e37",
+      "chunk-76d97ae9ad65e7c134e4f39f61203547",
+      "chunk-cecb5a926892f726efe8342701a1573a",
+      "chunk-6b55c418053c4a4792e8da66632e67d6"
     ],
-    "count": 6,
-    "update_time": 1778048396,
+    "count": 10,
+    "update_time": 1778091497,
     "_id": "Blue Whale Report"
   },
-  "Risk Management": {
+  "Customer Communication Draft": {
     "chunk_ids": [
-      "chunk-60813e3913c0d8681c0ef7937b01b99c",
-      "chunk-db7406a7cec74cac415bb65e61af0c02",
-      "chunk-92f04e4637b01e8690c21f1043ac04e3",
-      "chunk-2a9fe9e3df5e1fda2445315449929f76"
+      "chunk-417c911a0a791840d66dc227cd884e37",
+      "chunk-674919726c613ceae563de940e9210c6"
     ],
-    "count": 4,
-    "update_time": 1778048072,
-    "_id": "Risk Management"
+    "count": 2,
+    "update_time": 1778090913,
+    "_id": "Customer Communication Draft"
   },
-  "Acceptance Criteria": {
+  "Blue Whale Report Weekly Update": {
     "chunk_ids": [
-      "chunk-92f04e4637b01e8690c21f1043ac04e3",
-      "chunk-2a9fe9e3df5e1fda2445315449929f76",
-      "chunk-a7a5f6a61d77f4b20efb7f871e74155a",
-      "chunk-cc62a6c9fb99d31439150380cef44c4d",
-      "chunk-a719e38a41e4f45b9ddde017e3a10812",
-      "chunk-57902305cc4fde183edf80ae8dd20894"
-    ],
-    "count": 6,
-    "update_time": 1778048627,
-    "_id": "Acceptance Criteria"
-  },
-  "Feedback Loop": {
-    "chunk_ids": [
-      "chunk-92f04e4637b01e8690c21f1043ac04e3"
+      "chunk-417c911a0a791840d66dc227cd884e37"
     ],
     "count": 1,
-    "create_time": 1778047805,
-    "update_time": 1778047805,
-    "_id": "Feedback Loop"
+    "create_time": 1778090533,
+    "update_time": 1778090533,
+    "_id": "Blue Whale Report Weekly Update"
   },
-  "Alert Description": {
+  "Frontend Enhancements": {
     "chunk_ids": [
-      "chunk-92f04e4637b01e8690c21f1043ac04e3"
+      "chunk-417c911a0a791840d66dc227cd884e37"
     ],
     "count": 1,
-    "create_time": 1778047805,
-    "update_time": 1778047805,
-    "_id": "Alert Description"
+    "create_time": 1778090537,
+    "update_time": 1778090537,
+    "_id": "Frontend Enhancements"
+  },
+  "Task Breakdown": {
+    "chunk_ids": [
+      "chunk-417c911a0a791840d66dc227cd884e37"
+    ],
+    "count": 1,
+    "create_time": 1778090537,
+    "update_time": 1778090537,
+    "_id": "Task Breakdown"
+  },
+  "Review Schedule": {
+    "chunk_ids": [
+      "chunk-417c911a0a791840d66dc227cd884e37"
+    ],
+    "count": 1,
+    "create_time": 1778090537,
+    "update_time": 1778090537,
+    "_id": "Review Schedule"
+  },
+  "Demonstration Preference": {
+    "chunk_ids": [
+      "chunk-417c911a0a791840d66dc227cd884e37"
+    ],
+    "count": 1,
+    "create_time": 1778090537,
+    "update_time": 1778090537,
+    "_id": "Demonstration Preference"
+  },
+  "Project Synchronization": {
+    "chunk_ids": [
+      "chunk-417c911a0a791840d66dc227cd884e37"
+    ],
+    "count": 1,
+    "create_time": 1778090537,
+    "update_time": 1778090537,
+    "_id": "Project Synchronization"
+  },
+  "Customer Feedback": {
+    "chunk_ids": [
+      "chunk-417c911a0a791840d66dc227cd884e37"
+    ],
+    "count": 1,
+    "create_time": 1778090537,
+    "update_time": 1778090537,
+    "_id": "Customer Feedback"
+  },
+  "Task Completion Status": {
+    "chunk_ids": [
+      "chunk-417c911a0a791840d66dc227cd884e37"
+    ],
+    "count": 1,
+    "create_time": 1778090537,
+    "update_time": 1778090537,
+    "_id": "Task Completion Status"
   },
   "Polaris": {
     "chunk_ids": [
@@ -313,11 +283,38 @@
       "chunk-92f04e4637b01e8690c21f1043ac04e3",
       "chunk-eb1d6ee54f9c54ae28745b1cf885e083",
       "chunk-3fc6eb7b138cd81ac51cd60c88e12b75",
-      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
+      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e",
+      "chunk-bbdf641d26f984e1ba66e8da7593c02c",
+      "chunk-1d29631898da6b5d9c45d90897b8d65e",
+      "chunk-31cf726d0fd95502a49473b957839521",
+      "chunk-16eadec8b7fe2c62976d614a8fe4526c",
+      "chunk-582667d8032621bc02939bcc57d7c2dd",
+      "chunk-6b55c418053c4a4792e8da66632e67d6",
+      "chunk-f8a3af499c22f18aceb06df693b066e1"
     ],
-    "count": 11,
-    "update_time": 1778048665,
+    "count": 18,
+    "update_time": 1778091536,
     "_id": "Polaris"
+  },
+  "Orion海外支付网关": {
+    "chunk_ids": [
+      "chunk-6542522ab21aeb1f125ab7ac3d935dbc",
+      "chunk-db7406a7cec74cac415bb65e61af0c02",
+      "chunk-eb1d6ee54f9c54ae28745b1cf885e083",
+      "chunk-06ccdd4148be7e3a4d432ca34f4b65a0",
+      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e",
+      "chunk-bbdf641d26f984e1ba66e8da7593c02c",
+      "chunk-af0a542d93d4019c7a2c187932978fd7",
+      "chunk-831841e6a9d2d322331bf44767072027",
+      "chunk-1d29631898da6b5d9c45d90897b8d65e",
+      "chunk-31cf726d0fd95502a49473b957839521",
+      "chunk-157fe779439b0bcbd54d32979002c203",
+      "chunk-bc6f0745fb5b43edaa4da42211ad7255",
+      "chunk-ae63aa94ccb0c6e7e81e3bbf1731a75a"
+    ],
+    "count": 13,
+    "update_time": 1778091613,
+    "_id": "Orion海外支付网关"
   },
   "星桥CRM": {
     "chunk_ids": [
@@ -328,47 +325,31 @@
       "chunk-92f04e4637b01e8690c21f1043ac04e3",
       "chunk-eb1d6ee54f9c54ae28745b1cf885e083",
       "chunk-06ccdd4148be7e3a4d432ca34f4b65a0",
-      "chunk-3e06d0e157a44134b0e57b91cf1fddb1"
+      "chunk-3e06d0e157a44134b0e57b91cf1fddb1",
+      "chunk-bbdf641d26f984e1ba66e8da7593c02c",
+      "chunk-af0a542d93d4019c7a2c187932978fd7",
+      "chunk-831841e6a9d2d322331bf44767072027",
+      "chunk-674919726c613ceae563de940e9210c6",
+      "chunk-31cf726d0fd95502a49473b957839521",
+      "chunk-157fe779439b0bcbd54d32979002c203",
+      "chunk-bc6f0745fb5b43edaa4da42211ad7255",
+      "chunk-ae63aa94ccb0c6e7e81e3bbf1731a75a"
     ],
-    "count": 8,
-    "update_time": 1778048013,
+    "count": 16,
+    "update_time": 1778091613,
     "_id": "星桥CRM"
   },
-  "Business Trip Budget": {
+  "Falcon": {
     "chunk_ids": [
-      "chunk-eb1d6ee54f9c54ae28745b1cf885e083"
-    ],
-    "count": 1,
-    "create_time": 1778047879,
-    "update_time": 1778047879,
-    "_id": "Business Trip Budget"
-  },
-  "Falcon风控中台": {
-    "chunk_ids": [
-      "chunk-6542522ab21aeb1f125ab7ac3d935dbc",
-      "chunk-db7406a7cec74cac415bb65e61af0c02",
-      "chunk-eb1d6ee54f9c54ae28745b1cf885e083",
-      "chunk-06ccdd4148be7e3a4d432ca34f4b65a0",
-      "chunk-3e06d0e157a44134b0e57b91cf1fddb1",
-      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
-    ],
-    "count": 6,
-    "update_time": 1778048665,
-    "_id": "Falcon风控中台"
-  },
-  "Polaris智能排班": {
-    "chunk_ids": [
-      "chunk-1041fcefcd08c4b8b16e0886ed561d59",
       "chunk-1b4ac1050fd4c4da4c13a546f1092f96",
-      "chunk-db7406a7cec74cac415bb65e61af0c02",
-      "chunk-eb1d6ee54f9c54ae28745b1cf885e083",
-      "chunk-2a9fe9e3df5e1fda2445315449929f76",
-      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e",
-      "chunk-15044e321936a9838efaca34c4b7be2f"
+      "chunk-4f6518c25c68e803227152a9928769c1",
+      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75",
+      "chunk-bbdf641d26f984e1ba66e8da7593c02c"
     ],
-    "count": 7,
-    "update_time": 1778048828,
-    "_id": "Polaris智能排班"
+    "count": 4,
+    "create_time": 1778090590,
+    "update_time": 1778090590,
+    "_id": "Falcon"
   },
   "蓝鲸报表": {
     "chunk_ids": [
@@ -380,159 +361,606 @@
       "chunk-06ccdd4148be7e3a4d432ca34f4b65a0",
       "chunk-3e06d0e157a44134b0e57b91cf1fddb1",
       "chunk-3fc6eb7b138cd81ac51cd60c88e12b75",
-      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
+      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e",
+      "chunk-bbdf641d26f984e1ba66e8da7593c02c",
+      "chunk-af0a542d93d4019c7a2c187932978fd7",
+      "chunk-831841e6a9d2d322331bf44767072027",
+      "chunk-674919726c613ceae563de940e9210c6",
+      "chunk-1d29631898da6b5d9c45d90897b8d65e",
+      "chunk-31cf726d0fd95502a49473b957839521",
+      "chunk-157fe779439b0bcbd54d32979002c203",
+      "chunk-bc6f0745fb5b43edaa4da42211ad7255",
+      "chunk-ae63aa94ccb0c6e7e81e3bbf1731a75a"
     ],
-    "count": 9,
-    "update_time": 1778048665,
+    "count": 18,
+    "update_time": 1778091613,
     "_id": "蓝鲸报表"
   },
-  "Orion海外支付网关": {
+  "黄色项": {
+    "chunk_ids": [
+      "chunk-6542522ab21aeb1f125ab7ac3d935dbc",
+      "chunk-bbdf641d26f984e1ba66e8da7593c02c"
+    ],
+    "count": 2,
+    "create_time": 1778090590,
+    "update_time": 1778090590,
+    "_id": "黄色项"
+  },
+  "绿色项": {
+    "chunk_ids": [
+      "chunk-6542522ab21aeb1f125ab7ac3d935dbc",
+      "chunk-bbdf641d26f984e1ba66e8da7593c02c"
+    ],
+    "count": 2,
+    "create_time": 1778090590,
+    "update_time": 1778090590,
+    "_id": "绿色项"
+  },
+  "红色项": {
+    "chunk_ids": [
+      "chunk-6542522ab21aeb1f125ab7ac3d935dbc",
+      "chunk-bbdf641d26f984e1ba66e8da7593c02c"
+    ],
+    "count": 2,
+    "create_time": 1778090590,
+    "update_time": 1778090590,
+    "_id": "红色项"
+  },
+  "审计日志": {
+    "chunk_ids": [
+      "chunk-0c0342e74ce24f9442643b70f4938abe",
+      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75",
+      "chunk-bbdf641d26f984e1ba66e8da7593c02c"
+    ],
+    "count": 3,
+    "create_time": 1778090590,
+    "update_time": 1778090590,
+    "_id": "审计日志"
+  },
+  "人工覆盖率": {
+    "chunk_ids": [
+      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c",
+      "chunk-bbdf641d26f984e1ba66e8da7593c02c"
+    ],
+    "count": 2,
+    "create_time": 1778090590,
+    "update_time": 1778090590,
+    "_id": "人工覆盖率"
+  },
+  "员工连续晚班次数": {
+    "chunk_ids": [
+      "chunk-4dbcc7b99de8467cf3d4d5750dec3723",
+      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c",
+      "chunk-bbdf641d26f984e1ba66e8da7593c02c"
+    ],
+    "count": 3,
+    "create_time": 1778090590,
+    "update_time": 1778090590,
+    "_id": "员工连续晚班次数"
+  },
+  "班次缺口率": {
+    "chunk_ids": [
+      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c",
+      "chunk-bbdf641d26f984e1ba66e8da7593c02c"
+    ],
+    "count": 2,
+    "create_time": 1778090590,
+    "update_time": 1778090590,
+    "_id": "班次缺口率"
+  },
+  "门店经理满意度": {
+    "chunk_ids": [
+      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c",
+      "chunk-bbdf641d26f984e1ba66e8da7593c02c"
+    ],
+    "count": 2,
+    "create_time": 1778090590,
+    "update_time": 1778090590,
+    "_id": "门店经理满意度"
+  },
+  "Polaris智能排班": {
+    "chunk_ids": [
+      "chunk-1041fcefcd08c4b8b16e0886ed561d59",
+      "chunk-1b4ac1050fd4c4da4c13a546f1092f96",
+      "chunk-db7406a7cec74cac415bb65e61af0c02",
+      "chunk-eb1d6ee54f9c54ae28745b1cf885e083",
+      "chunk-2a9fe9e3df5e1fda2445315449929f76",
+      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e",
+      "chunk-15044e321936a9838efaca34c4b7be2f",
+      "chunk-af0a542d93d4019c7a2c187932978fd7",
+      "chunk-532678afc48ac990ae29c1022012f438",
+      "chunk-1d29631898da6b5d9c45d90897b8d65e",
+      "chunk-31cf726d0fd95502a49473b957839521",
+      "chunk-f15f687f9191405de27a91f7e558fd9a",
+      "chunk-86b7f7de6132f8beaa10e4b8030e9c0e",
+      "chunk-157fe779439b0bcbd54d32979002c203"
+    ],
+    "count": 14,
+    "update_time": 1778091460,
+    "_id": "Polaris智能排班"
+  },
+  "Polaris评审核心指标": {
+    "chunk_ids": [
+      "chunk-af0a542d93d4019c7a2c187932978fd7"
+    ],
+    "count": 1,
+    "create_time": 1778090659,
+    "update_time": 1778090659,
+    "_id": "Polaris评审核心指标"
+  },
+  "Falcon风控中台": {
     "chunk_ids": [
       "chunk-6542522ab21aeb1f125ab7ac3d935dbc",
       "chunk-db7406a7cec74cac415bb65e61af0c02",
       "chunk-eb1d6ee54f9c54ae28745b1cf885e083",
       "chunk-06ccdd4148be7e3a4d432ca34f4b65a0",
-      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
-    ],
-    "count": 5,
-    "update_time": 1778048665,
-    "_id": "Orion海外支付网关"
-  },
-  "沙箱验证": {
-    "chunk_ids": [
-      "chunk-06ccdd4148be7e3a4d432ca34f4b65a0"
-    ],
-    "count": 1,
-    "create_time": 1778047941,
-    "update_time": 1778047941,
-    "_id": "沙箱验证"
-  },
-  "风险管理": {
-    "chunk_ids": [
-      "chunk-06ccdd4148be7e3a4d432ca34f4b65a0"
-    ],
-    "count": 1,
-    "create_time": 1778047941,
-    "update_time": 1778047941,
-    "_id": "风险管理"
-  },
-  "Falcon Deadline": {
-    "chunk_ids": [
-      "chunk-3e06d0e157a44134b0e57b91cf1fddb1"
-    ],
-    "count": 1,
-    "create_time": 1778048013,
-    "update_time": 1778048013,
-    "_id": "Falcon Deadline"
-  },
-  "蓝鲸Deadline": {
-    "chunk_ids": [
-      "chunk-3e06d0e157a44134b0e57b91cf1fddb1"
-    ],
-    "count": 1,
-    "create_time": 1778048013,
-    "update_time": 1778048013,
-    "_id": "蓝鲸Deadline"
-  },
-  "SQL Troubleshooting": {
-    "chunk_ids": [
-      "chunk-c17fc70850ea5d35ec1022bdd417c6ee",
       "chunk-3e06d0e157a44134b0e57b91cf1fddb1",
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
+      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e",
+      "chunk-af0a542d93d4019c7a2c187932978fd7",
+      "chunk-1d29631898da6b5d9c45d90897b8d65e",
+      "chunk-31cf726d0fd95502a49473b957839521",
+      "chunk-157fe779439b0bcbd54d32979002c203",
+      "chunk-bc6f0745fb5b43edaa4da42211ad7255",
+      "chunk-ae63aa94ccb0c6e7e81e3bbf1731a75a"
     ],
-    "count": 3,
-    "update_time": 1778048396,
-    "_id": "SQL Troubleshooting"
+    "count": 12,
+    "update_time": 1778091613,
+    "_id": "Falcon风控中台"
   },
-  "星桥Deadline": {
+  "Polaris决策变更": {
     "chunk_ids": [
-      "chunk-3e06d0e157a44134b0e57b91cf1fddb1"
-    ],
-    "count": 1,
-    "create_time": 1778048013,
-    "update_time": 1778048013,
-    "_id": "星桥Deadline"
-  },
-  "Monitoring Drills": {
-    "chunk_ids": [
-      "chunk-3e06d0e157a44134b0e57b91cf1fddb1"
+      "chunk-af0a542d93d4019c7a2c187932978fd7"
     ],
     "count": 1,
-    "create_time": 1778048013,
-    "update_time": 1778048013,
-    "_id": "Monitoring Drills"
+    "create_time": 1778090659,
+    "update_time": 1778090659,
+    "_id": "Polaris决策变更"
   },
-  "Falcon Pilot Commitment": {
+  "团建投票": {
     "chunk_ids": [
-      "chunk-3e06d0e157a44134b0e57b91cf1fddb1"
-    ],
-    "count": 1,
-    "create_time": 1778048013,
-    "update_time": 1778048013,
-    "_id": "Falcon Pilot Commitment"
-  },
-  "Bluewhale Pilot Commitment": {
-    "chunk_ids": [
-      "chunk-3e06d0e157a44134b0e57b91cf1fddb1"
-    ],
-    "count": 1,
-    "create_time": 1778048013,
-    "update_time": 1778048013,
-    "_id": "Bluewhale Pilot Commitment"
-  },
-  "Starbridge Core Commitment": {
-    "chunk_ids": [
-      "chunk-3e06d0e157a44134b0e57b91cf1fddb1"
-    ],
-    "count": 1,
-    "create_time": 1778048013,
-    "update_time": 1778048013,
-    "_id": "Starbridge Core Commitment"
-  },
-  "蓝鲸Pilot Commitment": {
-    "chunk_ids": [
-      "chunk-3e06d0e157a44134b0e57b91cf1fddb1"
-    ],
-    "count": 1,
-    "create_time": 1778048017,
-    "update_time": 1778048017,
-    "_id": "蓝鲸Pilot Commitment"
-  },
-  "星桥Core Commitment": {
-    "chunk_ids": [
-      "chunk-3e06d0e157a44134b0e57b91cf1fddb1"
-    ],
-    "count": 1,
-    "create_time": 1778048017,
-    "update_time": 1778048017,
-    "_id": "星桥Core Commitment"
-  },
-  "Weekly Commitment": {
-    "chunk_ids": [
-      "chunk-2a9fe9e3df5e1fda2445315449929f76"
-    ],
-    "count": 1,
-    "create_time": 1778048072,
-    "update_time": 1778048072,
-    "_id": "Weekly Commitment"
-  },
-  "Artificial Bottom Guarantee": {
-    "chunk_ids": [
-      "chunk-2a9fe9e3df5e1fda2445315449929f76"
-    ],
-    "count": 1,
-    "create_time": 1778048072,
-    "update_time": 1778048072,
-    "_id": "Artificial Bottom Guarantee"
-  },
-  "Labor Compliance": {
-    "chunk_ids": [
-      "chunk-2a9fe9e3df5e1fda2445315449929f76",
-      "chunk-57902305cc4fde183edf80ae8dd20894"
+      "chunk-1041fcefcd08c4b8b16e0886ed561d59",
+      "chunk-af0a542d93d4019c7a2c187932978fd7"
     ],
     "count": 2,
-    "update_time": 1778048627,
-    "_id": "Labor Compliance"
+    "create_time": 1778090659,
+    "update_time": 1778090659,
+    "_id": "团建投票"
+  },
+  "Polaris智能排班埋点": {
+    "chunk_ids": [
+      "chunk-af0a542d93d4019c7a2c187932978fd7"
+    ],
+    "count": 1,
+    "create_time": 1778090660,
+    "update_time": 1778090660,
+    "_id": "Polaris智能排班埋点"
+  },
+  "蓝鲸报表埋点": {
+    "chunk_ids": [
+      "chunk-af0a542d93d4019c7a2c187932978fd7"
+    ],
+    "count": 1,
+    "create_time": 1778090660,
+    "update_time": 1778090660,
+    "_id": "蓝鲸报表埋点"
+  },
+  "下午茶日程": {
+    "chunk_ids": [
+      "chunk-af0a542d93d4019c7a2c187932978fd7"
+    ],
+    "count": 1,
+    "create_time": 1778090660,
+    "update_time": 1778090660,
+    "_id": "下午茶日程"
+  },
+  "出差计划": {
+    "chunk_ids": [
+      "chunk-af0a542d93d4019c7a2c187932978fd7"
+    ],
+    "count": 1,
+    "create_time": 1778090660,
+    "update_time": 1778090660,
+    "_id": "出差计划"
+  },
+  "星桥CRM埋点": {
+    "chunk_ids": [
+      "chunk-af0a542d93d4019c7a2c187932978fd7"
+    ],
+    "count": 1,
+    "create_time": 1778090660,
+    "update_time": 1778090660,
+    "_id": "星桥CRM埋点"
+  },
+  "Orion海外支付网关周报": {
+    "chunk_ids": [
+      "chunk-af0a542d93d4019c7a2c187932978fd7"
+    ],
+    "count": 1,
+    "create_time": 1778090660,
+    "update_time": 1778090660,
+    "_id": "Orion海外支付网关周报"
+  },
+  "蓝鲸报表验收口径": {
+    "chunk_ids": [
+      "chunk-af0a542d93d4019c7a2c187932978fd7"
+    ],
+    "count": 1,
+    "create_time": 1778090660,
+    "update_time": 1778090660,
+    "_id": "蓝鲸报表验收口径"
+  },
+  "星桥CRM验收口径": {
+    "chunk_ids": [
+      "chunk-af0a542d93d4019c7a2c187932978fd7"
+    ],
+    "count": 1,
+    "create_time": 1778090660,
+    "update_time": 1778090660,
+    "_id": "星桥CRM验收口径"
+  },
+  "Polaris智能排班验收口径": {
+    "chunk_ids": [
+      "chunk-af0a542d93d4019c7a2c187932978fd7"
+    ],
+    "count": 1,
+    "create_time": 1778090660,
+    "update_time": 1778090660,
+    "_id": "Polaris智能排班验收口径"
+  },
+  "Falcon风险控制中台": {
+    "chunk_ids": [
+      "chunk-831841e6a9d2d322331bf44767072027",
+      "chunk-674919726c613ceae563de940e9210c6"
+    ],
+    "count": 2,
+    "update_time": 1778090913,
+    "_id": "Falcon风险控制中台"
+  },
+  "历史客户数据字段": {
+    "chunk_ids": [
+      "chunk-831841e6a9d2d322331bf44767072027"
+    ],
+    "count": 1,
+    "create_time": 1778090740,
+    "update_time": 1778090740,
+    "_id": "历史客户数据字段"
+  },
+  "汇率结算窗口": {
+    "chunk_ids": [
+      "chunk-831841e6a9d2d322331bf44767072027"
+    ],
+    "count": 1,
+    "create_time": 1778090740,
+    "update_time": 1778090740,
+    "_id": "汇率结算窗口"
+  },
+  "数据口径": {
+    "chunk_ids": [
+      "chunk-831841e6a9d2d322331bf44767072027"
+    ],
+    "count": 1,
+    "create_time": 1778090740,
+    "update_time": 1778090740,
+    "_id": "数据口径"
+  },
+  "权限评审验收标准": {
+    "chunk_ids": [
+      "chunk-831841e6a9d2d322331bf44767072027"
+    ],
+    "count": 1,
+    "create_time": 1778090740,
+    "update_time": 1778090740,
+    "_id": "权限评审验收标准"
+  },
+  "Orion海外支付": {
+    "chunk_ids": [
+      "chunk-831841e6a9d2d322331bf44767072027"
+    ],
+    "count": 1,
+    "create_time": 1778090740,
+    "update_time": 1778090740,
+    "_id": "Orion海外支付"
+  },
+  "需求冻结": {
+    "chunk_ids": [
+      "chunk-831841e6a9d2d322331bf44767072027"
+    ],
+    "count": 1,
+    "create_time": 1778090740,
+    "update_time": 1778090740,
+    "_id": "需求冻结"
+  },
+  "星桥CRM灰度阶段": {
+    "chunk_ids": [
+      "chunk-831841e6a9d2d322331bf44767072027"
+    ],
+    "count": 1,
+    "create_time": 1778090740,
+    "update_time": 1778090740,
+    "_id": "星桥CRM灰度阶段"
+  },
+  "orion海外支付网关": {
+    "chunk_ids": [
+      "chunk-831841e6a9d2d322331bf44767072027"
+    ],
+    "count": 1,
+    "create_time": 1778090741,
+    "update_time": 1778090741,
+    "_id": "orion海外支付网关"
+  },
+  "灰度阶段": {
+    "chunk_ids": [
+      "chunk-831841e6a9d2d322331bf44767072027"
+    ],
+    "count": 1,
+    "create_time": 1778090741,
+    "update_time": 1778090741,
+    "_id": "灰度阶段"
+  },
+  "灰度发布": {
+    "chunk_ids": [
+      "chunk-831841e6a9d2d322331bf44767072027",
+      "chunk-bc6f0745fb5b43edaa4da42211ad7255"
+    ],
+    "count": 2,
+    "update_time": 1778091572,
+    "_id": "灰度发布"
+  },
+  "Blue Whale Report Executive Trial Acceptance Criteria": {
+    "chunk_ids": [
+      "chunk-674919726c613ceae563de940e9210c6"
+    ],
+    "count": 1,
+    "create_time": 1778090913,
+    "update_time": 1778090913,
+    "_id": "Blue Whale Report Executive Trial Acceptance Criteria"
+  },
+  "Blue Whale Report Key Reports Commitment": {
+    "chunk_ids": [
+      "chunk-674919726c613ceae563de940e9210c6"
+    ],
+    "count": 1,
+    "create_time": 1778090913,
+    "update_time": 1778090913,
+    "_id": "Blue Whale Report Key Reports Commitment"
+  },
+  "Orion Gateway Core Link Commitment": {
+    "chunk_ids": [
+      "chunk-674919726c613ceae563de940e9210c6"
+    ],
+    "count": 1,
+    "create_time": 1778090913,
+    "update_time": 1778090913,
+    "_id": "Orion Gateway Core Link Commitment"
+  },
+  "Star Bridge CRM Freeze Tasks": {
+    "chunk_ids": [
+      "chunk-674919726c613ceae563de940e9210c6"
+    ],
+    "count": 1,
+    "create_time": 1778090913,
+    "update_time": 1778090913,
+    "_id": "Star Bridge CRM Freeze Tasks"
+  },
+  "SQL Troubleshooting Approach": {
+    "chunk_ids": [
+      "chunk-674919726c613ceae563de940e9210c6"
+    ],
+    "count": 1,
+    "create_time": 1778090913,
+    "update_time": 1778090913,
+    "_id": "SQL Troubleshooting Approach"
+  },
+  "Falcon Risk Control Sandbox Commitment": {
+    "chunk_ids": [
+      "chunk-674919726c613ceae563de940e9210c6"
+    ],
+    "count": 1,
+    "create_time": 1778090913,
+    "update_time": 1778090913,
+    "_id": "Falcon Risk Control Sandbox Commitment"
+  },
+  "Falcon Risk Control Launch Tasks": {
+    "chunk_ids": [
+      "chunk-674919726c613ceae563de940e9210c6"
+    ],
+    "count": 1,
+    "create_time": 1778090913,
+    "update_time": 1778090913,
+    "_id": "Falcon Risk Control Launch Tasks"
+  },
+  "Star Bridge CRM Replay Branch": {
+    "chunk_ids": [
+      "chunk-674919726c613ceae563de940e9210c6"
+    ],
+    "count": 1,
+    "create_time": 1778090913,
+    "update_time": 1778090913,
+    "_id": "Star Bridge CRM Replay Branch"
+  },
+  "Star Bridge CRM Core Link Commitment": {
+    "chunk_ids": [
+      "chunk-674919726c613ceae563de940e9210c6"
+    ],
+    "count": 1,
+    "create_time": 1778090913,
+    "update_time": 1778090913,
+    "_id": "Star Bridge CRM Core Link Commitment"
+  },
+  "试点门店": {
+    "chunk_ids": [
+      "chunk-15044e321936a9838efaca34c4b7be2f",
+      "chunk-532678afc48ac990ae29c1022012f438",
+      "chunk-86b7f7de6132f8beaa10e4b8030e9c0e"
+    ],
+    "count": 3,
+    "update_time": 1778091392,
+    "_id": "试点门店"
+  },
+  "PoC版本": {
+    "chunk_ids": [
+      "chunk-532678afc48ac990ae29c1022012f438"
+    ],
+    "count": 1,
+    "create_time": 1778091081,
+    "update_time": 1778091081,
+    "_id": "PoC版本"
+  },
+  "团队": {
+    "chunk_ids": [
+      "chunk-532678afc48ac990ae29c1022012f438"
+    ],
+    "count": 1,
+    "create_time": 1778091081,
+    "update_time": 1778091081,
+    "_id": "团队"
+  },
+  "模型评估": {
+    "chunk_ids": [
+      "chunk-15044e321936a9838efaca34c4b7be2f",
+      "chunk-532678afc48ac990ae29c1022012f438",
+      "chunk-86b7f7de6132f8beaa10e4b8030e9c0e"
+    ],
+    "count": 3,
+    "update_time": 1778091392,
+    "_id": "模型评估"
+  },
+  "风险列表": {
+    "chunk_ids": [
+      "chunk-532678afc48ac990ae29c1022012f438",
+      "chunk-bc6f0745fb5b43edaa4da42211ad7255"
+    ],
+    "count": 2,
+    "update_time": 1778091572,
+    "_id": "风险列表"
+  },
+  "统一口径": {
+    "chunk_ids": [
+      "chunk-15044e321936a9838efaca34c4b7be2f",
+      "chunk-532678afc48ac990ae29c1022012f438"
+    ],
+    "count": 2,
+    "create_time": 1778091081,
+    "update_time": 1778091081,
+    "_id": "统一口径"
+  },
+  "节假日客流": {
+    "chunk_ids": [
+      "chunk-532678afc48ac990ae29c1022012f438"
+    ],
+    "count": 1,
+    "create_time": 1778091081,
+    "update_time": 1778091081,
+    "_id": "节假日客流"
+  },
+  "里程碑": {
+    "chunk_ids": [
+      "chunk-85ceb61467a102ff77b5ca7639e61dad",
+      "chunk-532678afc48ac990ae29c1022012f438"
+    ],
+    "count": 2,
+    "create_time": 1778091081,
+    "update_time": 1778091081,
+    "_id": "里程碑"
+  },
+  "Meeting Action Items": {
+    "chunk_ids": [
+      "chunk-1d29631898da6b5d9c45d90897b8d65e"
+    ],
+    "count": 1,
+    "create_time": 1778091101,
+    "update_time": 1778091101,
+    "_id": "Meeting Action Items"
+  },
+  "Polaris审计日志": {
+    "chunk_ids": [
+      "chunk-1d29631898da6b5d9c45d90897b8d65e"
+    ],
+    "count": 1,
+    "create_time": 1778091101,
+    "update_time": 1778091101,
+    "_id": "Polaris审计日志"
+  },
+  "会议待办事项": {
+    "chunk_ids": [
+      "chunk-1d29631898da6b5d9c45d90897b8d65e"
+    ],
+    "count": 1,
+    "create_time": 1778091101,
+    "update_time": 1778091101,
+    "_id": "会议待办事项"
+  },
+  "Project Schedule Adjustment": {
+    "chunk_ids": [
+      "chunk-f27bcfe21acd513bf183bbb73930a3a9"
+    ],
+    "count": 1,
+    "create_time": 1778091148,
+    "update_time": 1778091148,
+    "_id": "Project Schedule Adjustment"
+  },
+  "Bluewhale Report Development": {
+    "chunk_ids": [
+      "chunk-f27bcfe21acd513bf183bbb73930a3a9"
+    ],
+    "count": 1,
+    "create_time": 1778091148,
+    "update_time": 1778091148,
+    "_id": "Bluewhale Report Development"
+  },
+  "Star Bridge CRM Gray Version": {
+    "chunk_ids": [
+      "chunk-f27bcfe21acd513bf183bbb73930a3a9"
+    ],
+    "count": 1,
+    "create_time": 1778091148,
+    "update_time": 1778091148,
+    "_id": "Star Bridge CRM Gray Version"
+  },
+  "Bluewhale Report Permission Review": {
+    "chunk_ids": [
+      "chunk-f27bcfe21acd513bf183bbb73930a3a9"
+    ],
+    "count": 1,
+    "create_time": 1778091148,
+    "update_time": 1778091148,
+    "_id": "Bluewhale Report Permission Review"
+  },
+  "Star Bridge CRM Data Consistency": {
+    "chunk_ids": [
+      "chunk-f27bcfe21acd513bf183bbb73930a3a9"
+    ],
+    "count": 1,
+    "create_time": 1778091148,
+    "update_time": 1778091148,
+    "_id": "Star Bridge CRM Data Consistency"
+  },
+  "Falcon Risk Control Acceptance Criteria": {
+    "chunk_ids": [
+      "chunk-f27bcfe21acd513bf183bbb73930a3a9"
+    ],
+    "count": 1,
+    "create_time": 1778091148,
+    "update_time": 1778091148,
+    "_id": "Falcon Risk Control Acceptance Criteria"
+  },
+  "Bluewhale Report Pilot Stores": {
+    "chunk_ids": [
+      "chunk-f27bcfe21acd513bf183bbb73930a3a9"
+    ],
+    "count": 1,
+    "create_time": 1778091148,
+    "update_time": 1778091148,
+    "_id": "Bluewhale Report Pilot Stores"
+  },
+  "Orion Overseas Payment Gateway Responsibility": {
+    "chunk_ids": [
+      "chunk-f27bcfe21acd513bf183bbb73930a3a9"
+    ],
+    "count": 1,
+    "create_time": 1778091148,
+    "update_time": 1778091148,
+    "_id": "Orion Overseas Payment Gateway Responsibility"
   },
   "Memory": {
     "chunk_ids": [
@@ -540,1045 +968,1098 @@
       "chunk-bb5c51b38f13dad45911c5ef26998736",
       "chunk-26b06aa0c5b9f23d91349f546eaa888f",
       "chunk-b5100b07b1d9802e83eb27a9fc3e5bf0",
-      "chunk-2a9fe9e3df5e1fda2445315449929f76"
+      "chunk-2a9fe9e3df5e1fda2445315449929f76",
+      "chunk-76d97ae9ad65e7c134e4f39f61203547",
+      "chunk-97fed97bb39e4f420820b8b544ae7410"
     ],
-    "count": 5,
-    "create_time": 1778048072,
-    "update_time": 1778048072,
+    "count": 7,
+    "update_time": 1778091324,
     "_id": "Memory"
   },
-  "PoC Version": {
+  "Orion Gateway Status": {
     "chunk_ids": [
-      "chunk-2a9fe9e3df5e1fda2445315449929f76"
+      "chunk-76d97ae9ad65e7c134e4f39f61203547"
     ],
     "count": 1,
-    "create_time": 1778048072,
-    "update_time": 1778048072,
-    "_id": "PoC Version"
+    "create_time": 1778091176,
+    "update_time": 1778091176,
+    "_id": "Orion Gateway Status"
   },
-  "Task Status": {
+  "Blue Whale Report Acceptance Criteria": {
     "chunk_ids": [
-      "chunk-2a9fe9e3df5e1fda2445315449929f76"
+      "chunk-76d97ae9ad65e7c134e4f39f61203547"
     ],
     "count": 1,
-    "create_time": 1778048072,
-    "update_time": 1778048072,
-    "_id": "Task Status"
+    "create_time": 1778091176,
+    "update_time": 1778091176,
+    "_id": "Blue Whale Report Acceptance Criteria"
   },
-  "Pilot Version": {
+  "Daily Report Format": {
     "chunk_ids": [
-      "chunk-2a9fe9e3df5e1fda2445315449929f76"
+      "chunk-76d97ae9ad65e7c134e4f39f61203547"
     ],
     "count": 1,
-    "create_time": 1778048072,
-    "update_time": 1778048072,
-    "_id": "Pilot Version"
+    "create_time": 1778091176,
+    "update_time": 1778091176,
+    "_id": "Daily Report Format"
   },
-  "Store Manager": {
+  "Falcon Risk Control Status": {
     "chunk_ids": [
-      "chunk-2a9fe9e3df5e1fda2445315449929f76",
-      "chunk-57902305cc4fde183edf80ae8dd20894"
+      "chunk-76d97ae9ad65e7c134e4f39f61203547"
+    ],
+    "count": 1,
+    "create_time": 1778091176,
+    "update_time": 1778091176,
+    "_id": "Falcon Risk Control Status"
+  },
+  "Falcon Risk Control Compliance Version": {
+    "chunk_ids": [
+      "chunk-76d97ae9ad65e7c134e4f39f61203547"
+    ],
+    "count": 1,
+    "create_time": 1778091176,
+    "update_time": 1778091176,
+    "_id": "Falcon Risk Control Compliance Version"
+  },
+  "Star Bridge CRM Decision": {
+    "chunk_ids": [
+      "chunk-76d97ae9ad65e7c134e4f39f61203547"
+    ],
+    "count": 1,
+    "create_time": 1778091176,
+    "update_time": 1778091176,
+    "_id": "Star Bridge CRM Decision"
+  },
+  "Star Bridge CRM Grayscale Version": {
+    "chunk_ids": [
+      "chunk-76d97ae9ad65e7c134e4f39f61203547"
+    ],
+    "count": 1,
+    "create_time": 1778091176,
+    "update_time": 1778091176,
+    "_id": "Star Bridge CRM Grayscale Version"
+  },
+  "Blue Whale Report Status": {
+    "chunk_ids": [
+      "chunk-76d97ae9ad65e7c134e4f39f61203547"
+    ],
+    "count": 1,
+    "create_time": 1778091176,
+    "update_time": 1778091176,
+    "_id": "Blue Whale Report Status"
+  },
+  "Star Bridge CRM Official Release Version": {
+    "chunk_ids": [
+      "chunk-76d97ae9ad65e7c134e4f39f61203547"
+    ],
+    "count": 1,
+    "create_time": 1778091176,
+    "update_time": 1778091176,
+    "_id": "Star Bridge CRM Official Release Version"
+  },
+  "Orion Gateway Small Flow Test": {
+    "chunk_ids": [
+      "chunk-76d97ae9ad65e7c134e4f39f61203547"
+    ],
+    "count": 1,
+    "create_time": 1778091176,
+    "update_time": 1778091176,
+    "_id": "Orion Gateway Small Flow Test"
+  },
+  "Falcon Risk Control Iteration": {
+    "chunk_ids": [
+      "chunk-76d97ae9ad65e7c134e4f39f61203547"
+    ],
+    "count": 1,
+    "create_time": 1778091176,
+    "update_time": 1778091176,
+    "_id": "Falcon Risk Control Iteration"
+  },
+  "Star Bridge CRM Release Phase": {
+    "chunk_ids": [
+      "chunk-76d97ae9ad65e7c134e4f39f61203547"
+    ],
+    "count": 1,
+    "create_time": 1778091176,
+    "update_time": 1778091176,
+    "_id": "Star Bridge CRM Release Phase"
+  },
+  "Blue Whale Report Timeline": {
+    "chunk_ids": [
+      "chunk-76d97ae9ad65e7c134e4f39f61203547"
+    ],
+    "count": 1,
+    "create_time": 1778091176,
+    "update_time": 1778091176,
+    "_id": "Blue Whale Report Timeline"
+  },
+  "Orion Gateway Channel Selection Criteria": {
+    "chunk_ids": [
+      "chunk-76d97ae9ad65e7c134e4f39f61203547"
+    ],
+    "count": 1,
+    "create_time": 1778091176,
+    "update_time": 1778091176,
+    "_id": "Orion Gateway Channel Selection Criteria"
+  },
+  "Orion Gateway": {
+    "chunk_ids": [
+      "chunk-76d97ae9ad65e7c134e4f39f61203547"
+    ],
+    "count": 1,
+    "create_time": 1778091176,
+    "update_time": 1778091176,
+    "_id": "Orion Gateway"
+  },
+  "销售团队导入表格模板": {
+    "chunk_ids": [
+      "chunk-31cf726d0fd95502a49473b957839521"
+    ],
+    "count": 1,
+    "create_time": 1778091232,
+    "update_time": 1778091232,
+    "_id": "销售团队导入表格模板"
+  },
+  "策略回放数据量": {
+    "chunk_ids": [
+      "chunk-31cf726d0fd95502a49473b957839521"
+    ],
+    "count": 1,
+    "create_time": 1778091232,
+    "update_time": 1778091232,
+    "_id": "策略回放数据量"
+  },
+  "策略回放数据量太大": {
+    "chunk_ids": [
+      "chunk-31cf726d0fd95502a49473b957839521"
+    ],
+    "count": 1,
+    "create_time": 1778091232,
+    "update_time": 1778091232,
+    "_id": "策略回放数据量太大"
+  },
+  "Project Goal Adjustment": {
+    "chunk_ids": [
+      "chunk-16eadec8b7fe2c62976d614a8fe4526c"
+    ],
+    "count": 1,
+    "create_time": 1778091257,
+    "update_time": 1778091257,
+    "_id": "Project Goal Adjustment"
+  },
+  "Explanation Panel Structure": {
+    "chunk_ids": [
+      "chunk-23024f9ea6618de13fe52f15018d4109",
+      "chunk-c17fc70850ea5d35ec1022bdd417c6ee",
+      "chunk-164629181eeda930a1e97de010bdca44",
+      "chunk-16eadec8b7fe2c62976d614a8fe4526c"
+    ],
+    "count": 4,
+    "create_time": 1778091257,
+    "update_time": 1778091257,
+    "_id": "Explanation Panel Structure"
+  },
+  "Product Documentation Emphasis": {
+    "chunk_ids": [
+      "chunk-16eadec8b7fe2c62976d614a8fe4526c",
+      "chunk-f8a3af499c22f18aceb06df693b066e1"
     ],
     "count": 2,
-    "update_time": 1778048627,
-    "_id": "Store Manager"
+    "update_time": 1778091536,
+    "_id": "Product Documentation Emphasis"
   },
-  "Polaris Smart Scheduling": {
+  "Algorithm Playback Grouping": {
     "chunk_ids": [
-      "chunk-a7a5f6a61d77f4b20efb7f871e74155a"
+      "chunk-23024f9ea6618de13fe52f15018d4109",
+      "chunk-16eadec8b7fe2c62976d614a8fe4526c"
+    ],
+    "count": 2,
+    "create_time": 1778091257,
+    "update_time": 1778091257,
+    "_id": "Algorithm Playback Grouping"
+  },
+  "Acceptance Criteria": {
+    "chunk_ids": [
+      "chunk-92f04e4637b01e8690c21f1043ac04e3",
+      "chunk-2a9fe9e3df5e1fda2445315449929f76",
+      "chunk-a7a5f6a61d77f4b20efb7f871e74155a",
+      "chunk-cc62a6c9fb99d31439150380cef44c4d",
+      "chunk-a719e38a41e4f45b9ddde017e3a10812",
+      "chunk-57902305cc4fde183edf80ae8dd20894",
+      "chunk-16eadec8b7fe2c62976d614a8fe4526c"
+    ],
+    "count": 7,
+    "create_time": 1778091257,
+    "update_time": 1778091257,
+    "_id": "Acceptance Criteria"
+  },
+  "Review Process Guideline": {
+    "chunk_ids": [
+      "chunk-16eadec8b7fe2c62976d614a8fe4526c"
     ],
     "count": 1,
-    "create_time": 1778048147,
-    "update_time": 1778048147,
-    "_id": "Polaris Smart Scheduling"
+    "create_time": 1778091257,
+    "update_time": 1778091257,
+    "_id": "Review Process Guideline"
   },
-  "Meeting Room Cache Issue": {
+  "Meeting Room Booking Issue": {
     "chunk_ids": [
-      "chunk-a7a5f6a61d77f4b20efb7f871e74155a"
+      "chunk-0baf43ebc0b5e09bd22b03ea28799d01",
+      "chunk-16eadec8b7fe2c62976d614a8fe4526c",
+      "chunk-582667d8032621bc02939bcc57d7c2dd"
+    ],
+    "count": 3,
+    "update_time": 1778091357,
+    "_id": "Meeting Room Booking Issue"
+  },
+  "Audit Log Access": {
+    "chunk_ids": [
+      "chunk-16eadec8b7fe2c62976d614a8fe4526c"
     ],
     "count": 1,
-    "create_time": 1778048147,
-    "update_time": 1778048147,
-    "_id": "Meeting Room Cache Issue"
+    "create_time": 1778091257,
+    "update_time": 1778091257,
+    "_id": "Audit Log Access"
   },
-  "Risk Identification": {
+  "Customer Demo Guideline": {
     "chunk_ids": [
-      "chunk-a7a5f6a61d77f4b20efb7f871e74155a"
+      "chunk-16eadec8b7fe2c62976d614a8fe4526c"
     ],
     "count": 1,
-    "create_time": 1778048147,
-    "update_time": 1778048147,
-    "_id": "Risk Identification"
+    "create_time": 1778091257,
+    "update_time": 1778091257,
+    "_id": "Customer Demo Guideline"
   },
-  "Risk Matrix": {
+  "Core Metrics for Review": {
     "chunk_ids": [
-      "chunk-a7a5f6a61d77f4b20efb7f871e74155a"
+      "chunk-889cd3a80c43f7bce79d2e9f0d43ae3c",
+      "chunk-16eadec8b7fe2c62976d614a8fe4526c"
+    ],
+    "count": 2,
+    "create_time": 1778091257,
+    "update_time": 1778091257,
+    "_id": "Core Metrics for Review"
+  },
+  "Manual Override": {
+    "chunk_ids": [
+      "chunk-f15f687f9191405de27a91f7e558fd9a"
     ],
     "count": 1,
-    "create_time": 1778048147,
-    "update_time": 1778048147,
-    "_id": "Risk Matrix"
+    "create_time": 1778091296,
+    "update_time": 1778091296,
+    "_id": "Manual Override"
   },
-  "Customer Demo Guidelines": {
+  "Model Evaluation Criteria": {
     "chunk_ids": [
-      "chunk-a7a5f6a61d77f4b20efb7f871e74155a"
+      "chunk-f15f687f9191405de27a91f7e558fd9a"
     ],
     "count": 1,
-    "create_time": 1778048147,
-    "update_time": 1778048147,
-    "_id": "Customer Demo Guidelines"
+    "create_time": 1778091296,
+    "update_time": 1778091296,
+    "_id": "Model Evaluation Criteria"
   },
-  "Audit Log Fields": {
+  "Labor Compliance Constraint": {
     "chunk_ids": [
-      "chunk-a7a5f6a61d77f4b20efb7f871e74155a"
+      "chunk-f15f687f9191405de27a91f7e558fd9a"
     ],
     "count": 1,
-    "create_time": 1778048147,
-    "update_time": 1778048147,
-    "_id": "Audit Log Fields"
+    "create_time": 1778091296,
+    "update_time": 1778091296,
+    "_id": "Labor Compliance Constraint"
   },
-  "Polaris Exports Support": {
+  "Branch Management": {
     "chunk_ids": [
-      "chunk-a7a5f6a61d77f4b20efb7f871e74155a"
+      "chunk-f15f687f9191405de27a91f7e558fd9a"
     ],
     "count": 1,
-    "create_time": 1778048147,
-    "update_time": 1778048147,
-    "_id": "Polaris Exports Support"
+    "create_time": 1778091296,
+    "update_time": 1778091296,
+    "_id": "Branch Management"
   },
-  "Weekly Report Updates": {
+  "Iteration Commitment": {
     "chunk_ids": [
-      "chunk-a7a5f6a61d77f4b20efb7f871e74155a"
+      "chunk-f15f687f9191405de27a91f7e558fd9a"
     ],
     "count": 1,
-    "create_time": 1778048147,
-    "update_time": 1778048147,
-    "_id": "Weekly Report Updates"
+    "create_time": 1778091296,
+    "update_time": 1778091296,
+    "_id": "Iteration Commitment"
+  },
+  "Go Live Decision": {
+    "chunk_ids": [
+      "chunk-f15f687f9191405de27a91f7e558fd9a"
+    ],
+    "count": 1,
+    "create_time": 1778091296,
+    "update_time": 1778091296,
+    "_id": "Go Live Decision"
+  },
+  "Business Alignment": {
+    "chunk_ids": [
+      "chunk-f15f687f9191405de27a91f7e558fd9a"
+    ],
+    "count": 1,
+    "create_time": 1778091297,
+    "update_time": 1778091297,
+    "_id": "Business Alignment"
+  },
+  "Action Items": {
+    "chunk_ids": [
+      "chunk-97fed97bb39e4f420820b8b544ae7410"
+    ],
+    "count": 1,
+    "create_time": 1778091324,
+    "update_time": 1778091324,
+    "_id": "Action Items"
+  },
+  "Decision Summary": {
+    "chunk_ids": [
+      "chunk-1041fcefcd08c4b8b16e0886ed561d59",
+      "chunk-97fed97bb39e4f420820b8b544ae7410"
+    ],
+    "count": 2,
+    "create_time": 1778091324,
+    "update_time": 1778091324,
+    "_id": "Decision Summary"
+  },
+  "Falcon Acceptance Criteria": {
+    "chunk_ids": [
+      "chunk-97fed97bb39e4f420820b8b544ae7410"
+    ],
+    "count": 1,
+    "create_time": 1778091324,
+    "update_time": 1778091324,
+    "_id": "Falcon Acceptance Criteria"
+  },
+  "Orion Strategy Data": {
+    "chunk_ids": [
+      "chunk-97fed97bb39e4f420820b8b544ae7410"
+    ],
+    "count": 1,
+    "create_time": 1778091324,
+    "update_time": 1778091324,
+    "_id": "Orion Strategy Data"
   },
   "Polaris Acceptance Criteria": {
     "chunk_ids": [
-      "chunk-a7a5f6a61d77f4b20efb7f871e74155a"
+      "chunk-a7a5f6a61d77f4b20efb7f871e74155a",
+      "chunk-97fed97bb39e4f420820b8b544ae7410"
     ],
-    "count": 1,
-    "create_time": 1778048147,
-    "update_time": 1778048147,
+    "count": 2,
+    "create_time": 1778091324,
+    "update_time": 1778091324,
     "_id": "Polaris Acceptance Criteria"
   },
-  "Orion Payment Gateway": {
+  "Polaris Explanation Button": {
     "chunk_ids": [
-      "chunk-61ef8cd55c161340695f43105b297ff4"
+      "chunk-97fed97bb39e4f420820b8b544ae7410"
     ],
     "count": 1,
-    "create_time": 1778048342,
-    "update_time": 1778048342,
-    "_id": "Orion Payment Gateway"
+    "create_time": 1778091324,
+    "update_time": 1778091324,
+    "_id": "Polaris Explanation Button"
   },
-  "Monitoring and Rollback": {
+  "Bluewhale Acceptance Criteria": {
     "chunk_ids": [
-      "chunk-61ef8cd55c161340695f43105b297ff4"
+      "chunk-97fed97bb39e4f420820b8b544ae7410"
     ],
     "count": 1,
-    "create_time": 1778048342,
-    "update_time": 1778048342,
-    "_id": "Monitoring and Rollback"
+    "create_time": 1778091324,
+    "update_time": 1778091324,
+    "_id": "Bluewhale Acceptance Criteria"
   },
-  "Core Scope": {
+  "Export Feature Query": {
     "chunk_ids": [
-      "chunk-61ef8cd55c161340695f43105b297ff4"
+      "chunk-97fed97bb39e4f420820b8b544ae7410"
     ],
     "count": 1,
-    "create_time": 1778048342,
-    "update_time": 1778048342,
-    "_id": "Core Scope"
+    "create_time": 1778091324,
+    "update_time": 1778091324,
+    "_id": "Export Feature Query"
   },
-  "Third Party Dependency": {
+  "Starbridge Demo Preference": {
     "chunk_ids": [
-      "chunk-61ef8cd55c161340695f43105b297ff4"
+      "chunk-97fed97bb39e4f420820b8b544ae7410"
     ],
     "count": 1,
-    "create_time": 1778048342,
-    "update_time": 1778048342,
-    "_id": "Third Party Dependency"
+    "create_time": 1778091324,
+    "update_time": 1778091324,
+    "_id": "Starbridge Demo Preference"
   },
-  "Release Schedule": {
+  "Falcon Logging Issue": {
     "chunk_ids": [
-      "chunk-61ef8cd55c161340695f43105b297ff4"
+      "chunk-97fed97bb39e4f420820b8b544ae7410"
     ],
     "count": 1,
-    "create_time": 1778048342,
-    "update_time": 1778048342,
-    "_id": "Release Schedule"
+    "create_time": 1778091324,
+    "update_time": 1778091324,
+    "_id": "Falcon Logging Issue"
   },
-  "Bluewhale Report": {
+  "测试用例": {
     "chunk_ids": [
-      "chunk-61ef8cd55c161340695f43105b297ff4"
+      "chunk-97fed97bb39e4f420820b8b544ae7410"
     ],
     "count": 1,
-    "create_time": 1778048342,
-    "update_time": 1778048342,
-    "_id": "Bluewhale Report"
+    "create_time": 1778091324,
+    "update_time": 1778091324,
+    "_id": "测试用例"
+  },
+  "接口清单": {
+    "chunk_ids": [
+      "chunk-97fed97bb39e4f420820b8b544ae7410"
+    ],
+    "count": 1,
+    "create_time": 1778091324,
+    "update_time": 1778091324,
+    "_id": "接口清单"
+  },
+  "客户话术": {
+    "chunk_ids": [
+      "chunk-97fed97bb39e4f420820b8b544ae7410"
+    ],
+    "count": 1,
+    "create_time": 1778091324,
+    "update_time": 1778091324,
+    "_id": "客户话术"
+  },
+  "监控面板": {
+    "chunk_ids": [
+      "chunk-97fed97bb39e4f420820b8b544ae7410"
+    ],
+    "count": 1,
+    "create_time": 1778091324,
+    "update_time": 1778091324,
+    "_id": "监控面板"
+  },
+  "复盘模板": {
+    "chunk_ids": [
+      "chunk-97fed97bb39e4f420820b8b544ae7410"
+    ],
+    "count": 1,
+    "create_time": 1778091324,
+    "update_time": 1778091324,
+    "_id": "复盘模板"
+  },
+  "Alert Description Clarity": {
+    "chunk_ids": [
+      "chunk-582667d8032621bc02939bcc57d7c2dd"
+    ],
+    "count": 1,
+    "create_time": 1778091357,
+    "update_time": 1778091357,
+    "_id": "Alert Description Clarity"
+  },
+  "Go Live Schedule": {
+    "chunk_ids": [
+      "chunk-582667d8032621bc02939bcc57d7c2dd"
+    ],
+    "count": 1,
+    "create_time": 1778091357,
+    "update_time": 1778091357,
+    "_id": "Go Live Schedule"
+  },
+  "Polaris Scheduling Demo": {
+    "chunk_ids": [
+      "chunk-582667d8032621bc02939bcc57d7c2dd"
+    ],
+    "count": 1,
+    "create_time": 1778091357,
+    "update_time": 1778091357,
+    "_id": "Polaris Scheduling Demo"
+  },
+  "Polaris Scheduling Acceptance Criteria": {
+    "chunk_ids": [
+      "chunk-582667d8032621bc02939bcc57d7c2dd"
+    ],
+    "count": 1,
+    "create_time": 1778091357,
+    "update_time": 1778091357,
+    "_id": "Polaris Scheduling Acceptance Criteria"
+  },
+  "Polaris Audit Log": {
+    "chunk_ids": [
+      "chunk-4f6518c25c68e803227152a9928769c1",
+      "chunk-92f04e4637b01e8690c21f1043ac04e3",
+      "chunk-a7a5f6a61d77f4b20efb7f871e74155a",
+      "chunk-cc62a6c9fb99d31439150380cef44c4d",
+      "chunk-0baf43ebc0b5e09bd22b03ea28799d01",
+      "chunk-582667d8032621bc02939bcc57d7c2dd"
+    ],
+    "count": 6,
+    "create_time": 1778091357,
+    "update_time": 1778091357,
+    "_id": "Polaris Audit Log"
+  },
+  "Export Support Status": {
+    "chunk_ids": [
+      "chunk-582667d8032621bc02939bcc57d7c2dd"
+    ],
+    "count": 1,
+    "create_time": 1778091357,
+    "update_time": 1778091357,
+    "_id": "Export Support Status"
+  },
+  "Team Building Vote": {
+    "chunk_ids": [
+      "chunk-1041fcefcd08c4b8b16e0886ed561d59",
+      "chunk-582667d8032621bc02939bcc57d7c2dd",
+      "chunk-6b55c418053c4a4792e8da66632e67d6"
+    ],
+    "count": 3,
+    "update_time": 1778091497,
+    "_id": "Team Building Vote"
+  },
+  "Polaris Review Metrics": {
+    "chunk_ids": [
+      "chunk-0baf43ebc0b5e09bd22b03ea28799d01",
+      "chunk-582667d8032621bc02939bcc57d7c2dd"
+    ],
+    "count": 2,
+    "create_time": 1778091357,
+    "update_time": 1778091357,
+    "_id": "Polaris Review Metrics"
+  },
+  "PoC阶段": {
+    "chunk_ids": [
+      "chunk-15044e321936a9838efaca34c4b7be2f",
+      "chunk-86b7f7de6132f8beaa10e4b8030e9c0e"
+    ],
+    "count": 2,
+    "create_time": 1778091392,
+    "update_time": 1778091392,
+    "_id": "PoC阶段"
+  },
+  "灰度版本": {
+    "chunk_ids": [
+      "chunk-15044e321936a9838efaca34c4b7be2f",
+      "chunk-86b7f7de6132f8beaa10e4b8030e9c0e"
+    ],
+    "count": 2,
+    "create_time": 1778091392,
+    "update_time": 1778091392,
+    "_id": "灰度版本"
+  },
+  "人工兜底": {
+    "chunk_ids": [
+      "chunk-15044e321936a9838efaca34c4b7be2f",
+      "chunk-86b7f7de6132f8beaa10e4b8030e9c0e"
+    ],
+    "count": 2,
+    "create_time": 1778091392,
+    "update_time": 1778091392,
+    "_id": "人工兜底"
+  },
+  "成功率": {
+    "chunk_ids": [
+      "chunk-15044e321936a9838efaca34c4b7be2f",
+      "chunk-86b7f7de6132f8beaa10e4b8030e9c0e"
+    ],
+    "count": 2,
+    "create_time": 1778091392,
+    "update_time": 1778091392,
+    "_id": "成功率"
+  },
+  "响应时间": {
+    "chunk_ids": [
+      "chunk-15044e321936a9838efaca34c4b7be2f",
+      "chunk-86b7f7de6132f8beaa10e4b8030e9c0e"
+    ],
+    "count": 2,
+    "create_time": 1778091392,
+    "update_time": 1778091392,
+    "_id": "响应时间"
+  },
+  "异常兜底": {
+    "chunk_ids": [
+      "chunk-15044e321936a9838efaca34c4b7be2f",
+      "chunk-86b7f7de6132f8beaa10e4b8030e9c0e"
+    ],
+    "count": 2,
+    "create_time": 1778091392,
+    "update_time": 1778091392,
+    "_id": "异常兜底"
+  },
+  "人工回滚入口": {
+    "chunk_ids": [
+      "chunk-15044e321936a9838efaca34c4b7be2f",
+      "chunk-86b7f7de6132f8beaa10e4b8030e9c0e"
+    ],
+    "count": 2,
+    "create_time": 1778091392,
+    "update_time": 1778091392,
+    "_id": "人工回滚入口"
+  },
+  "Falcon Wind Control Central": {
+    "chunk_ids": [
+      "chunk-cecb5a926892f726efe8342701a1573a"
+    ],
+    "count": 1,
+    "create_time": 1778091421,
+    "update_time": 1778091421,
+    "_id": "Falcon Wind Control Central"
   },
   "Xingqiao CRM": {
     "chunk_ids": [
       "chunk-4f6518c25c68e803227152a9928769c1",
       "chunk-db7406a7cec74cac415bb65e61af0c02",
-      "chunk-61ef8cd55c161340695f43105b297ff4"
+      "chunk-61ef8cd55c161340695f43105b297ff4",
+      "chunk-cecb5a926892f726efe8342701a1573a"
     ],
-    "count": 3,
-    "create_time": 1778048342,
-    "update_time": 1778048342,
+    "count": 4,
+    "create_time": 1778091421,
+    "update_time": 1778091421,
     "_id": "Xingqiao CRM"
   },
-  "Root Cause Analysis": {
+  "Sandbox Validation Version": {
     "chunk_ids": [
-      "chunk-61ef8cd55c161340695f43105b297ff4"
+      "chunk-cecb5a926892f726efe8342701a1573a"
     ],
     "count": 1,
-    "create_time": 1778048342,
-    "update_time": 1778048342,
-    "_id": "Root Cause Analysis"
+    "create_time": 1778091421,
+    "update_time": 1778091421,
+    "_id": "Sandbox Validation Version"
   },
-  "Xingqiao CRM Key Report": {
+  "Cross-Border Transaction Rules": {
     "chunk_ids": [
-      "chunk-61ef8cd55c161340695f43105b297ff4"
+      "chunk-cecb5a926892f726efe8342701a1573a"
     ],
     "count": 1,
-    "create_time": 1778048342,
-    "update_time": 1778048342,
-    "_id": "Xingqiao CRM Key Report"
+    "create_time": 1778091421,
+    "update_time": 1778091421,
+    "_id": "Cross-Border Transaction Rules"
   },
-  "Orion Overseas Payment Gateway": {
+  "Exchange Rate Settlement Window": {
     "chunk_ids": [
-      "chunk-257dc3149297f67229682b3933f5d357",
-      "chunk-db7406a7cec74cac415bb65e61af0c02",
-      "chunk-61ef8cd55c161340695f43105b297ff4",
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
-    ],
-    "count": 4,
-    "update_time": 1778048396,
-    "_id": "Orion Overseas Payment Gateway"
-  },
-  "Gray Data Run": {
-    "chunk_ids": [
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
+      "chunk-cecb5a926892f726efe8342701a1573a"
     ],
     "count": 1,
-    "create_time": 1778048396,
-    "update_time": 1778048396,
-    "_id": "Gray Data Run"
+    "create_time": 1778091421,
+    "update_time": 1778091421,
+    "_id": "Exchange Rate Settlement Window"
   },
-  "Daily Report": {
+  "Falcon Risk Control Architecture Review": {
     "chunk_ids": [
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
+      "chunk-cecb5a926892f726efe8342701a1573a"
     ],
     "count": 1,
-    "create_time": 1778048396,
-    "update_time": 1778048396,
-    "_id": "Daily Report"
+    "create_time": 1778091421,
+    "update_time": 1778091421,
+    "_id": "Falcon Risk Control Architecture Review"
   },
-  "Risk Assessment": {
+  "Orion Overseas Payment Gateway Decision": {
     "chunk_ids": [
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05",
-      "chunk-57902305cc4fde183edf80ae8dd20894"
+      "chunk-cecb5a926892f726efe8342701a1573a"
+    ],
+    "count": 1,
+    "create_time": 1778091421,
+    "update_time": 1778091421,
+    "_id": "Orion Overseas Payment Gateway Decision"
+  },
+  "Xingqiao CRM Release Acceptance Criteria": {
+    "chunk_ids": [
+      "chunk-cecb5a926892f726efe8342701a1573a"
+    ],
+    "count": 1,
+    "create_time": 1778091421,
+    "update_time": 1778091421,
+    "_id": "Xingqiao CRM Release Acceptance Criteria"
+  },
+  "Blue Whale Report Sandbox Validation": {
+    "chunk_ids": [
+      "chunk-cecb5a926892f726efe8342701a1573a"
+    ],
+    "count": 1,
+    "create_time": 1778091421,
+    "update_time": 1778091421,
+    "_id": "Blue Whale Report Sandbox Validation"
+  },
+  "Falcon Risk Control Responsibility": {
+    "chunk_ids": [
+      "chunk-cecb5a926892f726efe8342701a1573a"
+    ],
+    "count": 1,
+    "create_time": 1778091421,
+    "update_time": 1778091421,
+    "_id": "Falcon Risk Control Responsibility"
+  },
+  "Falcon Risk Control Strategy Replay": {
+    "chunk_ids": [
+      "chunk-cecb5a926892f726efe8342701a1573a"
+    ],
+    "count": 1,
+    "create_time": 1778091421,
+    "update_time": 1778091421,
+    "_id": "Falcon Risk Control Strategy Replay"
+  },
+  "Xingqiao CRM Risk Table Completion": {
+    "chunk_ids": [
+      "chunk-cecb5a926892f726efe8342701a1573a"
+    ],
+    "count": 1,
+    "create_time": 1778091421,
+    "update_time": 1778091421,
+    "_id": "Xingqiao CRM Risk Table Completion"
+  },
+  "Falcon风险控制策略回放验收标准": {
+    "chunk_ids": [
+      "chunk-157fe779439b0bcbd54d32979002c203"
+    ],
+    "count": 1,
+    "create_time": 1778091460,
+    "update_time": 1778091460,
+    "_id": "Falcon风险控制策略回放验收标准"
+  },
+  "客服和销售": {
+    "chunk_ids": [
+      "chunk-157fe779439b0bcbd54d32979002c203"
+    ],
+    "count": 1,
+    "create_time": 1778091460,
+    "update_time": 1778091460,
+    "_id": "客服和销售"
+  },
+  "测试计划": {
+    "chunk_ids": [
+      "chunk-157fe779439b0bcbd54d32979002c203"
+    ],
+    "count": 1,
+    "create_time": 1778091460,
+    "update_time": 1778091460,
+    "_id": "测试计划"
+  },
+  "蓝鲸报表高管试用验收标准": {
+    "chunk_ids": [
+      "chunk-157fe779439b0bcbd54d32979002c203",
+      "chunk-ae63aa94ccb0c6e7e81e3bbf1731a75a"
     ],
     "count": 2,
-    "update_time": 1778048627,
-    "_id": "Risk Assessment"
+    "update_time": 1778091613,
+    "_id": "蓝鲸报表高管试用验收标准"
   },
-  "Risk List": {
+  "星桥CRM联调验收标准": {
     "chunk_ids": [
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
+      "chunk-157fe779439b0bcbd54d32979002c203"
     ],
     "count": 1,
-    "create_time": 1778048396,
-    "update_time": 1778048396,
-    "_id": "Risk List"
+    "create_time": 1778091460,
+    "update_time": 1778091460,
+    "_id": "星桥CRM联调验收标准"
   },
-  "Unified Template": {
+  "Orion海外支付网关通道选型验收标准": {
     "chunk_ids": [
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
+      "chunk-157fe779439b0bcbd54d32979002c203"
     ],
     "count": 1,
-    "create_time": 1778048396,
-    "update_time": 1778048396,
-    "_id": "Unified Template"
+    "create_time": 1778091460,
+    "update_time": 1778091460,
+    "_id": "Orion海外支付网关通道选型验收标准"
   },
-  "Risk Table": {
+  "Falcon合规审查验收标准": {
     "chunk_ids": [
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
+      "chunk-157fe779439b0bcbd54d32979002c203"
     ],
     "count": 1,
-    "create_time": 1778048396,
-    "update_time": 1778048396,
-    "_id": "Risk Table"
+    "create_time": 1778091460,
+    "update_time": 1778091460,
+    "_id": "Falcon合规审查验收标准"
   },
-  "Blocking Items": {
+  "部门": {
     "chunk_ids": [
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
+      "chunk-157fe779439b0bcbd54d32979002c203"
     ],
     "count": 1,
-    "create_time": 1778048396,
-    "update_time": 1778048396,
-    "_id": "Blocking Items"
+    "create_time": 1778091465,
+    "update_time": 1778091465,
+    "_id": "部门"
   },
-  "Integration Phase": {
+  "HDMI Adapter": {
     "chunk_ids": [
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
+      "chunk-6b55c418053c4a4792e8da66632e67d6"
     ],
     "count": 1,
-    "create_time": 1778048396,
-    "update_time": 1778048396,
-    "_id": "Integration Phase"
+    "create_time": 1778091497,
+    "update_time": 1778091497,
+    "_id": "HDMI Adapter"
   },
-  "Online Phase": {
+  "Falcon Risk Management": {
     "chunk_ids": [
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
+      "chunk-6b55c418053c4a4792e8da66632e67d6"
     ],
     "count": 1,
-    "create_time": 1778048396,
-    "update_time": 1778048396,
-    "_id": "Online Phase"
+    "create_time": 1778091497,
+    "update_time": 1778091497,
+    "_id": "Falcon Risk Management"
   },
-  "Completion Criteria": {
+  "Audit Log": {
     "chunk_ids": [
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
+      "chunk-6b55c418053c4a4792e8da66632e67d6"
     ],
     "count": 1,
-    "create_time": 1778048396,
-    "update_time": 1778048396,
-    "_id": "Completion Criteria"
+    "create_time": 1778091497,
+    "update_time": 1778091497,
+    "_id": "Audit Log"
   },
-  "Sandbox Verification Stage": {
+  "Blue Whale Report Export Support": {
     "chunk_ids": [
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
+      "chunk-6b55c418053c4a4792e8da66632e67d6"
     ],
     "count": 1,
-    "create_time": 1778048396,
-    "update_time": 1778048396,
-    "_id": "Sandbox Verification Stage"
+    "create_time": 1778091497,
+    "update_time": 1778091497,
+    "_id": "Blue Whale Report Export Support"
   },
-  "generated contents": {
+  "Polaris Smart Scheduling": {
     "chunk_ids": [
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
+      "chunk-a7a5f6a61d77f4b20efb7f871e74155a",
+      "chunk-6b55c418053c4a4792e8da66632e67d6"
+    ],
+    "count": 2,
+    "create_time": 1778091497,
+    "update_time": 1778091497,
+    "_id": "Polaris Smart Scheduling"
+  },
+  "management communication": {
+    "chunk_ids": [
+      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e",
+      "chunk-6b55c418053c4a4792e8da66632e67d6"
+    ],
+    "count": 2,
+    "create_time": 1778091497,
+    "update_time": 1778091497,
+    "_id": "management communication"
+  },
+  "acceptance criteria": {
+    "chunk_ids": [
+      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e",
+      "chunk-6b55c418053c4a4792e8da66632e67d6"
+    ],
+    "count": 2,
+    "create_time": 1778091497,
+    "update_time": 1778091497,
+    "_id": "acceptance criteria"
+  },
+  "8th Floor Conference Room": {
+    "chunk_ids": [
+      "chunk-6b55c418053c4a4792e8da66632e67d6"
     ],
     "count": 1,
-    "create_time": 1778048396,
-    "update_time": 1778048396,
-    "_id": "generated contents"
+    "create_time": 1778091497,
+    "update_time": 1778091497,
+    "_id": "8th Floor Conference Room"
   },
-  "Sales Team": {
+  "customer demonstration": {
     "chunk_ids": [
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
+      "chunk-6b55c418053c4a4792e8da66632e67d6"
     ],
     "count": 1,
-    "create_time": 1778048396,
-    "update_time": 1778048396,
-    "_id": "Sales Team"
+    "create_time": 1778091497,
+    "update_time": 1778091497,
+    "_id": "customer demonstration"
   },
-  "Daily Progress": {
+  "risk status": {
     "chunk_ids": [
-      "chunk-d9bd56dec3ecb540f1eaa11cc8bcdd05"
+      "chunk-6b55c418053c4a4792e8da66632e67d6"
     ],
     "count": 1,
-    "create_time": 1778048396,
-    "update_time": 1778048396,
-    "_id": "Daily Progress"
+    "create_time": 1778091497,
+    "update_time": 1778091497,
+    "_id": "risk status"
   },
-  "Blueshell Report Alarm": {
-    "chunk_ids": [
-      "chunk-cc62a6c9fb99d31439150380cef44c4d"
-    ],
-    "count": 1,
-    "create_time": 1778048461,
-    "update_time": 1778048461,
-    "_id": "Blueshell Report Alarm"
-  },
-  "Orion Payment Gateway Tracking": {
-    "chunk_ids": [
-      "chunk-cc62a6c9fb99d31439150380cef44c4d"
-    ],
-    "count": 1,
-    "create_time": 1778048461,
-    "update_time": 1778048461,
-    "_id": "Orion Payment Gateway Tracking"
-  },
-  "Star Bridge CRM Review": {
-    "chunk_ids": [
-      "chunk-cc62a6c9fb99d31439150380cef44c4d"
-    ],
-    "count": 1,
-    "create_time": 1778048461,
-    "update_time": 1778048461,
-    "_id": "Star Bridge CRM Review"
-  },
-  "Blueshell Report Risk": {
-    "chunk_ids": [
-      "chunk-cc62a6c9fb99d31439150380cef44c4d"
-    ],
-    "count": 1,
-    "create_time": 1778048461,
-    "update_time": 1778048461,
-    "_id": "Blueshell Report Risk"
-  },
-  "Polaris Smart Scheduling Review": {
-    "chunk_ids": [
-      "chunk-cc62a6c9fb99d31439150380cef44c4d"
-    ],
-    "count": 1,
-    "create_time": 1778048461,
-    "update_time": 1778048461,
-    "_id": "Polaris Smart Scheduling Review"
-  },
-  "Orion Payment Gateway Demo": {
-    "chunk_ids": [
-      "chunk-cc62a6c9fb99d31439150380cef44c4d"
-    ],
-    "count": 1,
-    "create_time": 1778048461,
-    "update_time": 1778048461,
-    "_id": "Orion Payment Gateway Demo"
-  },
-  "Falcon Risk Control Review": {
-    "chunk_ids": [
-      "chunk-cc62a6c9fb99d31439150380cef44c4d"
-    ],
-    "count": 1,
-    "create_time": 1778048461,
-    "update_time": 1778048461,
-    "_id": "Falcon Risk Control Review"
-  },
-  "Star Bridge CRM Demo": {
-    "chunk_ids": [
-      "chunk-cc62a6c9fb99d31439150380cef44c4d"
-    ],
-    "count": 1,
-    "create_time": 1778048461,
-    "update_time": 1778048461,
-    "_id": "Star Bridge CRM Demo"
-  },
-  "Falcon Risk Control Export": {
-    "chunk_ids": [
-      "chunk-cc62a6c9fb99d31439150380cef44c4d"
-    ],
-    "count": 1,
-    "create_time": 1778048461,
-    "update_time": 1778048461,
-    "_id": "Falcon Risk Control Export"
-  },
-  "Polaris Smart Scheduling Metrics": {
-    "chunk_ids": [
-      "chunk-cc62a6c9fb99d31439150380cef44c4d"
-    ],
-    "count": 1,
-    "create_time": 1778048461,
-    "update_time": 1778048461,
-    "_id": "Polaris Smart Scheduling Metrics"
-  },
-  "Lunch Group Buy": {
-    "chunk_ids": [
-      "chunk-cc62a6c9fb99d31439150380cef44c4d"
-    ],
-    "count": 1,
-    "create_time": 1778048461,
-    "update_time": 1778048461,
-    "_id": "Lunch Group Buy"
-  },
-  "Meeting Room Reservation Issue": {
+  "activity options": {
     "chunk_ids": [
       "chunk-1041fcefcd08c4b8b16e0886ed561d59",
-      "chunk-cc62a6c9fb99d31439150380cef44c4d"
+      "chunk-6b55c418053c4a4792e8da66632e67d6"
     ],
     "count": 2,
-    "create_time": 1778048461,
-    "update_time": 1778048461,
-    "_id": "Meeting Room Reservation Issue"
-  },
-  "Polaris Smart Scheduling Report": {
-    "chunk_ids": [
-      "chunk-257dc3149297f67229682b3933f5d357",
-      "chunk-cc62a6c9fb99d31439150380cef44c4d"
-    ],
-    "count": 2,
-    "create_time": 1778048461,
-    "update_time": 1778048461,
-    "_id": "Polaris Smart Scheduling Report"
-  },
-  "Project Risk Matrix": {
-    "chunk_ids": [
-      "chunk-cc62a6c9fb99d31439150380cef44c4d"
-    ],
-    "count": 1,
-    "create_time": 1778048461,
-    "update_time": 1778048461,
-    "_id": "Project Risk Matrix"
-  },
-  "Development Split Interface List": {
-    "chunk_ids": [
-      "chunk-a719e38a41e4f45b9ddde017e3a10812"
-    ],
-    "count": 1,
-    "create_time": 1778048461,
-    "update_time": 1778048461,
-    "_id": "Development Split Interface List"
-  },
-  "Operations": {
-    "chunk_ids": [
-      "chunk-a719e38a41e4f45b9ddde017e3a10812"
-    ],
-    "count": 1,
-    "create_time": 1778048461,
-    "update_time": 1778048461,
-    "_id": "Operations"
-  },
-  "Product": {
-    "chunk_ids": [
-      "chunk-a719e38a41e4f45b9ddde017e3a10812"
-    ],
-    "count": 1,
-    "create_time": 1778048461,
-    "update_time": 1778048461,
-    "_id": "Product"
-  },
-  "Testing": {
-    "chunk_ids": [
-      "chunk-847726ab3add2aec75c8f03c2bc49d8b",
-      "chunk-a719e38a41e4f45b9ddde017e3a10812"
-    ],
-    "count": 2,
-    "create_time": 1778048461,
-    "update_time": 1778048461,
-    "_id": "Testing"
-  },
-  "Project Pending Tasks": {
-    "chunk_ids": [
-      "chunk-cc62a6c9fb99d31439150380cef44c4d"
-    ],
-    "count": 1,
-    "create_time": 1778048461,
-    "update_time": 1778048461,
-    "_id": "Project Pending Tasks"
-  },
-  "Gray List": {
-    "chunk_ids": [
-      "chunk-b3fba99e4e16b08c01c14a9c9e7177ab",
-      "chunk-a33fb9dbf76c6ab5d6ee21334f31b10d",
-      "chunk-26b06aa0c5b9f23d91349f546eaa888f",
-      "chunk-a719e38a41e4f45b9ddde017e3a10812"
-    ],
-    "count": 4,
-    "create_time": 1778048461,
-    "update_time": 1778048461,
-    "_id": "Gray List"
+    "create_time": 1778091497,
+    "update_time": 1778091497,
+    "_id": "activity options"
   },
   "项目目标": {
     "chunk_ids": [
-      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
-    ],
-    "count": 1,
-    "create_time": 1778048549,
-    "update_time": 1778048549,
-    "_id": "项目目标"
-  },
-  "决策支持系统": {
-    "chunk_ids": [
-      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
-    ],
-    "count": 1,
-    "create_time": 1778048549,
-    "update_time": 1778048549,
-    "_id": "决策支持系统"
-  },
-  "员工": {
-    "chunk_ids": [
-      "chunk-4e0f1885eb6771149f93a455915b9113",
-      "chunk-2ec1e958be5dc9b11f6a224a2a6b9571",
-      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
-    ],
-    "count": 3,
-    "create_time": 1778048549,
-    "update_time": 1778048549,
-    "_id": "员工"
-  },
-  "核心指标": {
-    "chunk_ids": [
-      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
-    ],
-    "count": 1,
-    "create_time": 1778048549,
-    "update_time": 1778048549,
-    "_id": "核心指标"
-  },
-  "Falcon": {
-    "chunk_ids": [
-      "chunk-1b4ac1050fd4c4da4c13a546f1092f96",
-      "chunk-4f6518c25c68e803227152a9928769c1",
-      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
-    ],
-    "count": 3,
-    "create_time": 1778048549,
-    "update_time": 1778048549,
-    "_id": "Falcon"
-  },
-  "审计日志": {
-    "chunk_ids": [
-      "chunk-0c0342e74ce24f9442643b70f4938abe",
-      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
+      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75",
+      "chunk-f8a3af499c22f18aceb06df693b066e1"
     ],
     "count": 2,
-    "create_time": 1778048549,
-    "update_time": 1778048549,
-    "_id": "审计日志"
+    "create_time": 1778091536,
+    "update_time": 1778091536,
+    "_id": "项目目标"
+  },
+  "Employee Skill Tag Default Priority": {
+    "chunk_ids": [
+      "chunk-f8a3af499c22f18aceb06df693b066e1"
+    ],
+    "count": 1,
+    "create_time": 1778091536,
+    "update_time": 1778091536,
+    "_id": "Employee Skill Tag Default Priority"
+  },
+  "员工班次分析": {
+    "chunk_ids": [
+      "chunk-f8a3af499c22f18aceb06df693b066e1"
+    ],
+    "count": 1,
+    "create_time": 1778091536,
+    "update_time": 1778091536,
+    "_id": "员工班次分析"
   },
   "产品文案": {
     "chunk_ids": [
       "chunk-4dbcc7b99de8467cf3d4d5750dec3723",
-      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
-    ],
-    "count": 2,
-    "create_time": 1778048549,
-    "update_time": 1778048549,
-    "_id": "产品文案"
-  },
-  "里程碑结构": {
-    "chunk_ids": [
-      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
-    ],
-    "count": 1,
-    "create_time": 1778048549,
-    "update_time": 1778048549,
-    "_id": "里程碑结构"
-  },
-  "风险识别": {
-    "chunk_ids": [
-      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
-    ],
-    "count": 1,
-    "create_time": 1778048549,
-    "update_time": 1778048549,
-    "_id": "风险识别"
-  },
-  "需求": {
-    "chunk_ids": [
-      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75"
-    ],
-    "count": 1,
-    "create_time": 1778048549,
-    "update_time": 1778048549,
-    "_id": "需求"
-  },
-  "Key Report Commitment": {
-    "chunk_ids": [
-      "chunk-57902305cc4fde183edf80ae8dd20894"
-    ],
-    "count": 1,
-    "create_time": 1778048627,
-    "update_time": 1778048627,
-    "_id": "Key Report Commitment"
-  },
-  "Core Commitment": {
-    "chunk_ids": [
-      "chunk-57902305cc4fde183edf80ae8dd20894"
-    ],
-    "count": 1,
-    "create_time": 1778048627,
-    "update_time": 1778048627,
-    "_id": "Core Commitment"
-  },
-  "Gray Test Phase": {
-    "chunk_ids": [
-      "chunk-57902305cc4fde183edf80ae8dd20894"
-    ],
-    "count": 1,
-    "create_time": 1778048627,
-    "update_time": 1778048627,
-    "_id": "Gray Test Phase"
-  },
-  "Model Evaluation Phase": {
-    "chunk_ids": [
-      "chunk-57902305cc4fde183edf80ae8dd20894"
-    ],
-    "count": 1,
-    "create_time": 1778048627,
-    "update_time": 1778048627,
-    "_id": "Model Evaluation Phase"
-  },
-  "Risk Control Commitment": {
-    "chunk_ids": [
-      "chunk-57902305cc4fde183edf80ae8dd20894"
-    ],
-    "count": 1,
-    "create_time": 1778048627,
-    "update_time": 1778048627,
-    "_id": "Risk Control Commitment"
-  },
-  "Manual Backup": {
-    "chunk_ids": [
-      "chunk-57902305cc4fde183edf80ae8dd20894"
-    ],
-    "count": 1,
-    "create_time": 1778048627,
-    "update_time": 1778048627,
-    "_id": "Manual Backup"
-  },
-  "PoC Acceptance Criteria": {
-    "chunk_ids": [
-      "chunk-57902305cc4fde183edf80ae8dd20894"
-    ],
-    "count": 1,
-    "create_time": 1778048627,
-    "update_time": 1778048627,
-    "_id": "PoC Acceptance Criteria"
-  },
-  "Next Morning Meeting": {
-    "chunk_ids": [
-      "chunk-57902305cc4fde183edf80ae8dd20894"
-    ],
-    "count": 1,
-    "create_time": 1778048627,
-    "update_time": 1778048627,
-    "_id": "Next Morning Meeting"
-  },
-  "Next Iteration": {
-    "chunk_ids": [
-      "chunk-57902305cc4fde183edf80ae8dd20894"
-    ],
-    "count": 1,
-    "create_time": 1778048627,
-    "update_time": 1778048627,
-    "_id": "Next Iteration"
-  },
-  "Pilot Stores": {
-    "chunk_ids": [
-      "chunk-57902305cc4fde183edf80ae8dd20894"
-    ],
-    "count": 1,
-    "create_time": 1778048627,
-    "update_time": 1778048627,
-    "_id": "Pilot Stores"
-  },
-  "Business and Technical Teams": {
-    "chunk_ids": [
-      "chunk-57902305cc4fde183edf80ae8dd20894"
-    ],
-    "count": 1,
-    "create_time": 1778048627,
-    "update_time": 1778048627,
-    "_id": "Business and Technical Teams"
-  },
-  "Polaris Intelligent Scheduling": {
-    "chunk_ids": [
-      "chunk-db7406a7cec74cac415bb65e61af0c02",
-      "chunk-57902305cc4fde183edf80ae8dd20894",
-      "chunk-0baf43ebc0b5e09bd22b03ea28799d01"
+      "chunk-3fc6eb7b138cd81ac51cd60c88e12b75",
+      "chunk-f8a3af499c22f18aceb06df693b066e1"
     ],
     "count": 3,
-    "update_time": 1778048743,
-    "_id": "Polaris Intelligent Scheduling"
+    "create_time": 1778091536,
+    "update_time": 1778091536,
+    "_id": "产品文案"
   },
-  "白雨": {
+  "员工技能标签": {
     "chunk_ids": [
-      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
+      "chunk-b3fba99e4e16b08c01c14a9c9e7177ab",
+      "chunk-4dbcc7b99de8467cf3d4d5750dec3723",
+      "chunk-9ff3855b72b767c3bec7568b60fc84f9",
+      "chunk-0c0342e74ce24f9442643b70f4938abe",
+      "chunk-bb5c51b38f13dad45911c5ef26998736",
+      "chunk-26b06aa0c5b9f23d91349f546eaa888f",
+      "chunk-f8a3af499c22f18aceb06df693b066e1"
+    ],
+    "count": 7,
+    "create_time": 1778091536,
+    "update_time": 1778091536,
+    "_id": "员工技能标签"
+  },
+  "算法回放": {
+    "chunk_ids": [
+      "chunk-4dbcc7b99de8467cf3d4d5750dec3723",
+      "chunk-f8a3af499c22f18aceb06df693b066e1"
+    ],
+    "count": 2,
+    "create_time": 1778091536,
+    "update_time": 1778091536,
+    "_id": "算法回放"
+  },
+  "灰度名单": {
+    "chunk_ids": [
+      "chunk-4dbcc7b99de8467cf3d4d5750dec3723",
+      "chunk-2ec1e958be5dc9b11f6a224a2a6b9571",
+      "chunk-1041fcefcd08c4b8b16e0886ed561d59",
+      "chunk-bb5c51b38f13dad45911c5ef26998736",
+      "chunk-f8a3af499c22f18aceb06df693b066e1"
+    ],
+    "count": 5,
+    "create_time": 1778091536,
+    "update_time": 1778091536,
+    "_id": "灰度名单"
+  },
+  "Project Goals and Timing": {
+    "chunk_ids": [
+      "chunk-f8a3af499c22f18aceb06df693b066e1"
     ],
     "count": 1,
-    "create_time": 1778048665,
-    "update_time": 1778048665,
-    "_id": "白雨"
+    "create_time": 1778091536,
+    "update_time": 1778091536,
+    "_id": "Project Goals and Timing"
   },
-  "backlog": {
+  "门店经理": {
     "chunk_ids": [
-      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
+      "chunk-9ff3855b72b767c3bec7568b60fc84f9",
+      "chunk-bb5c51b38f13dad45911c5ef26998736",
+      "chunk-f8a3af499c22f18aceb06df693b066e1"
+    ],
+    "count": 3,
+    "create_time": 1778091536,
+    "update_time": 1778091536,
+    "_id": "门店经理"
+  },
+  "周末高峰时段": {
+    "chunk_ids": [
+      "chunk-f8a3af499c22f18aceb06df693b066e1"
     ],
     "count": 1,
-    "create_time": 1778048665,
-    "update_time": 1778048665,
-    "_id": "backlog"
+    "create_time": 1778091536,
+    "update_time": 1778091536,
+    "_id": "周末高峰时段"
   },
-  "audit log fields": {
+  "青鲸报表": {
     "chunk_ids": [
-      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
+      "chunk-bc6f0745fb5b43edaa4da42211ad7255"
     ],
     "count": 1,
-    "create_time": 1778048665,
-    "update_time": 1778048665,
-    "_id": "audit log fields"
+    "create_time": 1778091572,
+    "update_time": 1778091572,
+    "_id": "青鲸报表"
   },
-  "scope management": {
+  "Compliance Requirements": {
     "chunk_ids": [
-      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
+      "chunk-bc6f0745fb5b43edaa4da42211ad7255"
     ],
     "count": 1,
-    "create_time": 1778048666,
-    "update_time": 1778048666,
-    "_id": "scope management"
+    "create_time": 1778091572,
+    "update_time": 1778091572,
+    "_id": "Compliance Requirements"
   },
-  "customer demo": {
+  "Falcon风控中台的策略回放数据": {
     "chunk_ids": [
-      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
+      "chunk-bc6f0745fb5b43edaa4da42211ad7255"
     ],
     "count": 1,
-    "create_time": 1778048666,
-    "update_time": 1778048666,
-    "_id": "customer demo"
+    "create_time": 1778091572,
+    "update_time": 1778091572,
+    "_id": "Falcon风控中台的策略回放数据"
   },
-  "acceptance criteria": {
+  "灰度数据": {
     "chunk_ids": [
-      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
+      "chunk-bc6f0745fb5b43edaa4da42211ad7255"
     ],
     "count": 1,
-    "create_time": 1778048666,
-    "update_time": 1778048666,
-    "_id": "acceptance criteria"
+    "create_time": 1778091572,
+    "update_time": 1778091572,
+    "_id": "灰度数据"
   },
-  "explanation button": {
+  "上线窗口": {
     "chunk_ids": [
-      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
+      "chunk-bc6f0745fb5b43edaa4da42211ad7255"
     ],
     "count": 1,
-    "create_time": 1778048666,
-    "update_time": 1778048666,
-    "_id": "explanation button"
+    "create_time": 1778091572,
+    "update_time": 1778091572,
+    "_id": "上线窗口"
   },
-  "management communication": {
+  "策略回放阶段": {
     "chunk_ids": [
-      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
+      "chunk-ae63aa94ccb0c6e7e81e3bbf1731a75a"
     ],
     "count": 1,
-    "create_time": 1778048666,
-    "update_time": 1778048666,
-    "_id": "management communication"
+    "create_time": 1778091613,
+    "update_time": 1778091613,
+    "_id": "策略回放阶段"
   },
-  "audit log storage": {
+  "Orion海外支付网关接口开发": {
     "chunk_ids": [
-      "chunk-57b9e13b3eeafb17864ad7ee24b8a66e"
+      "chunk-ae63aa94ccb0c6e7e81e3bbf1731a75a"
     ],
     "count": 1,
-    "create_time": 1778048666,
-    "update_time": 1778048666,
-    "_id": "audit log storage"
+    "create_time": 1778091613,
+    "update_time": 1778091613,
+    "_id": "Orion海外支付网关接口开发"
   },
-  "Polaris Review Metrics": {
+  "星桥CRM需求冻结": {
     "chunk_ids": [
-      "chunk-0baf43ebc0b5e09bd22b03ea28799d01"
+      "chunk-ae63aa94ccb0c6e7e81e3bbf1731a75a"
     ],
     "count": 1,
-    "create_time": 1778048742,
-    "update_time": 1778048742,
-    "_id": "Polaris Review Metrics"
+    "create_time": 1778091613,
+    "update_time": 1778091613,
+    "_id": "星桥CRM需求冻结"
   },
-  "Meeting Room Booking Issue": {
+  "Falcon风控决策": {
     "chunk_ids": [
-      "chunk-0baf43ebc0b5e09bd22b03ea28799d01"
+      "chunk-ae63aa94ccb0c6e7e81e3bbf1731a75a"
     ],
     "count": 1,
-    "create_time": 1778048742,
-    "update_time": 1778048742,
-    "_id": "Meeting Room Booking Issue"
-  },
-  "Customer Demo Preference": {
-    "chunk_ids": [
-      "chunk-0baf43ebc0b5e09bd22b03ea28799d01"
-    ],
-    "count": 1,
-    "create_time": 1778048743,
-    "update_time": 1778048743,
-    "_id": "Customer Demo Preference"
-  },
-  "Risk Matrix Generation": {
-    "chunk_ids": [
-      "chunk-0baf43ebc0b5e09bd22b03ea28799d01"
-    ],
-    "count": 1,
-    "create_time": 1778048743,
-    "update_time": 1778048743,
-    "_id": "Risk Matrix Generation"
-  },
-  "Requirement Milestones": {
-    "chunk_ids": [
-      "chunk-0baf43ebc0b5e09bd22b03ea28799d01"
-    ],
-    "count": 1,
-    "create_time": 1778048743,
-    "update_time": 1778048743,
-    "_id": "Requirement Milestones"
-  },
-  "Falcon Risk Control Demo": {
-    "chunk_ids": [
-      "chunk-0baf43ebc0b5e09bd22b03ea28799d01"
-    ],
-    "count": 1,
-    "create_time": 1778048743,
-    "update_time": 1778048743,
-    "_id": "Falcon Risk Control Demo"
-  },
-  "Business Trip Plan": {
-    "chunk_ids": [
-      "chunk-0baf43ebc0b5e09bd22b03ea28799d01"
-    ],
-    "count": 1,
-    "create_time": 1778048743,
-    "update_time": 1778048743,
-    "_id": "Business Trip Plan"
-  },
-  "Review Scope": {
-    "chunk_ids": [
-      "chunk-0baf43ebc0b5e09bd22b03ea28799d01"
-    ],
-    "count": 1,
-    "create_time": 1778048743,
-    "update_time": 1778048743,
-    "_id": "Review Scope"
-  },
-  "Falcon Risk Control": {
-    "chunk_ids": [
-      "chunk-0baf43ebc0b5e09bd22b03ea28799d01"
-    ],
-    "count": 1,
-    "create_time": 1778048743,
-    "update_time": 1778048743,
-    "_id": "Falcon Risk Control"
-  },
-  "Polaris Scheduling Report": {
-    "chunk_ids": [
-      "chunk-0baf43ebc0b5e09bd22b03ea28799d01"
-    ],
-    "count": 1,
-    "create_time": 1778048743,
-    "update_time": 1778048743,
-    "_id": "Polaris Scheduling Report"
-  },
-  "PoC阶段": {
-    "chunk_ids": [
-      "chunk-15044e321936a9838efaca34c4b7be2f"
-    ],
-    "count": 1,
-    "create_time": 1778048828,
-    "update_time": 1778048828,
-    "_id": "PoC阶段"
-  },
-  "决策": {
-    "chunk_ids": [
-      "chunk-15044e321936a9838efaca34c4b7be2f"
-    ],
-    "count": 1,
-    "create_time": 1778048828,
-    "update_time": 1778048828,
-    "_id": "决策"
-  },
-  "统一口径": {
-    "chunk_ids": [
-      "chunk-15044e321936a9838efaca34c4b7be2f"
-    ],
-    "count": 1,
-    "create_time": 1778048828,
-    "update_time": 1778048828,
-    "_id": "统一口径"
-  },
-  "人工兜底": {
-    "chunk_ids": [
-      "chunk-15044e321936a9838efaca34c4b7be2f"
-    ],
-    "count": 1,
-    "create_time": 1778048828,
-    "update_time": 1778048828,
-    "_id": "人工兜底"
-  },
-  "试点门店": {
-    "chunk_ids": [
-      "chunk-15044e321936a9838efaca34c4b7be2f"
-    ],
-    "count": 1,
-    "create_time": 1778048828,
-    "update_time": 1778048828,
-    "_id": "试点门店"
-  },
-  "模型评估": {
-    "chunk_ids": [
-      "chunk-15044e321936a9838efaca34c4b7be2f"
-    ],
-    "count": 1,
-    "create_time": 1778048828,
-    "update_time": 1778048828,
-    "_id": "模型评估"
-  },
-  "任务": {
-    "chunk_ids": [
-      "chunk-15044e321936a9838efaca34c4b7be2f"
-    ],
-    "count": 1,
-    "create_time": 1778048828,
-    "update_time": 1778048828,
-    "_id": "任务"
-  },
-  "监控告警": {
-    "chunk_ids": [
-      "chunk-15044e321936a9838efaca34c4b7be2f"
-    ],
-    "count": 1,
-    "create_time": 1778048828,
-    "update_time": 1778048828,
-    "_id": "监控告警"
-  },
-  "回滚脚本": {
-    "chunk_ids": [
-      "chunk-15044e321936a9838efaca34c4b7be2f"
-    ],
-    "count": 1,
-    "create_time": 1778048828,
-    "update_time": 1778048828,
-    "_id": "回滚脚本"
-  },
-  "数据样本": {
-    "chunk_ids": [
-      "chunk-15044e321936a9838efaca34c4b7be2f"
-    ],
-    "count": 1,
-    "create_time": 1778048828,
-    "update_time": 1778048828,
-    "_id": "数据样本"
-  },
-  "成功率": {
-    "chunk_ids": [
-      "chunk-15044e321936a9838efaca34c4b7be2f"
-    ],
-    "count": 1,
-    "create_time": 1778048828,
-    "update_time": 1778048828,
-    "_id": "成功率"
-  },
-  "响应时间": {
-    "chunk_ids": [
-      "chunk-15044e321936a9838efaca34c4b7be2f"
-    ],
-    "count": 1,
-    "create_time": 1778048828,
-    "update_time": 1778048828,
-    "_id": "响应时间"
-  },
-  "灰度版本": {
-    "chunk_ids": [
-      "chunk-15044e321936a9838efaca34c4b7be2f"
-    ],
-    "count": 1,
-    "create_time": 1778048828,
-    "update_time": 1778048828,
-    "_id": "灰度版本"
-  },
-  "异常兜底": {
-    "chunk_ids": [
-      "chunk-15044e321936a9838efaca34c4b7be2f"
-    ],
-    "count": 1,
-    "create_time": 1778048828,
-    "update_time": 1778048828,
-    "_id": "异常兜底"
-  },
-  "人工回滚入口": {
-    "chunk_ids": [
-      "chunk-15044e321936a9838efaca34c4b7be2f"
-    ],
-    "count": 1,
-    "create_time": 1778048828,
-    "update_time": 1778048828,
-    "_id": "人工回滚入口"
+    "create_time": 1778091613,
+    "update_time": 1778091613,
+    "_id": "Falcon风控决策"
   }
 }
