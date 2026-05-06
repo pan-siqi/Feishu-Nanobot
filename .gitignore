@@ -30,6 +30,10 @@ sessions/
 analysis/
 analysis/**
 
+# Local Neo4j credentials (copy from envs/neo4j.local.env.example)
+.env.neo4j.local
+envs/neo4j.local.env
+
 docs/proposal/**
 
 tests/**

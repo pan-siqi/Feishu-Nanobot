@@ -140,6 +140,8 @@ LightRAG `Neo4JStorage` 常用变量（参见 LightRAG 文档）：
 - `NEO4J_USERNAME` / `NEO4J_PASSWORD`
 - 可选：`NEO4J_DATABASE`、`NEO4J_WORKSPACE`
 
+本地密钥建议复制 **`envs/neo4j.local.env.example`** 为 **`envs/neo4j.local.env`**（已在 `.gitignore` 中忽略），填入密码后执行：`set -a && source envs/neo4j.local.env && set +a`，再跑 Router 测评。亦可使用仓库根目录 **`.env.neo4j.local`**（同样已忽略）；也可用全局 `export`，无单独配置文件要求。
+
 ### 5.3 LLM（OpenAI 兼容）
 
 - `OPENAI_API_KEY` 或 `NANOBOT_BENCHMARK_OPENAI_API_KEY` 或 `LLM_BINDING_API_KEY`
