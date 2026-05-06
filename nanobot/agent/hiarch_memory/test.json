@@ -1,0 +1,52 @@
+{
+    "schema": "2.0", 
+    "body": {
+        "elements": [
+            {
+                "tag": "button",
+                "element_id": "custom_id", 
+                "margin": "0px 0px 0px 0px",
+                "type": "primary", 
+                "size": "small", 
+                "width": "default",
+                "text": {
+                    "tag": "plain_text",
+                    "content": "确定"
+                },
+                "icon": {
+                    "tag": "standard_icon", 
+                    "token": "chat-forbidden_outlined", 
+                    "color": "orange"
+                },
+                "hover_tips": {}, 
+                "disabled": false,
+                "disabled_tips": {},
+                "confirm": {
+                    "title": {
+                        "tag": "plain_text",
+                        "content": "title"
+                    },
+                    "text": {
+                        "tag": "plain_text",
+                        "content": "content"
+                    }
+                },
+                "behaviors": [
+                    {
+                        "type": "open_url", 
+                        "default_url": "https://www.baidu.com", 
+                        "android_url": "https://developer.android.com/", 
+                        "ios_url": "lark://msgcard/unsupported_action", 
+                        "pc_url": "https://www.windows.com" 
+                    },
+                    {
+                        "type": "callback",
+                        "value": {
+                            "key_1": "value_1"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

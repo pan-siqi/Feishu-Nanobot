@@ -19,6 +19,7 @@ from pydantic import Field
 from nanobot.bus.events import OutboundMessage
 from nanobot.bus.queue import MessageBus
 from nanobot.channels.base import BaseChannel
+from nanobot.channels.feishu_card import normalize_interactive_card
 from nanobot.config.paths import get_media_dir
 from nanobot.config.schema import Base
 
@@ -1416,16 +1417,16 @@ class FeishuChannel(BaseChannel):
                 return
 
             # process card
-            card_content = msg.metadata.get('_card')
-            if card_content:
-                card = json.dumps(
-                    {"config": {"wide_screen_mode": True}, "elements": [
-                        {"tag": "markdown", "content": card_content},
-                    ]},
-                    ensure_ascii=False,
-                )
+            card_json = msg.metadata.get("_card_json")
+            if isinstance(card_json, dict):
+                card_json = normalize_interactive_card(card_json)
                 await loop.run_in_executor(
-                    None, self._send_message_sync, receive_id_type, msg.chat_id, "interactive", card
+                    None,
+                    self._send_message_sync,
+                    receive_id_type,
+                    msg.chat_id,
+                    "interactive",
+                    json.dumps(card_json, ensure_ascii=False),
                 )
                 return
 
