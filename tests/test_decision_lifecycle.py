@@ -67,6 +67,12 @@ class _FakeRepo:
         rows.sort(key=lambda x: x.strength)
         return rows[:limit]
 
+    def get_by_ec_id(self, ec_id: str):
+        for i in self.items:
+            if i.ec_id == ec_id:
+                return i
+        return None
+
 
 class _FakeProvider:
     def __init__(self, parsed=None, merge_decision: str = "False") -> None:
