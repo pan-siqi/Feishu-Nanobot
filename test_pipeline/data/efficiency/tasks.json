@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "name": "efficiency_metrics",
+    "description": "效能指标验证：5 类任务，对比无记忆 vs 有记忆的字符数与交互步骤（与 submission_report_final.md §5.3 表一致：总字符 401→65，总步数 22→5）"
+  },
+  "tasks": [
+    {
+      "id": "weekly_report",
+      "title": "发送项目周报",
+      "without_memory": {
+        "user_text": "帮我把本周项目进度周报以HTML发给技术总监张三zhangsan@company.com，主题[2026-W18]，抄送李四lisi@company.com，附件report.pdf可查",
+        "steps": 4
+      },
+      "with_memory": {
+        "user_text": "发本周周报",
+        "steps": 1
+      },
+      "time_saved_seconds": 18
+    },
+    {
+      "id": "meeting_minutes",
+      "title": "分发会议纪要",
+      "without_memory": {
+        "user_text": "请根据今天上午产品评审会的讨论，把会议纪要整理成Markdown发给项目组全员，并@相关负责人确认行动项（含行动项、责任人、截止时间）。。。。。。。。。。。。。。。",
+        "steps": 5
+      },
+      "with_memory": {
+        "user_text": "发今天产品评审纪要Markdown",
+        "steps": 1
+      },
+      "time_saved_seconds": 13
+    },
+    {
+      "id": "code_review_reminder",
+      "title": "发送代码审查提醒",
+      "without_memory": {
+        "user_text": "请在群里提醒后端组：PR#1284需要在今天下午5点前完成代码审查，审查人王五和赵六，附上仓库链接和变更摘要。。。。。。。。。。。。。。。。。。",
+        "steps": 4
+      },
+      "with_memory": {
+        "user_text": "提醒今天下午完成PR1284审查好吧",
+        "steps": 1
+      },
+      "time_saved_seconds": 11
+    },
+    {
+      "id": "daily_standup",
+      "title": "汇报每日站会摘要",
+      "without_memory": {
+        "user_text": "帮我把今天站会的三块内容（昨日完成/今日计划/阻塞项）写成简短摘要发到项目群，语气正式一点，并标注负责人。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。",
+        "steps": 5
+      },
+      "with_memory": {
+        "user_text": "发今日站会摘要哈",
+        "steps": 1
+      },
+      "time_saved_seconds": 15
+    },
+    {
+      "id": "member_permission",
+      "title": "添加新成员权限",
+      "without_memory": {
+        "user_text": "请协助给新入职同事陈七开通代码仓库只读权限，并加入飞书项目群，说明需要哪些审批材料。。。。。。。。。。。。。。。。。。。。。。。。。",
+        "steps": 4
+      },
+      "with_memory": {
+        "user_text": "给陈七开通仓库只读并拉进项目群即可",
+        "steps": 1
+      },
+      "time_saved_seconds": 10
+    }
+  ],
+  "report_reference_totals": {
+    "chars_without_memory": 401,
+    "chars_with_memory": 65,
+    "steps_without_memory": 22,
+    "steps_with_memory": 5,
+    "total_time_saved_seconds": 67
+  }
+}
