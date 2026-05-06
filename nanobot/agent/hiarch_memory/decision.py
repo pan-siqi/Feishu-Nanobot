@@ -32,7 +32,7 @@ class DecisionMemoryStore(BaseMemoryStore):
         # extract event candidates from window
         histext: str = format_messages(history)
         msg: List[Dict[str, Any]] = [
-            {'role': 'system', 'content': render_template('custom/extract.md', strip=True)},
+            {'role': 'system', 'content': render_template('custom/decision_extract.md', strip=True)},
             {'role': 'user', 'content': histext},
         ]
         _scheme = EventCandidateResult

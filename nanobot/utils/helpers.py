@@ -22,7 +22,8 @@ def format_messages(messages: List[Dict[str, str]]) -> str:
             continue
         tools = f" [tools: {', '.join(message['tools_used'])}]" if message.get("tools_used") else ""
         timestamp_string: str = message.get('timestamp', '?')[:16]
-        lines.append(f"[{timestamp_string}] {message['role'].upper()}{tools}: {message['content']}")
+        message_id = f" [message_id: {message['message_id']}]" if message.get("message_id") else ""
+        lines.append(f"[{timestamp_string}] {message['role'].upper()}{tools}{message_id}: {message['content']}")
     return "\n".join(lines)
 
 def read_file(file_path: str) -> str:
