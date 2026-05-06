@@ -719,21 +719,34 @@ def gateway(
                         request_limit = max(1, min(10, int(chunk.split("=", 1)[1])))
                     except Exception:
                         pass
-            review_service = DecisionReviewService(agent.decision_memorystore)
-            review_content = review_service.build_review_message(
+            store = getattr(agent, "decision_memorystore", None) or getattr(agent, "decision", None)
+            if store is None:
+                return "Decision review: decision store unavailable."
+            review_service = DecisionReviewService(store)
+            review_result = review_service.run_review(
                 DecisionReviewRequest(project=request_project, limit=request_limit)
             )
-            if not review_content:
+            if not review_result.markdown.strip():
                 return "Decision review: no stale-important decisions found."
             if job.payload.deliver and job.payload.to:
+                from nanobot.agent.hiarch_memory.review_card import build_decision_review_card
                 from nanobot.bus.events import OutboundMessage
 
-                await bus.publish_outbound(OutboundMessage(
-                    channel=job.payload.channel or "cli",
-                    chat_id=job.payload.to,
-                    content=review_content,
-                ))
-            return review_content
+                meta: dict = {}
+                if review_result.candidates:
+                    meta["_card_json"] = build_decision_review_card(
+                        review_result.markdown,
+                        review_result.candidates,
+                    )
+                await bus.publish_outbound(
+                    OutboundMessage(
+                        channel=job.payload.channel or "cli",
+                        chat_id=job.payload.to,
+                        content=review_result.markdown,
+                        metadata=meta,
+                    )
+                )
+            return review_result.markdown
 
         reminder_note = (
             "[Scheduled Task] Timer finished.\n\n"

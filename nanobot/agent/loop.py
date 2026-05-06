@@ -301,6 +301,11 @@ class AgentLoop:
         self.commands = CommandRouter()
         register_builtin_commands(self.commands)
 
+    @property
+    def decision_memorystore(self) -> DecisionMemoryStore:
+        """Alias for cron and builtins that expect ``decision_memorystore``."""
+        return self.decision
+
     def _register_default_tools(self) -> None:
         """Register the default set of tools."""
         allowed_dir = (
@@ -604,7 +609,9 @@ class AgentLoop:
                         pending_queue=pending,
                     )
                     if response is not None:
-                        for res in response: await self.bus.publish_outbound(res)
+                        # mulit publish
+                        for obm in response: 
+                            await self.bus.publish_outbound(obm)
                     elif msg.channel == "cli":
                         await self.bus.publish_outbound(OutboundMessage(
                             channel=msg.channel, chat_id=msg.chat_id,
@@ -798,7 +805,7 @@ class AgentLoop:
             initial_messages=initial_messages,
         )
 
-        if not card_outbound_message: outbound_messages.append(card_outbound_message)
+        if card_outbound_message: outbound_messages.append(card_outbound_message)
         
         # do check:
         if not read_only:
@@ -813,7 +820,7 @@ class AgentLoop:
                 on_stream_end=on_stream_end,
                 pending_queue=pending_queue,
             )
-            if not normal_outbound_message: outbound_messages.append(normal_outbound_message)
+            if normal_outbound_message: outbound_messages.append(normal_outbound_message)
         
         # save session
         save_skip = 1 + history_messages_length + (1 if user_persisted_early else 0)
