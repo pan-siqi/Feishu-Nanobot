@@ -1538,10 +1538,11 @@ class FeishuChannel(BaseChannel):
             chat_id = message.chat_id
             chat_type = message.chat_type
             msg_type = message.message_type
-
+            
+            # 在 if chat_type == "group" and not self._is_group_message_for_bot(message): return 之前，先做“旁路记录”
             if chat_type == "group" and not self._is_group_message_for_bot(message):
                 logger.debug("Feishu: skipping group message (not mentioned)")
-                return
+                return 
 
             # Add reaction
             reaction_id = await self._add_reaction(message_id, self.config.react_emoji)

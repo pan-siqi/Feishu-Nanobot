@@ -28,7 +28,7 @@ class DecisionMemoryStore(BaseMemoryStore):
         self._ec_repo = EventCandidateRepository(self._session, batch_size, max_score)
         self._ec_save_path = os.path.join(self._mem_save_path, '.ec.jsonl')
     
-    async def extract(self, history: List[Dict[str, Any]]) -> None:
+    async def extract(self, history: List[Dict[str, Any]]) -> List[str]:
         # extract event candidates from window
         histext: str = format_messages(history)
         msg: List[Dict[str, Any]] = [
@@ -43,7 +43,8 @@ class DecisionMemoryStore(BaseMemoryStore):
         # merge ec
         parsed: Dict[str, List] = response.parsed
         result: List[Dict] = parsed.get('result')
-        [item for item in result]
+        _evidence_message_ids: List[str] = list()
+        for item in result: _evidence_message_ids.extend(item.get('evidence_message_ids'))
 
         if not self._ec_repo.list(): # if first
             for item in result: self._ec_repo.create(self._scheme_to_metaclass(item))
@@ -57,6 +58,7 @@ class DecisionMemoryStore(BaseMemoryStore):
                     if ec_merge: self._ec_repo.update_by_ec_id(ec_merge); is_create = False
                 if is_create: self._ec_repo.create(ec)
         self._ec_repo.build_embed()
+        return _evidence_message_ids
                 
     async def _merge(self, ec: EventCandidateMetaClass, result: List[Tuple[EventCandidateMetaClass, float]]) -> EventCandidateMetaClass | None:
         ec_text = self._ec_repo.convert_text(ec, remove_ec_id=True)
