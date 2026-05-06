@@ -51,7 +51,7 @@ class ShortermMemoryStore:
                 self._history_save_path,
             )
             # <operate batch>
-            await self._router.operate_batch() # enter router
+            await self._router.operate_batch(project=session.key)
             history = history[_num:]
 
         # if should build-document

@@ -46,4 +46,9 @@ def connect_database() -> Session:
     )
 
     Base.metadata.create_all(engine)
+
+    # Phase 2: add columns on existing DBs (no-op if already present)
+    from nanobot.agent.hiarch_memory.database.ec_database import ensure_event_candidate_schema
+
+    ensure_event_candidate_schema(engine)
     return SessionLocal

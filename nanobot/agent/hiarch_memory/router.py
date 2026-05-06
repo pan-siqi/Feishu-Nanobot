@@ -26,7 +26,7 @@ class Router:
         self._episodic = episodic
         self._decision = decision
     
-    async def operate_batch(self):
+    async def operate_batch(self, project: str | None = None):
         # first step: split `batch` into `slide windows`
         self._create_slide_windows()
         
@@ -42,7 +42,7 @@ class Router:
             
             # 2.2 feedinto decision
             self._add_extra_message_id(_window_content) # add message id
-            _evidence_message_ids = await self._decision.extract(_window_content) # extract event candidate, insert database
+            _evidence_message_ids = await self._decision.extract(_window_content, project=project)
             self._merge_evidence_message_ids(_evidence_message_ids)
             self._windows_recorded.append(windows_path)
             write_pickle(self._windows_recorded, self._windows_recorded_path)

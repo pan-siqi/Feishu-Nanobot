@@ -11,6 +11,7 @@
 - `decision_signal` 应反映合并后最准确的当前状态。
 - `summary` 描述讨论了什么。
 - `decision_result` 描述最终结论；如果仍未定，就明确当前暂定状态或未决问题。
+- `aliases`、`reasons`、`objections`、`alternatives`、`participants`、`deadline`、`importance` 按对话如实填写；无则空数组或省略（由 schema 默认处理）。
 - `entities` 合并去重，保留关键模块、文件、人、日期、工具或系统名。
 - `evidence_message_ids` 以新事件提供的直接证据为主；如有必要可保留同一事件中仍然有效的旧证据，最终去重。
 - `confidence` 反映合并后结果的可信度，不要机械取高值。

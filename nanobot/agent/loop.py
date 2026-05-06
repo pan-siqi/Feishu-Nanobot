@@ -796,7 +796,9 @@ class AgentLoop:
         # do check:
         if read_only:
             return # no response
-        elif 
+        
+        
+
 
 
     async def _normal_response(
@@ -857,7 +859,7 @@ class AgentLoop:
             content=final_content,
             metadata=meta,
         )
-
+    
 
     def _sanitize_persisted_blocks(
         self,
