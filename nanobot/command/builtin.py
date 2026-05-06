@@ -327,9 +327,9 @@ async def cmd_decision_review(ctx: CommandContext) -> OutboundMessage:
     if len(parts) < 2:
         usage = (
             "Usage:\n"
-            "- /decision-review <decision_id> reinforce\n"
-            "- /decision-review <decision_id> expire\n"
-            "- /decision-review <decision_id> update <new statement>"
+            "- /decision-review <ec_id> reinforce\n"
+            "- /decision-review <ec_id> expire\n"
+            "- /decision-review <ec_id> update <new conclusion>"
         )
         return OutboundMessage(
             channel=ctx.msg.channel,
@@ -337,7 +337,7 @@ async def cmd_decision_review(ctx: CommandContext) -> OutboundMessage:
             content=usage,
             metadata={**dict(ctx.msg.metadata or {}), "render_as": "text"},
         )
-    decision_id = parts[0]
+    ec_id = parts[0]
     action = parts[1].lower()
     if action not in {"reinforce", "expire", "update"}:
         return OutboundMessage(
@@ -357,7 +357,7 @@ async def cmd_decision_review(ctx: CommandContext) -> OutboundMessage:
                 metadata={**dict(ctx.msg.metadata or {}), "render_as": "text"},
             )
 
-    store = getattr(ctx.loop, "decision_memorystore", None)
+    store = getattr(ctx.loop, "decision", None) or getattr(ctx.loop, "decision_memorystore", None)
     if store is None:
         return OutboundMessage(
             channel=ctx.msg.channel,
@@ -366,24 +366,24 @@ async def cmd_decision_review(ctx: CommandContext) -> OutboundMessage:
             metadata={**dict(ctx.msg.metadata or {}), "render_as": "text"},
         )
 
-    updated = store.mark_review(decision_id, action, new_statement=new_statement)
+    updated = store.mark_review(ec_id, action, new_statement=new_statement)
     if updated is None:
         return OutboundMessage(
             channel=ctx.msg.channel,
             chat_id=ctx.msg.chat_id,
-            content=f"Decision `{decision_id}` not found or invalid update payload.",
+            content=f"Event candidate `{ec_id}` not found or invalid update payload.",
             metadata={**dict(ctx.msg.metadata or {}), "render_as": "text"},
         )
 
     if action == "update":
         content = (
-            f"Decision `{decision_id}` superseded by `{updated.id}`.\n"
-            f"- topic: `{updated.topic}`\n"
-            f"- statement: {updated.statement}"
+            f"`{ec_id}` superseded by `{updated.ec_id}`.\n"
+            f"- event: `{updated.event_name}`\n"
+            f"- decision_result: {updated.decision_result}"
         )
     else:
         content = (
-            f"Updated decision `{updated.id}` with action `{action}`.\n"
+            f"Updated `{updated.ec_id}` with action `{action}`.\n"
             f"- status: `{updated.status}`\n"
             f"- strength: {updated.strength:.2f}\n"
             f"- review_count: {updated.review_count}"

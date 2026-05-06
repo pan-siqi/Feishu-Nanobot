@@ -29,7 +29,7 @@ class Base(DeclarativeBase):
 def connect_database() -> Session:
     postgresql_config = PostgresqlConfig(
         user_name=os.environ.get("NANOBOT_PG_USER", "nanobot"),
-        user_passward=os.environ.get("NANOBOT_PG_PASSWORD", ""),
+        user_passward=os.environ.get("NANOBOT_PG_PASSWORD", "!Liwenhan123"),
         url=os.environ.get("NANOBOT_PG_HOST", "localhost"),
         port=os.environ.get("NANOBOT_PG_PORT", "5432"),
         database_name=os.environ.get("NANOBOT_PG_DATABASE", "nanobot"),
@@ -48,7 +48,7 @@ def connect_database() -> Session:
     Base.metadata.create_all(engine)
 
     # Phase 2: add columns on existing DBs (no-op if already present)
-    from nanobot.agent.hiarch_memory.database.ec_database import ensure_event_candidate_schema
+    # from nanobot.agent.hiarch_memory.database.ec_database import ensure_event_candidate_schema
 
-    ensure_event_candidate_schema(engine)
+    # ensure_event_candidate_schema(engine)
     return SessionLocal

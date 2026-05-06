@@ -9,7 +9,11 @@ from loguru import logger
 from sqlalchemy.orm.session import Session
 
 from nanobot.agent.hiarch_memory.base import BaseMemoryStore
-from nanobot.agent.hiarch_memory.database.ec_database import EventCandidateMetaClass, EventCandidateRepository
+from nanobot.agent.hiarch_memory.database.ec_database import (
+    EventCandidateMetaClass,
+    EventCandidateRepository,
+    item_row_to_meta,
+)
 from nanobot.agent.hiarch_memory.scheme import DecisionStatus, EventCandidate, EventCandidateMergeResult, EventCandidateResult
 from nanobot.providers.base import LLMResponse
 from nanobot.providers.openai_compat_provider import OpenAICompatProvider
@@ -31,6 +35,8 @@ def _merge_eval_bool(content: str | None) -> bool:
 
 
 _ACTIVE_MIN_CONF = float(os.environ.get("NANOBOT_DECISION_ACTIVE_MIN_CONFIDENCE", "0.65"))
+_REINFORCE_FACTOR = float(os.environ.get("NANOBOT_DECISION_REINFORCE_FACTOR", "1.8"))
+_STRENGTH_CAP = float(os.environ.get("NANOBOT_DECISION_STRENGTH_CAP", "50"))
 
 
 class DecisionMemoryStore(BaseMemoryStore):
@@ -68,6 +74,87 @@ class DecisionMemoryStore(BaseMemoryStore):
 
     def list_review_candidates(self, project: str, limit: int = 3) -> list[EventCandidateMetaClass]:
         return self._ec_repo.list_review_candidates(project=project, limit=limit)
+
+    def mark_review(
+        self,
+        ec_id: str,
+        action: str,
+        *,
+        new_statement: str | None = None,
+    ) -> EventCandidateMetaClass | None:
+        """
+        Human review feedback (slash commands or future card callbacks).
+
+        - reinforce: strength *= factor (capped), review_count++, last_reviewed_at = now
+        - expire: status -> expired
+        - update: supersede old row, create new active row with decision_result = new_statement
+        """
+        row = self._ec_repo.get_by_ec_id(ec_id)
+        if row is None:
+            return None
+        meta = item_row_to_meta(row)
+        now_iso = datetime.now(timezone.utc).isoformat()
+        act = (action or "").strip().lower()
+
+        if act == "reinforce":
+            meta.strength = min(_STRENGTH_CAP, float(meta.strength or 1.0) * _REINFORCE_FACTOR)
+            meta.review_count = int(meta.review_count or 0) + 1
+            meta.last_reviewed_at = now_iso
+            meta.update_at = now_iso
+            self._ec_repo.update_by_ec_id(meta)
+            refreshed = self._ec_repo.get_by_ec_id(ec_id)
+            return item_row_to_meta(refreshed) if refreshed else None
+
+        if act == "expire":
+            meta.status = DecisionStatus.EXPIRED.value
+            meta.last_reviewed_at = now_iso
+            meta.update_at = now_iso
+            self._ec_repo.update_by_ec_id(meta)
+            refreshed = self._ec_repo.get_by_ec_id(ec_id)
+            return item_row_to_meta(refreshed) if refreshed else None
+
+        if act == "update":
+            stmt = (new_statement or "").strip()
+            if not stmt:
+                return None
+            old = meta
+            old.status = DecisionStatus.SUPERSEDED.value
+            old.last_reviewed_at = now_iso
+            old.update_at = now_iso
+            self._ec_repo.update_by_ec_id(old)
+
+            new_id = f"ec_{uuid4().hex[:10]}"
+            new_meta = EventCandidateMetaClass(
+                ec_id=new_id,
+                event_name=old.event_name,
+                aliases=list(old.aliases),
+                decision_signal=old.decision_signal,
+                summary=old.summary,
+                decision_result=stmt,
+                entities=list(old.entities),
+                evidence_message_ids=list(old.evidence_message_ids),
+                confidence=min(1.0, float(old.confidence) + 0.05),
+                update_at=now_iso,
+                project=old.project,
+                reasons=list(old.reasons),
+                objections=list(old.objections),
+                alternatives=list(old.alternatives),
+                deadline=old.deadline,
+                participants=list(old.participants),
+                importance=float(old.importance),
+                strength=min(_STRENGTH_CAP, float(old.strength or 1.0) * 1.2),
+                last_reviewed_at=now_iso,
+                review_count=int(old.review_count or 0) + 1,
+                status=DecisionStatus.ACTIVE.value,
+                supersedes=old.ec_id,
+            )
+            self._ec_repo.create(new_meta)
+            self._ec_repo.build_embed()
+            refreshed = self._ec_repo.get_by_ec_id(new_id)
+            return item_row_to_meta(refreshed) if refreshed else None
+
+        logger.warning("mark_review: unknown action {!r} for ec_id={}", action, ec_id)
+        return None
 
     async def extract(self, history: List[Dict[str, Any]], project: str | None = None) -> List[str]:
         project = project or ""
@@ -125,12 +212,7 @@ class DecisionMemoryStore(BaseMemoryStore):
             ecs_text += self._ec_repo.convert_text(res[0]).strip() + "\n\n"
 
         msg_eval: List[Dict[str, Any]] = [
-            {
-                "role": "user",
-                "content": render_template(
-                    "custom/evaluate.md", strip=True, event=ec_text, event_list=ecs_text
-                ),
-            },
+            {"role": "user", "content": render_template("custom/evaluate.md", strip=True, event=ec_text, event_list=ecs_text)},
         ]
         response_eval = await self._provider.chat_with_retry(
             msg_eval, model=self._model, tools=None, tool_choice=None
@@ -140,28 +222,16 @@ class DecisionMemoryStore(BaseMemoryStore):
             return None
 
         msg_merge: List[Dict[str, Any]] = [
-            {
-                "role": "user",
-                "content": render_template(
-                    "custom/merge.md", strip=True, event=ec_text, event_list=ecs_text
-                ),
-            },
+            {"role": "user", "content": render_template("custom/merge.md", strip=True, event=ec_text, event_list=ecs_text)},
         ]
         self._provider.set_scheme(EventCandidateMergeResult)
-        response_merge = await self._provider.chat_scheme(
-            msg_merge, model=self._model, tools=None, tool_choice=None
-        )
-        if isinstance(response_merge, LLMResponse):
-            raise Exception("fail to build scheme")
+        response_merge = await self._provider.chat_scheme(msg_merge, model=self._model, tools=None, tool_choice=None)
+        if isinstance(response_merge, LLMResponse): raise Exception("fail to build scheme")
 
         parsed: Dict[str, Any] = response_merge.parsed or {}
-        cand = parsed.get("event_candidate")
-        if isinstance(cand, EventCandidate):
-            cand = cand.model_dump()
-        if not isinstance(cand, dict):
-            cand = {}
+        ec = parsed.get("event_candidate")
         return self._scheme_to_metaclass(
-            cand,
+            ec,
             ec_id=parsed.get("ec_id"),
             project=old.project or project,
             base=old,
@@ -171,13 +241,11 @@ class DecisionMemoryStore(BaseMemoryStore):
         self,
         item: Dict[str, Any],
         ec_id: str | None = None,
-        *,
         project: str = "",
         base: EventCandidateMetaClass | None = None,
     ) -> EventCandidateMetaClass:
-        if not ec_id:
-            ec_id = f"ec_{uuid4().hex[:10]}"
-        now_iso = datetime.now(timezone.utc).isoformat()
+        if not ec_id: ec_id = f"ec_{uuid4().hex[:10]}"
+        now_iso = datetime.now().isoformat()
 
         def _list(key: str) -> List[str]:
             v = item.get(key)

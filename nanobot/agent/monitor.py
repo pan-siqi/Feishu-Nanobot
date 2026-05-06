@@ -58,7 +58,7 @@ class Monitor:
         Reserved for group_reply_gate.md style logic; currently never suppresses.
         """
         _ = session
-        return False
+        return True
 
     async def _publish_card(
             self,
@@ -67,18 +67,9 @@ class Monitor:
         ) -> None | Tuple[dict, OutboundMessage]:
         _ = session
         text = (msg.content or "").strip()
-        if not text:
-            logger.debug("Monitor card: skip (empty inbound text)")
-            return
-
         result: List[Tuple[EventCandidateMetaClass, float]] = self._repo.retrieve(text)
         if not result:
             logger.info("Monitor card: skip (no EventCandidate within repo filter)")
-            return
-
-        best_score = result[0][1]
-        if best_score >= self._card_max_distance:
-            logger.info("Monitor card: skip (best_distance={:.4f} >= threshold={:.4f})", best_score, self._card_max_distance)
             return
 
         card_md = "\n\n".join(self.convert_ec_to_beautify_markdown(ec) for ec, _ in result)
