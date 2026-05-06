@@ -59,7 +59,7 @@ class DecisionMemoryStore(BaseMemoryStore):
 
     def has_any_candidates(self, project: str | None = None) -> bool:
         return bool(self._ec_repo.list(limit=1, project=project))
-
+    
     def prompt_block_for_query(self, query: str, top_k: int = 3, project: str | None = None) -> str:
         """Canonical text blocks for top matching event candidates (system prompt)."""
         hits = self._ec_repo.retrieve(query, top_k=top_k, project=project)
@@ -155,7 +155,7 @@ class DecisionMemoryStore(BaseMemoryStore):
 
         logger.warning("mark_review: unknown action {!r} for ec_id={}", action, ec_id)
         return None
-
+    
     async def extract(self, history: List[Dict[str, Any]], project: str | None = None) -> List[str]:
         project = project or ""
         histext: str = format_messages(history)

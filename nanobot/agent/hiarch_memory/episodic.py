@@ -70,7 +70,7 @@ class EpisodicMemoryStore:
         histext: str = format_messages(history)
         msg: List[Dict[str, Any]] = [
             {'role': 'system', 'content': render_template('custom/extract.md', strip=True)},
-            {'role': 'user', 'content': histext},
+            {'role': 'user', 'content': f'请从以下文本中抽取结构化信息：{histext}'},
         ]
         _scheme = InterMediateResult
         # _scheme = self._load_scheme()

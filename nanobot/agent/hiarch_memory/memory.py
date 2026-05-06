@@ -28,7 +28,6 @@ class HiarchMemoryStore:
         self,
         current_message: str,
         memory_project: str | None = None,
-        *,
         sources: list[MemorySource] | None = None,
     ) -> str:
         route = sources if sources is not None else self._query_router.route(current_message)
