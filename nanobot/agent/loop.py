@@ -756,10 +756,16 @@ class AgentLoop:
             self.sessions.save(session)
             user_persisted_early = True
 
-        # set block 
+        # set block
+        is_block: bool = False
         if not msg.is_mentioned:
-            if self._block_message(session):
-                return 'Read but no reply'
+            is_block = self._block_message(session)
+        
+        # publish card
+        await self._publish_card(msg)
+
+        if is_block:
+            return 'Read but no reply'
 
         final_content, _, all_msgs, stop_reason, had_injections = await self._run_agent_loop(
             initial_messages,
@@ -812,12 +818,27 @@ class AgentLoop:
         session.messages: [{'role': 'user', 'content': '[user id]: xxx', 'timestamp': 'xxx'}]
         --> LLM --> True/False
         '''
-        message = [
-            {'role': 'user', 'content': render_template('custom/t1.md', strip=True, value='xxx')}
-        ]
-        response = self.provider.chat_with_retry(message)
-        print(f'skip: {session.messages[-1]['content']}')
+        # message = [
+        #     {'role': 'user', 'content': render_template('custom/t1.md', strip=True, value='xxx')}
+        # ]
+        # response = self.provider.chat_with_retry(message)
+        # print(f'skip: {session.messages[-1]['content']}')
         return True
+
+    async def _publish_card(self, msg: InboundMessage):
+        content = 'this is a card content'
+        card = f"****\n\nHHHHHH$x+1 = 2$"
+        meta = dict(msg.metadata or {})
+        meta['_card'] = card
+
+        await self.bus.publish_outbound(
+            OutboundMessage(
+                channel=msg.channel,
+                chat_id=msg.chat_id,
+                content=content,
+                metadata=meta,
+            )
+        ) 
 
     def _sanitize_persisted_blocks(
         self,
