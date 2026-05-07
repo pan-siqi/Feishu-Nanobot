@@ -38,3 +38,4 @@ docs/proposal/**
 
 tests/**
 .config.json
+.md
