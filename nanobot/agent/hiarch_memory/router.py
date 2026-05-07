@@ -50,12 +50,6 @@ class Router:
             processed += 1
 
         self._delete_slide_windows()
-        if processed:
-            logger.info(
-                "Router operate_batch: slide_windows_processed={} rag_dir={} decision_pg=EventCandidateItem",
-                processed,
-                os.path.join(self._mem_save_path, "rag_storage"),
-            )
     
     def _create_slide_windows(self, session: Session): # .history.jsonl --> windows/window_<idx>.jsonl
         # if os.path.exists(self._windows_root): raise Exception(f'{self._windows_root} could not exist!')
@@ -67,8 +61,8 @@ class Router:
         self._windows_recorded: List = list()
         write_pickle(self._windows_recorded, self._windows_recorded_path)
 
-        # _temp: List[Dict] = read_jsonlines(self._history_save_path)
-        _temp = session.messages
+        _temp: List[Dict] = read_jsonlines(self._history_save_path)
+        # _temp = session.messages
         left: int = 0
         while True:
             right: int = min(left+self._windows_size, len(_temp)-1) # update right idx

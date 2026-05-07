@@ -79,7 +79,6 @@ class DecisionMemoryStore(BaseMemoryStore):
         self,
         ec_id: str,
         action: str,
-        *,
         new_statement: str | None = None,
     ) -> EventCandidateMetaClass | None:
         """
@@ -159,8 +158,12 @@ class DecisionMemoryStore(BaseMemoryStore):
     async def extract(self, history: List[Dict[str, Any]], project: str | None = None) -> List[str]:
         project = project or ""
         histext: str = format_messages(history)
+        now_str = datetime.now().strftime("%Y-%m-%d %H:%M (周%A)").replace(
+            "Monday", "一").replace("Tuesday", "二").replace("Wednesday", "三").replace(
+            "Thursday", "四").replace("Friday", "五").replace("Saturday", "六").replace(
+            "Sunday", "日")
         msg: List[Dict[str, Any]] = [
-            {"role": "system", "content": render_template("custom/decision_extract.md", strip=True)},
+            {"role": "system", "content": render_template("custom/decision_extract.md", strip=True, now=now_str)},
             {"role": "user", "content": histext},
         ]
         self._provider.set_scheme(EventCandidateResult)
