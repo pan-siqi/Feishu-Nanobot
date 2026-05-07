@@ -40,4 +40,4 @@ tests/**
 .config.json
 .md
 *.sh
-main.py
+main.py.nanobot/
