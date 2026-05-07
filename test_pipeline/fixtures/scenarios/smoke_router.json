@@ -4,7 +4,8 @@
     "description": "最小 Router 全链路烟测（少量消息；检索校验依赖 NANOBOT_MEMORY_ROUTE_ALL=1 以保证决策层参与聚合）"
   },
   "messages": [
-    "团队确认：项目进度周报收件人为张三 zhangsan@company.com，请在周五前发出。"
+    "【决策结论】项目进度周报收件人确定为张三 zhangsan@company.com，周五前发出；全员执行。",
+    "会议纪要同步：以上收件人规则作为本周固定口径，请勿发到其它邮箱。"
   ],
   "queries": [
     {

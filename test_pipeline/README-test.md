@@ -152,6 +152,13 @@ LightRAG `Neo4JStorage` 常用变量（参见 LightRAG 文档）：
 
 Episodic 内 LightRAG 的 LLM 适配层可能与 Volcengine 配置耦合；若 Router 全链路与决策 E2E 行为不一致，请核对线上 **同一 base_url/model**。
 
+### 5.3.1 决策检索（PG / 覆写）
+
+`EventCandidateRepository.retrieve` 在向量邻域内对 **`update_at` 更新的行**做新近度加权（避免同一主题下旧结论余弦距离更近盖住覆写）。可调：
+
+- **`NANOBOT_DECISION_RETRIEVE_RECENCY_LAMBDA`**（默认 `0.22`）：越大越偏向最新记录；设为 **`0`** 则退回纯余弦距离排序。
+- **`NANOBOT_DECISION_RETRIEVE_PREFETCH_MULT`**（默认 `5`）、**`NANOBOT_DECISION_RETRIEVE_PREFETCH_CAP`**（默认 `80`）：先按距离多取若干条再截断为 `top_k`。
+
 ### 5.4 嵌入模型
 
 仓库根目录 **`model/bge-small-zh-v1.5/`**，否则尝试 HuggingFace **`BAAI/bge-small-zh-v1.5`**。
