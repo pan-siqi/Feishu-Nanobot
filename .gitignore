@@ -37,3 +37,4 @@ envs/neo4j.local.env
 docs/proposal/**
 
 tests/**
+.config.json
