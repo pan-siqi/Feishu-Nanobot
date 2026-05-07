@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import math
+import os
 from dataclasses import asdict, dataclass, fields
 from datetime import datetime, timezone
 from typing import Dict, List, Tuple
@@ -26,6 +27,23 @@ REVIEW_RETENTION_THRESHOLD = 0.4
 REVIEW_IMPORTANCE_MIN = 0.6
 DECAY_HALF_LIFE_DAYS = 30.0
 STRENGTH_FLOOR = 0.12
+
+# Retrieve: cosine-only ranks stale rows above fresher overrides when both stay `active`.
+# After prefetching neighbors, subtract λ × normalized recency from distance (newer wins ties).
+_RETRIEVE_RECENCY_LAMBDA_DEFAULT = "0.22"
+_RETRIEVE_PREFETCH_MULT_DEFAULT = "5"
+_RETRIEVE_PREFETCH_CAP_DEFAULT = "80"
+
+
+def _parse_update_ts(update_at: str | None) -> float:
+    if not update_at:
+        return 0.0
+    try:
+        u = str(update_at).strip().replace("Z", "+00:00")
+        dt = datetime.fromisoformat(u)
+        return float(dt.timestamp())
+    except (ValueError, TypeError, OSError):
+        return 0.0
 
 
 @dataclass
@@ -271,11 +289,21 @@ class EventCandidateRepository:
 
         query_vector = self._embed_model.encode([query_string], normalize_embeddings=True).flatten()
         distance = EventCandidateItem.embedding.cosine_distance(query_vector).label("distance")
+        excluded_status = (
+            DecisionStatus.SUPERSEDED.value,
+            DecisionStatus.EXPIRED.value,
+            DecisionStatus.ARCHIVED.value,
+        )
+        mult = max(1, int(os.environ.get("NANOBOT_DECISION_RETRIEVE_PREFETCH_MULT", _RETRIEVE_PREFETCH_MULT_DEFAULT)))
+        cap = max(1, int(os.environ.get("NANOBOT_DECISION_RETRIEVE_PREFETCH_CAP", _RETRIEVE_PREFETCH_CAP_DEFAULT)))
+        prefetch_limit = min(max(top_k * mult, top_k), cap)
+
         stmt = (
             select(EventCandidateItem, distance)
             .where(EventCandidateItem.embedding.is_not(None))
+            .where(EventCandidateItem.status.notin_(excluded_status))
             .order_by(distance)
-            .limit(top_k)
+            .limit(prefetch_limit)
         )
         if project is not None:
             stmt = stmt.where(EventCandidateItem.project == project)
@@ -283,6 +311,22 @@ class EventCandidateRepository:
         result: List[Tuple[EventCandidateItem, float]] = self.session.execute(stmt).all()
         if is_filter:
             result = list(filter(lambda item: item[1] < self._max_score, result))
+
+        lam = float(os.environ.get("NANOBOT_DECISION_RETRIEVE_RECENCY_LAMBDA", _RETRIEVE_RECENCY_LAMBDA_DEFAULT))
+        if lam > 0.0 and len(result) > 1:
+            ts_list = [_parse_update_ts(item[0].update_at) for item in result]
+            t_min, t_max = min(ts_list), max(ts_list)
+            span = max(t_max - t_min, 1.0)
+
+            def _adjusted_sort_key(item: Tuple[EventCandidateItem, float]) -> float:
+                dist = item[1]
+                ts = _parse_update_ts(item[0].update_at)
+                recency = (ts - t_min) / span
+                return dist - lam * recency
+
+            result.sort(key=_adjusted_sort_key)
+
+        result = result[:top_k]
 
         out: List[Tuple[EventCandidateMetaClass, float]] = []
         keys = [f.name for f in fields(EventCandidateMetaClass)]
