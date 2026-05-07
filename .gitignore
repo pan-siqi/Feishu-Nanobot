@@ -37,7 +37,7 @@ envs/neo4j.local.env
 docs/proposal/**
 
 tests/**
-.config.json
+config.json
 .md
 *.sh
 main.py.nanobot/
