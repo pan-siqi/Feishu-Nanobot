@@ -23,7 +23,7 @@ class ShortermMemoryStore:
         self._cursor_save_path = os.path.join(self._mem_save_path, '.cursor')
         self._shorterm_memory_save_path = os.path.join(self._mem_save_path, '.shortermem.jsonl')
         
-        self._max_history_num: int = 500
+        self._max_history_num: int = 5
         self._cursor: int = self._load_cursor() if os.path.exists(self._cursor_save_path) else 0
         self._buffer: List = list()
         self._episodic = episodic
@@ -39,19 +39,14 @@ class ShortermMemoryStore:
         history: List[Dict[str, Any]] = session.get_history(max_messages=0, clip_index=self._cursor)
         
         # if should rebuild
-        if True:
-        # if self._is_rebuild(history):
+        # if True:
+        if self._is_rebuild(history):
             _num: int = self._get_num(history)
             batch = history[0:_num]
             self._save_history(batch)
-            logger.info(
-                "Shorterm flush: batch_messages={} cursor_after={} history_jsonl={}",
-                _num,
-                self._cursor,
-                self._history_save_path,
-            )
+
             # <operate batch>
-            await self._router.operate_batch(project=session.key)
+            await self._router.operate_batch(session=session, project=session.key)
             history = history[_num:]
 
         # if should build-document
@@ -88,7 +83,7 @@ class ShortermMemoryStore:
         return _records
 
     def _save_history(self, history: List):
-        with jsonlines.open(self._history_save_path, mode='a') as writer:
+        with jsonlines.open(self._history_save_path, mode='w') as writer:
             writer.write_all(history)
     
     def _save_cursor(self):

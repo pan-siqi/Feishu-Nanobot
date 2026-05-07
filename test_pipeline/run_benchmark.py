@@ -61,6 +61,10 @@ def cmd_decision_e2e() -> int:
     return _run("run_e2e_all.py")
 
 
+def cmd_decision_e2e_seeds_only() -> int:
+    return _run("e2e_decision_bench_seeds.py")
+
+
 def cmd_router_full() -> int:
     suite = os.environ.get("NANOBOT_ROUTER_SUITE", "smoke")
     extra = ["--suite", suite]
@@ -95,8 +99,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     sub.add_parser(
         "decision-e2e",
-        help="L2 决策子链：extract→PG→retrieve（Router 卸批外的等价滑窗，见 run_e2e_all）",
+        help="L2 决策子链：noise→temporal→bench(2)；可选 NANOBOT_BENCHMARK_INCLUDE_SEEDS=1 追加 seeds(20)",
     ).set_defaults(func=cmd_decision_e2e)
+    sub.add_parser(
+        "decision-e2e-seeds",
+        help="仅跑 decision_bench_seed_cases.json（20 条种子展开，不含 noise/temporal）",
+    ).set_defaults(func=cmd_decision_e2e_seeds_only)
     sub.add_parser(
         "router-full",
         help="Router 全链路：.history.jsonl→operate_batch（Episodic+Decision），默认 smoke",

@@ -1,310 +1,324 @@
 {
-  "chunk-af9844458918cd898899fb9dd08e385c": {
-    "tokens": 427,
-    "content": "[Memory]\nuid: 9902f\ntype: fact\ntopic: system_behavior\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778090475\n\ncontent:\n系统在员工技能标签为空时会默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: b3b9c\ntype: preference\ntopic: product_documentation\nimportance: 0.7\nttl_days: 180\ntimestamp: 1778090475\n\ncontent:\n产品文案需要强调系统是建议工具，不会替代门店经理最终决策，这一点对一线接受度很关键。\n\n[Memory]\nuid: 5c62a\ntype: goal\ntopic: project_plan\nimportance: 0.6\nttl_days: 14\ntimestamp: 1778090475\n\ncontent:\n如果两周后指标稳定，再讨论全量；如果解释面板仍然不够清楚，项目目标从全量上线改成区域试点。\n\n[Memory]\nuid: 21f66\ntype: task\ntopic: data_handling\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090475\n\ncontent:\n灰度名单要重新整理，新增门店先不进来，避免这轮验证被样本变化干扰。\n\n[Memory]\nuid: b8e41\ntype: goal\ntopic: algorithm_replay\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090475\n\ncontent:\n算法回放建议按门店类型分组，不要把商圈店和社区店混在一起看，否则平均值会掩盖问题。\n\n[Memory]\nuid: a4fa3\ntype: task\ntopic: data_schema\nimportance: 0.5\nttl_days: 1\ntimestamp: 1778090475\n\ncontent:\n排班结果表需要加上 rule_version、model_version 和 manual_override_reason 三个字段，今晚联调环境可以验证。",
+  "chunk-bc1a88e768a15e39122f4a44e23b2164": {
+    "tokens": 440,
+    "content": "[Memory]\nuid: b8695\ntype: fact\ntopic: boundary_condition_employee_skill_tag\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117015\n\ncontent:\n员工技能标签为空时，系统会默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: 55815\ntype: fact\ntopic: new_store_exclusion\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117015\n\ncontent:\n新增门店先不进来，避免这轮验证被样本变化干扰。\n\n[Memory]\nuid: 613ea\ntype: goal\ntopic: project_pilot_discussion\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117015\n\ncontent:\n如果两周后指标稳定，我们再讨论全量；如果解释面板仍然不够清楚，就先把项目目标从全量上线改成区域试点。\n\n[Memory]\nuid: edf93\ntype: preference\ntopic: product_copy_emphasis\nimportance: 1.0\nttl_days: 180\ntimestamp: 1778117015\n\ncontent:\n产品文案需要强调系统是建议工具，不会替代门店经理最终决策，这一点对一线接受度很关键。\n\n[Memory]\nuid: a691b\ntype: preference\ntopic: polaris_explanation_panel_structure\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117015\n\ncontent:\nPolaris 的解释面板我想拆成三层：先给门店经理看结论，再展示触发的关键约束，最后保留详细日志给审计使用。\n\n[Memory]\nuid: 73a4e\ntype: task\ntopic: scheduling_result_table_update\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117015\n\ncontent:\n我已经把排班结果表加上 rule_version、model_version 和 manual_override_reason 三个字段，今晚联调环境可以验证。",
     "chunk_order_index": 0,
-    "full_doc_id": "doc-af9844458918cd898899fb9dd08e385c",
+    "full_doc_id": "doc-bc1a88e768a15e39122f4a44e23b2164",
     "file_path": "unknown_source",
     "llm_cache_list": [
-      "default:extract:7e0892ebeb34b64f07cad43d3a04c7a5",
-      "default:extract:e2238a5d55fc6f14aac9d86379a9a37d"
+      "default:extract:37c4957d1f1773711f9e8399329825b2",
+      "default:extract:920f81d5fce600be8037ef522fb3f82e"
     ],
-    "create_time": 1778090476,
-    "update_time": 1778090485,
-    "_id": "chunk-af9844458918cd898899fb9dd08e385c"
+    "create_time": 1778117016,
+    "update_time": 1778117024,
+    "_id": "chunk-bc1a88e768a15e39122f4a44e23b2164"
   },
-  "chunk-417c911a0a791840d66dc227cd884e37": {
-    "tokens": 960,
-    "content": "[Memory]\nuid: 982ea\ntype: task\ntopic: star_bridge_crm_event_tracking\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090523\n\ncontent:\n星桥CRM 的埋点需要前端补充，尤其是从配置页返回列表页的路径。\n\n[Memory]\nuid: 175b5\ntype: preference\ntopic: star_bridge_crm_demo_preference\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090523\n\ncontent:\n星桥CRM 的客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解。\n\n[Memory]\nuid: dc0d6\ntype: task\ntopic: milestone_requirement拆分\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090523\n\ncontent:\n帮我们把需求拆成三阶段里程碑，并指出每阶段验收标准。\n\n[Memory]\nuid: 35b5d\ntype: preference\ntopic: polaris_scheduling_demo_preference\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090523\n\ncontent:\nPolaris智能排班 的客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解。\n\n[Memory]\nuid: a60de\ntype: goal\ntopic: polaris_review_core_metrics\nimportance: 0.5\nttl_days: 14\ntimestamp: 1778090523\n\ncontent:\nPolaris 两周后评审的核心指标定为：人工覆盖率、员工连续晚班次数、班次缺口率和门店经理满意度。\n\n[Memory]\nuid: 17527\ntype: preference\ntopic: falcon_risk_control_demo_preference\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090523\n\ncontent:\nFalcon风控中台 的客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解。\n\n[Memory]\nuid: 75786\ntype: task\ntopic: orion_payment_gateway_event_tracking\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090523\n\ncontent:\nOrion海外支付网关 的埋点需要前端补充，尤其是从配置页返回列表页的路径。\n\n[Memory]\nuid: 38022\ntype: task\ntopic: blue_whale_report_event_tracking\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090523\n\ncontent:\n蓝鲸报表 的埋点需要前端补充，尤其是从配置页返回列表页的路径。\n\n[Memory]\nuid: 875d9\ntype: fact\ntopic: blue_whale_report_weekly_update\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090523\n\ncontent:\n蓝鲸报表 的周报更新，绿色项是已完成，黄色项是需要协作，红色项只剩一个，和财务和运营口径存在差异有关。\n\n[Memory]\nuid: f74f6\ntype: goal\ntopic: polaris_scheduling_review_guideline\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090523\n\ncontent:\nPolaris智能排班 复盘时要区分真实缺陷和沟通成本，不要所有问题都归到研发延期。\n\n[Memory]\nuid: bd762\ntype: fact\ntopic: blue_whale_report_export_query\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090523\n\ncontent:\n蓝鲸报表 客户问到下个版本是否支持导出，按“规划中但未承诺日期”回复。\n\n[Memory]\nuid: 6df19\ntype: fact\ntopic: customer_communication_draft\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090523\n\ncontent:\n客户说明草稿：我们已定位到影响范围，并正在按优先级推进修复。\n\n[Memory]\nuid: eede4\ntype: fact\ntopic: meeting_minutes_project_sync\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090523\n\ncontent:\n会议纪要：团队围绕当前项目的交付范围、依赖和风险进行了同步，优先保障核心链路可用，非关键功能进入后续迭代。",
+  "chunk-c0fa405aa56bf9a0ba2469fd55d4f26a": {
+    "tokens": 661,
+    "content": "[Memory]\nuid: 7b5e5\ntype: fact\ntopic: star_bridge_crm_tracking_issue\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778117036\n\ncontent:\n星桥CRM 的埋点存在遗漏，尤其是从配置页返回列表页的路径，需要前端补充。\n\n[Memory]\nuid: 36776\ntype: fact\ntopic: falcon_risk_control_demo_preference\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117036\n\ncontent:\nFalcon风控中台的客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解。\n\n[Memory]\nuid: b938d\ntype: fact\ntopic: blue_whale_report_alert_issue\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778117036\n\ncontent:\n蓝鲸报表的告警不是服务不可用，而是批处理延迟触发了阈值，建议把告警描述改清楚，避免值班同学误判。\n\n[Memory]\nuid: c44d4\ntype: task\ntopic: polaris_review_metrics\nimportance: 1.0\nttl_days: 14\ntimestamp: 1778117036\n\ncontent:\n将Polaris两周后评审的核心指标定为：人工覆盖率、员工连续晚班次数、班次缺口率和门店经理满意度。\n\n[Memory]\nuid: 5bc2e\ntype: goal\ntopic: consistent_acceptance_criteria\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778117036\n\ncontent:\n在产品开发中，需确保一致的验收口径，而不是更多功能。\n\n[Memory]\nuid: 2543b\ntype: fact\ntopic: polaris_audit_log_storage\nimportance: 0.5\nttl_days: 180\ntimestamp: 1778117036\n\ncontent:\nPolaris的审计日志字段已入库，后续法务如需抽查，可以按门店、日期和规则版本过滤。\n\n[Memory]\nuid: 01766\ntype: constraint\ntopic: distinguish_defects_and_costs\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778117036\n\ncontent:\n团队复盘时需区分真实缺陷和沟通成本，避免将所有问题归结为研发延期。\n\n[Memory]\nuid: ef028\ntype: task\ntopic: generate_project_risk_matrix\nimportance: 1.0\nttl_days: 14\ntimestamp: 1778117036\n\ncontent:\n需要生成项目风险矩阵，包含影响、概率、负责人和缓解措施。\n\n[Memory]\nuid: 78359\ntype: fact\ntopic: polaris_smart_scheduling_demo_preference\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117036\n\ncontent:\nPolaris智能排班的客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解。",
     "chunk_order_index": 0,
-    "full_doc_id": "doc-417c911a0a791840d66dc227cd884e37",
+    "full_doc_id": "doc-c0fa405aa56bf9a0ba2469fd55d4f26a",
     "file_path": "unknown_source",
     "llm_cache_list": [
-      "default:extract:9894c9414f35057089ad650dd36bcfb3",
-      "default:extract:0529833617531bd29992befdab43b6d4"
+      "default:extract:cc4ea0eef700957a8f108852ed7a9ec3",
+      "default:extract:d2bfa172ecc3041324860f2e27feaa32"
     ],
-    "create_time": 1778090523,
-    "update_time": 1778090533,
-    "_id": "chunk-417c911a0a791840d66dc227cd884e37"
+    "create_time": 1778117036,
+    "update_time": 1778117045,
+    "_id": "chunk-c0fa405aa56bf9a0ba2469fd55d4f26a"
   },
-  "chunk-bbdf641d26f984e1ba66e8da7593c02c": {
-    "tokens": 750,
-    "content": "[Memory]\nuid: 73b1d\ntype: task\ntopic: blue_whale_report_tracking\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090577\n\ncontent:\n蓝鲸报表的埋点需要前端补充，尤其是从配置页返回列表页的路径。\n\n[Memory]\nuid: 67e95\ntype: fact\ntopic: polaris_review_metrics\nimportance: 1.0\nttl_days: 14\ntimestamp: 1778090577\n\ncontent:\nPolaris两周后评审的核心指标包括人工覆盖率、员工连续晚班次数、班次缺口率和门店经理满意度。\n\n[Memory]\nuid: d0bfd\ntype: preference\ntopic: falcon_demo_approach\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090577\n\ncontent:\nFalcon风控中台的客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解。\n\n[Memory]\nuid: 9cfe8\ntype: constraint\ntopic: star_bridge_crm_review\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778090577\n\ncontent:\n星桥CRM复盘时要区分真实缺陷和沟通成本，不要所有问题都归到研发延期。\n\n[Memory]\nuid: 166af\ntype: preference\ntopic: polaris_scheduling_demo\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090577\n\ncontent:\nPolaris智能排班的客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解。\n\n[Memory]\nuid: d2b03\ntype: task\ntopic: blue_whale_export_query\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090577\n\ncontent:\n蓝鲸报表的客户问到下个版本是否支持导出，回复按“规划中但未承诺日期”。\n\n[Memory]\nuid: d0f75\ntype: task\ntopic: orion_payment_gateway_tracking\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090577\n\ncontent:\nOrion海外支付网关的埋点需要前端补充，尤其是从配置页返回列表页的路径。\n\n[Memory]\nuid: 8b581\ntype: fact\ntopic: falcon_report_status\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090577\n\ncontent:\nFalcon风控中台的周报中提到绿色项是已完成，黄色项是需要协作，红色项只剩一个，和跨境交易规则更新频繁有关。\n\n[Memory]\nuid: 66872\ntype: fact\ntopic: blue_whale_report_status\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090577\n\ncontent:\n蓝鲸报表的周报中提到绿色项是已完成，黄色项是需要协作，红色项只剩一个，和夜间批处理不稳定有关。\n\n[Memory]\nuid: 2b920\ntype: fact\ntopic: polaris_audit_logs\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090577\n\ncontent:\nPolaris的审计日志字段已经入库，法务如果需要抽查可以按门店、日期和规则版本过滤。",
+  "chunk-5fe07dfa2892e9860a0071c5d0e64a53": {
+    "tokens": 689,
+    "content": "[Memory]\nuid: 16192\ntype: task\ntopic: frontend_completion\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117056\n\ncontent:\n前端需要补充蓝鲸报表、Polaris智能排班和星桥CRM从配置页返回列表页的埋点。\n\n[Memory]\nuid: c2611\ntype: goal\ntopic: polaris_review_metrics\nimportance: 0.7\nttl_days: 14\ntimestamp: 1778117056\n\ncontent:\nPolaris两周后评审的核心指标定为：人工覆盖率、员工连续晚班次数、班次缺口率和门店经理满意度。\n\n[Memory]\nuid: 40adf\ntype: constraint\ntopic: scope_constraint\nimportance: 1.0\nttl_days: 180\ntimestamp: 1778117056\n\ncontent:\n会议决策中提到不扩大范围，只处理阻塞上线或影响客户承诺的问题。\n\n[Memory]\nuid: de720\ntype: fact\ntopic: polaris_audit_logs\nimportance: 0.5\nttl_days: 180\ntimestamp: 1778117056\n\ncontent:\nPolaris的审计日志字段已经入库，法务可以按门店、日期和规则版本过滤。\n\n[Memory]\nuid: 4708f\ntype: preference\ntopic: customer_demo_preference\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117056\n\ncontent:\n在客户演示中，Orion海外支付网关和Polaris智能排班最好不要展示后台配置细节，直接走业务场景。\n\n[Memory]\nuid: 0ff9d\ntype: task\ntopic: risk_matrix_generation\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117056\n\ncontent:\n需要生成项目风险矩阵，包含影响、概率、负责人和缓解措施。\n\n[Memory]\nuid: d6ea7\ntype: relationship\ntopic: falcon_report_status\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117056\n\ncontent:\nFalcon风控中台的周报需更新，绿色项是已完成，黄色项是需要协作，红色项只剩一个，和跨境交易规则更新频繁有关。\n\n[Memory]\nuid: df9d8\ntype: constraint\ntopic: alert_description_constraint\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117056\n\ncontent:\n蓝鲸报表的告警描述需要改清楚，避免值班同学误判。\n\n[Memory]\nuid: 453a4\ntype: task\ntopic: milestone_task\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117056\n\ncontent:\n将需求拆成三阶段里程碑，并指出每阶段的验收标准。\n\n[Memory]\nuid: b1df8\ntype: goal\ntopic: polaris_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117056\n\ncontent:\nPolaris智能排班目前最缺的是一致的验收口径。",
     "chunk_order_index": 0,
-    "full_doc_id": "doc-bbdf641d26f984e1ba66e8da7593c02c",
+    "full_doc_id": "doc-5fe07dfa2892e9860a0071c5d0e64a53",
     "file_path": "unknown_source",
     "llm_cache_list": [
-      "default:extract:5ae5582432d95971633df822fa6695fd",
-      "default:extract:dd6ff797d6da07671cb7f455e7c79176"
+      "default:extract:c0df36fe55ef7286c1d475e4135b433a",
+      "default:extract:be611aae2ab732b409b61c86c7d37dba"
     ],
-    "create_time": 1778090577,
-    "update_time": 1778090590,
-    "_id": "chunk-bbdf641d26f984e1ba66e8da7593c02c"
+    "create_time": 1778117056,
+    "update_time": 1778117064,
+    "_id": "chunk-5fe07dfa2892e9860a0071c5d0e64a53"
   },
-  "chunk-af0a542d93d4019c7a2c187932978fd7": {
-    "tokens": 1027,
-    "content": "[Memory]\nuid: 15dfc\ntype: constraint\ntopic: polaris_smart_scheduling_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778090644\n\ncontent:\nPolaris智能排班目前最缺的是一致的验收口径，不是更多功能。\n\n[Memory]\nuid: a0b37\ntype: constraint\ntopic: blue_whale_report_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778090644\n\ncontent:\n蓝鲸报表目前最缺的是一致的验收口径，不是更多功能。\n\n[Memory]\nuid: 426e3\ntype: constraint\ntopic: xingqiao_crm_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778090644\n\ncontent:\n星桥CRM目前最缺的是一致的验收口径，不是更多功能。\n\n[Memory]\nuid: 7a58a\ntype: preference\ntopic: orion_overseas_payment_gateway_demo\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090644\n\ncontent:\nOrion海外支付网关的客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解。\n\n[Memory]\nuid: 475dc\ntype: goal\ntopic: polaris_review_core_metrics\nimportance: 0.7\nttl_days: 14\ntimestamp: 1778090644\n\ncontent:\nPolaris两周后评审的核心指标建议定为：人工覆盖率、员工连续晚班次数、班次缺口率和门店经理满意度。\n\n[Memory]\nuid: 7c481\ntype: constraint\ntopic: falcon_risk_control_review\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778090644\n\ncontent:\nFalcon风控中台复盘时要区分真实缺陷和沟通成本，不要所有问题都归到研发延期。\n\n[Memory]\nuid: c73fb\ntype: task\ntopic: team_building_vote_deadline\nimportance: 0.4\nttl_days: 7\ntimestamp: 1778090644\n\ncontent:\n周五团建投票截止了，羽毛球和密室逃脱目前票数很接近。\n\n[Memory]\nuid: fec98\ntype: fact\ntopic: polaris_decision_change\nimportance: 1.0\nttl_days: 365\ntimestamp: 1778090644\n\ncontent:\nPolaris的决策变更已经同步给管理层，大家后续不要再引用旧的5月底全量计划。\n\n[Memory]\nuid: 37fdb\ntype: fact\ntopic: afternoon_tea_schedule\nimportance: 0.3\nttl_days: 1\ntimestamp: 1778090644\n\ncontent:\n今天下午茶改到16:30，供应商临时换了芝士蛋糕，过敏信息我贴在公告栏。\n\n[Memory]\nuid: abfa3\ntype: task\ntopic: polaris_smart_scheduling_tracking\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090644\n\ncontent:\nPolaris智能排班的埋点看起来漏了一段，尤其是从配置页返回列表页的路径，需要前端补一下。\n\n[Memory]\nuid: 047ef\ntype: task\ntopic: blue_whale_report_tracking\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090644\n\ncontent:\n蓝鲸报表的埋点看起来漏了一段，尤其是从配置页返回列表页的路径，需要前端补一下。\n\n[Memory]\nuid: ca335\ntype: task\ntopic: xingqiao_crm_tracking\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090644\n\ncontent:\n星桥CRM的埋点看起来漏了一段，尤其是从配置页返回列表页的路径，需要前端补一下。\n\n[Memory]\nuid: e2c83\ntype: fact\ntopic: orion_overseas_payment_gateway_weekly_report\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090644\n\ncontent:\nOrion海外支付网关的周报更新了，绿色项是已完成，黄色项是需要协作，红色项只剩一个，和跨境交易规则更新频繁有关。\n\n[Memory]\nuid: 96005\ntype: task\ntopic: business_trip_plan\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778090644\n\ncontent:\n请大家报一下下周出差计划，财务要提前锁差旅预算。",
+  "chunk-d875b9bd41e5e9a46a15519d1b67d8f2": {
+    "tokens": 701,
+    "content": "[Memory]\nuid: 4ef22\ntype: fact\ntopic: polaris_schedule_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117099\n\ncontent:\nPolaris智能排班 目前最缺的是一致的验收口径，不是更多功能。\n\n[Memory]\nuid: 3eddc\ntype: fact\ntopic: bluewhale_report_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117099\n\ncontent:\n蓝鲸报表 目前最缺的是一致的验收口径，不是更多功能。\n\n[Memory]\nuid: 6552b\ntype: preference\ntopic: orion_payment_gateway_demo\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778117099\n\ncontent:\nOrion海外支付网关 的客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解。\n\n[Memory]\nuid: 7ec07\ntype: goal\ntopic: polaris_review_core_metrics\nimportance: 0.7\nttl_days: 14\ntimestamp: 1778117099\n\ncontent:\nPolaris 两周后评审的核心指标我建议定为：人工覆盖率、员工连续晚班次数、班次缺口率和门店经理满意度。\n\n[Memory]\nuid: 8c62a\ntype: task\ntopic: falcon_risk_control_review\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778117099\n\ncontent:\nFalcon风控中台 复盘时要区分真实缺陷和沟通成本，不要所有问题都归到研发延期。\n\n[Memory]\nuid: 003d2\ntype: task\ntopic: travel_budget_plan\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117099\n\ncontent:\n请大家报一下下周出差计划，财务要提前锁差旅预算。\n\n[Memory]\nuid: e1a9f\ntype: task\ntopic: export_support_in_next_version\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117099\n\ncontent:\n客户问到下个版本是否支持导出，我先按“规划中但未承诺日期”回复，可以吗？\n\n[Memory]\nuid: 656c2\ntype: fact\ntopic: polaris_decision_change\nimportance: 1.0\nttl_days: 180\ntimestamp: 1778117099\n\ncontent:\nPolaris 的决策变更已经同步给管理层，大家后续不要再引用旧的 5 月底全量计划。\n\n[Memory]\nuid: 52d35\ntype: fact\ntopic: meeting_room_booking_cache_issue\nimportance: 0.5\nttl_days: 1\ntimestamp: 1778117099\n\ncontent:\n会议室预约系统今天有缓存问题，重复预订先在群里同步一下。\n\n[Memory]\nuid: aa442\ntype: task\ntopic: discussion_summary\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778117099\n\ncontent:\n请把刚才的长讨论总结成 5 条决策和 5 条行动项。",
     "chunk_order_index": 0,
-    "full_doc_id": "doc-af0a542d93d4019c7a2c187932978fd7",
+    "full_doc_id": "doc-d875b9bd41e5e9a46a15519d1b67d8f2",
     "file_path": "unknown_source",
     "llm_cache_list": [
-      "default:extract:06fa121a240e8bd220092a0e941235ad",
-      "default:extract:b2b8d53c60e65070ddb4a9f75571b7c6"
+      "default:extract:e36416378bd4fbb9a1d33057665187ef",
+      "default:extract:11881e5bf9cdbfe8a56ae98366957b06"
     ],
-    "create_time": 1778090644,
-    "update_time": 1778090659,
-    "_id": "chunk-af0a542d93d4019c7a2c187932978fd7"
+    "create_time": 1778117099,
+    "update_time": 1778117112,
+    "_id": "chunk-d875b9bd41e5e9a46a15519d1b67d8f2"
   },
-  "chunk-831841e6a9d2d322331bf44767072027": {
-    "tokens": 882,
-    "content": "[Memory]\nuid: bcc27\ntype: goal\ntopic: falcon_risk_control_gray_release\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778090729\n\ncontent:\nFalcon风控中台先小流量灰度，业务方希望看到每日进展和明确的风险列表。\n\n[Memory]\nuid: 463bf\ntype: goal\ntopic: orion_overseas_payment_gray_release\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778090729\n\ncontent:\nOrion海外支付网关先小流量灰度，业务方希望看到每日进展和明确的风险列表。\n\n[Memory]\nuid: 2b40d\ntype: goal\ntopic: blue_whale_report_gray_release\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778090729\n\ncontent:\n蓝鲸报表先小流量灰度，业务方希望看到每日进展和明确的风险列表。\n\n[Memory]\nuid: d94b0\ntype: fact\ntopic: star_bridge_crm_gray_phase\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778090729\n\ncontent:\n星桥CRM今天进入灰度阶段，最大不确定性是历史客户数据字段不一致，需要在今天下班前确认负责人。\n\n[Memory]\nuid: 496a3\ntype: fact\ntopic: orion_overseas_payment_area_online\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778090729\n\ncontent:\nOrion海外支付网关今天进入区域上线阶段，最大不确定性是汇率结算窗口影响对账，需要在今天下班前确认负责人。\n\n[Memory]\nuid: e8c07\ntype: fact\ntopic: blue_whale_report_data_caliber_confirmation\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778090729\n\ncontent:\n蓝鲸报表今天进入数据口径确认阶段，最大不确定性是财务和运营口径存在差异，需要在今天下班前确认负责人。\n\n[Memory]\nuid: 74dc7\ntype: fact\ntopic: orion_overseas_payment_responsibility_confirmation\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778090729\n\ncontent:\n需要在今天下班前确认Orion海外支付网关的负责人，主要不确定性包括当前数据样本覆盖异常场景不足和汇率结算窗口影响对账。\n\n[Memory]\nuid: c95ff\ntype: task\ntopic: falcon_risk_control_review_standards\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090729\n\ncontent:\nFalcon风控中台的合规审查、架构评审和上线验收标准需补充成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: b173c\ntype: task\ntopic: blue_whale_report_permission_review_standards\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090729\n\ncontent:\n蓝鲸报表的权限评审验收标准需补充成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 28ee0\ntype: task\ntopic: star_bridge_crm_freeze_review_standards\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090729\n\ncontent:\n星桥CRM的需求冻结、联调和正式发布验收标准需补充成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 2db6d\ntype: task\ntopic: orion_overseas_payment_sandbox_verification_standards\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778090729\n\ncontent:\nOrion海外支付网关的沙箱验证验收标准需补充成功率、响应时间、异常兜底和人工回滚入口。",
-    "chunk_order_index": 0,
-    "full_doc_id": "doc-831841e6a9d2d322331bf44767072027",
-    "file_path": "unknown_source",
-    "llm_cache_list": [
-      "default:extract:3d36c4bbe00c1befdca7ca096a9d466a",
-      "default:extract:9cf754c5765adb7a7817032eeb81b72c"
-    ],
-    "create_time": 1778090729,
-    "update_time": 1778090740,
-    "_id": "chunk-831841e6a9d2d322331bf44767072027"
-  },
-  "chunk-674919726c613ceae563de940e9210c6": {
-    "tokens": 778,
-    "content": "[Memory]\nuid: 70bf4\ntype: task\ntopic: sql_troubleshooting_approach\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778090888\n\ncontent:\nSQL 排查思路包括确认指标定义变化，按日期、渠道、地区和业务线逐层聚合，比较源表入库量、去重逻辑和维表关联命中率，抽样核对明细记录。\n\n[Memory]\nuid: 67cf5\ntype: fact\ntopic: customer_communication_draft\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778090888\n\ncontent:\n客户说明草稿表示已定位影响范围，并正在按优先级推进修复，强调当前服务主链路保持可用，部分数据展示可能存在延迟。\n\n[Memory]\nuid: 10b2e\ntype: goal\ntopic: falcon_risk_control_sandbox_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778090888\n\ncontent:\n关于 Falcon风控中台，计划本周只承诺沙箱验证，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 0cb67\ntype: goal\ntopic: blue_whale_report_key_reports_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778090888\n\ncontent:\n关于 蓝鲸报表，计划本周只承诺关键报表，其他内容写进下一轮迭代。\n\n[Memory]\nuid: f0aaa\ntype: goal\ntopic: orion_gateway_core_link_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778090888\n\ncontent:\n关于 Orion海外支付网关，建议本周只承诺核心链路，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 08801\ntype: fact\ntopic: star_bridge_crm_freeze_tasks\nimportance: 0.4\nttl_days: 30\ntimestamp: 1778090888\n\ncontent:\n星桥CRM 的需求冻结相关任务还剩6个未关闭，其中客户话术最容易拖慢节奏。\n\n[Memory]\nuid: 189a5\ntype: constraint\ntopic: blue_whale_report_executive_trial_acceptance_criteria\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778090888\n\ncontent:\n蓝鲸报表 的高管试用验收标准需要补上成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 804b3\ntype: fact\ntopic: falcon_risk_control_launch_tasks\nimportance: 0.4\nttl_days: 30\ntimestamp: 1778090888\n\ncontent:\nFalcon风控中台的上线相关任务还剩4个未关闭，其中数据校验最容易拖慢节奏。\n\n[Memory]\nuid: dd98f\ntype: goal\ntopic: star_bridge_crm_core_link_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778090888\n\ncontent:\n关于 星桥CRM，建议本周只承诺核心链路，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 8f9c6\ntype: fact\ntopic: star_bridge_crm_replay_branch\nimportance: 0.4\nttl_days: 30\ntimestamp: 1778090888\n\ncontent:\n星桥CRM 的复盘版本已经拉了分支，非核心的配置项不要再插进来了。",
-    "chunk_order_index": 0,
-    "full_doc_id": "doc-674919726c613ceae563de940e9210c6",
-    "file_path": "unknown_source",
-    "llm_cache_list": [
-      "default:extract:eea395e5a6050877f90252282edf7250",
-      "default:extract:c1300a05de21964d6a0bf623c8396c00"
-    ],
-    "create_time": 1778090888,
-    "update_time": 1778090913,
-    "_id": "chunk-674919726c613ceae563de940e9210c6"
-  },
-  "chunk-532678afc48ac990ae29c1022012f438": {
-    "tokens": 728,
-    "content": "[Memory]\nuid: 39017\ntype: task\ntopic: decision_on_release_timing\nimportance: 1.0\nttl_days: 7\ntimestamp: 1778091069\n\ncontent:\nPolaris智能排班需要确认是否保留原计划在周五上线，或者多跑两天灰度数据再开全量，团队倾向于后者。\n\n[Memory]\nuid: 4d96a\ntype: task\ntopic: commitment_for_current_week\nimportance: 0.6\nttl_days: 7\ntimestamp: 1778091069\n\ncontent:\nPolaris智能排班在本周只承诺风控策略回放，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 53b80\ntype: constraint\ntopic: acceptance_criteria_for_pilot_store\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091069\n\ncontent:\nPolaris智能排班的试点门店灰度验收标准需补充成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 49df8\ntype: fact\ntopic: poC_version_branching\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091069\n\ncontent:\nPolaris智能排班的PoC版本已有分支，需合并主流程，非核心配置项不再插入。\n\n[Memory]\nuid: 8b19d\ntype: task\ntopic: responsibility_confirmation\nimportance: 0.7\nttl_days: 1\ntimestamp: 1778091069\n\ncontent:\n团队需在今天下班前确认关于Polaris智能排班的负责人，因劳动合规约束复杂。\n\n[Memory]\nuid: df212\ntype: task\ntopic: daily_progress_and_risk_list\nimportance: 0.6\nttl_days: 7\ntimestamp: 1778091069\n\ncontent:\nPolaris智能排班的每日进展和风险列表需要向业务方提供。\n\n[Memory]\nuid: 198f5\ntype: constraint\ntopic: holiday_customer_flow_variability\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778091069\n\ncontent:\nPolaris智能排班的节假日客流波动大，需提前演练监控告警和回滚脚本。\n\n[Memory]\nuid: 511a8\ntype: constraint\ntopic: model_evaluation_acceptance_criteria\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091069\n\ncontent:\nPolaris智能排班的模型评估验收标准需补充成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 7cbc4\ntype: task\ntopic: unified_messaging_for_sales_and_support\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778091069\n\ncontent:\nPolaris智能排班的项目组需准备统一口径给客服和销售。\n\n[Memory]\nuid: 7a8fc\ntype: task\ntopic: milestones_and_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091069\n\ncontent:\n关于Polaris智能排班，需将需求拆分为三阶段里程碑，并指出每阶段的验收标准。",
-    "chunk_order_index": 0,
-    "full_doc_id": "doc-532678afc48ac990ae29c1022012f438",
-    "file_path": "unknown_source",
-    "llm_cache_list": [
-      "default:extract:c294107168d225318c2d4f91fb63311b",
-      "default:extract:a9bf48c95b5d5adf14697696a200b82f"
-    ],
-    "create_time": 1778091069,
-    "update_time": 1778091081,
-    "_id": "chunk-532678afc48ac990ae29c1022012f438"
-  },
-  "chunk-1d29631898da6b5d9c45d90897b8d65e": {
+  "chunk-535dfbf7e9f97468a9a41b5e38843306": {
     "tokens": 764,
-    "content": "[Memory]\nuid: de029\ntype: preference\ntopic: polaris_alarm_description\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091092\n\ncontent:\nPolaris智能排班 的告警描述需改清楚，以避免值班同学误判。\n\n[Memory]\nuid: 7b405\ntype: preference\ntopic: polaris_demo_preference\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091092\n\ncontent:\nPolaris智能排班 客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解。\n\n[Memory]\nuid: 81327\ntype: fact\ntopic: orion_payment_gateway_risks\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091092\n\ncontent:\nOrion海外支付网关 这周风险没有新增，但有两个旧风险还没关闭：不同地区合规要求差异大，以及接口回滚方案还没演练。\n\n[Memory]\nuid: 492b2\ntype: fact\ntopic: falcon_risk_management\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091092\n\ncontent:\nFalcon风控中台 这周风险没有新增，但有两个旧风险还没关闭：误杀率和召回率平衡困难，以及接口回滚方案还没演练。\n\n[Memory]\nuid: 42333\ntype: fact\ntopic: polaris_audit_log\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091092\n\ncontent:\nPolaris 的审计日志字段已经入库，法务如需抽查，可以按门店、日期和规则版本过滤。\n\n[Memory]\nuid: 03cae\ntype: goal\ntopic: polaris_review_metrics\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778091092\n\ncontent:\nPolaris 两周后评审的核心指标为：人工覆盖率、员工连续晚班次数、班次缺口率和门店经理满意度。\n\n[Memory]\nuid: 52a52\ntype: task\ntopic: blue_whale_report_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091092\n\ncontent:\n蓝鲸报表 目前最缺的是一致的验收口径，不是更多功能。请大家先把口径表补齐。\n\n[Memory]\nuid: d82e5\ntype: task\ntopic: meeting_action_items\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091092\n\ncontent:\n此次会议的待办事项包括：产品补充验收口径，研发拆分接口清单，测试补充回归用例，运营准备灰度名单。\n\n[Memory]\nuid: abd4a\ntype: task\ntopic: polaris_review_distinction\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091092\n\ncontent:\nPolaris智能排班 复盘时要区分真实缺陷和沟通成本，不要所有问题都归到研发延期。\n\n[Memory]\nuid: d779b\ntype: task\ntopic: blue_whale_report_tracking_issues\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091092\n\ncontent:\n蓝鲸报表 的埋点看起来漏了一段，尤其是从配置页返回列表页的路径，需要前端补一下。",
+    "content": "[Memory]\nuid: 71261\ntype: goal\ntopic: falcon_risk_control_gray_release\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117150\n\ncontent:\nFalcon风控中台能接受先小流量灰度，但希望看到每日进展和明确的风险列表。\n\n[Memory]\nuid: e1559\ntype: goal\ntopic: orion_overseas_payment_gray_release\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117150\n\ncontent:\nOrion海外支付网关能接受先小流量灰度，但希望看到每日进展和明确的风险列表。\n\n[Memory]\nuid: ae464\ntype: goal\ntopic: blue_whale_report_gray_release\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117150\n\ncontent:\n蓝鲸报表能接受先小流量灰度，但希望看到每日进展和明确的风险列表。\n\n[Memory]\nuid: 0b58f\ntype: task\ntopic: falcon_risk_control_branch\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117150\n\ncontent:\nFalcon风控中台的上线版本已经拉了分支，今天先合主流程，非核心的配置项不要再插进来了。\n\n[Memory]\nuid: 4267d\ntype: task\ntopic: star_bridge_crm_pilot_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117150\n\ncontent:\n关于星桥CRM，建议本周只承诺试点门店，其他内容写进下一轮迭代。\n\n[Memory]\nuid: bfdc9\ntype: task\ntopic: orion_overseas_payment_key_report_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117150\n\ncontent:\n关于Orion海外支付网关，建议本周只承诺关键报表，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 92fd3\ntype: task\ntopic: blue_whale_report_sandbox_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117150\n\ncontent:\n关于蓝鲸报表，建议本周只承诺沙箱验证，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 0ecee\ntype: fact\ntopic: star_bridge_crm_integration\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117150\n\ncontent:\n星桥CRM今天进入联调阶段，最大不确定性是销售团队导入表格模板不统一，需要在今天下班前确认负责人。\n\n[Memory]\nuid: 5cdcd\ntype: fact\ntopic: falcon_risk_control_architecture_review\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117150\n\ncontent:\nFalcon风控中台今天进入架构评审阶段，最大不确定性是跨境交易规则更新频繁，需要在今天下班前确认负责人。\n\n[Memory]\nuid: 09a9d\ntype: fact\ntopic: orion_overseas_payment_sandbox_validation\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117150\n\ncontent:\nOrion海外支付网关今天进入沙箱验证阶段，最大不确定性是第三方沙箱返回码不稳定，需要在今天下班前确认负责人。",
     "chunk_order_index": 0,
-    "full_doc_id": "doc-1d29631898da6b5d9c45d90897b8d65e",
+    "full_doc_id": "doc-535dfbf7e9f97468a9a41b5e38843306",
     "file_path": "unknown_source",
     "llm_cache_list": [
-      "default:extract:cd9ec5ebfc7571abba2de24f3effff69",
-      "default:extract:8998406732d1040fe1ee6cdab0477a7b"
+      "default:extract:f2934e6282caa1d8d9f3114263c2de5e",
+      "default:extract:432dd12ae25cd4f9bb64044b03eddea3"
     ],
-    "create_time": 1778091092,
-    "update_time": 1778091101,
-    "_id": "chunk-1d29631898da6b5d9c45d90897b8d65e"
+    "create_time": 1778117150,
+    "update_time": 1778117158,
+    "_id": "chunk-535dfbf7e9f97468a9a41b5e38843306"
   },
-  "chunk-f27bcfe21acd513bf183bbb73930a3a9": {
-    "tokens": 733,
-    "content": "[Memory]\nuid: c89af\ntype: fact\ntopic: project_schedule_adjustment\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778091138\n\ncontent:\n上线窗口顺延以确保关键链路在真实业务场景下稳定，延后一周能降低上线后返工和客户侧中断风险。\n\n[Memory]\nuid: 76c59\ntype: fact\ntopic: bluewhale_report_development\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091138\n\ncontent:\n蓝鲸报表的指标看板开发版本已拉分支，非核心配置项不再插入。\n\n[Memory]\nuid: 67c13\ntype: task\ntopic: orion_overseas_payment_gateway\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091138\n\ncontent:\nOrion海外支付网关本周只承诺沙箱验证，其他内容写入下一轮迭代。\n\n[Memory]\nuid: 57423\ntype: fact\ntopic: star_bridge_crm_gray_version\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091138\n\ncontent:\n星桥CRM的灰度版本已拉分支，非核心配置项不再插入。\n\n[Memory]\nuid: 3b1f9\ntype: task\ntopic: falcon_risk_control\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091138\n\ncontent:\nFalcon风控中台的跨境交易规则更新频繁会在上线窗口暴露，建议提前演练监控告警和回滚脚本。\n\n[Memory]\nuid: a8db4\ntype: fact\ntopic: bluewhale_report_permission_review\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091138\n\ncontent:\n蓝鲸报表的权限评审版本已拉分支，非核心配置项不再插入。\n\n[Memory]\nuid: cf723\ntype: task\ntopic: star_bridge_crm_data_consistency\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091138\n\ncontent:\n星桥CRM的历史客户数据字段不一致可能在上线窗口暴露，建议提前演练监控告警和回滚脚本。\n\n[Memory]\nuid: 0be7e\ntype: task\ntopic: falcon_risk_control_acceptance_criteria\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091138\n\ncontent:\n关于Falcon风控中台，建议补充成功率、响应时间、异常兜底和人工回滚入口的验收标准。\n\n[Memory]\nuid: d1486\ntype: task\ntopic: bluewhale_report_pilot_stores\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091138\n\ncontent:\n蓝鲸报表的试点门店本周只承诺，其他内容写入下一轮迭代。\n\n[Memory]\nuid: f2ff4\ntype: task\ntopic: orion_overseas_payment_gateway_responsibility\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778091138\n\ncontent:\nOrion海外支付网关需要确认汇率结算窗口影响对账的负责人。",
+  "chunk-2b6998a923e85ccf147531fe141a2964": {
+    "tokens": 655,
+    "content": "[Memory]\nuid: 632de\ntype: goal\ntopic: falcon_risk_control_platform\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117203\n\ncontent:\nFalcon风控中台可以先小流量灰度，业务方希望看到每日进展和明确的风险列表。\n\n[Memory]\nuid: ddb6b\ntype: goal\ntopic: orion_overseas_payment_gateway\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117203\n\ncontent:\nOrion海外支付网关可以先小流量灰度，业务方希望看到每日进展和明确的风险列表。\n\n[Memory]\nuid: e8ff3\ntype: goal\ntopic: blue_whale_report\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117203\n\ncontent:\n蓝鲸报表可以先小流量灰度，业务方希望看到每日进展和明确的风险列表。\n\n[Memory]\nuid: 82f4b\ntype: fact\ntopic: xingqiao_crm\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117203\n\ncontent:\n星桥CRM今天进入灰度阶段，客户线索、合同状态、回访记录统一到一个销售协同面板。\n\n[Memory]\nuid: 79286\ntype: constraint\ntopic: data_sample_coverage\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778117203\n\ncontent:\n当前数据样本还不足以覆盖异常场景，销售团队导入表格模板不统一，需要业务和技术一起确认。\n\n[Memory]\nuid: 37e31\ntype: constraint\ntopic: deployment_risks\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778117203\n\ncontent:\n在上线窗口集中暴露的风险包括权限模型和区域隔离未对齐，建议提前演练监控告警和回滚脚本。\n\n[Memory]\nuid: ce769\ntype: task\ntopic: falcon_risk_control_platform\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117203\n\ncontent:\n关于Falcon风控中台，建议本周只承诺核心链路，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 17af6\ntype: task\ntopic: orion_overseas_payment_gateway\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117203\n\ncontent:\n关于Orion海外支付网关，建议本周只承诺沙箱验证，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 777b2\ntype: task\ntopic: blue_whale_report\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117203\n\ncontent:\n关于蓝鲸报表，建议本周只承诺沙箱验证，其他内容写进下一轮迭代。",
     "chunk_order_index": 0,
-    "full_doc_id": "doc-f27bcfe21acd513bf183bbb73930a3a9",
+    "full_doc_id": "doc-2b6998a923e85ccf147531fe141a2964",
     "file_path": "unknown_source",
     "llm_cache_list": [
-      "default:extract:8e3f9b7c67b474b69da3bb4fa904a543",
-      "default:extract:3cea73c72517cbb8139fadd1f2ceac90"
+      "default:extract:1714b95f98ec1c08495ca91f8504b707",
+      "default:extract:964bbb2999aabac49545b6550fc1f013"
     ],
-    "create_time": 1778091138,
-    "update_time": 1778091148,
-    "_id": "chunk-f27bcfe21acd513bf183bbb73930a3a9"
+    "create_time": 1778117204,
+    "update_time": 1778117215,
+    "_id": "chunk-2b6998a923e85ccf147531fe141a2964"
   },
-  "chunk-76d97ae9ad65e7c134e4f39f61203547": {
-    "tokens": 1004,
-    "content": "[Memory]\nuid: cbb2d\ntype: preference\ntopic: daily_report_format\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778091162\n\ncontent:\n今天日报简短，需明确阻塞项和需要他人协助的地方。\n\n[Memory]\nuid: 05e4f\ntype: task\ntopic: blue_whale_report_acceptance_criteria\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091162\n\ncontent:\n蓝鲸报表的上线验收标准需补充成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 3d754\ntype: fact\ntopic: orion_gateway_status\nimportance: 1.0\nttl_days: 1\ntimestamp: 1778091162\n\ncontent:\nOrion海外支付网关接入多地区支付通道，需在今天下班前确认负责人。\n\n[Memory]\nuid: db581\ntype: task\ntopic: star_bridge_crm_decision\nimportance: 1.0\nttl_days: 7\ntimestamp: 1778091162\n\ncontent:\n星桥CRM需决策是否保留原计划在周五上线或先多跑两天灰度数据。\n\n[Memory]\nuid: e3937\ntype: fact\ntopic: falcon_risk_control_status\nimportance: 1.0\nttl_days: 1\ntimestamp: 1778091162\n\ncontent:\nFalcon风控中台需在今天下班前确认负责人，最大不确定性是误杀率和召回率平衡困难。\n\n[Memory]\nuid: e7354\ntype: fact\ntopic: star_bridge_crm_grayscale_version\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091162\n\ncontent:\n星桥CRM的灰度版本已拉分支，非核心配置项不再插入。\n\n[Memory]\nuid: bc937\ntype: fact\ntopic: falcon_risk_control_compliance_version\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091162\n\ncontent:\nFalcon风控中台的合规审查版本已拉分支，非核心配置项不再插入。\n\n[Memory]\nuid: 420a9\ntype: fact\ntopic: blue_whale_report_status\nimportance: 1.0\nttl_days: 1\ntimestamp: 1778091162\n\ncontent:\n蓝鲸报表需在今天下班前确认负责人，最大不确定性是财务和运营口径存在差异。\n\n[Memory]\nuid: d4c77\ntype: fact\ntopic: star_bridge_crm_official_release_version\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091162\n\ncontent:\n星桥CRM的正式发布版本已拉分支，非核心配置项不再插入。\n\n[Memory]\nuid: 6eb1c\ntype: fact\ntopic: orion_gateway_small_flow_test\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091162\n\ncontent:\nOrion海外支付网关小流量试跑版本已拉分支，非核心配置项不再插入。\n\n[Memory]\nuid: 57be7\ntype: goal\ntopic: falcon_risk_control_iteration\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091162\n\ncontent:\n关于Falcon风控中台，建议本周只承诺关键报表，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 431e9\ntype: fact\ntopic: star_bridge_crm_release_phase\nimportance: 1.0\nttl_days: 1\ntimestamp: 1778091162\n\ncontent:\n星桥CRM今天进入正式发布阶段，需确认权限模型和区域隔离是否对齐。\n\n[Memory]\nuid: 98a4f\ntype: fact\ntopic: blue_whale_report_timeline\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091162\n\ncontent:\n蓝鲸报表的排期中，指标看板开发相关任务还剩4个未关闭，其中权限验证最容易拖慢节奏。\n\n[Memory]\nuid: 9df64\ntype: task\ntopic: orion_gateway_channel_selection_criteria\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091162\n\ncontent:\nOrion海外支付网关的通道选型验收标准需补充成功率、响应时间、异常兜底和人工回滚入口。",
-    "chunk_order_index": 0,
-    "full_doc_id": "doc-76d97ae9ad65e7c134e4f39f61203547",
-    "file_path": "unknown_source",
-    "llm_cache_list": [
-      "default:extract:81d223935b29ebeaa827687dd6025a2d",
-      "default:extract:e16f8114f0e3d97488f469e9573f5994"
-    ],
-    "create_time": 1778091162,
-    "update_time": 1778091176,
-    "_id": "chunk-76d97ae9ad65e7c134e4f39f61203547"
-  },
-  "chunk-31cf726d0fd95502a49473b957839521": {
-    "tokens": 792,
-    "content": "[Memory]\nuid: 317c0\ntype: task\ntopic: orion_overseas_payment_gateway_tracking\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091222\n\ncontent:\nOrion海外支付网关 的埋点需要前端补充，尤其是从配置页返回列表页的路径。\n\n[Memory]\nuid: 51488\ntype: fact\ntopic: blue_whale_report_risks\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091222\n\ncontent:\n蓝鲸报表 这周风险没有新增，但有两个旧风险还没关闭：财务和运营口径存在差异，以及接口回滚方案还没演练。\n\n[Memory]\nuid: 4ba87\ntype: task\ntopic: polaris_smart_scheduling_tracking\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091222\n\ncontent:\nPolaris智能排班 的埋点需要前端补充，尤其是从配置页返回列表页的路径。\n\n[Memory]\nuid: c345b\ntype: task\ntopic: star_bridge_crm_tracking\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091222\n\ncontent:\n星桥CRM 的埋点需要前端补充，尤其是从配置页返回列表页的路径。\n\n[Memory]\nuid: 8ed57\ntype: task\ntopic: falcon_risk_control_platform_tracking\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091222\n\ncontent:\nFalcon风控中台 的埋点需要前端补充，尤其是从配置页返回列表页的路径。\n\n[Memory]\nuid: 04d07\ntype: fact\ntopic: blue_whale_report_weekly_update\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091222\n\ncontent:\n蓝鲸报表 的周报中，绿色项是已完成，黄色项是需要协作，红色项只剩一个，和 财务和运营口径存在差异 有关。\n\n[Memory]\nuid: 333aa\ntype: fact\ntopic: polaris_audit_log\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091222\n\ncontent:\nPolaris 的审计日志字段已入库，法务可按门店、日期和规则版本过滤。\n\n[Memory]\nuid: 23f0f\ntype: fact\ntopic: polaris_review_metrics\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091222\n\ncontent:\nPolaris 两周后评审的核心指标包括：人工覆盖率、员工连续晚班次数、班次缺口率和门店经理满意度。\n\n[Memory]\nuid: 6ae92\ntype: fact\ntopic: star_bridge_crm_weekly_update\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091222\n\ncontent:\n星桥CRM 的周报中，绿色项是已完成，黄色项是需要协作，红色项只剩一个，和 销售团队导入表格模板不统一 有关。\n\n[Memory]\nuid: 194f1\ntype: fact\ntopic: falcon_risk_control_weekly_update\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091222\n\ncontent:\nFalcon风控中台 的周报中，绿色项是已完成，黄色项是需要协作，红色项只剩一个，和 策略回放数据量太大 有关。",
-    "chunk_order_index": 0,
-    "full_doc_id": "doc-31cf726d0fd95502a49473b957839521",
-    "file_path": "unknown_source",
-    "llm_cache_list": [
-      "default:extract:849322d31415b5d75d2fd94f5452e68e",
-      "default:extract:ebc6cb3e8b635ae05458618dedb3e015"
-    ],
-    "create_time": 1778091222,
-    "update_time": 1778091232,
-    "_id": "chunk-31cf726d0fd95502a49473b957839521"
-  },
-  "chunk-16eadec8b7fe2c62976d614a8fe4526c": {
-    "tokens": 715,
-    "content": "[Memory]\nuid: 5292e\ntype: goal\ntopic: project_goal_adjustment\nimportance: 0.7\nttl_days: 14\ntimestamp: 1778091246\n\ncontent:\n如果两周后指标稳定，再讨论全量；如果解释面板仍然不够清楚，项目目标从全量上线改成区域试点。\n\n[Memory]\nuid: bc21b\ntype: fact\ntopic: explanation_panel_structure\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091246\n\ncontent:\nPolaris 的解释面板拆成三层：先给门店经理看结论，再展示触发的关键约束，最后保留详细日志给审计使用。\n\n[Memory]\nuid: 888b3\ntype: preference\ntopic: product_documentation_emphasis\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091246\n\ncontent:\n产品文案需要强调系统是建议工具，不会替代门店经理最终决策，这一点对一线接受度很关键。\n\n[Memory]\nuid: 6533f\ntype: task\ntopic: algorithm_playback_grouping\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091246\n\ncontent:\n算法回放建议按门店类型分组，避免商圈店和社区店混在一起看。\n\n[Memory]\nuid: 45bb7\ntype: fact\ntopic: acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091246\n\ncontent:\nPolaris 智能排班 目前最缺的是一致的验收口径，不是更多功能。\n\n[Memory]\nuid: eacc9\ntype: task\ntopic: review_process_guideline\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091246\n\ncontent:\n复盘时要区分真实缺陷和沟通成本，不要所有问题都归到研发延期。\n\n[Memory]\nuid: 514bb\ntype: task\ntopic: meeting_room_booking_issue\nimportance: 0.5\nttl_days: 1\ntimestamp: 1778091246\n\ncontent:\n会议室预约系统今天有缓存问题，重复预订先在群里同步一下。\n\n[Memory]\nuid: cf6c8\ntype: fact\ntopic: audit_log_access\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091246\n\ncontent:\nPolaris 的审计日志字段已经入库，法务如果需要抽查，可以按门店、日期和规则版本过滤。\n\n[Memory]\nuid: 03658\ntype: preference\ntopic: customer_demo_guideline\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091246\n\ncontent:\nOrion海外支付网关 的客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解。\n\n[Memory]\nuid: 739d9\ntype: goal\ntopic: core_metrics_for_review\nimportance: 0.7\nttl_days: 14\ntimestamp: 1778091246\n\ncontent:\nPolaris 两周后评审的核心指标定为：人工覆盖率、员工连续晚班次数、班次缺口率和门店经理满意度。",
-    "chunk_order_index": 0,
-    "full_doc_id": "doc-16eadec8b7fe2c62976d614a8fe4526c",
-    "file_path": "unknown_source",
-    "llm_cache_list": [
-      "default:extract:af7356203ce85f18c1ac74981fad69fd",
-      "default:extract:dfce3f394d5fd703af610e2273f8a79f"
-    ],
-    "create_time": 1778091246,
-    "update_time": 1778091257,
-    "_id": "chunk-16eadec8b7fe2c62976d614a8fe4526c"
-  },
-  "chunk-f15f687f9191405de27a91f7e558fd9a": {
-    "tokens": 497,
-    "content": "[Memory]\nuid: 166b1\ntype: constraint\ntopic: labor_compliance_constraint\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091286\n\ncontent:\nPolaris智能排班的劳动合规约束复杂，可能在上线窗口集中暴露，需要提前演练监控告警和回滚脚本。\n\n[Memory]\nuid: 77822\ntype: constraint\ntopic: manual_override\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091286\n\ncontent:\nPolaris智能排班的门店经理希望保留人工兜底，可能在上线窗口集中暴露。\n\n[Memory]\nuid: 6b497\ntype: constraint\ntopic: model_evaluation_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091286\n\ncontent:\nPolaris智能排班的模型评估验收标准需要补充成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: e1a00\ntype: task\ntopic: iteration_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778091286\n\ncontent:\n本周只承诺Polaris智能排班的核心链路，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 0de6d\ntype: goal\ntopic: go_live_decision\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778091286\n\ncontent:\nPolaris智能排班需要在周五前决定是上线还是多跑两天灰度数据再开全量。\n\n[Memory]\nuid: 476a5\ntype: fact\ntopic: branch_management\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091286\n\ncontent:\nPolaris智能排班的试点门店灰度版本已拉分支，非核心配置项不要再插入。\n\n[Memory]\nuid: 4f046\ntype: relationship\ntopic: business_alignment\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091286\n\ncontent:\n业务方能接受Polaris智能排班先小流量灰度，但希望看到每日进展和明确的风险列表。",
-    "chunk_order_index": 0,
-    "full_doc_id": "doc-f15f687f9191405de27a91f7e558fd9a",
-    "file_path": "unknown_source",
-    "llm_cache_list": [
-      "default:extract:de9bfc66ec5c512f5fca4718e88b975c",
-      "default:extract:f5b163c08d6704175a444045840da4a1"
-    ],
-    "create_time": 1778091286,
-    "update_time": 1778091296,
-    "_id": "chunk-f15f687f9191405de27a91f7e558fd9a"
-  },
-  "chunk-97fed97bb39e4f420820b8b544ae7410": {
-    "tokens": 728,
-    "content": "[Memory]\nuid: e1d36\ntype: fact\ntopic: decision_summary\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778091312\n\ncontent:\n核心范围先收敛，灰度名单分两批，数据口径由产品和财务共同确认，第三方依赖必须有降级方案，上线前补充压测和回归。\n\n[Memory]\nuid: fd73d\ntype: task\ntopic: action_items\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778091312\n\ncontent:\n接口清单、测试用例、客户话术、监控面板、复盘模板分别由对应负责人推进。\n\n[Memory]\nuid: c9311\ntype: constraint\ntopic: falcon_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091312\n\ncontent:\nFalcon风控中台目前最缺的是一致的验收口径，不是更多功能，请大家先把口径表补齐。\n\n[Memory]\nuid: d3838\ntype: constraint\ntopic: polaris_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091312\n\ncontent:\nPolaris智能排班目前最缺的是一致的验收口径，不是更多功能，请大家先把口径表补齐。\n\n[Memory]\nuid: bda7e\ntype: fact\ntopic: orion_strategy_data\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091312\n\ncontent:\n策略回放数据量太大是Orion海外支付网关的一个红色项。\n\n[Memory]\nuid: 498d9\ntype: goal\ntopic: polaris_explanation_button\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091312\n\ncontent:\nPolaris今天灰度数据稳定，但门店经理仍然想要一个“为什么这样排”的解释按钮，这个需求不大，但优先级很高。\n\n[Memory]\nuid: e962f\ntype: constraint\ntopic: bluewhale_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091312\n\ncontent:\n蓝鲸报表目前最缺的是一致的验收口径，不是更多功能，请大家先把口径表补齐。\n\n[Memory]\nuid: 7fbe6\ntype: task\ntopic: falcon_logging_issue\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091312\n\ncontent:\nFalcon风控中台的埋点漏了一段，尤其是从配置页返回列表页的路径，需要前端补一下。\n\n[Memory]\nuid: bbb5a\ntype: preference\ntopic: starbridge_demo_preference\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091312\n\ncontent:\n星桥CRM的客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解。\n\n[Memory]\nuid: faf86\ntype: fact\ntopic: export_feature_query\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091312\n\ncontent:\n客户希望下个版本支持导出，目前按“规划中但未承诺日期”回复。",
-    "chunk_order_index": 0,
-    "full_doc_id": "doc-97fed97bb39e4f420820b8b544ae7410",
-    "file_path": "unknown_source",
-    "llm_cache_list": [
-      "default:extract:b724d8bb2757a3c52e5eec53204a5054",
-      "default:extract:c6d972e2d894341542b88088a21fb1c7"
-    ],
-    "create_time": 1778091312,
-    "update_time": 1778091324,
-    "_id": "chunk-97fed97bb39e4f420820b8b544ae7410"
-  },
-  "chunk-582667d8032621bc02939bcc57d7c2dd": {
-    "tokens": 613,
-    "content": "[Memory]\nuid: 1cfd1\ntype: fact\ntopic: go_live_schedule\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778091348\n\ncontent:\n决定将上线窗口顺延以确保关键链路稳定，核心功能已完成，但数据一致性和异常兜底仍需验证。\n\n[Memory]\nuid: cd7f4\ntype: fact\ntopic: polaris_audit_log\nimportance: 0.5\nttl_days: 180\ntimestamp: 1778091348\n\ncontent:\nPolaris的审计日志字段已经入库，法务可以按门店、日期和规则版本过滤抽查。\n\n[Memory]\nuid: cc93e\ntype: preference\ntopic: polaris_scheduling_demo\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091348\n\ncontent:\nPolaris智能排班的客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解。\n\n[Memory]\nuid: d4974\ntype: constraint\ntopic: polaris_scheduling_acceptance_criteria\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091348\n\ncontent:\nPolaris智能排班目前最缺的是一致的验收口径，而不是更多功能。\n\n[Memory]\nuid: e4c8c\ntype: task\ntopic: alert_description_clarity\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091348\n\ncontent:\n建议把告警描述改清楚，避免值班同学误判。\n\n[Memory]\nuid: 2e1d1\ntype: fact\ntopic: export_support_status\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091348\n\ncontent:\n下个版本支持导出的问题回复为“规划中但未承诺日期”。\n\n[Memory]\nuid: 5e773\ntype: fact\ntopic: team_building_vote\nimportance: 0.4\nttl_days: 7\ntimestamp: 1778091348\n\ncontent:\n本周五团建投票截止，羽毛球和密室逃脱目前票数很接近。\n\n[Memory]\nuid: 9ffa7\ntype: fact\ntopic: meeting_room_booking_issue\nimportance: 0.4\nttl_days: 7\ntimestamp: 1778091348\n\ncontent:\n会议室预约系统今天有缓存问题，重复预订先在群里同步。\n\n[Memory]\nuid: ae388\ntype: goal\ntopic: polaris_review_metrics\nimportance: 0.5\nttl_days: 14\ntimestamp: 1778091348\n\ncontent:\nPolaris两周后评审的核心指标包括人工覆盖率、员工连续晚班次数、班次缺口率和门店经理满意度。",
-    "chunk_order_index": 0,
-    "full_doc_id": "doc-582667d8032621bc02939bcc57d7c2dd",
-    "file_path": "unknown_source",
-    "llm_cache_list": [
-      "default:extract:9f87ba02489623e51ec5b764bfa0e85f",
-      "default:extract:2fa8ce8e8f0f1ca7b1d6d31da2b17325"
-    ],
-    "create_time": 1778091348,
-    "update_time": 1778091357,
-    "_id": "chunk-582667d8032621bc02939bcc57d7c2dd"
-  },
-  "chunk-86b7f7de6132f8beaa10e4b8030e9c0e": {
-    "tokens": 555,
-    "content": "[Memory]\nuid: eda34\ntype: fact\ntopic: polaris_poC_stage\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091382\n\ncontent:\nPolaris智能排班今天进入PoC阶段，使用历史客流、员工技能标签和排班约束生成门店班表建议，目前最大不确定性是节假日客流波动大，需要确认负责人。\n\n[Memory]\nuid: 950d7\ntype: fact\ntopic: polaris_gray_version_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091382\n\ncontent:\nPolaris智能排班的试点门店灰度版本的验收标准需要补充成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 8bdd7\ntype: fact\ntopic: polaris_poc_version_uncertainty\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091382\n\ncontent:\nPolaris智能排班的PoC版本存在最大不确定性，门店经理希望保留人工兜底，需要确认负责人。\n\n[Memory]\nuid: a5343\ntype: fact\ntopic: polaris_unified_communication\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091382\n\ncontent:\nPolaris智能排班项目组需要给客服和销售准备统一口径。\n\n[Memory]\nuid: ddc86\ntype: goal\ntopic: polaris_release_decision\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091382\n\ncontent:\nPolaris智能排班项目的关键决策是保留原计划在周五上线，还是先多跑两天灰度数据再开全量，倾向后者。\n\n[Memory]\nuid: d3e5b\ntype: fact\ntopic: polaris_gray_related_tasks\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091382\n\ncontent:\nPolaris智能排班的试点门店灰度相关任务还剩5个未关闭，其中回归测试最容易拖慢节奏。\n\n[Memory]\nuid: 17d37\ntype: fact\ntopic: polaris_model_evaluation_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091382\n\ncontent:\nPolaris智能排班模型评估的验收标准需要补充成功率、响应时间、异常兜底和人工回滚入口。",
-    "chunk_order_index": 0,
-    "full_doc_id": "doc-86b7f7de6132f8beaa10e4b8030e9c0e",
-    "file_path": "unknown_source",
-    "llm_cache_list": [
-      "default:extract:815ebc86903b2d52dba46250f110e16d",
-      "default:extract:1e53891e18938d1db07713b17a47a244"
-    ],
-    "create_time": 1778091382,
-    "update_time": 1778091392,
-    "_id": "chunk-86b7f7de6132f8beaa10e4b8030e9c0e"
-  },
-  "chunk-cecb5a926892f726efe8342701a1573a": {
+  "chunk-1cd988b6fc057980eceaf3498854629f": {
     "tokens": 711,
-    "content": "[Memory]\nuid: 3bf1a\ntype: task\ntopic: falcon_risk_control_architecture_review\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778091407\n\ncontent:\nFalcon风控中台今天进入架构评审阶段，需确认跨境交易规则负责人。\n\n[Memory]\nuid: 71519\ntype: task\ntopic: orion_overseas_payment_gateway_decision\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778091407\n\ncontent:\nOrion海外支付网关需决策是原计划周五上线还是多跑两天灰度数据，存在多个不确定性因素。\n\n[Memory]\nuid: 153b7\ntype: task\ntopic: xingqiao_crm_release_acceptance_criteria\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091407\n\ncontent:\n星桥CRM的正式发布验收标准需补充成功率、响应时间等细节。\n\n[Memory]\nuid: 4881b\ntype: task\ntopic: blue_whale_report_sandbox_validation\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091407\n\ncontent:\n蓝鲸报表的沙箱验证需补充成功率、响应时间等验收标准。\n\n[Memory]\nuid: bbcb4\ntype: task\ntopic: falcon_risk_control_responsibility\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778091407\n\ncontent:\n需要确认Falcon风控中台的负责人，以应对频繁的跨境交易规则更新。\n\n[Memory]\nuid: 3fe8e\ntype: fact\ntopic: orion_overseas_payment_gateway_sandbox_version\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778091407\n\ncontent:\nOrion海外支付网关的沙箱验证版本已经拉了分支，需合主流程，非核心配置项不再插入。\n\n[Memory]\nuid: 752e0\ntype: task\ntopic: xingqiao_crm_risk_table_completion\nimportance: 0.5\nttl_days: 3\ntimestamp: 1778091407\n\ncontent:\n星桥CRM的风险表需在今天先完成，明天讨论放量条件。\n\n[Memory]\nuid: 44d34\ntype: task\ntopic: falcon_risk_control_strategy_replay\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091407\n\ncontent:\nFalcon风控中台的策略回放版本需补充验收标准。\n\n[Memory]\nuid: bedb7\ntype: constraint\ntopic: orion_overseas_payment_gateway_exchange_rate_impact\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778091407\n\ncontent:\nOrion海外支付网关的汇率结算窗口影响对账问题需确认。\n\n[Memory]\nuid: a0223\ntype: task\ntopic: blue_whale_report_schedule\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778091407\n\ncontent:\n蓝鲸报表的排期中，接入多地区支付通道的任务需确认负责人。",
+    "content": "[Memory]\nuid: 7fa9b\ntype: task\ntopic: sql_troubleshooting_approach\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778117256\n\ncontent:\nSQL 排查思路包括确认指标定义是否变化，按日期、渠道、地区和业务线逐层聚合，对比源表入库量、去重逻辑和维表关联命中率，最后抽样核对明细记录。\n\n[Memory]\nuid: 87cec\ntype: constraint\ntopic: falcon_risk_control_strategy_playback\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117256\n\ncontent:\nFalcon风控中台需要确认负责人，当前最大不确定性是策略回放数据量太大。\n\n[Memory]\nuid: cd4da\ntype: fact\ntopic: blue_whale_report_indicator_dashboard\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117256\n\ncontent:\n蓝鲸报表的指标看板开发相关任务中，客户话术最容易拖慢节奏。\n\n[Memory]\nuid: a4be6\ntype: goal\ntopic: blue_whale_report_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117256\n\ncontent:\n关于蓝鲸报表，建议本周只承诺试点门店，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 64ea1\ntype: goal\ntopic: star_bridge_crm_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117256\n\ncontent:\n关于星桥CRM，建议本周只承诺核心链路，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 974e4\ntype: constraint\ntopic: falcon_risk_control_launch_acceptance_criteria\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778117256\n\ncontent:\nFalcon风控中台的上线验收标准需要补上成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 67f22\ntype: constraint\ntopic: blue_whale_report_permission_review_acceptance_criteria\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778117256\n\ncontent:\n蓝鲸报表的权限评审验收标准还不够具体，建议补上成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: e3c0e\ntype: constraint\ntopic: star_bridge_crm_sales_import_template\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778117256\n\ncontent:\n星桥CRM的销售团队导入表格模板不统一，可能会在上线窗口集中暴露，建议提前演练监控告警和回滚脚本。\n\n[Memory]\nuid: 14208\ntype: goal\ntopic: orion_overseas_payment_gateway_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117256\n\ncontent:\n对于Orion海外支付网关，建议本周只承诺核心链路，其他内容写进下一轮迭代。",
     "chunk_order_index": 0,
-    "full_doc_id": "doc-cecb5a926892f726efe8342701a1573a",
+    "full_doc_id": "doc-1cd988b6fc057980eceaf3498854629f",
     "file_path": "unknown_source",
     "llm_cache_list": [
-      "default:extract:5df9f311b125f92ec6f71a7cb3c6b8ab",
-      "default:extract:7b52b05f443e0f7cdb380d279f58aa77"
+      "default:extract:0ca4872e0328fde943441032d6079233",
+      "default:extract:5998ebbb3059bcf18d90723149765c3a"
     ],
-    "create_time": 1778091407,
-    "update_time": 1778091421,
-    "_id": "chunk-cecb5a926892f726efe8342701a1573a"
+    "create_time": 1778117256,
+    "update_time": 1778117264,
+    "_id": "chunk-1cd988b6fc057980eceaf3498854629f"
   },
-  "chunk-157fe779439b0bcbd54d32979002c203": {
-    "tokens": 950,
-    "content": "[Memory]\nuid: 040ff\ntype: constraint\ntopic: falcon_risk_control_strategy_replay_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091448\n\ncontent:\nFalcon风控中台的策略回放验收标准需要补充成功率、响应时间、异常兜底和人工回滚入口，以便测试判断是否通过。\n\n[Memory]\nuid: f553a\ntype: constraint\ntopic: xingqiao_crm_integration_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091448\n\ncontent:\n星桥CRM的联调验收标准需要补充成功率、响应时间、异常兜底和人工回滚入口，以便测试判断是否通过。\n\n[Memory]\nuid: a788e\ntype: fact\ntopic: falcon_risk_control_online_version_branch\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091448\n\ncontent:\nFalcon风控中台的上线版本已拉分支，先合主流程，非核心配置项不再插入。\n\n[Memory]\nuid: def18\ntype: constraint\ntopic: blue_whale_report_executive_trial_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091448\n\ncontent:\n蓝鲸报表的高管试用验收标准需要补充成功率、响应时间、异常兜底和人工回滚入口，以便测试判断是否通过。\n\n[Memory]\nuid: aef60\ntype: constraint\ntopic: orion_overseas_payment_gateway_channel_selection_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091448\n\ncontent:\nOrion海外支付网关的通道选型验收标准需要补充成功率、响应时间、异常兜底和人工回滚入口，以便测试判断是否通过。\n\n[Memory]\nuid: f1f33\ntype: goal\ntopic: polaris_smart_scheduling_project_change\nimportance: 1.0\nttl_days: 180\ntimestamp: 1778091448\n\ncontent:\n关于Polaris智能排班，项目变更为在12家门店灰度运行两周，而非全量上线。\n\n[Memory]\nuid: 5e2c0\ntype: constraint\ntopic: falcon_risk_control_compliance_review_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091448\n\ncontent:\nFalcon风控中台的合规审查验收标准需要补充成功率、响应时间、异常兜底和人工回滚入口，以便测试判断是否通过。\n\n[Memory]\nuid: c4e29\ntype: task\ntopic: blue_whale_report_commitment\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091448\n\ncontent:\n关于蓝鲸报表，建议本周只承诺关键报表，其他内容写进下一轮迭代。\n\n[Memory]\nuid: be979\ntype: task\ntopic: orion_overseas_payment_gateway_commitment\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091448\n\ncontent:\n关于Orion海外支付网关，建议本周只承诺沙箱验证，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 99334\ntype: task\ntopic: test_plan_modification\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091448\n\ncontent:\n测试计划需要修改，新增公平性、边界条件和人工覆盖流程的用例。\n\n[Memory]\nuid: b7695\ntype: goal\ntopic: falcon_risk_control_strategy_replay_stages\nimportance: 0.5\nttl_days: 180\ntimestamp: 1778091448\n\ncontent:\nFalcon风控中台的策略回放方案分为三阶段，第一阶段完成核心闭环和可观测埋点。\n\n[Memory]\nuid: 4aae6\ntype: task\ntopic: unified_communication_for_customer_service_and_sales\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091448\n\ncontent:\n项目组需要给客服和销售准备统一口径，以便保证信息一致性。",
+  "chunk-0b8e176ac242524f4eff259d87ee0bc6": {
+    "tokens": 491,
+    "content": "[Memory]\nuid: 72895\ntype: goal\ntopic: decision_on_full_launch\nimportance: 1.0\nttl_days: 7\ntimestamp: 1778117328\n\ncontent:\nPolaris智能排班的决策倾向是先多跑两天灰度数据再开全量。\n\n[Memory]\nuid: f3e67\ntype: task\ntopic: commitment_for_current_week\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117328\n\ncontent:\nPolaris智能排班本周只承诺风控策略回放，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 927ae\ntype: constraint\ntopic: acceptance_criteria\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117328\n\ncontent:\nPolaris智能排班的试点门店灰度验收标准建议补上成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 36b02\ntype: constraint\ntopic: uncertainty_management\nimportance: 0.5\nttl_days: 1\ntimestamp: 1778117328\n\ncontent:\nPolaris智能排班的最大不确定性是劳动合规约束复杂，需要在今天下班前确认负责人。\n\n[Memory]\nuid: c6ab3\ntype: constraint\ntopic: model_evaluation_acceptance_criteria\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117328\n\ncontent:\nPolaris智能排班的模型评估阶段需要明确验收标准，包括成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: a7478\ntype: fact\ntopic: task_status\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117328\n\ncontent:\nPolaris智能排班的排期中试点门店灰度相关任务还剩2个未关闭，其中客户话术最容易拖慢节奏。\n\n[Memory]\nuid: 1bf09\ntype: fact\ntopic: grey_list_management\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117328\n\ncontent:\nPolaris智能排班的灰度名单分两批。",
     "chunk_order_index": 0,
-    "full_doc_id": "doc-157fe779439b0bcbd54d32979002c203",
+    "full_doc_id": "doc-0b8e176ac242524f4eff259d87ee0bc6",
     "file_path": "unknown_source",
     "llm_cache_list": [
-      "default:extract:3a80c634d81413f0a940c4cab747ae77",
-      "default:extract:0c00f3f8ef9797e06d64b3ead97fc823"
+      "default:extract:dfe1427c9340600689b36e8564ccdca2",
+      "default:extract:b4da3f408cd4447044a0ee9c0176230b"
     ],
-    "create_time": 1778091448,
-    "update_time": 1778091460,
-    "_id": "chunk-157fe779439b0bcbd54d32979002c203"
+    "create_time": 1778117328,
+    "update_time": 1778117341,
+    "_id": "chunk-0b8e176ac242524f4eff259d87ee0bc6"
   },
-  "chunk-6b55c418053c4a4792e8da66632e67d6": {
-    "tokens": 727,
-    "content": "[Memory]\nuid: f89cd\ntype: task\ntopic: hdmi_adapter_usage\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778091488\n\ncontent:\n客户演示需要 8 楼会议室的 HDMI 转接头。\n\n[Memory]\nuid: a6106\ntype: task\ntopic: blue_whale_report_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091488\n\ncontent:\n蓝鲸报表 目前最缺的是一致的验收口径，不是更多功能。请大家先把口径表补齐。\n\n[Memory]\nuid: d2db8\ntype: fact\ntopic: polaris_decision_change\nimportance: 1.0\nttl_days: 180\ntimestamp: 1778091488\n\ncontent:\nPolaris 的决策变更已经同步给管理层，大家后续不要再引用旧的 5 月底全量计划。\n\n[Memory]\nuid: 23284\ntype: goal\ntopic: polaris_smart_scheduling_review\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091488\n\ncontent:\nPolaris智能排班 复盘时要区分真实缺陷和沟通成本，不要所有问题都归到研发延期。\n\n[Memory]\nuid: 484f2\ntype: preference\ntopic: orion_overseas_payment_gateway_demo\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091488\n\ncontent:\nOrion海外支付网关 的客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解。\n\n[Memory]\nuid: 90389\ntype: task\ntopic: blue_whale_report_export_support\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091488\n\ncontent:\n蓝鲸报表 客户问到下个版本是否支持导出，我先按“规划中但未承诺日期”回复。\n\n[Memory]\nuid: 7a328\ntype: fact\ntopic: falcon_risk_management\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091488\n\ncontent:\nFalcon风控中台 这周风险没有新增，但有两个旧风险还没关闭：策略回放数据量太大，以及接口回滚方案还没演练。\n\n[Memory]\nuid: 01db9\ntype: task\ntopic: discussion_summary\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778091488\n\ncontent:\n请把刚才的长讨论总结成 5 条决策和 5 条行动项。\n\n[Memory]\nuid: 8f5f7\ntype: task\ntopic: team_building_vote\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778091488\n\ncontent:\n本周五团建投票截止，羽毛球和密室逃脱目前票数很接近。\n\n[Memory]\nuid: d2b7f\ntype: fact\ntopic: polaris_audit_log\nimportance: 0.7\nttl_days: 180\ntimestamp: 1778091488\n\ncontent:\nPolaris 的审计日志字段已经入库，后面法务如果需要抽查，可以按门店、日期和规则版本过滤。",
+  "chunk-ab33783bd8bd02ca26966d0fc9b15254": {
+    "tokens": 587,
+    "content": "[Memory]\nuid: 04183\ntype: task\ntopic: polaris_alarm_description\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117358\n\ncontent:\nPolaris智能排班的告警描述需要改清楚，以避免值班同学误判。\n\n[Memory]\nuid: 00068\ntype: preference\ntopic: polaris_customer_demo\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117358\n\ncontent:\nPolaris智能排班的客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解。\n\n[Memory]\nuid: 0ee08\ntype: fact\ntopic: polaris_audit_log\nimportance: 1.0\nttl_days: 180\ntimestamp: 1778117358\n\ncontent:\nPolaris的审计日志字段已经入库，法务可以按门店、日期和规则版本过滤进行抽查。\n\n[Memory]\nuid: 877ac\ntype: goal\ntopic: polaris_review_metrics\nimportance: 1.0\nttl_days: 14\ntimestamp: 1778117358\n\ncontent:\nPolaris两周后评审的核心指标包括：人工覆盖率、员工连续晚班次数、班次缺口率和门店经理满意度。\n\n[Memory]\nuid: 8929c\ntype: fact\ntopic: falcon_risks\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117358\n\ncontent:\nFalcon风控中台这周风险没有新增，但有两个旧风险还没关闭：误杀率和召回率平衡困难，以及接口回滚方案还没演练。\n\n[Memory]\nuid: 0da31\ntype: fact\ntopic: orion_risks\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117358\n\ncontent:\nOrion海外支付网关这周风险没有新增，但有两个旧风险还没关闭：不同地区合规要求差异大，以及接口回滚方案还没演练。\n\n[Memory]\nuid: 07d50\ntype: task\ntopic: blue_whale_report_tracking\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117358\n\ncontent:\n蓝鲸报表的埋点看起来漏了一段，尤其是从配置页返回列表页的路径，需要前端补一下。\n\n[Memory]\nuid: eb787\ntype: fact\ntopic: meeting_room_reservation\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117358\n\ncontent:\n会议室预约系统今天有缓存问题，重复预订需要在群里同步。",
     "chunk_order_index": 0,
-    "full_doc_id": "doc-6b55c418053c4a4792e8da66632e67d6",
+    "full_doc_id": "doc-ab33783bd8bd02ca26966d0fc9b15254",
     "file_path": "unknown_source",
     "llm_cache_list": [
-      "default:extract:bf4523232336df2038151d83704133a3",
-      "default:extract:d8c1321e91fcd4e90d6b85b6fc0838fa"
+      "default:extract:815b2280d67fc90da8d800e0ab8a0f42",
+      "default:extract:0119b53fcace540c30d1d8d46bb83b49"
     ],
-    "create_time": 1778091488,
-    "update_time": 1778091497,
-    "_id": "chunk-6b55c418053c4a4792e8da66632e67d6"
+    "create_time": 1778117358,
+    "update_time": 1778117367,
+    "_id": "chunk-ab33783bd8bd02ca26966d0fc9b15254"
   },
-  "chunk-f8a3af499c22f18aceb06df693b066e1": {
-    "tokens": 531,
-    "content": "[Memory]\nuid: a1140\ntype: fact\ntopic: polaris_explanation_panel_structure\nimportance: 1.0\nttl_days: 180\ntimestamp: 1778091526\n\ncontent:\nPolaris 的解释面板需要拆成三层：先给门店经理看结论，再展示触发的关键约束，最后保留详细日志给审计使用。\n\n[Memory]\nuid: f4a03\ntype: fact\ntopic: employee_skill_tag_default_priority\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778091526\n\ncontent:\n测试发现一个边界条件：员工技能标签为空时，系统会默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: b8216\ntype: constraint\ntopic: product_documentation_emphasis\nimportance: 0.7\nttl_days: 180\ntimestamp: 1778091526\n\ncontent:\n产品文案需要强调系统是建议工具，不会替代门店经理最终决策，这一点对一线接受度很关键。\n\n[Memory]\nuid: bfbc8\ntype: goal\ntopic: project_goals_and_timing\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091526\n\ncontent:\n如果两周后指标稳定，再讨论全量；如果解释面板仍然不够清楚，就先把项目目标从全量上线改成区域试点。\n\n[Memory]\nuid: 83b36\ntype: fact\ntopic: employee_shift_analysis\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091526\n\ncontent:\n昨天 12 家门店的回放结果显示，员工连续晚班次数下降了，但周末高峰时段仍然存在人手不足的风险。\n\n[Memory]\nuid: 7742f\ntype: task\ntopic: graylist_management\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091526\n\ncontent:\n新增门店先不进灰度名单，避免这轮验证被样本变化干扰。\n\n[Memory]\nuid: 9597e\ntype: preference\ntopic: algorithm_playback_grouping\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091526\n\ncontent:\n建议算法回放按门店类型分组，不要把商圈店和社区店混在一起看，否则平均值会掩盖问题。",
+  "chunk-012fe3e5cd16dda6721670267681d383": {
+    "tokens": 605,
+    "content": "[Memory]\nuid: 90c1d\ntype: fact\ntopic: project_schedule\nimportance: 1.0\nttl_days: 7\ntimestamp: 1778117391\n\ncontent:\n上线窗口顺延是为了确保关键链路在真实业务场景下足够稳定，当前核心功能已经完成，但在数据一致性和异常兜底方面仍需要补充验证。\n\n[Memory]\nuid: fc5d5\ntype: goal\ntopic: orion_payment_gateway\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117391\n\ncontent:\n关于Orion海外支付网关，本周只承诺沙箱验证，其他内容写进下一轮迭代。\n\n[Memory]\nuid: ca95e\ntype: fact\ntopic: xingqiao_crm\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117391\n\ncontent:\n星桥CRM的灰度版本今天进入联调阶段，最大不确定性是历史客户数据字段不一致，需要确认负责人。\n\n[Memory]\nuid: 3759a\ntype: fact\ntopic: falcon_risk_control\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117391\n\ncontent:\nFalcon风控中台的沙箱验证相关任务还剩3个未关闭，其中客户话术最容易拖慢节奏。\n\n[Memory]\nuid: 9bda4\ntype: fact\ntopic: blue_whale_report\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117391\n\ncontent:\n蓝鲸报表的权限评审版本已经拉了分支，非核心的配置项不要再插进来了。\n\n[Memory]\nuid: abfc3\ntype: fact\ntopic: blue_whale_report_metrics\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117391\n\ncontent:\n蓝鲸报表的指标看板开发相关任务还剩2个未关闭，其中接口联调最容易拖慢节奏。\n\n[Memory]\nuid: 4b890\ntype: task\ntopic: meeting_minutes\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117391\n\ncontent:\n请基于讨论生成会议纪要，包含背景、结论、待办和风险。\n\n[Memory]\nuid: 06933\ntype: fact\ntopic: decision_summary\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778117391\n\ncontent:\n决策摘要包括：核心范围先收敛；灰度名单分两批；数据口径由产品和财务共同确认；第三方依赖必须有降级方案；上线前补充压测和回归。行动项由对应负责人推进。",
     "chunk_order_index": 0,
-    "full_doc_id": "doc-f8a3af499c22f18aceb06df693b066e1",
+    "full_doc_id": "doc-012fe3e5cd16dda6721670267681d383",
     "file_path": "unknown_source",
     "llm_cache_list": [
-      "default:extract:9decb08f9e6f87cdc76e6a7effcd4056",
-      "default:extract:67b7d62c27e743304040c6466625dfd3"
+      "default:extract:545929c468e75f5d1e174eb5775bddff",
+      "default:extract:77c26701a9564f18571adfb568a000f7"
     ],
-    "create_time": 1778091526,
-    "update_time": 1778091536,
-    "_id": "chunk-f8a3af499c22f18aceb06df693b066e1"
+    "create_time": 1778117391,
+    "update_time": 1778117399,
+    "_id": "chunk-012fe3e5cd16dda6721670267681d383"
   },
-  "chunk-bc6f0745fb5b43edaa4da42211ad7255": {
-    "tokens": 730,
-    "content": "[Memory]\nuid: b4e22\ntype: constraint\ntopic: falcon_risk_control_strategy_replay_data\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778091561\n\ncontent:\nFalcon风控中台的策略回放数据量太大，需要在今天下班前确认负责人。\n\n[Memory]\nuid: e9189\ntype: task\ntopic: orion_overseas_payment_gateway_launch_decision\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778091561\n\ncontent:\nOrion海外支付网关需要在周五上线，或者先多跑两天灰度数据再开全量。\n\n[Memory]\nuid: e1af1\ntype: fact\ntopic: xingqiao_crm_gray_release\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778091561\n\ncontent:\n星桥CRM能接受先小流量灰度，但希望看到每日进展和明确的风险列表。\n\n[Memory]\nuid: 2f1d3\ntype: constraint\ntopic: blue_whale_report_acceptance_criteria\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778091561\n\ncontent:\n蓝鲸报表的上线验收标准需要补充成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 14e66\ntype: task\ntopic: falcon_risk_control_monitoring_preparation\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778091561\n\ncontent:\nFalcon风控中台在上线窗口需要提前演练监控告警和回滚脚本。\n\n[Memory]\nuid: 632d7\ntype: task\ntopic: xingqiao_crm_monitoring_preparation\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778091561\n\ncontent:\n星桥CRM在上线窗口需要提前演练监控告警和回滚脚本。\n\n[Memory]\nuid: 1ab5a\ntype: constraint\ntopic: blue_whale_report_data_consistency_risk\nimportance: 0.6\nttl_days: 7\ntimestamp: 1778091561\n\ncontent:\n蓝鲸报表的指标口径历史版本混杂，会在上线窗口集中暴露。\n\n[Memory]\nuid: fd0f8\ntype: constraint\ntopic: orion_overseas_payment_gateway_compliance_differences\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778091561\n\ncontent:\n不同地区合规要求差异大，需要在今天下班前确认负责人。\n\n[Memory]\nuid: e6a84\ntype: constraint\ntopic: xingqiao_crm_gray_acceptance_criteria\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778091561\n\ncontent:\n星桥CRM的灰度验收标准需要补充成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 86013\ntype: task\ntopic: falcon_risk_control_commitments\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778091561\n\ncontent:\n关于Falcon风控中台，建议本周只承诺关键报表，其他内容写进下一轮迭代。",
+  "chunk-6528cee3d3f685f6501838385edd21d2": {
+    "tokens": 740,
+    "content": "[Memory]\nuid: eaf19\ntype: task\ntopic: daily_report_simplification\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117413\n\ncontent:\n日报可以简短一些，把阻塞项和需要他人协助的地方写清楚。\n\n[Memory]\nuid: f92d3\ntype: task\ntopic: bluewhale_report_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117413\n\ncontent:\n蓝鲸报表的上线验收标准需要补充成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 8d709\ntype: fact\ntopic: orion_gateway_sandbox_verification\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117413\n\ncontent:\nOrion海外支付网关进入沙箱验证阶段，接入多地区支付通道，统一风控、结算和失败重试逻辑。\n\n[Memory]\nuid: 6165e\ntype: task\ntopic: starbridge_crm_release_decision\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778117413\n\ncontent:\n星桥CRM需要决定是否保留原计划在周五上线，或先多跑两天灰度数据再开全量。\n\n[Memory]\nuid: 97791\ntype: fact\ntopic: falcon_risk_control_architecture_review\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117413\n\ncontent:\nFalcon风控中台进入架构评审阶段，最大不确定性是误杀率和召回率平衡困难。\n\n[Memory]\nuid: 00c83\ntype: fact\ntopic: starbridge_crm_gray_branch\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117413\n\ncontent:\n星桥CRM的灰度版本已经拉了分支，今天先合主流程，非核心的配置项不要再插进来了。\n\n[Memory]\nuid: b60f2\ntype: goal\ntopic: starbridge_crm_commitment\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117413\n\ncontent:\n关于星桥CRM，只承诺关键报表，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 35ea0\ntype: task\ntopic: orion_gateway_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117413\n\ncontent:\nOrion海外支付网关的验收标准需要补充成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 40d2d\ntype: goal\ntopic: falcon_risk_control_commitment\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117413\n\ncontent:\n关于Falcon风控中台，只承诺试点门店，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 99cfb\ntype: fact\ntopic: bluewhale_report_schedule\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117413\n\ncontent:\n蓝鲸报表的排期，指标看板开发相关任务还剩4个未关闭，其中权限验证最容易拖慢节奏。",
     "chunk_order_index": 0,
-    "full_doc_id": "doc-bc6f0745fb5b43edaa4da42211ad7255",
+    "full_doc_id": "doc-6528cee3d3f685f6501838385edd21d2",
     "file_path": "unknown_source",
     "llm_cache_list": [
-      "default:extract:0bf5fd41ac4a6a8ab9c36752c61509b0",
-      "default:extract:81733bfefbe040efb6571c3f710a9246"
+      "default:extract:5c96dc04d9dc790b599ed8d41f611b28",
+      "default:extract:ec40d9288826b8d02af617644dfef6c6"
     ],
-    "create_time": 1778091561,
-    "update_time": 1778091572,
-    "_id": "chunk-bc6f0745fb5b43edaa4da42211ad7255"
+    "create_time": 1778117413,
+    "update_time": 1778117426,
+    "_id": "chunk-6528cee3d3f685f6501838385edd21d2"
   },
-  "chunk-ae63aa94ccb0c6e7e81e3bbf1731a75a": {
-    "tokens": 797,
-    "content": "[Memory]\nuid: 261f3\ntype: fact\ntopic: orion_overseas_payment_gateway_interface_development\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091604\n\ncontent:\nOrion海外支付网关的排期中，接口开发相关任务还剩7个未关闭，其中回归测试最容易拖慢节奏。\n\n[Memory]\nuid: 51f6d\ntype: task\ntopic: blue_whale_report_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778091604\n\ncontent:\n关于蓝鲸报表，建议本周只承诺关键报表，其他内容写进下一轮迭代。\n\n[Memory]\nuid: e98bb\ntype: fact\ntopic: blue_whale_report_executive_trial_acceptance_criteria\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091604\n\ncontent:\n蓝鲸报表的高管试用验收标准还不够具体，建议补上成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: f5184\ntype: fact\ntopic: star_bridge_crm_freeze_requirements\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091604\n\ncontent:\n星桥CRM的排期中，需求冻结相关任务还剩6个未关闭，其中客户话术最容易拖慢节奏。\n\n[Memory]\nuid: db02c\ntype: task\ntopic: falcon_risk_control_decision_on_launch\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778091604\n\ncontent:\nFalcon风控中台需要一个决策：是保留原计划在周五上线，还是先多跑两天灰度数据再开全量。\n\n[Memory]\nuid: 3e294\ntype: fact\ntopic: falcon_risk_control_launch_acceptance_criteria\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091604\n\ncontent:\nFalcon风控中台的上线验收标准需要补上成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: a3f79\ntype: task\ntopic: falcon_risk_control_core_link_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778091604\n\ncontent:\n关于Falcon风控中台，建议本周只承诺核心链路，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 00fa9\ntype: fact\ntopic: orion_overseas_payment_gateway_business_alignment\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091604\n\ncontent:\n刚和业务方对齐了一轮，他们能接受Orion海外支付网关先小流量灰度，且希望看到每日进展和明确的风险列表。\n\n[Memory]\nuid: 56602\ntype: task\ntopic: star_bridge_crm_decision_on_launch\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778091604\n\ncontent:\n星桥CRM需要一个决策：是保留原计划在周五上线，还是先多跑两天灰度数据再开全量。\n\n[Memory]\nuid: a17a5\ntype: fact\ntopic: falcon_risk_control_strategy_replay_uncertainty\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778091604\n\ncontent:\nFalcon风控中台的策略回放阶段最大不确定性是跨境交易规则更新频繁。",
+  "chunk-ebdbd5af8a740c19e078de19577a1136": {
+    "tokens": 673,
+    "content": "[Memory]\nuid: 4b467\ntype: task\ntopic: orion_overseas_payment_gateway_tracking\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117458\n\ncontent:\nOrion海外支付网关 的埋点需要前端补全，尤其是从配置页返回列表页的路径。\n\n[Memory]\nuid: cbd18\ntype: task\ntopic: blue_whale_report_tracking\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117458\n\ncontent:\n蓝鲸报表 的埋点需要前端补全，尤其是从配置页返回列表页的路径。\n\n[Memory]\nuid: 7904c\ntype: task\ntopic: star_bridge_crm_tracking\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117458\n\ncontent:\n星桥CRM 的埋点需要前端补全，尤其是从配置页返回列表页的路径。\n\n[Memory]\nuid: 87c89\ntype: task\ntopic: polaris_smart_scheduling_tracking\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117458\n\ncontent:\nPolaris智能排班 的埋点需要前端补全，尤其是从配置页返回列表页的路径。\n\n[Memory]\nuid: 4fcc6\ntype: preference\ntopic: falcon_risk_control_demo_preference\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117458\n\ncontent:\nFalcon风控中台 的客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解。\n\n[Memory]\nuid: 0ae16\ntype: preference\ntopic: star_bridge_crm_demo_preference\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117458\n\ncontent:\n星桥CRM 的客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解。\n\n[Memory]\nuid: eb8ad\ntype: preference\ntopic: orion_overseas_payment_gateway_demo_preference\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117458\n\ncontent:\nOrion海外支付网关 的客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解。\n\n[Memory]\nuid: 48eb9\ntype: goal\ntopic: polaris_review_metrics\nimportance: 0.7\nttl_days: 14\ntimestamp: 1778117458\n\ncontent:\nPolaris 两周后评审的核心指标包括：人工覆盖率、员工连续晚班次数、班次缺口率和门店经理满意度。\n\n[Memory]\nuid: 417d3\ntype: fact\ntopic: blue_whale_report_risks\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117458\n\ncontent:\n蓝鲸报表 这周风险没有新增，但有两个旧风险还没关闭：财务和运营口径存在差异，以及接口回滚方案还没演练。",
     "chunk_order_index": 0,
-    "full_doc_id": "doc-ae63aa94ccb0c6e7e81e3bbf1731a75a",
+    "full_doc_id": "doc-ebdbd5af8a740c19e078de19577a1136",
     "file_path": "unknown_source",
     "llm_cache_list": [
-      "default:extract:1f5f811981f6a07f008e6a0e7efc1a77",
-      "default:extract:97d25609ef550cb8450323abf8facf8b"
+      "default:extract:c2d0adc119d3f6f2fcfc55730359db88",
+      "default:extract:79f40886fe31979010181fed488e4842"
     ],
-    "create_time": 1778091604,
-    "update_time": 1778091613,
-    "_id": "chunk-ae63aa94ccb0c6e7e81e3bbf1731a75a"
+    "create_time": 1778117458,
+    "update_time": 1778117466,
+    "_id": "chunk-ebdbd5af8a740c19e078de19577a1136"
+  },
+  "chunk-05bae77b79f3b6bcf44e89515d4d08f2": {
+    "tokens": 691,
+    "content": "[Memory]\nuid: afc17\ntype: goal\ntopic: project_goal_adjustment\nimportance: 0.5\nttl_days: 14\ntimestamp: 1778117505\n\ncontent:\n如果两周后指标稳定，再讨论全量；如果解释面板仍不清楚，项目目标改为区域试点。\n\n[Memory]\nuid: 13653\ntype: fact\ntopic: polaris_explanation_panel_structure\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117505\n\ncontent:\nPolaris 的解释面板拆分为三层：门店经理看结论，展示触发的关键约束，保留详细日志给审计使用。\n\n[Memory]\nuid: c2eba\ntype: fact\ntopic: store_performance_review\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117505\n\ncontent:\n昨天 12 家门店的回放结果显示员工连续晚班次数下降，但周末高峰时段仍存在人手不足的风险。\n\n[Memory]\nuid: 6781a\ntype: fact\ntopic: algorithm_playback_grouping\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117505\n\ncontent:\n算法回放建议按门店类型分组，以避免平均值掩盖问题。\n\n[Memory]\nuid: d863e\ntype: fact\ntopic: product_documentation_emphasis\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117505\n\ncontent:\n产品文案需强调系统是建议工具，不替代门店经理最终决策，对一线接受度关键。\n\n[Memory]\nuid: 76256\ntype: preference\ntopic: orion_gateway_client_demo\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117505\n\ncontent:\nOrion海外支付网关的客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解。\n\n[Memory]\nuid: bb599\ntype: constraint\ntopic: polaris_review_guidelines\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117505\n\ncontent:\nPolaris 智能排班复盘时要区分真实缺陷和沟通成本，避免所有问题归到研发延期。\n\n[Memory]\nuid: 93cf9\ntype: fact\ntopic: meeting_room_reservation_issue\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117505\n\ncontent:\n会议室预约系统今天有缓存问题，重复预订需在群里同步。\n\n[Memory]\nuid: abff7\ntype: task\ntopic: business_trip_plan_submission\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117505\n\ncontent:\n下周出差计划需提前报，财务要锁差旅预算。\n\n[Memory]\nuid: 05950\ntype: fact\ntopic: client_export_query_response\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117505\n\ncontent:\n客户问到下个版本是否支持导出，回复为规划中但未承诺日期。",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc-05bae77b79f3b6bcf44e89515d4d08f2",
+    "file_path": "unknown_source",
+    "llm_cache_list": [
+      "default:extract:000bda929227847881af95785b9ab060",
+      "default:extract:1072f4f340e8f408393f5d680175791c"
+    ],
+    "create_time": 1778117505,
+    "update_time": 1778117515,
+    "_id": "chunk-05bae77b79f3b6bcf44e89515d4d08f2"
+  },
+  "chunk-77e74c77456431651bf1beffbddbc951": {
+    "tokens": 639,
+    "content": "[Memory]\nuid: 34d0b\ntype: constraint\ntopic: labor_compliance_constraint\nimportance: 0.9\nttl_days: 30\ntimestamp: 1778117543\n\ncontent:\nPolaris智能排班的劳动合规约束复杂，需要在上线窗口集中暴露，最好把监控告警和回滚脚本提前演练一次。\n\n[Memory]\nuid: e8e1b\ntype: constraint\ntopic: manager_manual_backup\nimportance: 0.9\nttl_days: 30\ntimestamp: 1778117543\n\ncontent:\nPolaris智能排班的门店经理希望保留人工兜底，需在上线窗口集中暴露，最好把监控告警和回滚脚本提前演练一次。\n\n[Memory]\nuid: ef9b7\ntype: constraint\ntopic: pilot_store_acceptance_criteria\nimportance: 0.9\nttl_days: 30\ntimestamp: 1778117543\n\ncontent:\nPolaris智能排班的试点门店灰度验收标准需补上成功率、响应时间、异常兜底和人工回滚入口，否则测试难以判断是否可以过。\n\n[Memory]\nuid: 44998\ntype: constraint\ntopic: poc_acceptance_criteria\nimportance: 0.9\nttl_days: 30\ntimestamp: 1778117543\n\ncontent:\nPolaris智能排班的PoC验收标准需补上成功率、响应时间、异常兜底和人工回滚入口，否则测试难以判断是否可以过。\n\n[Memory]\nuid: fe0c6\ntype: fact\ntopic: model_evaluation_stage\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778117543\n\ncontent:\nPolaris智能排班今天进入模型评估阶段，需确认负责人。\n\n[Memory]\nuid: 21bd8\ntype: fact\ntopic: poc_stage\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778117543\n\ncontent:\nPolaris智能排班今天进入PoC阶段，需确认负责人。\n\n[Memory]\nuid: d4928\ntype: task\ntopic: responsibility_confirmation\nimportance: 0.7\nttl_days: 1\ntimestamp: 1778117543\n\ncontent:\nPolaris智能排班需要在今天下班前确认负责人。\n\n[Memory]\nuid: 2dc06\ntype: task\ntopic: iteration_commitment\nimportance: 0.6\nttl_days: 7\ntimestamp: 1778117543\n\ncontent:\n本周只承诺核心链路，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 3d5ac\ntype: task\ntopic: risk_table_completion\nimportance: 0.6\nttl_days: 1\ntimestamp: 1778117543\n\ncontent:\n需要在今天完成风险表，明天早会只讨论是否满足放量条件，不再重新展开需求范围。",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc-77e74c77456431651bf1beffbddbc951",
+    "file_path": "unknown_source",
+    "llm_cache_list": [
+      "default:extract:38c085ae4ffd6755f2fd4f9a223d0a72",
+      "default:extract:76c0c9da906efb0b53d24eaf4b93ed2f"
+    ],
+    "create_time": 1778117543,
+    "update_time": 1778117553,
+    "_id": "chunk-77e74c77456431651bf1beffbddbc951"
+  },
+  "chunk-30da519ef8b5548ad8dc9bcbfe010f5c": {
+    "tokens": 1053,
+    "content": "[Memory]\nuid: 854e4\ntype: fact\ntopic: project_scope\nimportance: 1.0\nttl_days: 180\ntimestamp: 1778117590\n\ncontent:\n核心范围先收敛\n\n[Memory]\nuid: ed8d2\ntype: task\ntopic: grey_list\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117590\n\ncontent:\n灰度名单分两批\n\n[Memory]\nuid: 016d0\ntype: fact\ntopic: data_definition\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117590\n\ncontent:\n数据口径由产品和财务共同确认\n\n[Memory]\nuid: 0bf5e\ntype: constraint\ntopic: third_party_dependency\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117590\n\ncontent:\n第三方依赖必须有降级方案\n\n[Memory]\nuid: 4b780\ntype: task\ntopic: pre_launch_testing\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117590\n\ncontent:\n上线前补充压测和回归\n\n[Memory]\nuid: 240b2\ntype: task\ntopic: acceptance_criteria\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778117590\n\ncontent:\n蓝鲸报表目前最缺的是一致的验收口径，不是更多功能\n\n[Memory]\nuid: 75adb\ntype: task\ntopic: acceptance_criteria\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778117590\n\ncontent:\nPolaris智能排班目前最缺的是一致的验收口径，不是更多功能\n\n[Memory]\nuid: 150f0\ntype: task\ntopic: acceptance_criteria\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778117590\n\ncontent:\nFalcon风控中台目前最缺的是一致的验收口径，不是更多功能\n\n[Memory]\nuid: 51b60\ntype: fact\ntopic: risk_management\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117590\n\ncontent:\n这周风险没有新增，但有两个旧风险还没关闭：误杀率和召回率平衡困难，以及接口回滚方案还没演练\n\n[Memory]\nuid: 81595\ntype: fact\ntopic: risk_management\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117590\n\ncontent:\n这周风险没有新增，但有两个旧风险还没关闭：夜间批处理不稳定，以及接口回滚方案还没演练\n\n[Memory]\nuid: eab77\ntype: preference\ntopic: client_demo\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778117590\n\ncontent:\n客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解\n\n[Memory]\nuid: 20149\ntype: task\ntopic: team_building\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117590\n\ncontent:\n本周五团建投票截止，羽毛球和密室逃脱目前票数很接近\n\n[Memory]\nuid: 9ba5a\ntype: task\ntopic: team_building\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117590\n\ncontent:\n本周五团建投票截止，羽毛球和密室逃脱目前票数很接近\n\n[Memory]\nuid: 0f135\ntype: task\ntopic: explanation_button\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117590\n\ncontent:\n门店经理仍然想要一个“为什么这样排”的解释按钮，优先级很高\n\n[Memory]\nuid: 0b379\ntype: fact\ntopic: project_decision_change\nimportance: 0.5\nttl_days: 180\ntimestamp: 1778117590\n\ncontent:\nPolaris的决策变更已经同步给管理层，大家后续不要再引用旧的5月底全量计划\n\n[Memory]\nuid: 658bc\ntype: fact\ntopic: project_decision_change\nimportance: 0.5\nttl_days: 180\ntimestamp: 1778117590\n\ncontent:\n周航的决策变更已经同步给管理层，大家后续不要再引用旧的5月底全量计划\n\n[Memory]\nuid: 50ec9\ntype: task\ntopic: milestone_requirements\nimportance: 1.0\nttl_days: 180\ntimestamp: 1778117590\n\ncontent:\n需求拆分为三阶段里程碑，并指出每阶段验收标准",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc-30da519ef8b5548ad8dc9bcbfe010f5c",
+    "file_path": "unknown_source",
+    "llm_cache_list": [
+      "default:extract:cd7a64655a6d8c68ab1b990387ab09b7",
+      "default:extract:38d99f25f8dd028d3fe20b2eb140daa5"
+    ],
+    "create_time": 1778117590,
+    "update_time": 1778117600,
+    "_id": "chunk-30da519ef8b5548ad8dc9bcbfe010f5c"
+  },
+  "chunk-1c33c5d3455f228aa8431abfaa5b0f57": {
+    "tokens": 751,
+    "content": "[Memory]\nuid: a067f\ntype: fact\ntopic: project_schedule_change\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778117642\n\ncontent:\n决定将上线窗口顺延以确保关键链路在真实业务场景下稳定，核心功能已完成，但数据一致性和异常兜底仍需验证，延后一周降低上线后返工和客户侧中断风险，项目方向不变。\n\n[Memory]\nuid: 90c5d\ntype: fact\ntopic: polaris_audit_log\nimportance: 0.7\nttl_days: 180\ntimestamp: 1778117642\n\ncontent:\nPolaris的审计日志字段已经入库，法务需要抽查可按门店、日期和规则版本过滤。\n\n[Memory]\nuid: 87658\ntype: preference\ntopic: polaris_smart_scheduling_demo\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117642\n\ncontent:\nPolaris智能排班的客户演示最好不要展示后台配置细节，直接走业务场景会更容易理解。\n\n[Memory]\nuid: 31fac\ntype: fact\ntopic: polaris_smart_scheduling_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117642\n\ncontent:\nPolaris智能排班目前最缺的是一致的验收口径，不是更多功能，需先补齐口径表。\n\n[Memory]\nuid: 5499b\ntype: fact\ntopic: orion_overseas_payment_gateway_review\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778117642\n\ncontent:\nOrion海外支付网关复盘时需区分真实缺陷和沟通成本，不要所有问题都归到研发延期。\n\n[Memory]\nuid: 6d731\ntype: fact\ntopic: polaris_smart_scheduling_export\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117642\n\ncontent:\nPolaris智能排班客户问到下个版本是否支持导出，我按“规划中但未承诺日期”回复。\n\n[Memory]\nuid: 3cef0\ntype: fact\ntopic: falcon_risk_control_review\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778117642\n\ncontent:\nFalcon风控中台复盘时需区分真实缺陷和沟通成本，不要所有问题都归到研发延期。\n\n[Memory]\nuid: 133c7\ntype: fact\ntopic: team_building_vote_deadline\nimportance: 0.3\nttl_days: 7\ntimestamp: 1778117642\n\ncontent:\n本周五团建投票截止，羽毛球和密室逃脱票数接近。\n\n[Memory]\nuid: a627a\ntype: fact\ntopic: xingqiao_crm_export\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117642\n\ncontent:\n星桥CRM的客户问到下个版本是否支持导出，我按“规划中但未承诺日期”回复。\n\n[Memory]\nuid: acf68\ntype: fact\ntopic: meeting_room_booking_cache_issue\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117642\n\ncontent:\n会议室预约系统今天有缓存问题，重复预订需在群里同步。",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc-1c33c5d3455f228aa8431abfaa5b0f57",
+    "file_path": "unknown_source",
+    "llm_cache_list": [
+      "default:extract:4df2782488e78285f71a6d9bcc7f3bcd",
+      "default:extract:d5d0d4d3273e5228e1a2aa4deacfa2b0"
+    ],
+    "create_time": 1778117642,
+    "update_time": 1778117651,
+    "_id": "chunk-1c33c5d3455f228aa8431abfaa5b0f57"
+  },
+  "chunk-ad342cbc8b3e10e83abe3251bdd450c0": {
+    "tokens": 519,
+    "content": "[Memory]\nuid: ba68c\ntype: fact\ntopic: polaris_gray_version_status\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117688\n\ncontent:\nPolaris智能排班的试点门店灰度版本仍有5个未关闭的任务，其中回归测试最容易拖慢节奏。\n\n[Memory]\nuid: 6e381\ntype: fact\ntopic: polaris_poc_stage\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117688\n\ncontent:\nPolaris智能排班今天进入PoC阶段，使用历史客流、员工技能标签和排班约束生成门店班表建议。\n\n[Memory]\nuid: fa717\ntype: task\ntopic: polaris_risk_management\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778117688\n\ncontent:\nPolaris智能排班的试点门店灰度需要明确的风险列表，建议完成风险表，以便在明天早会讨论放量条件。\n\n[Memory]\nuid: 9e94f\ntype: goal\ntopic: polaris_iteration_plan\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778117688\n\ncontent:\n关于Polaris智能排班，建议本周只承诺试点门店，其他内容写进下一轮迭代。\n\n[Memory]\nuid: c95c9\ntype: preference\ntopic: polaris_assessment_criteria\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117688\n\ncontent:\nPolaris智能排班的模型评估和灰度验收标准需要补充成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 7abbd\ntype: task\ntopic: polaris_responsibility_confirmation\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117688\n\ncontent:\nPolaris智能排班需要确认负责人，特别是在节假日客流波动大的情况下。\n\n[Memory]\nuid: 15e20\ntype: goal\ntopic: polaris_launch_decision\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117688\n\ncontent:\nPolaris智能排班的上线决策倾向于先多跑两天灰度数据再开全量。",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc-ad342cbc8b3e10e83abe3251bdd450c0",
+    "file_path": "unknown_source",
+    "llm_cache_list": [
+      "default:extract:90821f55867e0c805f649fe120e6fb49",
+      "default:extract:084532d5f31e7af5f0e4cb652dc7b8e6"
+    ],
+    "create_time": 1778117688,
+    "update_time": 1778117698,
+    "_id": "chunk-ad342cbc8b3e10e83abe3251bdd450c0"
+  },
+  "chunk-6794367f94397fcb5c7a9dd0389b074f": {
+    "tokens": 528,
+    "content": "[Memory]\nuid: ff047\ntype: fact\ntopic: falcon_risk_management_architecture_review\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117752\n\ncontent:\nFalcon风控中台今天进入架构评审阶段，集中处理交易异常检测、黑名单、额度策略和审计日志。\n\n[Memory]\nuid: 2bcfd\ntype: task\ntopic: orion_overseas_payment_gateway_decision\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117752\n\ncontent:\nOrion海外支付网关需要确认是否保留原计划在周五上线，或先多跑灰度数据。\n\n[Memory]\nuid: e1d72\ntype: task\ntopic: blue_whale_report_verification_standards\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117752\n\ncontent:\n蓝鲸报表上线前需要确认成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 485e6\ntype: constraint\ntopic: star_bridge_crm_data_inconsistency\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117752\n\ncontent:\n星桥CRM的历史客户数据字段不一致，需要在上线前确认负责人。\n\n[Memory]\nuid: 8c654\ntype: task\ntopic: falcon_risk_management_strategy_playback_verification\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117752\n\ncontent:\nFalcon风控中台的策略回放验收标准需要补上成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 79052\ntype: constraint\ntopic: orion_overseas_payment_gateway_risks\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117752\n\ncontent:\n关于Orion海外支付网关，当前数据样本不足以覆盖异常场景，汇率结算窗口影响对账，需要技术和业务确认。\n\n[Memory]\nuid: db41c\ntype: constraint\ntopic: star_bridge_crm_permission_model\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117752\n\ncontent:\n星桥CRM的权限模型和区域隔离还未完全对齐，需提前演练监控告警和回滚脚本。",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc-6794367f94397fcb5c7a9dd0389b074f",
+    "file_path": "unknown_source",
+    "llm_cache_list": [
+      "default:extract:d4bc5f6f23b8bb7c8c95b5594a931b5b",
+      "default:extract:f4a4fe0d3be943b31c11e0b2935a2481"
+    ],
+    "create_time": 1778117752,
+    "update_time": 1778117761,
+    "_id": "chunk-6794367f94397fcb5c7a9dd0389b074f"
+  },
+  "chunk-51c83014009da611d47b1879e93c2805": {
+    "tokens": 737,
+    "content": "[Memory]\nuid: ceb7a\ntype: constraint\ntopic: falcon_risk_control_replay_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117775\n\ncontent:\nFalcon风控中台的策略回放验收标准需补充成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 82907\ntype: constraint\ntopic: xingqiao_crm_integration_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117775\n\ncontent:\n星桥CRM的联调验收标准需补充成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 2f3e9\ntype: constraint\ntopic: xingqiao_crm_permission_model_alignment\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117775\n\ncontent:\n星桥CRM的权限模型和区域隔离尚未完全对齐，需提前演练监控告警和回滚脚本。\n\n[Memory]\nuid: 29e75\ntype: constraint\ntopic: blue_whale_report_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117775\n\ncontent:\n关于蓝鲸报表，验收标准需补充成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 602a1\ntype: task\ntopic: orion_payment_gateway_launch_decision\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117775\n\ncontent:\nOrion海外支付网关需要决策是保留原计划在周五上线，还是先多跑两天灰度数据再开全量。\n\n[Memory]\nuid: c6096\ntype: goal\ntopic: polaris_smart_scheduling_project_change\nimportance: 1.0\nttl_days: 180\ntimestamp: 1778117775\n\ncontent:\nPolaris智能排班项目调整为继续在12家门店灰度两周，变更原因包括可解释性要求提升等。\n\n[Memory]\nuid: 9e572\ntype: constraint\ntopic: falcon_risk_control_cross_border_transaction\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117775\n\ncontent:\nFalcon风控中台需关注跨境交易规则更新频繁，相关负责人需确认。\n\n[Memory]\nuid: fd34c\ntype: constraint\ntopic: product_documentation_emphasis\nimportance: 1.0\nttl_days: 180\ntimestamp: 1778117775\n\ncontent:\n产品文案需强调系统是建议工具，不会替代门店经理最终决策。\n\n[Memory]\nuid: 27cd7\ntype: task\ntopic: falcon_core_link_commitment\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778117775\n\ncontent:\n关于Falcon风控中台，建议本周只承诺核心链路，其他内容写进下一轮迭代。\n\n[Memory]\nuid: dbc08\ntype: task\ntopic: decision_action_items\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117775\n\ncontent:\n决策应包含5条行动项以明确下一步工作。",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc-51c83014009da611d47b1879e93c2805",
+    "file_path": "unknown_source",
+    "llm_cache_list": [
+      "default:extract:c475db23421d35c2adb8fc1340f6679d",
+      "default:extract:6a6420b7df0aca212bc9c4a5b603acb1"
+    ],
+    "create_time": 1778117775,
+    "update_time": 1778117784,
+    "_id": "chunk-51c83014009da611d47b1879e93c2805"
+  },
+  "chunk-063c9faa72185a3d7a0f53cedb3e86e4": {
+    "tokens": 682,
+    "content": "[Memory]\nuid: 7fab7\ntype: fact\ntopic: hdmi_adapter_usage\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117796\n\ncontent:\n8楼会议室的HDMI转接头正在被使用，客户演示马上要用。\n\n[Memory]\nuid: 84f3d\ntype: constraint\ntopic: blue_whale_report_acceptance_criteria\nimportance: 1.0\nttl_days: 30\ntimestamp: 1778117796\n\ncontent:\n蓝鲸报表需要一致的验收口径，口径表需补齐。\n\n[Memory]\nuid: 93d07\ntype: fact\ntopic: falcon_risk\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117796\n\ncontent:\nFalcon风控中台的风险包括策略回放数据量太大，以及接口回滚方案还没演练。\n\n[Memory]\nuid: d45b6\ntype: goal\ntopic: polaris_distinguish_defects\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117796\n\ncontent:\nPolaris智能排班需区分真实缺陷和沟通成本，复盘时不要归到研发延期。\n\n[Memory]\nuid: d3ee4\ntype: preference\ntopic: orion_demonstration_preference\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117796\n\ncontent:\nOrion海外支付网关客户演示不要展示后台配置细节，直接走业务场景会更容易理解。\n\n[Memory]\nuid: 0cd3f\ntype: fact\ntopic: polaris_audit_log\nimportance: 0.5\nttl_days: 180\ntimestamp: 1778117796\n\ncontent:\nPolaris的审计日志字段已经入库，法务可按门店、日期和规则版本过滤抽查。\n\n[Memory]\nuid: b25ab\ntype: fact\ntopic: team_building_vote\nimportance: 0.4\nttl_days: 7\ntimestamp: 1778117796\n\ncontent:\n本周五团建投票截止，羽毛球和密室逃脱目前票数接近。\n\n[Memory]\nuid: 8cc69\ntype: task\ntopic: onboarding_delay_explanation\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117796\n\ncontent:\n请提供一段面向业务方的解释，说明为什么上线需要延后一周。\n\n[Memory]\nuid: f18b8\ntype: task\ntopic: orion_alarm_clarity\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117796\n\ncontent:\nOrion海外支付网关的告警描述需更清晰，避免误判。\n\n[Memory]\nuid: 92204\ntype: fact\ntopic: polaris_decision_change\nimportance: 1.0\nttl_days: 180\ntimestamp: 1778117796\n\ncontent:\nPolaris的决策变更已同步给管理层，后续不要引用旧的5月底全量计划。",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc-063c9faa72185a3d7a0f53cedb3e86e4",
+    "file_path": "unknown_source",
+    "llm_cache_list": [
+      "default:extract:1a267ba4782e3ffbc1f83c17d9291fba",
+      "default:extract:33c536f420f75484bbf9b4ff46dff64c"
+    ],
+    "create_time": 1778117796,
+    "update_time": 1778117815,
+    "_id": "chunk-063c9faa72185a3d7a0f53cedb3e86e4"
+  },
+  "chunk-6c2ade5050417e499f91a867bb8c21fb": {
+    "tokens": 512,
+    "content": "[Memory]\nuid: abb40\ntype: goal\ntopic: polaris_explanation_panel_structure\nimportance: 1.0\nttl_days: 180\ntimestamp: 1778117830\n\ncontent:\nPolaris 的解释面板需要拆成三层：先给门店经理看结论，再展示触发的关键约束，最后保留详细日志给审计使用。\n\n[Memory]\nuid: c1b90\ntype: constraint\ntopic: product_documentation_emphasis\nimportance: 1.0\nttl_days: 180\ntimestamp: 1778117830\n\ncontent:\n产品文案需要强调系统是建议工具，不会替代门店经理最终决策，这一点对一线接受度很关键。\n\n[Memory]\nuid: 27202\ntype: goal\ntopic: project_full_launch_discussion\nimportance: 0.7\nttl_days: 14\ntimestamp: 1778117830\n\ncontent:\n如果两周后指标稳定，再讨论全量；如果解释面板仍然不够清楚，就先把项目目标从全量上线改成区域试点。\n\n[Memory]\nuid: 1920b\ntype: fact\ntopic: employee_skill_tag_condition\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117830\n\ncontent:\n员工技能标签为空时，系统会默认低优先级，可能导致新人排班过少。\n\n[Memory]\nuid: b8d98\ntype: task\ntopic: gray_list_management\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778117830\n\ncontent:\n灰度名单需要重新整理，新增门店先不进来，避免这轮验证被样本变化干扰。\n\n[Memory]\nuid: 1bb72\ntype: preference\ntopic: algorithm_replay_grouping\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778117830\n\ncontent:\n算法回放建议按门店类型分组，不要把商圈店和社区店混在一起看，否则平均值会掩盖问题。\n\n[Memory]\nuid: a024f\ntype: task\ntopic: scheduling_result_table_update\nimportance: 0.6\nttl_days: 30\ntimestamp: 1778117830\n\ncontent:\n排班结果表需要加上 rule_version、model_version 和 manual_override_reason 三个字段。",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc-6c2ade5050417e499f91a867bb8c21fb",
+    "file_path": "unknown_source",
+    "llm_cache_list": [
+      "default:extract:0394dafeb6fd21569aae217a202383b9",
+      "default:extract:94ebd31925e49ff2a6b1026382ca1a82"
+    ],
+    "create_time": 1778117830,
+    "update_time": 1778117838,
+    "_id": "chunk-6c2ade5050417e499f91a867bb8c21fb"
+  },
+  "chunk-0b276123d3def03f978160c8716aef44": {
+    "tokens": 563,
+    "content": "[Memory]\nuid: 5d314\ntype: constraint\ntopic: falcon_risk_control_strategy_playback\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778117896\n\ncontent:\nFalcon风控中台需要在上线前确认负责人，以解决策略回放数据量大的问题。\n\n[Memory]\nuid: ebf92\ntype: constraint\ntopic: orion_overseas_payment_gateway_compliance\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778117896\n\ncontent:\nOrion海外支付网关需要在上线前确认负责人，以解决不同地区合规要求差异大的问题。\n\n[Memory]\nuid: e6a5b\ntype: constraint\ntopic: star_bridge_crm_import_template\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778117896\n\ncontent:\n星桥CRM在上线前需要确认负责人，以解决销售团队导入表格模板不统一的问题。\n\n[Memory]\nuid: 7e713\ntype: task\ntopic: blue_whale_report_acceptance_criteria\nimportance: 0.7\nttl_days: 30\ntimestamp: 1778117896\n\ncontent:\n蓝鲸报表的上线验收标准需要补充成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 41642\ntype: constraint\ntopic: falcon_risk_control_misjudgment_recall_ratio\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778117896\n\ncontent:\nFalcon风控中台在上线前需要确认负责人，以解决误杀率和召回率平衡困难的问题。\n\n[Memory]\nuid: 687e9\ntype: constraint\ntopic: blue_whale_report_metric_version\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778117896\n\ncontent:\n蓝鲸报表在上线前需要确认负责人，以解决指标口径历史版本混杂的问题。\n\n[Memory]\nuid: 84c51\ntype: constraint\ntopic: star_bridge_crm_permission_model\nimportance: 0.7\nttl_days: 7\ntimestamp: 1778117896\n\ncontent:\n星桥CRM在上线前需要确认负责人，以解决权限模型和区域隔离未对齐的问题。\n\n[Memory]\nuid: a449f\ntype: fact\ntopic: project_launch_delay\nimportance: 0.9\nttl_days: 30\ntimestamp: 1778117896\n\ncontent:\n团队决定将上线窗口顺延，以确保关键链路在真实业务场景下足够稳定。",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc-0b276123d3def03f978160c8716aef44",
+    "file_path": "unknown_source",
+    "llm_cache_list": [
+      "default:extract:64d28300d22bf9b4f83dcd8569c26e78",
+      "default:extract:efdef0871f83a5ebc800d5ef4313cdc2"
+    ],
+    "create_time": 1778117896,
+    "update_time": 1778117904,
+    "_id": "chunk-0b276123d3def03f978160c8716aef44"
+  },
+  "chunk-ffd005d07142ad41d9088331afe1227b": {
+    "tokens": 762,
+    "content": "[Memory]\nuid: f1fdf\ntype: fact\ntopic: orion_payment_gateway_status\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117950\n\ncontent:\nOrion海外支付网关的接口开发相关任务还剩7个未关闭，其中数据校验最容易拖慢节奏。\n\n[Memory]\nuid: 9ccaf\ntype: task\ntopic: blue_whale_report_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117950\n\ncontent:\n关于蓝鲸报表，建议本周只承诺关键报表，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 632a4\ntype: task\ntopic: star_bridge_crm_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117950\n\ncontent:\n关于星桥CRM，建议本周只承诺核心链路，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 23f60\ntype: task\ntopic: falcon_risk_center_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117950\n\ncontent:\n关于Falcon风控中台，建议本周只承诺核心链路，其他内容写进下一轮迭代。\n\n[Memory]\nuid: b5073\ntype: preference\ntopic: blue_whale_report_executive_trial_standards\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117950\n\ncontent:\n关于蓝鲸报表，高管试用验收标准还不够具体，建议补上成功率、响应时间、异常兜底和人工回滚入口。\n\n[Memory]\nuid: 7ef1a\ntype: task\ntopic: orion_payment_gateway_commitment\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117950\n\ncontent:\n关于Orion海外支付网关，建议本周只承诺核心链路，其他内容写进下一轮迭代。\n\n[Memory]\nuid: 7c3c4\ntype: task\ntopic: falcon_risk_center_decision\nimportance: 0.5\nttl_days: 7\ntimestamp: 1778117950\n\ncontent:\nFalcon风控中台需要一个决策：保留原计划周五上线，还是多跑两天灰度数据再开全量。\n\n[Memory]\nuid: a464b\ntype: fact\ntopic: blue_whale_report_dashboard_status\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117950\n\ncontent:\n蓝鲸报表的指标看板开发相关任务还剩5个未关闭，其中回归测试最容易拖慢节奏。\n\n[Memory]\nuid: 2b463\ntype: fact\ntopic: falcon_risk_center_performance_testing\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117950\n\ncontent:\nFalcon风控中台进入性能压测阶段，当前最大不确定性是误杀率和召回率平衡困难。\n\n[Memory]\nuid: f1a12\ntype: relationship\ntopic: orion_payment_gateway_gray_test\nimportance: 0.5\nttl_days: 30\ntimestamp: 1778117950\n\ncontent:\n刚和业务方对齐，他们能接受Orion海外支付网关先小流量灰度，但希望看到每日进展和明确的风险列表。",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc-ffd005d07142ad41d9088331afe1227b",
+    "file_path": "unknown_source",
+    "llm_cache_list": [
+      "default:extract:cadd1b3fe46ba34b479593877b3ec1b2",
+      "default:extract:45ad747dfaa8eaa834fbfe48f818189a"
+    ],
+    "create_time": 1778117950,
+    "update_time": 1778117961,
+    "_id": "chunk-ffd005d07142ad41d9088331afe1227b"
   }
 }

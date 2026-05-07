@@ -68,12 +68,15 @@ class Monitor:
             msg: InboundMessage
         ) -> None | Tuple[dict, OutboundMessage]:
         _ = session
+        if not msg.is_mentioned:
+            return None
+
         text = (msg.content or "").strip()
         result: List[Tuple[EventCandidateMetaClass, float]] = self._repo.retrieve(text)
         if not result:
             logger.info("Monitor card: skip (no EventCandidate within repo filter)")
             return
-
+        
         card_md = "\n\n".join(self.convert_ec_to_beautify_markdown(ec) for ec, _ in result)
         meta = dict(msg.metadata or {})
         meta["_card_json"] = resolve_interactive_card(
@@ -100,6 +103,9 @@ class Monitor:
             strip=True,
             event_name=ec.event_name,
             project=ec.project,
+            importance=ec.importance,
+            status=ec.status,
+            strength=ec.strength,
             aliases=", ".join(ec.aliases),
             decision_signal=ec.decision_signal,
             summary=ec.summary,
