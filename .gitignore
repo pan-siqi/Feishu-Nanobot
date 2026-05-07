@@ -40,3 +40,4 @@ tests/**
 .config.json
 .md
 *.sh
+main.py
