@@ -804,7 +804,7 @@ class AgentLoop:
             msg=msg,
             initial_messages=initial_messages,
         )
-
+        
         if card_outbound_message: outbound_messages.append(card_outbound_message)
         
         # do check:

@@ -1,6 +1,7 @@
 from nanobot.agent.hiarch_memory.episodic import EpisodicMemoryStore
 from nanobot.agent.hiarch_memory.decision import DecisionMemoryStore
 from nanobot.utils.helpers import read_jsonlines, write_jsonlines, write_file, write_pickle, read_pickle
+from nanobot.session.manager import Session
 from typing import List, Dict, Any
 import os
 import shutil
@@ -26,9 +27,9 @@ class Router:
         self._episodic = episodic
         self._decision = decision
     
-    async def operate_batch(self, project: str | None = None):
+    async def operate_batch(self, session: Session, project: str | None = None):
         # first step: split `batch` into `slide windows`
-        self._create_slide_windows()
+        self._create_slide_windows(session)
         
         # second step: store in episodic & decision memorystore
         processed = 0
@@ -56,7 +57,7 @@ class Router:
                 os.path.join(self._mem_save_path, "rag_storage"),
             )
     
-    def _create_slide_windows(self): # .history.jsonl --> windows/window_<idx>.jsonl
+    def _create_slide_windows(self, session: Session): # .history.jsonl --> windows/window_<idx>.jsonl
         # if os.path.exists(self._windows_root): raise Exception(f'{self._windows_root} could not exist!')
         if os.path.exists(self._windows_root):
             self._windows_recorded: List = read_pickle(self._windows_recorded_path)
@@ -66,7 +67,8 @@ class Router:
         self._windows_recorded: List = list()
         write_pickle(self._windows_recorded, self._windows_recorded_path)
 
-        _temp: List[Dict] = read_jsonlines(self._history_save_path)
+        # _temp: List[Dict] = read_jsonlines(self._history_save_path)
+        _temp = session.messages
         left: int = 0
         while True:
             right: int = min(left+self._windows_size, len(_temp)-1) # update right idx

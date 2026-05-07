@@ -5,7 +5,7 @@
 | 分层 | 入口子命令 | 内容 |
 |------|------------|------|
 | **L1 离线** | `offline` / `all-offline` | 无 PG、无 LLM：向量几何仿真、效能对账、Token 估算 |
-| **L2 决策 E2E** | `decision-e2e` | 真实 `DecisionMemoryStore.extract` → PG → `retrieve`（`run_e2e_all`：抗干扰、时序、DecisionBench 子集） |
+| **L2 决策 E2E** | `decision-e2e` | 真实 `DecisionMemoryStore.extract` → PG → `retrieve`（`run_e2e_all`：抗干扰、时序、DecisionBench **2 例**；**20 条种子**见下文可选开关） |
 | **L2+ Router 全链** | `router-full` | 真实 `Router.operate_batch`：`.history.jsonl` 切窗 → **Episodic（LightRAG+Neo4j）+ Decision** |
 | **L3 渠道** | `channel` | 占位（飞书回调 / Monitor / Cron 未接自动化，见主报告 §8.1） |
 
@@ -22,8 +22,9 @@
 | `fixtures/report/noise_robustness/fixture.json` | §5.1 抗干扰：信号、噪声、6 条查询、金标准 `golden_decision` |
 | `fixtures/report/temporal_override/fixture.json` | §5.2 时序覆写：批次 A/B、合并后期望字段 |
 | `fixtures/report/efficiency/tasks.json` | §5.3 效能：无/有记忆文案与步数、`report_reference_totals` |
-| `fixtures/report/decision_bench_50_seeds.json` | §5.5：20 条种子（扩展用） |
-| `fixtures/report/decision_bench_e2e_cases.json` | DecisionBench 自动子集（鉴权、周报等） |
+| `fixtures/report/decision_bench_50_seeds.json` | §5.5：20 条种子元数据（`id/axis/query/notes`）；**可跑展开见 `decision_bench_seed_cases.json`** |
+| `fixtures/report/decision_bench_seed_cases.json` | 由种子整理的 **20 条 E2E**（对话 + 查询 + 判定；`e2e_decision_bench_seeds`；`db-08` 默认跳过） |
+| `fixtures/report/decision_bench_e2e_cases.json` | DecisionBench 小集（**2 条**；鉴权、周报） |
 
 历史路径 `test_pipeline/data/` 已迁移至此；`helpers.load_dataset_json` 仍兼容遗留 `data/`（若仍存在）。
 
@@ -40,6 +41,7 @@
 | `run_benchmark.py` | **主入口**（子命令见下节） |
 | `runtime.py` | PG、Provider、**`make_router_pipeline_context`（Router+Episodic+Decision+Hiarch）**、`batched_decision_extract` |
 | `helpers.py` | `fixtures/report` 加载、`REPORT_FIXTURES_DIR` / `DATA_DIR` |
+| `e2e_decision_bench_seeds.py` | `decision_bench_seed_cases.json`：**20 条种子展开** E2E |
 
 ---
 
@@ -81,7 +83,8 @@ uv run python test_pipeline/run_all.py --with-e2e      # = run_benchmark all-e2e
 
 ### 2.3 与 `run_e2e_all.py` 的关系
 
-- `decision-e2e` 与 `uv run python test_pipeline/run_e2e_all.py` **等价**（依次 `e2e_noise` → `e2e_temporal` → `e2e_decision_bench`）。  
+- `decision-e2e` 与 `uv run python test_pipeline/run_e2e_all.py` **等价**：依次 **`e2e_noise` → `e2e_temporal` → `e2e_decision_bench`（2 例）**。  
+- **20 条种子展开**（`decision_bench_seed_cases.json` / `e2e_decision_bench_seeds.py`）：默认 **不跑**，避免一条命令堆积过多 LLM 调用；需要时设置 **`NANOBOT_BENCHMARK_INCLUDE_SEEDS=1`** 再执行 `run_e2e_all`，或单独运行 **`run_benchmark decision-e2e-seeds`**。种子套件中 **`db-08`** 默认 SKIP。  
 - **完整「决策 + Router」** 请用 **`all-e2e`**（= `decision-e2e` 再跑 **`e2e_router_full`**，默认 **smoke**）。
 
 ---
@@ -105,9 +108,12 @@ uv run python test_pipeline/run_token_estimate.py
 uv run python test_pipeline/e2e_noise.py
 uv run python test_pipeline/e2e_temporal.py
 uv run python test_pipeline/e2e_decision_bench.py
+uv run python test_pipeline/e2e_decision_bench_seeds.py
 ```
 
 常用变量：见下文 §6；`e2e_noise` 支持 `--single-extract`、`--window-size` / `--overlap`、`NANOBOT_BENCHMARK_MAX_SCORE` 等。
+
+**种子 20 条**（`e2e_decision_bench_seeds`）：`NANOBOT_BENCHMARK_INCLUDE_SEEDS=1`；限流时可增大 **`NANOBOT_BENCHMARK_INTER_CASE_SLEEP_SEC`**（默认约 **2.0**）、**`NANOBOT_BENCHMARK_SEED_EXTRACT_RETRIES`**（默认 **5**）、**`NANOBOT_BENCHMARK_SEED_EXTRACT_BACKOFF_SEC`**。
 
 ### 4.2 Router 全链路（报告所述「经 Router 卸批」）
 

@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "name": "decision_bench_seed_cases",
+    "description": "由 decision_bench_50_seeds.json 展开的 20 条可跑 E2E：dialogue + query + 判定",
+    "source_seeds": "decision_bench_50_seeds.json",
+    "version": "1.0"
+  },
+  "cases": [
+    {
+      "id": "db-01",
+      "axis": "recall",
+      "project": "feishu:oc_seed_db01",
+      "dialogue": [
+        "架构评审结论：鉴权统一采用 JWT，不再使用服务端 Session。请全员按该方案改造。",
+        "会议纪要已同步：鉴权方案已定。"
+      ],
+      "query": "上次拍板用 JWT 还是 Session",
+      "hit_substrings": ["JWT"]
+    },
+    {
+      "id": "db-02",
+      "axis": "recall",
+      "project": "feishu:oc_seed_db02",
+      "dialogue": [
+        "客户 ABC 明确表示不接受电话通知，仅接受邮件与站内信，请勿再拨打手机推销。",
+        "客户成功团队记录：ABC 渠道偏好已写入。"
+      ],
+      "query": "客户 ABC 不接受哪种通知方式",
+      "hit_substrings": ["电话", "手机"]
+    },
+    {
+      "id": "db-03",
+      "axis": "noise",
+      "project": "feishu:oc_seed_db03",
+      "dialogue": [
+        "项目进度周报收件人为张三 zhangsan@company.com，周五前发出；全员执行。",
+        "顺带一提今天 Redis 连接池参数有个小问题我们晚点再看。"
+      ],
+      "query": "周报收件人是谁",
+      "hit_substrings": ["张三", "zhangsan"]
+    },
+    {
+      "id": "db-04",
+      "axis": "noise",
+      "project": "feishu:oc_seed_db04",
+      "dialogue": [
+        "发版窗口已定：本次交付必须在 2026-05-20 上线，延期需 CTO 审批。",
+        "今晚聚餐去哪吃再说。"
+      ],
+      "query": "发版日期最终定在哪天",
+      "hit_substrings": ["2026-05-20", "5 月 20"]
+    },
+    {
+      "id": "db-05",
+      "axis": "override",
+      "project": "feishu:oc_seed_db05",
+      "dialogue": [
+        "运营周报暂时发给 Alice alice@team.com。",
+        "更正：运营周报收件人改为 Bob bob@team.com，Alice 规则作废。"
+      ],
+      "query": "运营周报收件人现在是谁",
+      "hit_substrings": ["Bob", "bob@team.com"]
+    },
+    {
+      "id": "db-06",
+      "axis": "override",
+      "project": "feishu:oc_seed_db06",
+      "dialogue": [
+        "API 网关一期选型结论：先用 Kong。",
+        "变更：API 网关改为主推 APISIX，Kong 方案停止投入，新接入统一走 APISIX。"
+      ],
+      "query": "API 网关选型结论变了吗",
+      "hit_substrings": ["APISIX", "网关"]
+    },
+    {
+      "id": "db-07",
+      "axis": "forgetting",
+      "project": "feishu:oc_seed_db07",
+      "dialogue": [
+        "团队复盘节奏定为每两周一次，周一站会后追加 30 分钟复盘。",
+        "人力资源补充：复盘会议室固定 301。"
+      ],
+      "query": "三个月前定的复盘节奏还要复习吗",
+      "hit_substrings": ["复盘", "两周"]
+    },
+    {
+      "id": "db-08",
+      "axis": "forgetting",
+      "project": "feishu:oc_seed_db08",
+      "skip": true,
+      "skip_reason": "查询为指标元语义 R(t)，需专门衰减数值评测，不单靠决策检索",
+      "dialogue": ["占位：强度阈值策略单独评测。"],
+      "query": "哪些决策 R(t) 已低于阈值",
+      "hit_substrings": []
+    },
+    {
+      "id": "db-09",
+      "axis": "false_positive",
+      "project": "feishu:oc_seed_db09",
+      "dialogue": [
+        "帮我写一段 Python 快速排序，列表直接用原地排序就行。"
+      ],
+      "query": "帮我写一段 Python 快速排序",
+      "expect_empty_retrieval": true
+    },
+    {
+      "id": "db-10",
+      "axis": "false_positive",
+      "project": "feishu:oc_seed_db10",
+      "dialogue": [
+        "今天天气真好，中午要不要一起去楼下喝咖啡。"
+      ],
+      "query": "今天天气怎么样",
+      "expect_empty_retrieval": true
+    },
+    {
+      "id": "db-11",
+      "axis": "router",
+      "project": "feishu:oc_seed_db11",
+      "dialogue": [
+        "检索方案评审结论：团队决定不采用 Elasticsearch，全文检索走 OpenSearch 托管集群。",
+        "文档组按结论更新架构图。"
+      ],
+      "query": "为什么不用 Elasticsearch",
+      "hit_substrings": ["OpenSearch", "不用", "不采用"]
+    },
+    {
+      "id": "db-12",
+      "axis": "router",
+      "project": "feishu:oc_seed_db12",
+      "dialogue": [
+        "上周架构评审拍板：新订单服务拆分为独立微服务，数据库读写分离。",
+        "请大家按拆分方案拆 PR。"
+      ],
+      "query": "上周架构评审当时怎么定的",
+      "hit_substrings": ["微服务", "拆分"]
+    },
+    {
+      "id": "db-13",
+      "axis": "status",
+      "project": "feishu:oc_seed_db13",
+      "dialogue": [
+        "Algolia 搜索方案经评估已否决，转为自建 Meilisearch，请勿再采购 Algolia。",
+        "采购流程关闭对应 SKU。"
+      ],
+      "query": "Algolia 方案现在还有效吗",
+      "hit_substrings": ["否决", "Meilisearch", "无效"]
+    },
+    {
+      "id": "db-14",
+      "axis": "status",
+      "project": "feishu:oc_seed_db14",
+      "dialogue": [
+        "支付渠道打通需求暂缓，等大商户合同签回后再启动；暂缓清单登记在 PRJ-882。",
+        "本周先做登录加固。"
+      ],
+      "query": "暂缓的需求列表里有哪条",
+      "hit_substrings": ["支付", "暂缓"]
+    },
+    {
+      "id": "db-15",
+      "axis": "project_isolation",
+      "project": "feishu:oc_a",
+      "dialogue": [
+        "【项目 A｜feishu:oc_a】进度周报收件人固定为李四 lisi_a@company.com；请勿与其它项目混用。",
+        "项目 B 的收件人另行约定，本条仅约束项目 A。"
+      ],
+      "query": "项目 A 的收件人",
+      "hit_substrings": ["李四", "lisi_a"]
+    },
+    {
+      "id": "db-16",
+      "axis": "project_isolation",
+      "project": "feishu:oc_b",
+      "dialogue": [
+        "【项目 B｜feishu:oc_b】进度周报收件人为王五 wangwu_b@company.com；抄送规则另发。",
+        "与项目 A 的收件人规则相互独立。"
+      ],
+      "query": "项目 B 的收件人",
+      "hit_substrings": ["王五", "wangwu_b"]
+    },
+    {
+      "id": "db-17",
+      "axis": "evidence",
+      "project": "feishu:oc_seed_db17",
+      "dialogue": [
+        "变更记录：发布截止日从 5 号调整到 8 号，由张三在站会上明确宣布。",
+        "日历已更新。"
+      ],
+      "query": "谁说的截止日从 5 号改 8 号",
+      "hit_substrings": ["张三", "8"]
+    },
+    {
+      "id": "db-18",
+      "axis": "merge",
+      "project": "feishu:oc_seed_db18",
+      "dialogue": [
+        "【决策】与客户群的 SLA：工作日 4 小时内响应 P1 优先级故障；与客户负责人书面确认。",
+        "【同步】再次全员同步：与客户群的 SLA 维持工作日 4 小时内响应 P1，不做变更，与前一条决策一致。",
+        "运维值班已按该 SLA 登记值班表。"
+      ],
+      "query": "同一事件两条记录合并后结论",
+      "hit_substrings": ["SLA", "4 小时", "P1"]
+    },
+    {
+      "id": "db-19",
+      "axis": "efficiency",
+      "project": "feishu:oc_seed_db19",
+      "dialogue": [
+        "【决策】项目进度周报收件人为张三 zhangsan@company.com，每周五 17:00 前发出。",
+        "会议纪要：以上收件人与截止时间作为固定口径执行。",
+        "如需变更须经项目经理书面审批。"
+      ],
+      "query": "发本周周报",
+      "hit_substrings": ["张三", "zhangsan"]
+    },
+    {
+      "id": "db-20",
+      "axis": "efficiency",
+      "project": "feishu:oc_seed_db20",
+      "dialogue": [
+        "【决策】产品评审会纪要由产品助理整理为 Markdown，发送至项目组全员邮箱列表；此为固定分发规则。",
+        "项目经理确认：纪要模板已上传共享盘，全员可查。",
+        "后续评审沿用同一纪要流程。"
+      ],
+      "query": "发今天产品评审纪要",
+      "hit_substrings": ["纪要", "Markdown"]
+    }
+  ]
+}

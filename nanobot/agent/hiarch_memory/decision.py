@@ -56,7 +56,7 @@ class DecisionMemoryStore(BaseMemoryStore):
         self._session = database_session
         self._ec_repo = repo
         self._ec_save_path = os.path.join(self._mem_save_path, ".ec.jsonl")
-
+    
     def has_any_candidates(self, project: str | None = None) -> bool:
         return bool(self._ec_repo.list(limit=1, project=project))
     

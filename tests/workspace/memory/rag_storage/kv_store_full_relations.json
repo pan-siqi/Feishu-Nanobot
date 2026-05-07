@@ -1,480 +1,508 @@
 {
-  "doc-af9844458918cd898899fb9dd08e385c": {
+  "doc-bc1a88e768a15e39122f4a44e23b2164": {
     "relation_pairs": [
       [
-        "Data Handling",
-        "Project Plan"
+        "Product Copy Emphasis",
+        "Project Pilot Discussion"
       ],
       [
-        "Data Schema",
-        "Project Plan"
+        "Employee Skill Tag",
+        "New Store Exclusion"
       ],
       [
-        "Product Documentation",
-        "System Behavior"
+        "New Store Exclusion",
+        "New Store Validation"
       ],
       [
-        "Algorithm Replay",
-        "Data Handling"
+        "Boundary Condition Employee Skill Tag",
+        "Employee Skill Tag"
       ],
       [
-        "Algorithm Replay",
-        "Store Types"
+        "Audit Log",
+        "Polaris Explanation Panel Structure"
+      ],
+      [
+        "Polaris Explanation Panel Structure",
+        "Product Copy Emphasis"
+      ],
+      [
+        "Project Pilot Discussion",
+        "Scheduling Result Table Update"
+      ],
+      [
+        "Project Goals",
+        "Project Pilot Discussion"
       ]
     ],
-    "count": 5,
-    "create_time": 1778090486,
-    "update_time": 1778090486,
-    "_id": "doc-af9844458918cd898899fb9dd08e385c"
+    "count": 8,
+    "create_time": 1778117024,
+    "update_time": 1778117024,
+    "_id": "doc-bc1a88e768a15e39122f4a44e23b2164"
   },
-  "doc-417c911a0a791840d66dc227cd884e37": {
+  "doc-c0fa405aa56bf9a0ba2469fd55d4f26a": {
     "relation_pairs": [
-      [
-        "Demonstration Preference",
-        "Polaris Intelligent Scheduling"
-      ],
-      [
-        "Frontend Enhancements",
-        "Star Bridge CRM"
-      ],
-      [
-        "Milestone Requirement",
-        "Task Breakdown"
-      ],
-      [
-        "Demonstration Preference",
-        "Falcon Risk Control"
-      ],
-      [
-        "Polaris Core Metrics",
-        "Review Schedule"
-      ],
-      [
-        "Customer Communication Draft",
-        "Customer Feedback"
-      ],
-      [
-        "Blue Whale Report Weekly Update",
-        "Task Completion Status"
-      ],
-      [
-        "Meeting Minutes",
-        "Project Synchronization"
-      ],
-      [
-        "Blue Whale Report",
-        "Frontend Enhancements"
-      ],
-      [
-        "Frontend Enhancements",
-        "Orion Overseas Payment Gateway"
-      ]
-    ],
-    "count": 10,
-    "create_time": 1778090537,
-    "update_time": 1778090537,
-    "_id": "doc-417c911a0a791840d66dc227cd884e37"
-  },
-  "doc-bbdf641d26f984e1ba66e8da7593c02c": {
-    "relation_pairs": [
-      [
-        "Orion海外支付网关",
-        "蓝鲸报表"
-      ],
-      [
-        "Falcon",
-        "黄色项"
-      ],
-      [
-        "Falcon",
-        "绿色项"
-      ],
-      [
-        "Polaris",
-        "蓝鲸报表"
-      ],
-      [
-        "Falcon",
-        "蓝鲸报表"
-      ],
-      [
-        "星桥CRM",
-        "蓝鲸报表"
-      ],
-      [
-        "Polaris",
-        "门店经理满意度"
-      ],
-      [
-        "Falcon",
-        "红色项"
-      ],
-      [
-        "Polaris",
-        "人工覆盖率"
-      ],
       [
         "Polaris",
         "审计日志"
       ],
       [
         "Polaris",
-        "班次缺口率"
-      ],
-      [
-        "Polaris",
-        "员工连续晚班次数"
-      ]
-    ],
-    "count": 12,
-    "create_time": 1778090591,
-    "update_time": 1778090591,
-    "_id": "doc-bbdf641d26f984e1ba66e8da7593c02c"
-  },
-  "doc-af0a542d93d4019c7a2c187932978fd7": {
-    "relation_pairs": [
-      [
-        "星桥CRM",
-        "星桥CRM验收口径"
-      ],
-      [
-        "Polaris智能排班",
-        "Polaris智能排班验收口径"
-      ],
-      [
-        "Orion海外支付网关",
-        "Orion海外支付网关周报"
-      ],
-      [
-        "蓝鲸报表",
-        "蓝鲸报表验收口径"
-      ],
-      [
-        "蓝鲸报表",
-        "蓝鲸报表埋点"
-      ],
-      [
-        "Polaris智能排班",
-        "Polaris评审核心指标"
+        "项目风险矩阵"
       ],
       [
         "星桥CRM",
-        "星桥CRM埋点"
-      ],
-      [
-        "出差计划",
-        "团建投票"
-      ]
-    ],
-    "count": 8,
-    "create_time": 1778090664,
-    "update_time": 1778090664,
-    "_id": "doc-af0a542d93d4019c7a2c187932978fd7"
-  },
-  "doc-831841e6a9d2d322331bf44767072027": {
-    "relation_pairs": [
-      [
-        "orion海外支付网关",
-        "汇率结算窗口"
-      ],
-      [
-        "历史客户数据字段",
-        "星桥CRM"
-      ],
-      [
-        "Orion海外支付",
-        "Orion海外支付网关"
-      ],
-      [
-        "数据口径",
-        "蓝鲸报表"
-      ],
-      [
-        "Orion海外支付网关",
-        "灰度发布"
-      ],
-      [
-        "星桥CRM",
-        "星桥CRM灰度阶段"
-      ],
-      [
-        "Falcon风险控制中台",
-        "灰度发布"
-      ],
-      [
-        "星桥CRM",
-        "灰度阶段"
-      ],
-      [
-        "灰度发布",
-        "蓝鲸报表"
-      ],
-      [
-        "权限评审验收标准",
-        "蓝鲸报表"
-      ],
-      [
-        "星桥CRM",
-        "需求冻结"
-      ]
-    ],
-    "count": 11,
-    "create_time": 1778090741,
-    "update_time": 1778090741,
-    "_id": "doc-831841e6a9d2d322331bf44767072027"
-  },
-  "doc-674919726c613ceae563de940e9210c6": {
-    "relation_pairs": [
-      [
-        "Star Bridge CRM Core Link Commitment",
-        "Star Bridge CRM Freeze Tasks"
-      ],
-      [
-        "Customer Communication Draft",
-        "SQL Troubleshooting Approach"
-      ],
-      [
-        "Blue Whale Report Executive Trial Acceptance Criteria",
-        "Blue Whale Report Key Reports Commitment"
-      ],
-      [
-        "Falcon Risk Control Sandbox Commitment",
-        "Orion Gateway Core Link Commitment"
-      ],
-      [
-        "Falcon Risk Control Sandbox Commitment",
-        "Star Bridge CRM Core Link Commitment"
-      ],
-      [
-        "Falcon Risk Control Launch Tasks",
-        "Star Bridge CRM Freeze Tasks"
-      ]
-    ],
-    "count": 6,
-    "create_time": 1778090913,
-    "update_time": 1778090913,
-    "_id": "doc-674919726c613ceae563de940e9210c6"
-  },
-  "doc-532678afc48ac990ae29c1022012f438": {
-    "relation_pairs": [
-      [
-        "PoC版本",
-        "Polaris智能排班"
-      ],
-      [
-        "Polaris智能排班",
-        "里程碑"
-      ],
-      [
-        "Polaris智能排班",
-        "风险列表"
-      ],
-      [
-        "Polaris智能排班",
-        "节假日客流"
-      ],
-      [
-        "Polaris智能排班",
-        "模型评估"
-      ],
-      [
-        "Polaris智能排班",
-        "统一口径"
-      ],
-      [
-        "Polaris智能排班",
-        "试点门店"
-      ],
-      [
-        "Polaris智能排班",
-        "团队"
-      ]
-    ],
-    "count": 8,
-    "create_time": 1778091081,
-    "update_time": 1778091081,
-    "_id": "doc-532678afc48ac990ae29c1022012f438"
-  },
-  "doc-1d29631898da6b5d9c45d90897b8d65e": {
-    "relation_pairs": [
-      [
-        "会议待办事项",
-        "蓝鲸报表"
-      ],
-      [
-        "Polaris智能排班",
         "蓝鲸报表"
       ],
       [
         "Falcon风控中台",
-        "Orion海外支付网关"
+        "客户演示"
       ],
       [
-        "Polaris",
-        "Polaris审计日志"
+        "Polaris智能排班",
+        "客户演示"
       ],
       [
-        "Polaris",
-        "Polaris智能排班"
-      ],
-      [
-        "Meeting Action Items",
-        "蓝鲸报表"
+        "团队复盘",
+        "缺陷和沟通成本"
       ]
     ],
     "count": 6,
-    "create_time": 1778091105,
-    "update_time": 1778091105,
-    "_id": "doc-1d29631898da6b5d9c45d90897b8d65e"
+    "create_time": 1778117045,
+    "update_time": 1778117045,
+    "_id": "doc-c0fa405aa56bf9a0ba2469fd55d4f26a"
   },
-  "doc-f27bcfe21acd513bf183bbb73930a3a9": {
+  "doc-5fe07dfa2892e9860a0071c5d0e64a53": {
     "relation_pairs": [
       [
-        "Bluewhale Report Pilot Stores",
-        "Orion Overseas Payment Gateway Responsibility"
+        "Falcon Risk Control Center",
+        "Risk Matrix"
       ],
       [
-        "Falcon Risk Control",
-        "Falcon Risk Control Acceptance Criteria"
+        "Acceptance Criteria",
+        "Polaris"
       ],
       [
-        "Bluewhale Report Development",
-        "Project Schedule Adjustment"
+        "Polaris",
+        "Scope Constraint"
       ],
       [
-        "Falcon Risk Control",
+        "Polaris",
+        "Polaris Audit Logs"
+      ],
+      [
+        "Orion Overseas Payment Gateway",
+        "customer demonstration"
+      ],
+      [
+        "Customer Demo Preference",
         "Orion Overseas Payment Gateway"
       ],
       [
-        "Bluewhale Report Permission Review",
-        "Star Bridge CRM Gray Version"
+        "Blue Whale Report",
+        "Frontend Completion"
+      ],
+      [
+        "Alert Description Constraint",
+        "Blue Whale Report"
       ]
     ],
-    "count": 5,
-    "create_time": 1778091148,
-    "update_time": 1778091148,
-    "_id": "doc-f27bcfe21acd513bf183bbb73930a3a9"
+    "count": 8,
+    "create_time": 1778117067,
+    "update_time": 1778117067,
+    "_id": "doc-5fe07dfa2892e9860a0071c5d0e64a53"
   },
-  "doc-76d97ae9ad65e7c134e4f39f61203547": {
+  "doc-d875b9bd41e5e9a46a15519d1b67d8f2": {
     "relation_pairs": [
       [
-        "Daily Report Format",
-        "Memory"
+        "Falcon风控中台",
+        "管理层"
       ],
       [
-        "Memory",
-        "Star Bridge CRM Release Phase"
+        "Polaris智能排班",
+        "蓝鲸报表"
       ],
       [
-        "Memory",
-        "Orion Gateway Status"
+        "discussion_summary",
+        "讨论总结"
       ],
       [
-        "Falcon Risk Control Status",
-        "Memory"
+        "Polaris",
+        "polaris_review_core_metrics"
       ],
       [
-        "Blue Whale Report Status",
-        "Memory"
+        "会议室预约系统",
+        "员工"
       ],
       [
-        "Blue Whale Report Acceptance Criteria",
-        "Memory"
+        "Polaris",
+        "讨论总结"
       ],
       [
-        "Orion Gateway",
-        "Orion Gateway Status"
+        "bluewhale_report_acceptance_criteria",
+        "蓝鲸报表"
+      ],
+      [
+        "polaris_schedule_acceptance_criteria",
+        "polaris智能排班"
+      ],
+      [
+        "Polaris",
+        "Polaris智能排班"
+      ],
+      [
+        "orion_payment_gateway_demo",
+        "客户"
+      ],
+      [
+        "Orion海外支付网关",
+        "客户"
+      ]
+    ],
+    "count": 11,
+    "create_time": 1778117116,
+    "update_time": 1778117116,
+    "_id": "doc-d875b9bd41e5e9a46a15519d1b67d8f2"
+  },
+  "doc-535dfbf7e9f97468a9a41b5e38843306": {
+    "relation_pairs": [
+      [
+        "Falcon风控中台",
+        "Falcon风险控制分支"
+      ],
+      [
+        "Falcon风控中台",
+        "星桥CRM"
+      ],
+      [
+        "Orion海外支付网关",
+        "蓝鲸报表"
+      ],
+      [
+        "Orion海外支付网关",
+        "Orion海外支付网关关键报表承诺"
+      ],
+      [
+        "Orion海外支付网关",
+        "星桥CRM"
+      ],
+      [
+        "Falcon风控中台",
+        "Orion海外支付网关"
+      ],
+      [
+        "Falcon风控中台",
+        "蓝鲸报表"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1778117162,
+    "update_time": 1778117162,
+    "_id": "doc-535dfbf7e9f97468a9a41b5e38843306"
+  },
+  "doc-2b6998a923e85ccf147531fe141a2964": {
+    "relation_pairs": [
+      [
+        "Falcon Risk Control Platform",
+        "Orion Overseas Payment Gateway"
       ],
       [
         "Blue Whale Report",
-        "Blue Whale Report Acceptance Criteria"
+        "蓝鲸报表"
       ],
       [
-        "Memory",
-        "Star Bridge CRM Decision"
+        "Falcon Risk Control Platform",
+        "Falcon风控中台"
       ],
+      [
+        "Data Sample Coverage",
+        "Deployment Risks"
+      ],
+      [
+        "Blue Whale Report",
+        "Falcon Risk Control Platform"
+      ],
+      [
+        "Data Sample Coverage",
+        "Xingqiao CRM"
+      ],
+      [
+        "Falcon Risk Control Platform",
+        "Xingqiao CRM"
+      ],
+      [
+        "Orion Overseas Payment Gateway",
+        "Orion海外支付网关"
+      ]
+    ],
+    "count": 8,
+    "create_time": 1778117215,
+    "update_time": 1778117215,
+    "_id": "doc-2b6998a923e85ccf147531fe141a2964"
+  },
+  "doc-1cd988b6fc057980eceaf3498854629f": {
+    "relation_pairs": [
       [
         "Star Bridge CRM",
-        "Star Bridge CRM Decision"
+        "Star Bridge CRM Commitment"
+      ],
+      [
+        "Blue Whale Report",
+        "Blue Whale Report Indicator Dashboard"
+      ],
+      [
+        "Falcon Risk Control",
+        "Falcon Risk Control Strategy Playback"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1778117264,
+    "update_time": 1778117264,
+    "_id": "doc-1cd988b6fc057980eceaf3498854629f"
+  },
+  "doc-0b8e176ac242524f4eff259d87ee0bc6": {
+    "relation_pairs": [
+      [
+        "Acceptance Criteria",
+        "Polaris智能排班"
+      ],
+      [
+        "Polaris智能排班",
+        "Task Status"
+      ],
+      [
+        "Decision on Full Launch",
+        "Polaris智能排班"
+      ],
+      [
+        "Model Evaluation Acceptance Criteria",
+        "Polaris智能排班"
+      ],
+      [
+        "Commitment for Current Week",
+        "Polaris智能排班"
+      ],
+      [
+        "Grey List Management",
+        "Polaris智能排班"
+      ],
+      [
+        "Polaris智能排班",
+        "Polaris智能排班的决策倾向"
+      ],
+      [
+        "Polaris智能排班",
+        "Uncertainty Management"
+      ],
+      [
+        "Polaris智能排班",
+        "Polaris智能排班的试点门店灰度验收标准"
+      ],
+      [
+        "Polaris智能排班",
+        "排期中试点门店灰度相关任务"
       ]
     ],
     "count": 10,
-    "create_time": 1778091179,
-    "update_time": 1778091179,
-    "_id": "doc-76d97ae9ad65e7c134e4f39f61203547"
+    "create_time": 1778117341,
+    "update_time": 1778117341,
+    "_id": "doc-0b8e176ac242524f4eff259d87ee0bc6"
   },
-  "doc-31cf726d0fd95502a49473b957839521": {
+  "doc-ab33783bd8bd02ca26966d0fc9b15254": {
     "relation_pairs": [
       [
+        "Polaris评审指标",
+        "人工覆盖率"
+      ],
+      [
+        "Polaris评审指标",
+        "员工连续晚班次数"
+      ],
+      [
+        "Polaris客户演示",
+        "Polaris智能排班"
+      ],
+      [
+        "会议室预约系统",
+        "蓝鲸报表"
+      ],
+      [
+        "Polaris审计日志",
+        "Polaris智能排班"
+      ],
+      [
+        "Polaris评审指标",
+        "门店经理满意度"
+      ],
+      [
+        "Polaris评审指标",
+        "班次缺口率"
+      ],
+      [
         "Falcon风控中台",
-        "策略回放数据量太大"
+        "Orion海外支付网关"
+      ]
+    ],
+    "count": 8,
+    "create_time": 1778117368,
+    "update_time": 1778117368,
+    "_id": "doc-ab33783bd8bd02ca26966d0fc9b15254"
+  },
+  "doc-012fe3e5cd16dda6721670267681d383": {
+    "relation_pairs": [
+      [
+        "Decision Summary",
+        "Meeting Minutes"
       ],
       [
-        "蓝鲸报表",
-        "销售团队导入表格模板"
+        "Blue Whale Report",
+        "Blue Whale Report Metrics"
       ],
       [
-        "Falcon风控中台",
-        "蓝鲸报表"
+        "Falcon Risk Control",
+        "Project Schedule"
       ],
       [
-        "星桥CRM",
-        "蓝鲸报表"
+        "Blue Whale Report",
+        "Orion Payment Gateway"
       ],
       [
-        "策略回放数据量",
-        "蓝鲸报表"
+        "Falcon Risk Control",
+        "Falcon Risk Control Sandbox Validation"
       ],
+      [
+        "Decision Summary",
+        "Xingqiao CRM"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1778117399,
+    "update_time": 1778117399,
+    "_id": "doc-012fe3e5cd16dda6721670267681d383"
+  },
+  "doc-6528cee3d3f685f6501838385edd21d2": {
+    "relation_pairs": [
+      [
+        "Memory",
+        "Orion Gateway Acceptance Criteria"
+      ],
+      [
+        "Bluewhale Report Schedule",
+        "Memory"
+      ],
+      [
+        "Falcon Risk Control Architecture Review",
+        "Memory"
+      ],
+      [
+        "Memory",
+        "Starbridge CRM Gray Branch"
+      ],
+      [
+        "Orion Gateway",
+        "Orion Gateway Acceptance Criteria"
+      ],
+      [
+        "Daily Report Simplification",
+        "Memory"
+      ],
+      [
+        "Bluewhale Report",
+        "Bluewhale Report Schedule"
+      ],
+      [
+        "Memory",
+        "Starbridge CRM Release Decision"
+      ],
+      [
+        "Falcon Risk Control",
+        "Falcon Risk Control Architecture Review"
+      ],
+      [
+        "Bluewhale Report Acceptance Criteria",
+        "Memory"
+      ],
+      [
+        "Memory",
+        "Orion Gateway Sandbox Verification"
+      ],
+      [
+        "Falcon Risk Control Commitment",
+        "Memory"
+      ],
+      [
+        "Memory",
+        "Starbridge CRM Commitment"
+      ]
+    ],
+    "count": 13,
+    "create_time": 1778117426,
+    "update_time": 1778117426,
+    "_id": "doc-6528cee3d3f685f6501838385edd21d2"
+  },
+  "doc-ebdbd5af8a740c19e078de19577a1136": {
+    "relation_pairs": [
       [
         "Polaris",
         "Polaris智能排班"
       ]
     ],
-    "count": 6,
-    "create_time": 1778091232,
-    "update_time": 1778091232,
-    "_id": "doc-31cf726d0fd95502a49473b957839521"
+    "count": 1,
+    "create_time": 1778117470,
+    "update_time": 1778117470,
+    "_id": "doc-ebdbd5af8a740c19e078de19577a1136"
   },
-  "doc-16eadec8b7fe2c62976d614a8fe4526c": {
+  "doc-05bae77b79f3b6bcf44e89515d4d08f2": {
     "relation_pairs": [
       [
-        "Acceptance Criteria",
-        "Audit Log Access"
-      ],
-      [
-        "Algorithm Playback Grouping",
-        "Customer Demo Guideline"
-      ],
-      [
-        "Explanation Panel Structure",
+        "Orion Gateway Client Demo",
         "Product Documentation Emphasis"
       ],
       [
-        "Core Metrics for Review",
-        "Project Goal Adjustment"
+        "Business Trip Plan Submission",
+        "Meeting Room Reservation Issue"
       ],
       [
-        "Meeting Room Booking Issue",
-        "Review Process Guideline"
+        "Project Goal Adjustment",
+        "Store Performance Review"
+      ],
+      [
+        "Algorithm Playback Grouping",
+        "Polaris Review Guidelines"
+      ],
+      [
+        "Cache Issue",
+        "Polaris Review Guidelines"
+      ],
+      [
+        "Polaris Explanation Panel Structure",
+        "Store Performance Review"
       ]
     ],
-    "count": 5,
-    "create_time": 1778091261,
-    "update_time": 1778091261,
-    "_id": "doc-16eadec8b7fe2c62976d614a8fe4526c"
+    "count": 6,
+    "create_time": 1778117515,
+    "update_time": 1778117515,
+    "_id": "doc-05bae77b79f3b6bcf44e89515d4d08f2"
   },
-  "doc-f15f687f9191405de27a91f7e558fd9a": {
+  "doc-77e74c77456431651bf1beffbddbc951": {
     "relation_pairs": [
       [
-        "Model Evaluation Criteria",
+        "Polaris智能排班",
+        "Risk Table Completion"
+      ],
+      [
+        "Model Evaluation Stage",
         "Polaris智能排班"
       ],
       [
-        "Manual Override",
+        "PoC Stage",
         "Polaris智能排班"
       ],
       [
-        "Business Alignment",
+        "Polaris智能排班",
+        "Responsibility Confirmation"
+      ],
+      [
+        "PoC Acceptance Criteria",
         "Polaris智能排班"
       ],
       [
@@ -482,7 +510,7 @@
         "Polaris智能排班"
       ],
       [
-        "Go Live Decision",
+        "Pilot Store Acceptance Criteria",
         "Polaris智能排班"
       ],
       [
@@ -490,357 +518,337 @@
         "Polaris智能排班"
       ],
       [
-        "Branch Management",
+        "Manager Manual Backup",
         "Polaris智能排班"
       ]
     ],
-    "count": 7,
-    "create_time": 1778091297,
-    "update_time": 1778091297,
-    "_id": "doc-f15f687f9191405de27a91f7e558fd9a"
-  },
-  "doc-97fed97bb39e4f420820b8b544ae7410": {
-    "relation_pairs": [
-      [
-        "Action Items",
-        "Decision Summary"
-      ],
-      [
-        "Polaris Acceptance Criteria",
-        "Polaris Explanation Button"
-      ],
-      [
-        "Falcon Acceptance Criteria",
-        "Orion Strategy Data"
-      ],
-      [
-        "Action Items",
-        "监控面板"
-      ],
-      [
-        "Action Items",
-        "测试用例"
-      ],
-      [
-        "Action Items",
-        "接口清单"
-      ],
-      [
-        "Action Items",
-        "复盘模板"
-      ],
-      [
-        "Action Items",
-        "客户话术"
-      ],
-      [
-        "Falcon Acceptance Criteria",
-        "Falcon Logging Issue"
-      ]
-    ],
     "count": 9,
-    "create_time": 1778091324,
-    "update_time": 1778091324,
-    "_id": "doc-97fed97bb39e4f420820b8b544ae7410"
+    "create_time": 1778117553,
+    "update_time": 1778117553,
+    "_id": "doc-77e74c77456431651bf1beffbddbc951"
   },
-  "doc-582667d8032621bc02939bcc57d7c2dd": {
+  "doc-30da519ef8b5548ad8dc9bcbfe010f5c": {
     "relation_pairs": [
       [
-        "Polaris Review Metrics",
-        "Polaris Scheduling Acceptance Criteria"
+        "Team Building",
+        "羽毛球"
       ],
       [
-        "Meeting Room Booking Issue",
-        "Team Building Vote"
+        "Team Building",
+        "密室逃脱"
       ],
       [
-        "Polaris Audit Log",
-        "Polaris Scheduling Demo"
+        "Project Decision Change",
+        "Risk Management"
       ],
       [
-        "Go Live Schedule",
-        "Polaris Scheduling Acceptance Criteria"
+        "Acceptance Criteria",
+        "Pre-Launch Testing"
+      ],
+      [
+        "Grey List",
+        "Project Scope"
+      ],
+      [
+        "Data Definition",
+        "Third Party Dependency"
+      ],
+      [
+        "Client Demo",
+        "Team Building"
       ]
     ],
-    "count": 4,
-    "create_time": 1778091358,
-    "update_time": 1778091358,
-    "_id": "doc-582667d8032621bc02939bcc57d7c2dd"
+    "count": 7,
+    "create_time": 1778117600,
+    "update_time": 1778117600,
+    "_id": "doc-30da519ef8b5548ad8dc9bcbfe010f5c"
   },
-  "doc-86b7f7de6132f8beaa10e4b8030e9c0e": {
+  "doc-1c33c5d3455f228aa8431abfaa5b0f57": {
     "relation_pairs": [
       [
-        "灰度版本",
-        "试点门店"
+        "Polaris",
+        "Xingqiao CRM Export"
       ],
+      [
+        "Polaris",
+        "Polaris Audit Log"
+      ],
+      [
+        "Acceptance Criteria",
+        "Smart Scheduling"
+      ],
+      [
+        "Project Schedule Change",
+        "Team Building Vote Deadline"
+      ],
+      [
+        "Polaris",
+        "Smart Scheduling"
+      ],
+      [
+        "Falcon Risk Control Review",
+        "Orion Overseas Payment Gateway Review"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1778117651,
+    "update_time": 1778117651,
+    "_id": "doc-1c33c5d3455f228aa8431abfaa5b0f57"
+  },
+  "doc-ad342cbc8b3e10e83abe3251bdd450c0": {
+    "relation_pairs": [
       [
         "PoC阶段",
         "Polaris智能排班"
       ],
       [
-        "异常兜底",
-        "灰度版本"
+        "Polaris智能排班",
+        "员工技能标签"
       ],
       [
         "Polaris智能排班",
-        "模型评估"
-      ],
-      [
-        "响应时间",
-        "灰度版本"
-      ],
-      [
-        "成功率",
-        "灰度版本"
+        "上线决策"
       ],
       [
         "Polaris智能排班",
-        "人工兜底"
-      ],
-      [
-        "人工回滚入口",
-        "灰度版本"
-      ]
-    ],
-    "count": 8,
-    "create_time": 1778091392,
-    "update_time": 1778091392,
-    "_id": "doc-86b7f7de6132f8beaa10e4b8030e9c0e"
-  },
-  "doc-cecb5a926892f726efe8342701a1573a": {
-    "relation_pairs": [
-      [
-        "Exchange Rate Settlement Window",
-        "Orion Overseas Payment Gateway"
-      ],
-      [
-        "Falcon Risk Control Strategy Replay",
-        "Falcon Wind Control Central"
-      ],
-      [
-        "Blue Whale Report",
-        "Blue Whale Report Sandbox Validation"
-      ],
-      [
-        "Xingqiao CRM",
-        "Xingqiao CRM Release Acceptance Criteria"
-      ],
-      [
-        "Blue Whale Report",
-        "Orion Overseas Payment Gateway"
-      ],
-      [
-        "Cross-Border Transaction Rules",
-        "Falcon Wind Control Central"
-      ],
-      [
-        "Cross-Border Transaction Rules",
-        "Falcon Risk Control Architecture Review"
-      ],
-      [
-        "Orion Overseas Payment Gateway",
-        "Orion Overseas Payment Gateway Decision"
-      ]
-    ],
-    "count": 8,
-    "create_time": 1778091423,
-    "update_time": 1778091423,
-    "_id": "doc-cecb5a926892f726efe8342701a1573a"
-  },
-  "doc-157fe779439b0bcbd54d32979002c203": {
-    "relation_pairs": [
-      [
-        "Falcon风控中台",
-        "Orion海外支付网关"
-      ],
-      [
-        "Orion海外支付网关",
-        "Orion海外支付网关通道选型验收标准"
-      ],
-      [
-        "蓝鲸报表",
-        "蓝鲸报表高管试用验收标准"
-      ],
-      [
-        "Falcon风控中台",
-        "蓝鲸报表"
-      ],
-      [
-        "星桥CRM",
-        "星桥CRM联调验收标准"
+        "历史客流"
       ],
       [
         "Polaris智能排班",
-        "部门"
-      ],
-      [
-        "Falcon风控中台",
-        "测试计划"
-      ],
-      [
-        "Falcon合规审查验收标准",
-        "Falcon风控中台"
-      ],
-      [
-        "Falcon风控中台",
-        "Falcon风险控制策略回放验收标准"
-      ],
-      [
-        "Falcon风控中台",
-        "星桥CRM"
-      ]
-    ],
-    "count": 10,
-    "create_time": 1778091465,
-    "update_time": 1778091465,
-    "_id": "doc-157fe779439b0bcbd54d32979002c203"
-  },
-  "doc-6b55c418053c4a4792e8da66632e67d6": {
-    "relation_pairs": [
-      [
-        "Blue Whale Report",
-        "acceptance criteria"
-      ],
-      [
-        "Falcon Risk Management",
-        "risk status"
-      ],
-      [
-        "Team Building Vote",
-        "activity options"
-      ],
-      [
-        "8th Floor Conference Room",
-        "HDMI Adapter"
-      ],
-      [
-        "Polaris",
-        "management communication"
-      ],
-      [
-        "Polaris",
-        "Polaris Smart Scheduling"
-      ],
-      [
-        "Blue Whale Report",
-        "Blue Whale Report Export Support"
-      ],
-      [
-        "Orion Overseas Payment Gateway",
-        "customer demonstration"
-      ]
-    ],
-    "count": 8,
-    "create_time": 1778091497,
-    "update_time": 1778091497,
-    "_id": "doc-6b55c418053c4a4792e8da66632e67d6"
-  },
-  "doc-f8a3af499c22f18aceb06df693b066e1": {
-    "relation_pairs": [
-      [
-        "产品文案",
-        "门店经理"
-      ],
-      [
-        "Polaris",
-        "门店经理"
-      ],
-      [
-        "灰度名单",
-        "项目目标"
-      ],
-      [
-        "员工技能标签",
-        "员工班次分析"
-      ],
-      [
-        "员工班次分析",
-        "周末高峰时段"
-      ]
-    ],
-    "count": 5,
-    "create_time": 1778091536,
-    "update_time": 1778091536,
-    "_id": "doc-f8a3af499c22f18aceb06df693b066e1"
-  },
-  "doc-bc6f0745fb5b43edaa4da42211ad7255": {
-    "relation_pairs": [
-      [
-        "Orion海外支付网关",
-        "灰度数据"
-      ],
-      [
-        "Compliance Requirements",
-        "Falcon风控中台"
-      ],
-      [
-        "Falcon风控中台",
-        "Orion海外支付网关"
-      ],
-      [
-        "星桥CRM",
-        "灰度发布"
-      ],
-      [
-        "Falcon风控中台",
-        "蓝鲸报表"
-      ],
-      [
-        "星桥CRM",
-        "蓝鲸报表"
-      ],
-      [
-        "蓝鲸报表",
         "风险列表"
       ],
       [
-        "Falcon风控中台",
-        "Falcon风控中台的策略回放数据"
+        "Polaris智能排班",
+        "试点门店"
       ],
       [
-        "上线窗口",
-        "星桥CRM"
+        "Polaris智能排班",
+        "灰度版本"
+      ],
+      [
+        "Polaris智能排班",
+        "排班约束"
       ]
     ],
-    "count": 9,
-    "create_time": 1778091576,
-    "update_time": 1778091576,
-    "_id": "doc-bc6f0745fb5b43edaa4da42211ad7255"
+    "count": 8,
+    "create_time": 1778117701,
+    "update_time": 1778117701,
+    "_id": "doc-ad342cbc8b3e10e83abe3251bdd450c0"
   },
-  "doc-ae63aa94ccb0c6e7e81e3bbf1731a75a": {
+  "doc-6794367f94397fcb5c7a9dd0389b074f": {
     "relation_pairs": [
       [
-        "Orion海外支付网关",
+        "Falcon风控中台",
         "蓝鲸报表"
+      ],
+      [
+        "星桥CRM",
+        "权限模型"
+      ],
+      [
+        "星桥CRM",
+        "星桥CRM历史客户数据"
+      ],
+      [
+        "Falcon风控中台",
+        "策略回放验收标准"
+      ],
+      [
+        "Orion海外支付网关",
+        "Orion海外支付网关风险"
       ],
       [
         "Falcon风控中台",
         "Orion海外支付网关"
       ],
       [
-        "Orion海外支付网关接口开发",
-        "蓝鲸报表高管试用验收标准"
-      ],
-      [
-        "Falcon风控决策",
-        "星桥CRM需求冻结"
-      ],
-      [
-        "Falcon风控中台",
-        "策略回放阶段"
-      ],
-      [
-        "星桥CRM",
-        "策略回放阶段"
-      ],
-      [
-        "Falcon风控中台",
+        "Orion海外支付网关",
         "星桥CRM"
       ]
     ],
     "count": 7,
-    "create_time": 1778091614,
-    "update_time": 1778091614,
-    "_id": "doc-ae63aa94ccb0c6e7e81e3bbf1731a75a"
+    "create_time": 1778117761,
+    "update_time": 1778117761,
+    "_id": "doc-6794367f94397fcb5c7a9dd0389b074f"
+  },
+  "doc-51c83014009da611d47b1879e93c2805": {
+    "relation_pairs": [
+      [
+        "产品文案",
+        "系统强调"
+      ],
+      [
+        "蓝鲸报表",
+        "验收标准"
+      ],
+      [
+        "星桥CRM",
+        "集成标准"
+      ],
+      [
+        "Orion海外支付网关",
+        "启动决策"
+      ],
+      [
+        "Polaris智能排班项目",
+        "门店试运行"
+      ],
+      [
+        "下一步工作明确",
+        "决策行动项"
+      ],
+      [
+        "Falcon风控中台",
+        "风险控制标准"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1778117785,
+    "update_time": 1778117785,
+    "_id": "doc-51c83014009da611d47b1879e93c2805"
+  },
+  "doc-063c9faa72185a3d7a0f53cedb3e86e4": {
+    "relation_pairs": [
+      [
+        "Falcon Risk Control Platform",
+        "Risk Factors"
+      ],
+      [
+        "Filtering",
+        "Polaris Audit Log"
+      ],
+      [
+        "Client Demonstration",
+        "HDMI Adapter"
+      ],
+      [
+        "Polaris Scheduling",
+        "Real Defects"
+      ],
+      [
+        "Acceptance Criteria",
+        "Blue Whale Report"
+      ],
+      [
+        "Business Justification",
+        "Onboarding Delay Explanation"
+      ],
+      [
+        "Customer Demonstration",
+        "Orion Overseas Payment Gateway"
+      ],
+      [
+        "Alarm Descriptions",
+        "Orion Alarm Clarity"
+      ],
+      [
+        "Activity Selection",
+        "Team Building Vote"
+      ],
+      [
+        "Management Communication",
+        "Polaris Decision Change"
+      ]
+    ],
+    "count": 10,
+    "create_time": 1778117820,
+    "update_time": 1778117820,
+    "_id": "doc-063c9faa72185a3d7a0f53cedb3e86e4"
+  },
+  "doc-6c2ade5050417e499f91a867bb8c21fb": {
+    "relation_pairs": [
+      [
+        "Gray List Management",
+        "Product Documentation"
+      ],
+      [
+        "Polaris Explanation Panel",
+        "Project Full Launch Discussion"
+      ],
+      [
+        "Employee Skill Tag Condition",
+        "Scheduling Result Table Update"
+      ],
+      [
+        "Polaris Explanation Panel",
+        "Product Documentation"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1778117838,
+    "update_time": 1778117838,
+    "_id": "doc-6c2ade5050417e499f91a867bb8c21fb"
+  },
+  "doc-0b276123d3def03f978160c8716aef44": {
+    "relation_pairs": [
+      [
+        "蓝鲸报表",
+        "项目启动延迟"
+      ],
+      [
+        "Orion海外支付网关",
+        "认可人确认"
+      ],
+      [
+        "星桥CRM",
+        "星桥CRM权限模型"
+      ],
+      [
+        "蓝鲸报表",
+        "蓝鲸报表指标版本"
+      ],
+      [
+        "Falcon风控中台",
+        "Falcon风险控制误判召回率"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1778117909,
+    "update_time": 1778117909,
+    "_id": "doc-0b276123d3def03f978160c8716aef44"
+  },
+  "doc-ffd005d07142ad41d9088331afe1227b": {
+    "relation_pairs": [
+      [
+        "蓝鲸报表",
+        "蓝鲸报表指标看板"
+      ],
+      [
+        "Blue Whale Report Commitment",
+        "蓝鲸报表"
+      ],
+      [
+        "Star Bridge CRM Commitment",
+        "星桥CRM"
+      ],
+      [
+        "Orion海外支付网关",
+        "蓝鲸报表"
+      ],
+      [
+        "Falcon风控中台",
+        "高管试用验收标准"
+      ],
+      [
+        "Falcon风控中台",
+        "Falcon风控中台性能压测"
+      ],
+      [
+        "Falcon Risk Center Commitment",
+        "Falcon风控中台"
+      ],
+      [
+        "Orion海外支付网关",
+        "Orion海外支付网关小流量灰度"
+      ],
+      [
+        "Orion Payment Gateway Status",
+        "Orion海外支付网关"
+      ]
+    ],
+    "count": 9,
+    "create_time": 1778117961,
+    "update_time": 1778117961,
+    "_id": "doc-ffd005d07142ad41d9088331afe1227b"
   }
 }

@@ -207,7 +207,7 @@
   },
   "providers": {
     "custom": {
-      "apiKey": "sk-QZ4YFUpfJBYJLGphOx6IS2LA6eZm463GwR0NP4mczkFlXMs3",
+      "apiKey": "sk-agAQ8pJi0esBUbb71Q5Db3oHFghpAdLJJ4pejiZ3QG2qw1Fy",
       "apiBase": "https://www.dmxapi.cn/v1",
       "extraHeaders": null
     },
