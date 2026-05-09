@@ -22,7 +22,7 @@
 | 2026.4.17 | ✅ 完成记忆模块与Nanobot原项目接口的开发和调试 |
 | 2026.4.25 | ✅ Test Merge |
 | 2026.4.26 | ✅ Test Merge2 |
-
+| 2026.5.7 | ✅ 完成飞书推送卡片功能 |
 ---
 
 ## 🧠 Agent 工作流与人类记忆类比 (Agent Workflow & Human Memory Analogy)
@@ -54,25 +54,27 @@ Agent 的记忆系统模拟了人类记忆的形成过程，整个生命周期�
 我们在原有框架的基础上，定义并设计了全新的、更复杂的记忆模块。以下是 Feishu-nanobot 的记忆模块架构图：
 
 <p align="center">
-  <img src="docs/imgs/struc.png" alt="Feishu-nanobot Memory Architecture" width="800">
+  <img src="docs/imgs/struc_2.png" alt="Feishu-nanobot Memory Architecture" width="800">
 </p>
 
 
 ### 记忆模块核心组件说明：
 
-* **短期记忆 / Short-Term Memory (STM)**：采用内存滑动窗口机制（Sliding Window）高效处理并保留近期的对话数据流，确保 AI 在当前会议或单次沟通中能够顺畅理解连续追问与上下文指代。
+DecisionMind 的记忆引擎采用六层分层架构，当前已实现核心三层：短期记忆、情景记忆与决策记忆。各层职责如下：
 
-* **工作记忆 / Working Memory (WM)**：基于当前 Task ID 创建键值对暂存区（Scratchpad），充当 AI 处理跨表单提取或起草报告等多步任务时的“数字办公桌”，支持快速增删改查并在任务完成后自动归档清理。
+* **L0 短期记忆 / Short-Term Memory (STM)**：负责当前会话滑动窗口，回答“刚才说了什么”。系统以 JSONL 与内存维护最近消息，用于支撑连续追问、上下文指代和批量卸载触发；当消息累积到阈值后，会进入后续记忆抽取流程。
 
-* **程序记忆 / Procedural Memory**：通过静态配置与函数注册表永久驻留系统的 SOP 规范、System Prompt 模板及工具 API，相当于 AI 的“员工手册”，确保差旅报销、系统查询等所有操作绝对符合企业流程与合规要求。
+* **L1 情景记忆 / Episodic Memory**：负责记录“当时发生了什么”。系统通过 LightRAG + Neo4j 存储从历史对话中抽取出的事实片段、上下文和事件经过，生命周期通常为周到月，适合历史复盘、会议上下文还原和多跳关联查询。
 
-* **情景记忆 / Episodic & Scenario Memory**：利用混合检索向量库存储带有精确时间戳与数据来源的历史对话日志和执行轨迹，赋予 AI 强大的工作回溯能力，可随时精准还原过往会议策略或客户沟通细节。
+* **L2 决策记忆 / Decision Memory**：负责保存“当时为什么这么定”。系统将群聊中的项目决策建模为结构化事件单元，包含结论、理由、反对意见、被否方案、参与人、证据消息、置信度、重要度和记忆强度等字段，并使用 PostgreSQL + pgvector 进行长期但可更新的检索与维护。
 
-* **语义记忆 / Semantic Memory**：引入图检索增强生成（GraphRAG）架构永久保存并提炼领域知识，将散落的办公文档、研报转化为结构化的企业知识底座（如产品核心卖点、组织架构），实现复杂事实的网状关联。
+* **L3 工作记忆 / Working Memory**：规划中的任务级临时变量层，用于存放当前任务执行过程中的 KV scratchpad，例如中间结果、临时选择和多步任务状态。其生命周期限定在任务内，任务结束后清理或归档。
 
-* **协作记忆 / Collaborative Memory**：依托关系型数据库与角色权限控制（RBAC），以项目或团队维度存储共享状态与决策日志，专为跨部门协同设计，确保多智能体在复杂项目中进度对齐、打破信息孤岛。
+* **L4 语义记忆 / Semantic Memory**：规划中的稳定知识层，用于沉淀长期有效的企业知识、规范、文档事实和领域常识。相比情景记忆关注“发生过什么”，语义记忆更关注已经稳定下来的知识结论。
 
-* **记忆整合与上下文处理 / Memory Integration & Context Processing**：通过显式模板提示或调用轻量级本地小模型（Small LLM）提取短期对话意图，并无缝融合程序规范、工作暂存数据及全局历史知识，生成高密度的上下文摘要，最终输入给主控大语言模型（Main LLM）执行精准的办公决策和动作。
+* **L5 协作记忆 / Collaborative Memory**：部分实现的项目级协作状态层，依托决策状态机字段维护团队确认、复习、过期和覆盖关系。它使决策可以从 `candidate` 流转到 `active`、`superseded`、`expired` 等状态，支持主动推卡、人工确认和遗忘曲线复习提醒。
+
+* **记忆整合与上下文处理 / Memory Integration & Context Processing**：由 QueryRouter 与 HiarchMemoryStore 聚合完成。系统会先判断用户问题是否需要读取决策记忆、情景记忆或两者，再按项目隔离、状态过滤和相似度检索召回相关内容，最终注入 Prompt，帮助主模型在回复时带上可追溯的历史上下文与决策依据。
 
 您可以参考[记忆设计](docs/mds/design.md)，来研究我们在nanobot上做的最特别的改动。
 
