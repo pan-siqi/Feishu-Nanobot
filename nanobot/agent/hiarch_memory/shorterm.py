@@ -39,8 +39,7 @@ class ShortermMemoryStore:
         history: List[Dict[str, Any]] = session.get_history(max_messages=0, clip_index=self._cursor)
         
         # if should rebuild
-        if True:
-        # if self._is_rebuild(history):
+        if self._is_rebuild(history):
             _num: int = self._get_num(history)
             batch = history[0:_num]
             self._save_history(batch)
@@ -48,12 +47,6 @@ class ShortermMemoryStore:
             # <operate batch>
             await self._router.operate_batch(session=session, project=session.key)
             history = history[_num:]
-
-        # if should build-document
-        # if os.path.exists(self._history_save_path) and self._load_history():
-        #     await self._episodic.check()
-
-        # self._cleanup_history()
         
         # save total shortermem
         self._save_shorterm_memory(history)
