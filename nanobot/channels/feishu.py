@@ -1551,10 +1551,9 @@ class FeishuChannel(BaseChannel):
 
             sender_id = sender.sender_id.open_id if sender.sender_id else "unknown"
             chat_id = message.chat_id
-            chat_type = message.chat_type
+            chat_type = message.chat_type # option: 'p2p', 'group'
             msg_type = message.message_type
             
-            # 在 if chat_type == "group" and not self._is_group_message_for_bot(message): return 之前，先做“旁路记录”
             # if chat_type == "group" and not self._is_group_message_for_bot(message):
                 # logger.debug("Feishu: skipping group message (not mentioned)")
 
@@ -1659,6 +1658,7 @@ class FeishuChannel(BaseChannel):
                     "thread_id": thread_id,
                 },
                 is_mentioned=is_mentioned,
+                chat_type=chat_type,
             )
 
         except Exception as e:

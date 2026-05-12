@@ -1,13 +1,14 @@
-from typing import Any, Dict, List
-
-import jsonlines
-import os
-from loguru import logger
 
 from nanobot.session.manager import Session
 from nanobot.agent.hiarch_memory.episodic import EpisodicMemoryStore
 from nanobot.agent.hiarch_memory.decision import DecisionMemoryStore
 from nanobot.agent.hiarch_memory.router import Router
+from nanobot.agent.hiarch_memory.metaclass import FileName
+from nanobot.utils.helpers import write_jsonlines, write_file, read_file
+from typing import Any, Dict, List, Callable
+import asyncio
+import jsonlines
+import os
 
 class ShortermMemoryStore:
     def __init__(
@@ -19,76 +20,49 @@ class ShortermMemoryStore:
     ):
         self._workspace = workspace
         self._mem_save_path = mem_save_path
-        self._history_save_path = os.path.join(self._mem_save_path, '.history.jsonl')
-        self._cursor_save_path = os.path.join(self._mem_save_path, '.cursor')
-        self._shorterm_memory_save_path = os.path.join(self._mem_save_path, '.shortermem.jsonl')
-        
         self._max_history_num: int = 5
-        self._cursor: int = self._load_cursor() if os.path.exists(self._cursor_save_path) else 0
         self._buffer: List = list()
         self._episodic = episodic
         self._decision = decision
         self._router = Router(
             self._mem_save_path,
-            self._history_save_path,
             self._episodic,
-            self._decision
+            self._decision,
+            self._build_path,
         )
     
     async def rebuild_history(self, session: Session): # make number of history come into [m/2, m]
-        history: List[Dict[str, Any]] = session.get_history(max_messages=0, clip_index=self._cursor)
+        project_id: str = session.key # split different project into different space
+        # read file path in project
+        _cursor_path: str = self._build_path(project_id, FileName.cursor)
+        _history_path: str = self._build_path(project_id, FileName.history)
+        _shortermem_path: str = self._build_path(project_id, FileName.shortermem)
+        _cursor: int = int(read_file(_cursor_path)) if os.path.exists(_cursor_path) else 0
+        
+        history: List[Dict[str, Any]] = session.get_history(max_messages=0, clip_index=_cursor)
         
         # if should rebuild
         if self._is_rebuild(history):
             _num: int = self._get_num(history)
             batch = history[0:_num]
-            self._save_history(batch)
+            write_jsonlines(batch, _history_path)
 
             # <operate batch>
-            await self._router.operate_batch(session=session, project=session.key)
+            # await self._router.operate_batch(session=session, project=session.key)
+            asyncio.create_task(self._router.operate_batch(session=session, project_id=project_id))
             history = history[_num:]
         
         # save total shortermem
-        self._save_shorterm_memory(history)
+        write_jsonlines(history, _shortermem_path)
         return history
+    
+    def _build_path(self, project_id: str, file_name: str) -> str:
+        return os.path.join(self._mem_save_path, project_id, file_name)
 
     def _is_rebuild(self, history: List) -> bool:
         return len(history) >= self._max_history_num
-        # return False
 
     def _get_num(self, history: List) -> int:
         _num = len(history) - self._max_history_num // 2
         self._cursor += _num; self._save_cursor()
         return _num
-    
-    def _save_shorterm_memory(self, shortermem: List[Dict[str, Any]]):
-        with jsonlines.open(self._shorterm_memory_save_path, mode='w') as writer:
-            writer.write_all(shortermem)
-
-    def _cleanup_history(self):
-        if os.path.exists(self._history_save_path): os.remove(self._history_save_path)
-    
-    def _load_history(self) -> List[Dict[str, Any]]:
-        _records = []
-        with jsonlines.open(self._history_save_path, mode='r') as reader:
-            for obj in reader:
-                _records.append(obj)
-        return _records
-
-    def _save_history(self, history: List):
-        with jsonlines.open(self._history_save_path, mode='w') as writer:
-            writer.write_all(history)
-    
-    def _save_cursor(self):
-        with open(self._cursor_save_path, mode='w', encoding='utf-8') as writer:
-            writer.write(str(self._cursor))
-    
-    def _load_cursor(self) -> int:
-        with open(self._cursor_save_path, mode='r', encoding='utf-8') as reader:
-            content = reader.read().strip()
-        try:
-            content = int(content)
-        except Exception as e:
-            content = 0
-            print(f'extract clip index fail from `{self._cursor_save_path}`!')
-        return content

@@ -8,8 +8,6 @@ from pathlib import Path
 from typing import Any
 # from nanobot.agent.memory import MemoryStore
 from nanobot.agent.hiarch_memory import HiarchMemoryStore
-from nanobot.agent.hiarch_memory.episodic import EpisodicMemoryStore
-from nanobot.agent.hiarch_memory.decision import DecisionMemoryStore
 from nanobot.agent.skills import SkillsLoader
 from nanobot.utils.helpers import build_assistant_message, current_time_str, detect_image_mime
 from nanobot.utils.prompt_templates import render_template
@@ -28,19 +26,13 @@ class ContextBuilder:
     def __init__(
             self, 
             workspace: Path, 
-            episodic: EpisodicMemoryStore,
-            decision: DecisionMemoryStore,
+            memory: HiarchMemoryStore,
             disabled_skills: list[str] | None = None,
             timezone: str | None = None,
         ):
         self.workspace = workspace
         self.timezone = timezone
-        self.memory = HiarchMemoryStore(
-            workspace=self.workspace,
-            episodic=episodic,
-            decision=decision,
-        )
-
+        self.memory = memory
         self.skills = SkillsLoader(workspace, disabled_skills=set(disabled_skills) if disabled_skills else None)
 
     # def build_system_prompt(
@@ -77,13 +69,6 @@ class ContextBuilder:
     #         ))
 
     #     return "\n\n---\n\n".join(parts)
-    
-    @staticmethod
-    def _memory_project_key(channel: str | None, chat_id: str | None) -> str | None:
-        """Stable session scope for decision SQLite + retrieval (matches Session.key)."""
-        if channel and chat_id:
-            return f"{channel}:{chat_id}"
-        return None
 
     async def build_system_prompt(
         self,
@@ -107,20 +92,13 @@ class ContextBuilder:
         bootstrap = self._load_bootstrap_files()
         if bootstrap:
             parts.append(bootstrap)
-
-        mp = self._memory_project_key(channel, chat_id)
-        memory = await self.memory.aggregation_memory(current_message, memory_project=mp)
-        if memory:
-            if len(memory) > self._MAX_MEMORY_BLOCK_CHARS:
-                memory = memory[: self._MAX_MEMORY_BLOCK_CHARS].rstrip() + "\n\n...[memory truncated]"
-            parts.append(f"# Memory\n\n{memory}")
-            logger.info(
-                "System prompt includes # Memory: chars={} episodic_block={} decision_block={}",
-                len(memory),
-                "## Episodic knowledge" in memory,
-                "## Related decisions" in memory,
-            )
-
+        
+        memory = await self.memory.aggregation_memory(current_message, project_id=f'{channel}:{chat_id}')
+        # if memory:
+        #     if len(memory) > self._MAX_MEMORY_BLOCK_CHARS:
+        #         memory = memory[: self._MAX_MEMORY_BLOCK_CHARS].rstrip() + "\n\n...[memory truncated]"
+        #     parts.append(f"# Memory\n\n{memory}")
+        
         always_skills = self.skills.get_always_skills()
         if always_skills:
             always_content = self.skills.load_skills_for_context(always_skills)

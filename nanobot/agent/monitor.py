@@ -1,5 +1,4 @@
-from nanobot.agent.hiarch_memory.database.ec_database import Session as DataBaseSession
-from nanobot.agent.hiarch_memory.database.ec_database import EventCandidateMetaClass, EventCandidateRepository
+from nanobot.agent.hiarch_memory.database import DataBaseSession, EventCandidateMetaClass, EventCandidateRepository
 from nanobot.bus.events import InboundMessage, OutboundMessage
 from nanobot.bus.queue import MessageBus
 from nanobot.channels.feishu_card import resolve_interactive_card

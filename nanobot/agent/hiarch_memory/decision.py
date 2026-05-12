@@ -1,24 +1,17 @@
 from __future__ import annotations
-
-import os
-from datetime import datetime, timezone
-from typing import Any, Dict, List, Tuple
-from uuid import uuid4
-
-from loguru import logger
-from sqlalchemy.orm.session import Session
-
 from nanobot.agent.hiarch_memory.base import BaseMemoryStore
-from nanobot.agent.hiarch_memory.database.ec_database import (
-    EventCandidateMetaClass,
-    EventCandidateRepository,
-    item_row_to_meta,
-)
+from nanobot.agent.hiarch_memory.database import EventCandidateMetaClass, EventCandidateRepository, item_row_to_meta
 from nanobot.agent.hiarch_memory.scheme import DecisionStatus, EventCandidate, EventCandidateMergeResult, EventCandidateResult
 from nanobot.providers.base import LLMResponse
 from nanobot.providers.openai_compat_provider import OpenAICompatProvider
 from nanobot.utils.helpers import format_messages
 from nanobot.utils.prompt_templates import render_template
+from sqlalchemy.orm.session import Session
+from datetime import datetime, timezone
+from typing import Any, Dict, List, Tuple
+from uuid import uuid4
+from loguru import logger
+import os
 
 
 def _merge_eval_bool(content: str | None) -> bool:
@@ -61,33 +54,18 @@ class DecisionMemoryStore(BaseMemoryStore):
         return bool(self._ec_repo.list(limit=1, project=project))
     
     def prompt_block_for_query(self, query: str, top_k: int = 3, project: str | None = None) -> str:
-        """Canonical text blocks for top matching event candidates (system prompt)."""
         hits = self._ec_repo.retrieve(query, top_k=top_k, project=project)
-        if not hits:
-            return ""
+        if not hits: return ''
         chunks = [self._ec_repo.convert_text(ec) for ec, _ in hits]
-        return "## Related decisions\n\n" + "\n\n".join(chunks)
+        return '## Related decisions\n\n{}'.format('\n\n'.join(chunks))
 
     def decay(self) -> int:
-        """Apply calendar-time strength decay (see repository)."""
         return self._ec_repo.apply_decay()
 
     def list_review_candidates(self, project: str, limit: int = 3) -> list[EventCandidateMetaClass]:
         return self._ec_repo.list_review_candidates(project=project, limit=limit)
 
-    def mark_review(
-        self,
-        ec_id: str,
-        action: str,
-        new_statement: str | None = None,
-    ) -> EventCandidateMetaClass | None:
-        """
-        Human review feedback (slash commands or future card callbacks).
-
-        - reinforce: strength *= factor (capped), review_count++, last_reviewed_at = now
-        - expire: status -> expired
-        - update: supersede old row, create new active row with decision_result = new_statement
-        """
+    def mark_review(self, ec_id: str, action: str, new_statement: str | None = None) -> EventCandidateMetaClass | None:
         row = self._ec_repo.get_by_ec_id(ec_id)
         if row is None:
             return None
@@ -155,15 +133,10 @@ class DecisionMemoryStore(BaseMemoryStore):
         logger.warning("mark_review: unknown action {!r} for ec_id={}", action, ec_id)
         return None
     
-    async def extract(self, history: List[Dict[str, Any]], project: str | None = None) -> List[str]:
-        project = project or ""
+    async def extract(self, history: List[Dict[str, Any]], project_id: str) -> List[str]:
         histext: str = format_messages(history)
-        now_str = datetime.now().strftime("%Y-%m-%d %H:%M (周%A)").replace(
-            "Monday", "一").replace("Tuesday", "二").replace("Wednesday", "三").replace(
-            "Thursday", "四").replace("Friday", "五").replace("Saturday", "六").replace(
-            "Sunday", "日")
         msg: List[Dict[str, Any]] = [
-            {"role": "system", "content": render_template("custom/decision_extract.md", strip=True, now=now_str)},
+            {"role": "system", "content": render_template("custom/decision_extract.md", strip=True)},
             {"role": "user", "content": histext},
         ]
         self._provider.set_scheme(EventCandidateResult)
@@ -178,7 +151,7 @@ class DecisionMemoryStore(BaseMemoryStore):
             ev = item.get("evidence_message_ids") or []
             _evidence_message_ids.extend(ev)
 
-        if not self._ec_repo.list(limit=1, project=project):
+        if not self._ec_repo.list(limit=1, project=project): # first
             for item in result:
                 self._ec_repo.create(self._scheme_to_metaclass(item, project=project))
         else:
@@ -194,19 +167,13 @@ class DecisionMemoryStore(BaseMemoryStore):
                 if is_create:
                     self._ec_repo.create(ec)
         self._ec_repo.build_embed()
-        logger.info(
-            "Decision extract finished: project={} candidates_in_response={} evidence_ids={}",
-            project or "(none)",
-            len(result),
-            len(_evidence_message_ids),
-        )
         return _evidence_message_ids
 
     async def _merge(
         self,
         ec: EventCandidateMetaClass,
         result: List[Tuple[EventCandidateMetaClass, float]],
-        project: str,
+        project_id: str,
     ) -> EventCandidateMetaClass | None:
         old = result[0][0]
         ec_text = self._ec_repo.convert_text(ec, remove_ec_id=True)
@@ -220,7 +187,7 @@ class DecisionMemoryStore(BaseMemoryStore):
         response_eval = await self._provider.chat_with_retry(
             msg_eval, model=self._model, tools=None, tool_choice=None
         )
-
+        
         if not _merge_eval_bool(response_eval.content):
             return None
 
@@ -236,7 +203,7 @@ class DecisionMemoryStore(BaseMemoryStore):
         return self._scheme_to_metaclass(
             ec,
             ec_id=parsed.get("ec_id"),
-            project=old.project or project,
+            project_id=old.project_id or project_id,
             base=old,
         )
 
@@ -244,7 +211,7 @@ class DecisionMemoryStore(BaseMemoryStore):
         self,
         item: Dict[str, Any],
         ec_id: str | None = None,
-        project: str = "",
+        project_id: str = "",
         base: EventCandidateMetaClass | None = None,
     ) -> EventCandidateMetaClass:
         if not ec_id: ec_id = f"ec_{uuid4().hex[:10]}"
@@ -270,7 +237,7 @@ class DecisionMemoryStore(BaseMemoryStore):
         strength = 1.0
         review_count = 0
         last_reviewed_at: str | None = now_iso
-        proj = project
+        proj = project_id
         supersedes: str | None = None
 
         if base:

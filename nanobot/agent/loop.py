@@ -17,11 +17,8 @@ from nanobot.agent.autocompact import AutoCompact
 from nanobot.agent.context import ContextBuilder
 from nanobot.agent.hook import AgentHook, AgentHookContext, CompositeHook
 from nanobot.agent.memory import Consolidator, Dream
-from nanobot.agent.hiarch_memory.shorterm import ShortermMemoryStore
-from nanobot.agent.hiarch_memory.episodic import EpisodicMemoryStore
-from nanobot.agent.hiarch_memory.decision import DecisionMemoryStore
-from nanobot.agent.hiarch_memory.database.ec_database import Session as DataBaseSession
-from nanobot.agent.hiarch_memory.database.ec_database import connect_database, EventCandidateMetaClass, EventCandidateRepository
+from nanobot.agent.hiarch_memory import ShortermMemoryStore, EpisodicMemoryStore, DecisionMemoryStore, HiarchMemoryStore
+from nanobot.agent.hiarch_memory.database import DataBaseSession, connect_database, EventCandidateMetaClass, EventCandidateRepository
 from nanobot.agent.runner import _MAX_INJECTIONS_PER_TURN, AgentRunner, AgentRunSpec
 from nanobot.agent.skills import BUILTIN_SKILLS_DIR
 from nanobot.agent.subagent import SubagentManager
@@ -231,10 +228,15 @@ class AgentLoop:
             episodic=self.episodic,
             decision=self.decision,
         )
+        self.memory = HiarchMemoryStore(
+            workspace=self.workspace,
+            episodic=self.episodic,
+            decision=self.decision,
+        )
+
         self.context = ContextBuilder(
             workspace,
-            self.episodic,
-            self.decision,
+            memory=self.memory,
             timezone=timezone,
             disabled_skills=disabled_skills,
         )
@@ -798,12 +800,19 @@ class AgentLoop:
         outbound_messages: list[OutboundMessage] = list()
         history_messages_length: int = len(history)
 
-        read_only, all_msgs, card_outbound_message = \
-        await self.monitor.check(
-            session=session,
-            msg=msg,
-            initial_messages=initial_messages,
-        )
+        if msg.chat_type == 'p2p':
+            read_only = False
+            all_msgs = initial_messages
+            card_outbound_message = None
+        elif msg.chat_type == 'group':
+            read_only, all_msgs, card_outbound_message = \
+            await self.monitor.check(
+                session=session,
+                msg=msg,
+                initial_messages=initial_messages,
+            )
+        else: # if option not in ['p2p', 'group']
+            raise TypeError(f'chat type is `{msg.chat_type}`, not define.')
         
         if card_outbound_message: outbound_messages.append(card_outbound_message)
         

@@ -18,6 +18,7 @@ class InboundMessage:
     metadata: dict[str, Any] = field(default_factory=dict)  # Channel-specific data
     session_key_override: str | None = None  # Optional override for thread-scoped sessions
     is_mentioned: bool | None = None # Optional whether bot is mentioned
+    chat_type: str = 'p2p'# Default option is `p2p` chat type
 
     @property
     def session_key(self) -> str:

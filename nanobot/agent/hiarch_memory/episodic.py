@@ -7,6 +7,7 @@ from nanobot.utils.helpers import format_messages
 from nanobot.providers.openai_compat_provider import OpenAICompatProvider
 from nanobot.providers.base import LLMResponse, LLMResponseStructure
 from nanobot.agent.hiarch_memory.scheme import InterMediateResult
+from nanobot.agent.hiarch_memory.metaclass import FileName
 import json
 from uuid import uuid4
 import time
@@ -33,44 +34,41 @@ class EpisodicMemoryStore:
         self._mem_save_path = mem_save_path
         self._scheme_path = './nanobot/nanobot/agent/hiarch_memory/itermediate.json'
         self._embed_model_path = './model/bge-small-zh-v1.5/'
-        self._lightrag_workspace = os.path.join(self._mem_save_path, 'rag_storage')
-        self._initial_lightrag: bool = False
+        self._rag_manager: Dict[str, LightRAG] = dict() # id, rag, workspace
     
-    async def initial_lightrag(self): # MUST CALL!
+    async def initial_lightrag(self, project_id: str): # MUST CALL!
+        _workspace_dir: str = os.path.join(self._mem_save_path, project_id, FileName.rag_workspace)
         embed_model = LocalModelEmbed(self._embed_model_path)
         embed_func = EmbeddingFunc(embed_model.embedding_dim, embed_model.embed, embed_model.max_token_size)
-        self._rag = LightRAG(
-            working_dir=self._lightrag_workspace,
+        _rag = LightRAG(
+            working_dir=_workspace_dir,
             embedding_func=embed_func,
             llm_model_func=volcengine_openai_complete,
             llm_model_kwargs={'api_key': self._provider.api_key, 'base_url': self._provider.api_base, 'model': self._model},
-            graph_storage="Neo4JStorage",
+            graph_storage='Neo4JStorage',
         )
-        await self._rag.initialize_storages()
-        self._initial_lightrag = True
+        self._rag_manager[project_id] = _rag
+        await _rag.initialize_storages()
 
-    async def retrieve(self, query: str) -> str:
-        if not hasattr(self, '_rag'): return ''
-        result: str = await self._rag.aquery(query, param=QueryParam(mode="hybrid"))
+    async def retrieve(self, query: str, project_id: str) -> str:
+        if project_id not in self._rag_manager: return ''
+        result: str = await self._rag_manager[project_id].aquery(query, param=QueryParam(mode="hybrid"))
         return result
 
     async def convert_document(self, history: List[Dict[str, Any]]) -> str:
         doc: str = await self._jsonline_to_document(history)
         return doc
     
-    async def insert(self, memunit: str | None = None) -> None:
-        if not self._initial_lightrag: await self.initial_lightrag()
-        if memunit: await self._rag.ainsert(memunit)
+    async def insert(self, memunit: str | None, project_id: str) -> None:
+        if project_id not in self._rag_manager: await self.initial_lightrag(project_id)
+        if memunit: await self._rag_manager[project_id].ainsert(memunit)
         return 
-
-    def can_retrieve(self) -> bool:
-        return os.path.exists(self._lightrag_workspace)
 
     async def _jsonline_to_document(self, history) -> str:
         histext: str = format_messages(history)
         msg: List[Dict[str, Any]] = [
             {'role': 'system', 'content': render_template('custom/extract.md', strip=True)},
-            {'role': 'user', 'content': f'请从以下文本中抽取结构化信息：{histext}'},
+            {'role': 'user', 'content': f'{histext}'},
         ]
         _scheme = InterMediateResult
         # _scheme = self._load_scheme()

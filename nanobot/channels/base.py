@@ -139,6 +139,7 @@ class BaseChannel(ABC):
         metadata: dict[str, Any] | None = None,
         session_key: str | None = None,
         is_mentioned: bool | None = None,
+        chat_type: str = 'p2p',
     ) -> None:
         """
         Handle an incoming message from the chat platform.
@@ -174,6 +175,7 @@ class BaseChannel(ABC):
             metadata=meta,
             session_key_override=session_key,
             is_mentioned=is_mentioned,
+            chat_type=chat_type,
         )
 
         await self.bus.publish_inbound(msg)

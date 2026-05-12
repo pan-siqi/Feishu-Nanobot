@@ -58,7 +58,7 @@ class EventCandidateMetaClass:
     evidence_message_ids: List[str]
     confidence: float
     update_at: str
-    project: str
+    project_id: str
     reasons: List[str]
     objections: List[str]
     alternatives: List[str]
@@ -88,7 +88,7 @@ class EventCandidateItem(Base):
     confidence: Mapped[float] = mapped_column(Float)
     update_at: Mapped[str] = mapped_column(String)
 
-    project: Mapped[str] = mapped_column(String, default="")
+    project_id: Mapped[str] = mapped_column(String, default="")
     reasons: Mapped[List[str]] = mapped_column(JSONB, default=list)
     objections: Mapped[List[str]] = mapped_column(JSONB, default=list)
     alternatives: Mapped[List[str]] = mapped_column(JSONB, default=list)
@@ -239,12 +239,14 @@ class EventCandidateRepository:
         self.session.refresh(ec)
         return ec
 
-    def list(
-        self, limit: int = 20, offset: int = 0, project: str | None = None
-    ) -> list[EventCandidateItem]:
-        stmt = select(EventCandidateItem).order_by(EventCandidateItem.id.desc()).limit(limit).offset(offset)
-        if project is not None:
-            stmt = stmt.where(EventCandidateItem.project == project)
+    def list(self, project_id: str, limit: int=20, offset: int=0) -> list[EventCandidateItem]:
+        stmt = (
+            select(EventCandidateItem)
+            .where(EventCandidateItem.project_id == project_id)
+            .order_by(EventCandidateItem.id.desc())
+            .limit(limit)
+            .offset(offset)
+        )
         return list(self.session.scalars(stmt))
 
     def build_embed(self) -> None:
@@ -263,10 +265,7 @@ class EventCandidateRepository:
             texts.append(t)
             texts_hash.append(txthash)
 
-        embeddings: ndarray = self._embed_model.encode(
-            texts, batch_size=self._batch_size, normalize_embeddings=True
-        )
-
+        embeddings: ndarray = self._embed_model.encode(texts, batch_size=self._batch_size, normalize_embeddings=True)
         for idx, ec in enumerate(ecs):
             ec.embedding = embeddings[idx, :]
             ec.embedding_model = EMBEDDING_MODEL
@@ -278,55 +277,25 @@ class EventCandidateRepository:
     def retrieve(
         self,
         query: EventCandidateMetaClass | str,
+        project_id: str,
         top_k: int = 5,
         is_filter: bool = True,
-        project: str | None = None,
     ) -> List[Tuple[EventCandidateMetaClass, float]]:
-        if isinstance(query, EventCandidateMetaClass):
-            query_string = self.convert_text(query)
-        else:
-            query_string = str(query)
-
+        query_string: str = self.convert_text(query) if isinstance(query, EventCandidateMetaClass) else str(query)
         query_vector = self._embed_model.encode([query_string], normalize_embeddings=True).flatten()
         distance = EventCandidateItem.embedding.cosine_distance(query_vector).label("distance")
-        excluded_status = (
-            DecisionStatus.SUPERSEDED.value,
-            DecisionStatus.EXPIRED.value,
-            DecisionStatus.ARCHIVED.value,
-        )
-        mult = max(1, int(os.environ.get("NANOBOT_DECISION_RETRIEVE_PREFETCH_MULT", _RETRIEVE_PREFETCH_MULT_DEFAULT)))
-        cap = max(1, int(os.environ.get("NANOBOT_DECISION_RETRIEVE_PREFETCH_CAP", _RETRIEVE_PREFETCH_CAP_DEFAULT)))
-        prefetch_limit = min(max(top_k * mult, top_k), cap)
-
+        excluded_status = (DecisionStatus.SUPERSEDED.value, DecisionStatus.EXPIRED.value, DecisionStatus.ARCHIVED.value)
         stmt = (
             select(EventCandidateItem, distance)
             .where(EventCandidateItem.embedding.is_not(None))
             .where(EventCandidateItem.status.notin_(excluded_status))
+            .where(EventCandidateItem.project_id == project_id)
             .order_by(distance)
-            .limit(prefetch_limit)
+            .limit(top_k)
         )
-        if project is not None:
-            stmt = stmt.where(EventCandidateItem.project == project)
 
         result: List[Tuple[EventCandidateItem, float]] = self.session.execute(stmt).all()
-        if is_filter:
-            result = list(filter(lambda item: item[1] < self._max_score, result))
-
-        lam = float(os.environ.get("NANOBOT_DECISION_RETRIEVE_RECENCY_LAMBDA", _RETRIEVE_RECENCY_LAMBDA_DEFAULT))
-        if lam > 0.0 and len(result) > 1:
-            ts_list = [_parse_update_ts(item[0].update_at) for item in result]
-            t_min, t_max = min(ts_list), max(ts_list)
-            span = max(t_max - t_min, 1.0)
-
-            def _adjusted_sort_key(item: Tuple[EventCandidateItem, float]) -> float:
-                dist = item[1]
-                ts = _parse_update_ts(item[0].update_at)
-                recency = (ts - t_min) / span
-                return dist - lam * recency
-
-            result.sort(key=_adjusted_sort_key)
-
-        result = result[:top_k]
+        if is_filter: result = list(filter(lambda item: item[1] < self._max_score, result))
 
         out: List[Tuple[EventCandidateMetaClass, float]] = []
         keys = [f.name for f in fields(EventCandidateMetaClass)]
@@ -346,7 +315,6 @@ class EventCandidateRepository:
         return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
     def apply_decay(self) -> int:
-        """Gradually reduce strength for active/candidate rows (calendar-time)."""
         stmt = select(EventCandidateItem).where(
             EventCandidateItem.status.in_(
                 [DecisionStatus.ACTIVE.value, DecisionStatus.CANDIDATE.value]
