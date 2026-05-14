@@ -48,11 +48,12 @@ class Router:
             # 2.2 feedinto decision
             self._add_extra_message_id(_window_content) # add message id
             _evidence_message_ids = await self._decision.extract(_window_content, project_id)
-            self._merge_evidence_message_ids(_evidence_message_ids)
+            self._merge_evidence_message_ids(_evidence_message_ids, _evidence_path, _window_content)
             self._windows_record.append(windows_path)
-            write_pickle(self._windows_recorded, self._windows_recorded_path)
+            write_pickle(self._windows_record, _windows_record_path)
             processed += 1
-
+        
+        # final step: delete slide windows
         self._delete_slide_windows(_windows_root)
     
     def _create_slide_windows(self, _windows_root: str, _history_path: str, _windows_record_path: str): # .history.jsonl --> windows/window_<idx>.jsonl
@@ -78,7 +79,7 @@ class Router:
     
     def _delete_slide_windows(self, _windows_root: str):
         shutil.rmtree(_windows_root) # remove windows root dir
-        self._windows_recorded: List = list()
+        self._windows_record: List = list()
         
     def _add_extra_message_id(self, _window_content: List[Dict[str, Any]]):
         for win in _window_content:
@@ -88,14 +89,15 @@ class Router:
     def _merge_evidence_message_ids(
             self,
             evidence_message_ids: List[str],
-            evdience_path: str,
+            evidence_path: str,
             _window_content: List[Dict[str, Any]],
         ):
         # exists message id list
         _window_content_message_ids: List[str] = [win.get('message_id') for win in _window_content]
+        
         # filter not exists in _window_content_message_ids
         _evidence_message_ids: List = [emi for emi in evidence_message_ids if emi in _window_content_message_ids]
-        _evidence_message_ids_history: List[str] = read_pickle(evdience_path) if os.path.exists(evdience_path) else list()
+        _evidence_message_ids_history: List[str] = read_pickle(evidence_path) if os.path.exists(evidence_path) else list()
         
         # merge
         for evid in _evidence_message_ids:
@@ -103,4 +105,4 @@ class Router:
                 _evidence_message_ids_history.append(evid)
         
         # save
-        write_pickle(_evidence_message_ids_history, evdience_path)
+        write_pickle(_evidence_message_ids_history, evidence_path)
