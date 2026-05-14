@@ -287,9 +287,9 @@ class EventCandidateRepository:
         excluded_status = (DecisionStatus.SUPERSEDED.value, DecisionStatus.EXPIRED.value, DecisionStatus.ARCHIVED.value)
         stmt = (
             select(EventCandidateItem, distance)
+            .where(EventCandidateItem.project_id == project_id)
             .where(EventCandidateItem.embedding.is_not(None))
             .where(EventCandidateItem.status.notin_(excluded_status))
-            .where(EventCandidateItem.project_id == project_id)
             .order_by(distance)
             .limit(top_k)
         )

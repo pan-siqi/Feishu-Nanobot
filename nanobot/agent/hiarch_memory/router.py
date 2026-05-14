@@ -36,7 +36,7 @@ class Router:
         # second step: store in episodic & decision memorystore
         processed = 0
         for windows_path in glob(os.path.join(_windows_root, 'window*.jsonl')):
-            if windows_path in self._windows_record: continue
+            if windows_path in self._windows_record: continue 
             _window_content: List[Dict[str, Any]] = read_jsonlines(windows_path)
             # 2.1 feedinto episodic
             doc: str = await self._episodic.convert_document(_window_content)
