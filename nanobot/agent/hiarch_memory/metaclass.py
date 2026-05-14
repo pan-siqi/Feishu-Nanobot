@@ -10,4 +10,5 @@ class FileName:
     evidence: str      = '.evids.pkl'
     document: str      = '.document.txt'
     rag_workspace: str = 'rag_storage'
+    logger: str        = '.log'
 
