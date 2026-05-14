@@ -75,35 +75,35 @@ class EventCandidateMetaClass:
 class EventCandidateItem(Base):
     __tablename__ = "EventCandidateItem"
 
-    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    id: Mapped[int]                               = mapped_column(primary_key=True, autoincrement=True)
 
-    ec_id: Mapped[str] = mapped_column(String)
-    event_name: Mapped[str] = mapped_column(String)
-    aliases: Mapped[List[str]] = mapped_column(JSONB, default=list)
-    decision_signal: Mapped[str] = mapped_column(String)
-    summary: Mapped[str] = mapped_column(String)
-    decision_result: Mapped[str] = mapped_column(String)
-    entities: Mapped[List[str]] = mapped_column(JSONB, default=list)
-    evidence_message_ids: Mapped[List[str]] = mapped_column(JSONB, default=list)
-    confidence: Mapped[float] = mapped_column(Float)
-    update_at: Mapped[str] = mapped_column(String)
+    ec_id: Mapped[str]                            = mapped_column(String)
+    event_name: Mapped[str]                       = mapped_column(String)
+    aliases: Mapped[List[str]]                    = mapped_column(JSONB, default=list)
+    decision_signal: Mapped[str]                  = mapped_column(String)
+    summary: Mapped[str]                          = mapped_column(String)
+    decision_result: Mapped[str]                  = mapped_column(String)
+    entities: Mapped[List[str]]                   = mapped_column(JSONB, default=list)
+    evidence_message_ids: Mapped[List[str]]       = mapped_column(JSONB, default=list)
+    confidence: Mapped[float]                     = mapped_column(Float)
+    update_at: Mapped[str]                        = mapped_column(String)
 
-    project_id: Mapped[str] = mapped_column(String, default="")
-    reasons: Mapped[List[str]] = mapped_column(JSONB, default=list)
-    objections: Mapped[List[str]] = mapped_column(JSONB, default=list)
-    alternatives: Mapped[List[str]] = mapped_column(JSONB, default=list)
-    deadline: Mapped[str | None] = mapped_column(String, nullable=True)
-    participants: Mapped[List[str]] = mapped_column(JSONB, default=list)
-    importance: Mapped[float] = mapped_column(Float, default=0.5)
-    strength: Mapped[float] = mapped_column(Float, default=1.0)
-    last_reviewed_at: Mapped[str | None] = mapped_column(String, nullable=True)
-    review_count: Mapped[int] = mapped_column(Integer, default=0)
-    status: Mapped[str] = mapped_column(String, default=DecisionStatus.CANDIDATE.value)
-    supersedes: Mapped[str | None] = mapped_column(String, nullable=True)
+    project_id: Mapped[str]                       = mapped_column(String, default="")
+    reasons: Mapped[List[str]]                    = mapped_column(JSONB, default=list)
+    objections: Mapped[List[str]]                 = mapped_column(JSONB, default=list)
+    alternatives: Mapped[List[str]]               = mapped_column(JSONB, default=list)
+    deadline: Mapped[str | None]                  = mapped_column(String, nullable=True)
+    participants: Mapped[List[str]]               = mapped_column(JSONB, default=list)
+    importance: Mapped[float]                     = mapped_column(Float, default=0.5)
+    strength: Mapped[float]                       = mapped_column(Float, default=1.0)
+    last_reviewed_at: Mapped[str | None]          = mapped_column(String, nullable=True)
+    review_count: Mapped[int]                     = mapped_column(Integer, default=0)
+    status: Mapped[str]                           = mapped_column(String, default=DecisionStatus.CANDIDATE.value)
+    supersedes: Mapped[str | None]                = mapped_column(String, nullable=True)
 
-    embedding: Mapped[List[float] | None] = mapped_column(Vector(512))
-    embedding_model: Mapped[str | None] = mapped_column(String)
-    embedding_input_hash: Mapped[str | None] = mapped_column(String)
+    embedding: Mapped[List[float] | None]         = mapped_column(Vector(512))
+    embedding_model: Mapped[str | None]           = mapped_column(String)
+    embedding_input_hash: Mapped[str | None]      = mapped_column(String)
     embedding_updated_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
 
     __table_args__ = (
@@ -117,59 +117,59 @@ class EventCandidateItem(Base):
     )
 
 
-def ensure_event_candidate_schema(engine: Engine) -> None:
-    """Add Phase-2 columns on existing PostgreSQL deployments (idempotent)."""
-    insp = inspect(engine)
-    if not insp.has_table(EventCandidateItem.__tablename__):
-        return
-    existing = {c["name"] for c in insp.get_columns(EventCandidateItem.__tablename__)}
-    table = f'"{EventCandidateItem.__tablename__}"'
-    alters: list[str] = []
-    if "project" not in existing:
-        alters.append(f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS project VARCHAR NOT NULL DEFAULT ''")
-    if "reasons" not in existing:
-        alters.append(
-            f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS reasons JSONB NOT NULL DEFAULT '[]'::jsonb"
-        )
-    if "objections" not in existing:
-        alters.append(
-            f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS objections JSONB NOT NULL DEFAULT '[]'::jsonb"
-        )
-    if "alternatives" not in existing:
-        alters.append(
-            f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS alternatives JSONB NOT NULL DEFAULT '[]'::jsonb"
-        )
-    if "deadline" not in existing:
-        alters.append(f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS deadline VARCHAR")
-    if "participants" not in existing:
-        alters.append(
-            f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS participants JSONB NOT NULL DEFAULT '[]'::jsonb"
-        )
-    if "importance" not in existing:
-        alters.append(
-            f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS importance DOUBLE PRECISION NOT NULL DEFAULT 0.5"
-        )
-    if "strength" not in existing:
-        alters.append(
-            f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS strength DOUBLE PRECISION NOT NULL DEFAULT 1.0"
-        )
-    if "last_reviewed_at" not in existing:
-        alters.append(f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS last_reviewed_at VARCHAR")
-    if "review_count" not in existing:
-        alters.append(
-            f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS review_count INTEGER NOT NULL DEFAULT 0"
-        )
-    if "status" not in existing:
-        alters.append(
-            f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS status VARCHAR NOT NULL DEFAULT 'candidate'"
-        )
-    if "supersedes" not in existing:
-        alters.append(f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS supersedes VARCHAR")
-    if not alters:
-        return
-    with engine.begin() as conn:
-        for stmt in alters:
-            conn.execute(text(stmt))
+# def ensure_event_candidate_schema(engine: Engine) -> None:
+#     """Add Phase-2 columns on existing PostgreSQL deployments (idempotent)."""
+#     insp = inspect(engine)
+#     if not insp.has_table(EventCandidateItem.__tablename__):
+#         return
+#     existing = {c["name"] for c in insp.get_columns(EventCandidateItem.__tablename__)}
+#     table = f'"{EventCandidateItem.__tablename__}"'
+#     alters: list[str] = []
+#     if "project" not in existing:
+#         alters.append(f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS project VARCHAR NOT NULL DEFAULT ''")
+#     if "reasons" not in existing:
+#         alters.append(
+#             f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS reasons JSONB NOT NULL DEFAULT '[]'::jsonb"
+#         )
+#     if "objections" not in existing:
+#         alters.append(
+#             f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS objections JSONB NOT NULL DEFAULT '[]'::jsonb"
+#         )
+#     if "alternatives" not in existing:
+#         alters.append(
+#             f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS alternatives JSONB NOT NULL DEFAULT '[]'::jsonb"
+#         )
+#     if "deadline" not in existing:
+#         alters.append(f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS deadline VARCHAR")
+#     if "participants" not in existing:
+#         alters.append(
+#             f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS participants JSONB NOT NULL DEFAULT '[]'::jsonb"
+#         )
+#     if "importance" not in existing:
+#         alters.append(
+#             f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS importance DOUBLE PRECISION NOT NULL DEFAULT 0.5"
+#         )
+#     if "strength" not in existing:
+#         alters.append(
+#             f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS strength DOUBLE PRECISION NOT NULL DEFAULT 1.0"
+#         )
+#     if "last_reviewed_at" not in existing:
+#         alters.append(f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS last_reviewed_at VARCHAR")
+#     if "review_count" not in existing:
+#         alters.append(
+#             f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS review_count INTEGER NOT NULL DEFAULT 0"
+#         )
+#     if "status" not in existing:
+#         alters.append(
+#             f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS status VARCHAR NOT NULL DEFAULT 'candidate'"
+#         )
+#     if "supersedes" not in existing:
+#         alters.append(f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS supersedes VARCHAR")
+#     if not alters:
+#         return
+#     with engine.begin() as conn:
+#         for stmt in alters:
+#             conn.execute(text(stmt))
 
 
 def compute_retention(strength: float, delta_days: float) -> float:

@@ -24,7 +24,7 @@ class HiarchMemoryStore:
     async def aggregation_memory(self, current_message: str, project_id: str) -> str:
         parts: str = ''
         # Module1: Retrieve from Episodic
-        knowledge = await self._episodic.retrieve(current_message)
+        knowledge = await self._episodic.retrieve(current_message, project_id)
         if knowledge.strip(): parts += f"## Episodic knowledge\n\n{knowledge.strip()}"
         return parts
 

@@ -28,22 +28,25 @@ class ShortermMemoryStore:
             self._mem_save_path,
             self._episodic,
             self._decision,
-            self._build_path,
         )
     
     async def rebuild_history(self, session: Session): # make number of history come into [m/2, m]
-        project_id: str = session.key # split different project into different space
+        # split different project into different space
+        project_id: str = session.key; project_id = project_id.replace(':', '_')
+        _project_path: str = os.path.join(self._mem_save_path, project_id)
+        if not os.path.exists(_project_path): os.mkdir(_project_path)
+
         # read file path in project
-        _cursor_path: str = self._build_path(project_id, FileName.cursor)
-        _history_path: str = self._build_path(project_id, FileName.history)
-        _shortermem_path: str = self._build_path(project_id, FileName.shortermem)
+        _cursor_path: str = os.path.join(_project_path, FileName.cursor)
+        _history_path: str = os.path.join(_project_path, FileName.history)
+        _shortermem_path: str = os.path.join(_project_path, FileName.shortermem)
         _cursor: int = int(read_file(_cursor_path)) if os.path.exists(_cursor_path) else 0
         
         history: List[Dict[str, Any]] = session.get_history(max_messages=0, clip_index=_cursor)
         
         # if should rebuild
         if self._is_rebuild(history):
-            _num: int = self._get_num(history)
+            _num: int = self._get_num(history, _cursor, _cursor_path)
             batch = history[0:_num]
             write_jsonlines(batch, _history_path)
 
@@ -62,7 +65,7 @@ class ShortermMemoryStore:
     def _is_rebuild(self, history: List) -> bool:
         return len(history) >= self._max_history_num
 
-    def _get_num(self, history: List) -> int:
+    def _get_num(self, history: List, _cursor: int, _cursor_path: str) -> int:
         _num = len(history) - self._max_history_num // 2
-        self._cursor += _num; self._save_cursor()
+        _cursor += _num; write_file(str(_cursor), _cursor_path)
         return _num

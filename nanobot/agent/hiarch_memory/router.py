@@ -16,20 +16,22 @@ class Router:
         mem_save_path: str,
         episodic: EpisodicMemoryStore,
         decision: DecisionMemoryStore,
-        build_path: Callable[[str, str], str],
     ):
         self._mem_save_path = mem_save_path
         self._windows_size: int = 100
         self._overlap: int = 20
         self._episodic = episodic
         self._decision = decision
-        self._build_path = build_path
     
     async def operate_batch(self, session: Session, project_id: str):
-        _windows_root = self._build_path(project_id, FileName.windows_root)
-        _history_path = self._build_path(project_id, FileName.history)
-        _windows_record_path = self._build_path(project_id, FileName.windows_record)
+        _project_path: str = os.path.join(self._mem_save_path, project_id)
+        if not os.path.exists(_project_path): os.mkdir(_project_path)
         
+        _windows_root = os.path.join(_project_path, FileName.windows_root)
+        _history_path = os.path.join(_project_path, FileName.history)
+        _windows_record_path = os.path.join(_project_path, FileName.windows_root, FileName.windows_record)
+        _evidence_path = os.path.join(_project_path, FileName.evidence)
+
         # first step: split `batch` into `slide windows`
         self._create_slide_windows(_windows_root, _history_path, _windows_record_path)
         
@@ -51,7 +53,7 @@ class Router:
             write_pickle(self._windows_recorded, self._windows_recorded_path)
             processed += 1
 
-        self._delete_slide_windows()
+        self._delete_slide_windows(_windows_root)
     
     def _create_slide_windows(self, _windows_root: str, _history_path: str, _windows_record_path: str): # .history.jsonl --> windows/window_<idx>.jsonl
         # if os.path.exists(self._windows_root): raise Exception(f'{self._windows_root} could not exist!')
@@ -74,26 +76,31 @@ class Router:
             left = right - self._overlap # update left idx
             if len(_temp) - 1 - right == 0: break # full walk
     
-    def _delete_slide_windows(self):
-        shutil.rmtree(self._windows_root) # remove windows root dir
+    def _delete_slide_windows(self, _windows_root: str):
+        shutil.rmtree(_windows_root) # remove windows root dir
         self._windows_recorded: List = list()
         
     def _add_extra_message_id(self, _window_content: List[Dict[str, Any]]):
-        self._windows_message_ids: List[str] = list()
         for win in _window_content:
             message_id: str = f'm{uuid4().hex[:10]}'
             win['message_id'] = message_id
-            self._windows_message_ids.append(message_id)
     
-    def _merge_evidence_message_ids(self, evidence_message_ids: List[str]):
-        # filter not exists in _windows_message_ids
-        _evidence_message_ids: List = [emi for emi in evidence_message_ids if emi not in self._windows_message_ids]
-        _evidence_message_ids_history: List[str] = read_pickle(self._evidence_message_ids_path) if os.path.exists(self._evidence_message_ids_path) else list()
-
+    def _merge_evidence_message_ids(
+            self,
+            evidence_message_ids: List[str],
+            evdience_path: str,
+            _window_content: List[Dict[str, Any]],
+        ):
+        # exists message id list
+        _window_content_message_ids: List[str] = [win.get('message_id') for win in _window_content]
+        # filter not exists in _window_content_message_ids
+        _evidence_message_ids: List = [emi for emi in evidence_message_ids if emi in _window_content_message_ids]
+        _evidence_message_ids_history: List[str] = read_pickle(evdience_path) if os.path.exists(evdience_path) else list()
+        
         # merge
         for evid in _evidence_message_ids:
             if evid not in _evidence_message_ids_history:
                 _evidence_message_ids_history.append(evid)
         
         # save
-        write_pickle(_evidence_message_ids_history, self._evidence_message_ids_path)
+        write_pickle(_evidence_message_ids_history, evdience_path)

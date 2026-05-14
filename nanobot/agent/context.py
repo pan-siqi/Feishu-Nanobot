@@ -93,7 +93,7 @@ class ContextBuilder:
         if bootstrap:
             parts.append(bootstrap)
         
-        memory = await self.memory.aggregation_memory(current_message, project_id=f'{channel}:{chat_id}')
+        memory = await self.memory.aggregation_memory(current_message, project_id=f'{channel}_{chat_id}')
         # if memory:
         #     if len(memory) > self._MAX_MEMORY_BLOCK_CHARS:
         #         memory = memory[: self._MAX_MEMORY_BLOCK_CHARS].rstrip() + "\n\n...[memory truncated]"
