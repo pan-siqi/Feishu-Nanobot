@@ -2,8 +2,8 @@
 
 > 决策状态：**{{ decision_signal }}** · 生命周期：**{{ status }}** · 重要度：{{ importance }} · 记忆强度：{{ strength }}
 
-### 会话范围
-`{{ project }}`
+### 会话名称
+`{{ project_id }}`
 
 ### 📌 事件概览
 {{ summary }}

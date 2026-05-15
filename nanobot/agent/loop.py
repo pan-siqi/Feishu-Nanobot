@@ -757,7 +757,7 @@ class AgentLoop:
 
         # history = session.get_history(max_messages=0)
         # use shorterm's history
-        history = await self.shorterm.rebuild_history(session)
+        history, project_id = await self.shorterm.rebuild_history(session)
 
         initial_messages = await self.context.build_messages(
             history=history,
@@ -807,6 +807,7 @@ class AgentLoop:
         elif msg.chat_type == 'group':
             read_only, all_msgs, card_outbound_message = \
             await self.monitor.check(
+                project_id=project_id,
                 session=session,
                 msg=msg,
                 initial_messages=initial_messages,

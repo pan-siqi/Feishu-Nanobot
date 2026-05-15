@@ -867,6 +867,7 @@ def gateway(
     async def _health_server(host: str, health_port: int):
         """Lightweight HTTP health endpoint on the gateway port."""
         import json as _json
+        from nanobot.bus.events import InboundMessage
 
         async def handle(reader, writer):
             try:
@@ -882,6 +883,17 @@ def gateway(
                 method, path = parts[0], parts[1]
 
             if method == "GET" and path == "/health":
+                body = _json.dumps({"status": "ok"})
+                resp = (
+                    f"HTTP/1.0 200 OK\r\n"
+                    f"Content-Type: application/json\r\n"
+                    f"Content-Length: {len(body)}\r\n"
+                    f"\r\n{body}"
+                )
+            elif method == "POST" and path == "/debug/inbound":
+                metadata: dict = _json.loads(data.split(b"\r\n")[-1])
+                msg = InboundMessage(**metadata)
+                await bus.publish_inbound(msg) # publish messge
                 body = _json.dumps({"status": "ok"})
                 resp = (
                     f"HTTP/1.0 200 OK\r\n"

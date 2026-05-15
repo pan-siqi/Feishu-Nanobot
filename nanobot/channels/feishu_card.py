@@ -149,7 +149,6 @@ def _coerce_payload_format(value: Any) -> PayloadFormat:
 
 def resolve_interactive_card(
     metadata: dict[str, Any] | None,
-    *,
     default_markdown: str | None = None,
     default_header_title: str | None = "Nanobot",
 ) -> dict[str, Any]:

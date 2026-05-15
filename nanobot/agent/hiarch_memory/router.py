@@ -55,7 +55,7 @@ class Router:
             _windows_content_string: str = ''
             for wc_idx, wc in enumerate(_windows_content):
                 _windows_content_string += '[{}]{}: {}\n'.format(wc_idx, wc['role'], wc['content'][0: 100])
-            logger.info(f'current window content: \n{_windows_content_string}')
+            logger.info(f'current window content: \n{_windows_content_string.strip()}')
             
             # 2.1 feedinto episodic
             doc: str = await self._episodic.convert_document(_windows_content)
@@ -69,11 +69,15 @@ class Router:
             
             # 2.3 record windows_path
             self._windows_record.append(windows_path)
-            write_pickle(self._windows_record, _windows_record_path)
+            try:
+                write_pickle(self._windows_record, _windows_record_path)
+            except Exception as e:
+                print(e)
             processed += 1
         
-        # final step: delete slide windows
+        # final step: delete slide windows & stop logger
         self._delete_slide_windows(_windows_root)
+        logger.remove()
     
     def _create_slide_windows(self, _windows_root: str, _history_path: str, _windows_record_path: str): # .history.jsonl --> windows/window_<idx>.jsonl
         # if os.path.exists(self._windows_root): raise Exception(f'{self._windows_root} could not exist!')
