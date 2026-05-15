@@ -14,6 +14,17 @@ import pickle
 import tiktoken
 from loguru import logger
 
+def merge_eval_bool(content: str | None) -> bool:
+    if not content:
+        return False
+    t = content.strip().lower()
+    if t in ("true", "yes", "1", "是", "y"):
+        return True
+    if t in ("false", "no", "0", "否", "n"):
+        return False
+    head = t.split()[0] if t else ""
+    return head in ("true", "yes", "1", "是")
+
 def format_messages(messages: List[Dict[str, str]]) -> str:
     # convert chat history from List[Dict] to str format
     lines = []

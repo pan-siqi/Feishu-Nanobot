@@ -297,6 +297,8 @@ class AgentLoop:
             bus=self.bus,
             database_session=self._database_session,
             repo=self._repo,
+            provider=self.provider,
+            model=self.model,
         )
 
         self._register_default_tools()

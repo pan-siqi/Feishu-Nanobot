@@ -1,12 +1,14 @@
 from nanobot.agent.hiarch_memory.database import DataBaseSession, EventCandidateMetaClass, EventCandidateRepository
 from nanobot.agent.card import build_card
+from nanobot.providers.openai_compat_provider import OpenAICompatProvider
 from nanobot.bus.events import InboundMessage, OutboundMessage
 from nanobot.bus.queue import MessageBus
 from nanobot.channels.feishu_card import resolve_interactive_card
 from nanobot.session.manager import Session
 from nanobot.utils.prompt_templates import render_template
+from nanobot.utils.helpers import  merge_eval_bool
 from loguru import logger
-from typing import List, Tuple
+from typing import List, Tuple, Dict, Any
 from datetime import datetime
 import os
 
@@ -18,11 +20,15 @@ class Monitor:
         bus: MessageBus,
         database_session: DataBaseSession,
         repo: EventCandidateRepository,
+        provider: OpenAICompatProvider,
+        model: str,
         card_max_distance: float | None = None,
     ):
         self.bus = bus
         self._session = database_session
         self._repo = repo
+        self._provider = provider
+        self._model = model
         self._card_max_distance = (
             float(card_max_distance)
             if card_max_distance is not None
@@ -55,6 +61,15 @@ class Monitor:
         if not msg.is_mentioned: return
 
         text = (msg.content or "").strip()
+        # whether publish
+        msg_eval: List[Dict[str, Any]] = [
+            {"role": "user", "content": render_template("custom/evaluate_publish.md", strip=True, content=msg.content)},
+        ]
+        response_eval = await self._provider.chat_with_retry(
+            msg_eval, model=self._model, tools=None, tool_choice=None
+        )
+        if not merge_eval_bool(response_eval.content): return 
+
         result: List[Tuple[EventCandidateMetaClass, float]] = self._repo.retrieve(text, project_id)
         if not result: return
         

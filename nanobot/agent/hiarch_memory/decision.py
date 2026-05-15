@@ -4,7 +4,7 @@ from nanobot.agent.hiarch_memory.database import EventCandidateMetaClass, EventC
 from nanobot.agent.hiarch_memory.scheme import DecisionStatus, EventCandidate, EventCandidateMergeResult, EventCandidateResult
 from nanobot.providers.base import LLMResponse
 from nanobot.providers.openai_compat_provider import OpenAICompatProvider
-from nanobot.utils.helpers import format_messages
+from nanobot.utils.helpers import format_messages, merge_eval_bool
 from nanobot.utils.prompt_templates import render_template
 from sqlalchemy.orm.session import Session
 from datetime import datetime, timezone
@@ -12,17 +12,6 @@ from typing import Any, Dict, List, Tuple
 from uuid import uuid4
 from loguru import logger
 import os
-
-def _merge_eval_bool(content: str | None) -> bool:
-    if not content:
-        return False
-    t = content.strip().lower()
-    if t in ("true", "yes", "1", "是", "y"):
-        return True
-    if t in ("false", "no", "0", "否", "n"):
-        return False
-    head = t.split()[0] if t else ""
-    return head in ("true", "yes", "1", "是")
 
 _ACTIVE_MIN_CONF  = 0.65
 _REINFORCE_FACTOR = 1.8
@@ -182,7 +171,7 @@ class DecisionMemoryStore(BaseMemoryStore):
         response_eval = await self._provider.chat_with_retry(
             msg_eval, model=self._model, tools=None, tool_choice=None
         )
-        if not _merge_eval_bool(response_eval.content): return None
+        if not merge_eval_bool(response_eval.content): return None
 
         # second step: evaluate whether merge
         msg_merge: List[Dict[str, Any]] = [
