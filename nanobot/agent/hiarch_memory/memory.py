@@ -25,7 +25,7 @@ class HiarchMemoryStore:
         parts: str = ''
         # Module1: Retrieve from Episodic
         knowledge = await self._episodic.retrieve(current_message, project_id)
-        if knowledge.strip(): parts += f"## Episodic knowledge\n\n{knowledge.strip()}"
+        if knowledge: parts += f"## Episodic knowledge\n\n{knowledge.strip()}"
         return parts
 
     def efficient(self, memory_project: str | None = None) -> bool:
