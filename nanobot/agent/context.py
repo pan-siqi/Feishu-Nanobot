@@ -12,7 +12,7 @@ from nanobot.agent.skills import SkillsLoader
 from nanobot.utils.helpers import build_assistant_message, current_time_str, detect_image_mime
 from nanobot.utils.prompt_templates import render_template
 from loguru import logger
-
+import regex as re
 
 class ContextBuilder:
     """Builds the context (system prompt + messages) for the agent."""
@@ -94,10 +94,10 @@ class ContextBuilder:
             parts.append(bootstrap)
         
         memory = await self.memory.aggregation_memory(current_message, project_id=f'{channel}_{chat_id}')
-        # if memory:
-        #     if len(memory) > self._MAX_MEMORY_BLOCK_CHARS:
-        #         memory = memory[: self._MAX_MEMORY_BLOCK_CHARS].rstrip() + "\n\n...[memory truncated]"
-        #     parts.append(f"# Memory\n\n{memory}")
+        if memory:
+            if len(memory) > self._MAX_MEMORY_BLOCK_CHARS:
+                memory = memory[: self._MAX_MEMORY_BLOCK_CHARS].rstrip() + "\n\n...[memory truncated]"
+            parts.append(f"# Memory\n\n{memory}")
         
         always_skills = self.skills.get_always_skills()
         if always_skills:
@@ -187,6 +187,9 @@ class ContextBuilder:
         session_summary: str | None = None,
     ) -> list[dict[str, Any]]:
         """Build the complete message list for an LLM call."""
+        # preprocess current_message
+        current_message = re.sub(r'@.*?\(ou_[^)]+\)\s*', '', current_message)
+        
         runtime_ctx = self._build_runtime_context(channel, chat_id, self.timezone, session_summary=session_summary)
         user_content = self._build_user_content(current_message, media)
 

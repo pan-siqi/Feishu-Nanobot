@@ -52,10 +52,11 @@ class Monitor:
         return True
 
     async def _publish_card(self, project_id: str, session: Session, msg: InboundMessage) -> None | Tuple[dict, OutboundMessage]:
+        if not msg.is_mentioned: return
+
         text = (msg.content or "").strip()
         result: List[Tuple[EventCandidateMetaClass, float]] = self._repo.retrieve(text, project_id)
-        if not result:
-            return
+        if not result: return
         
         card_json, card_md = build_card([self.convert_ec_to_beautify_markdown(ec) for ec, _ in result])
         meta = dict(msg.metadata or {})

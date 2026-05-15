@@ -21,7 +21,7 @@ class ShortermMemoryStore:
     ):
         self._workspace = workspace
         self._mem_save_path = mem_save_path
-        self._max_history_num: int = 5
+        self._max_history_num: int = 10
         self._buffer: List = list()
         self._episodic = episodic
         self._decision = decision

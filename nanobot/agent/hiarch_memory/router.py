@@ -76,7 +76,7 @@ class Router:
             processed += 1
         
         # final step: delete slide windows & stop logger
-        self._delete_slide_windows(_windows_root)
+        # self._delete_slide_windows(_windows_root)
         logger.remove()
     
     def _create_slide_windows(self, _windows_root: str, _history_path: str, _windows_record_path: str): # .history.jsonl --> windows/window_<idx>.jsonl
@@ -101,7 +101,7 @@ class Router:
             if len(_temp) - 1 - right == 0: break # full walk
     
     def _delete_slide_windows(self, _windows_root: str):
-        shutil.rmtree(_windows_root) # remove windows root dir
+        if os.path.exists(_windows_root): shutil.rmtree(_windows_root) # remove windows root dir
         self._windows_record: List = list()
         
     def _add_extra_message_id(self, _windows_content: List[Dict[str, Any]]):
